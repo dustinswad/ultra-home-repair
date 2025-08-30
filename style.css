@@ -990,3 +990,10 @@ body {
         right: 10px;
     }
 }
+
+/* Temporarily hide Portfolio nav link across the site */
+nav a[href$="portfolio.html"],
+nav a[href$="/portfolio.html"],
+nav a[href$="/portfolio"] {
+  display: none !important;
+}
