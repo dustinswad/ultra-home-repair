@@ -43,7 +43,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 140px;
+  height: 90px;
   display: flex;
   align-items: center;
   box-shadow: var(--shadow);
@@ -64,19 +64,19 @@ body {
 }
 
 .nav-brand img.logo {
-    max-height: 128px;
+    max-height: 72px;
     width: auto;
 }
 
 /* Hero Section */
 .hero {
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 90px);
   background: url('images/hero-image-final.jpeg') center/contain no-repeat;
   background-size: contain;
   display: flex;
   align-items: center;
   position: relative;
-  margin-top: 100px;
+  margin-top: 90px;
   padding: 0;
 }
 
