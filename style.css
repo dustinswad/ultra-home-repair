@@ -96,6 +96,7 @@ body {
 .hero-form {
   margin-right: 4rem;
   flex-shrink: 0;
+  margin-top: -20px;   /* adjust this value until it looks right */
 }
 
 .hero-left {
