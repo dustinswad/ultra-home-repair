@@ -853,4 +853,13 @@ nav a[href$="/portfolio.html"],
 nav a[href$="/portfolio"] {
   display: none !important;
 }
+/* Shorter "Since 2009" band */
+.section.section--dark {
+  padding: 28px 0 !important;     /* was 80px 0 */
+}
+
+/* tighten inner spacing & keep type readable */
+.stats { margin: 8px 0 !important; }
+.stat-number { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; }
+.stat-label  { font-size: clamp(12px, 2.5vw, 16px); line-height: 1.3; }
 
