@@ -889,7 +889,7 @@ nav a[href$="/portfolio"] {
    --hero-form-note-size:font size of "We'll call you back within 1 day."
    =============================================================== */
 :root{
-  --hero-form-width: 1000px;
+  --hero-form-width: 100px;
   --hero-form-padding: 10px;
   --hero-form-right-gap: 0rem;
   --hero-form-top: -80px;
