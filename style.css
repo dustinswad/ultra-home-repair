@@ -96,7 +96,7 @@ body {
 .hero-form {
   margin-right: 4rem;
   flex-shrink: 0;
-  margin-top: -80px;   /* adjust this value until it looks right */
+  margin-top: -80px;   /* mobile/flow default; desktop is overridden below */
 }
 
 .hero-left {
@@ -172,9 +172,8 @@ body {
   padding: 1.6rem;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  
-  
-  
+  width: 100%;
+  /* transform: scale(0.9); disabled */
 }
 
 .quote-form h2 {
@@ -237,8 +236,6 @@ body {
   text-align: center;
   margin: 0;
 }
-
-
 
 /* Navigation */
 .nav-menu {
@@ -626,226 +623,117 @@ body {
 }
 
 
-/* Mobile Responsive */
+/* ===================== Mobile Responsive (begin) ===================== */
 @media (max-width: 768px) {
 
+  /* (your mobile styles here; unchanged from your file) */
 
-/* Portfolio Styles */
-.portfolio-intro {
-    text-align: center;
-    margin-bottom: 4rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
+  /* Portfolio Styles */
+  .portfolio-intro {
+      text-align: center;
+      margin-bottom: 4rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+  }
 
-.portfolio-intro h2 {
-    font-size: 2.5rem;
-    color: var(--text-dark);
-    margin-bottom: 1rem;
-}
+  .portfolio-intro h2 {
+      font-size: 2.5rem;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+  }
 
-.portfolio-intro p {
-    font-size: 1.2rem;
-    color: var(--text-body);
-    line-height: 1.8;
-}
+  .portfolio-intro p {
+      font-size: 1.2rem;
+      color: var(--text-body);
+      line-height: 1.8;
+  }
 
-/* Portfolio Slideshow */
-.portfolio-slideshow {
-    margin-bottom: 4rem;
-}
+  /* Portfolio Slideshow */
+  .portfolio-slideshow { margin-bottom: 4rem; }
 
-.slideshow-container {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    background: var(--white);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
+  .slideshow-container {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+  }
 
-.portfolio-slide {
-    display: none;
-    flex-direction: row;
-    min-height: 500px;
-    animation: fadeIn 0.5s ease-in-out;
-}
+  .portfolio-slide {
+      display: none;
+      flex-direction: row;
+      min-height: 500px;
+      animation: fadeIn 0.5s ease-in-out;
+  }
 
-.portfolio-slide:nth-child(2) {
-    min-height: 600px;
-}
+  .portfolio-slide:nth-child(2) { min-height: 600px; }
+  .portfolio-slide.active { display: flex; }
 
-.portfolio-slide.active {
-    display: flex;
-}
+  .slide-image { flex: 2; overflow: visible; }
+  .slide-image img { width: 100%; height: auto; object-fit: contain; max-height: none; }
 
-.slide-image {
-    flex: 2;
-    overflow: visible;
-}
+  .portfolio-slide:nth-child(2) .slide-image img { height: auto; min-height: 600px; }
 
-.slide-image img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    max-height: none;
-}
+  .slide-content {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--white);
+  }
 
-.portfolio-slide:nth-child(2) .slide-image img {
-    height: auto;
-    min-height: 600px;
-}
+  .slide-content h3 { font-size: 2rem; color: var(--text-dark); margin-bottom: 1.5rem; font-weight: 600; }
+  .slide-content p { font-size: 1.1rem; color: var(--text-body); line-height: 1.7; }
 
-.slide-content {
-    flex: 1;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: var(--white);
-}
+  .slide-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--white);
+      border: none;
+      padding: 1rem 1.2rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: var(--transition);
+      z-index: 10;
+  }
+  .slide-nav:hover { background: rgba(0, 0, 0, 0.9); }
+  .slide-nav.prev { left: 20px; }
+  .slide-nav.next { right: 20px; }
 
-.slide-content h3 {
-    font-size: 2rem;
-    color: var(--text-dark);
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-}
+  .slide-indicators { text-align: center; margin-top: 2rem; }
+  .dot { height: 15px; width: 15px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: var(--transition); }
+  .dot:hover, .dot.active { background-color: var(--primary-color); }
 
-.slide-content p {
-    font-size: 1.1rem;
-    color: var(--text-body);
-    line-height: 1.7;
-}
+  .slide-counter { text-align: center; margin-top: 1rem; font-size: 1rem; color: var(--text-body); }
 
-/* Navigation Buttons */
-.slide-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: var(--white);
-    border: none;
-    padding: 1rem 1.2rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: var(--transition);
-    z-index: 10;
-}
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-.slide-nav:hover {
-    background: rgba(0, 0, 0, 0.9);
-}
+  .portfolio-cta { text-align: center; padding: 3rem 0; background: var(--light-gray); border-radius: 8px; }
+  .portfolio-cta h2 { font-size: 2.2rem; color: var(--text-dark); margin-bottom: 1rem; }
+  .portfolio-cta p { font-size: 1.1rem; color: var(--text-body); margin-bottom: 2rem; }
 
-.slide-nav.prev {
-    left: 20px;
-}
+  /* Portfolio Mobile Responsive (nested; fine to keep) */
+  @media (max-width: 768px) {
+      .portfolio-intro h2 { font-size: 2rem; }
+      .portfolio-cta h2 { font-size: 1.8rem; }
+      .portfolio-slide { flex-direction: column; min-height: auto; }
+      .slide-image { height: 300px; }
+      .slide-image img { min-height: 300px; }
+      .slide-content { padding: 2rem; }
+      .slide-content h3 { font-size: 1.5rem; }
+      .slide-nav { padding: 0.8rem 1rem; font-size: 1.2rem; }
+      .slide-nav.prev { left: 10px; }
+      .slide-nav.next { right: 10px; }
+  }
 
-.slide-nav.next {
-    right: 20px;
-}
-
-/* Slide Indicators */
-.slide-indicators {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.dot:hover, .dot.active {
-    background-color: var(--primary-color);
-}
-
-/* Slide Counter */
-.slide-counter {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 1rem;
-    color: var(--text-body);
-}
-
-/* Fade Animation */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.portfolio-cta {
-    text-align: center;
-    padding: 3rem 0;
-    background: var(--light-gray);
-    border-radius: 8px;
-}
-
-.portfolio-cta h2 {
-    font-size: 2.2rem;
-    color: var(--text-dark);
-    margin-bottom: 1rem;
-}
-
-.portfolio-cta p {
-    font-size: 1.1rem;
-    color: var(--text-body);
-    margin-bottom: 2rem;
-}
-
-/* Portfolio Mobile Responsive */
-@media (max-width: 768px) {
-    .portfolio-intro h2 {
-        font-size: 2rem;
-    }
-    
-    .portfolio-cta h2 {
-        font-size: 1.8rem;
-    }
-    
-    .portfolio-slide {
-        flex-direction: column;
-        min-height: auto;
-    }
-    
-    .slide-image {
-        height: 300px;
-    }
-    
-    .slide-image img {
-        min-height: 300px;
-    }
-    
-    .slide-content {
-        padding: 2rem;
-    }
-    
-    .slide-content h3 {
-        font-size: 1.5rem;
-    }
-    
-    .slide-nav {
-        padding: 0.8rem 1rem;
-        font-size: 1.2rem;
-    }
-    
-    .slide-nav.prev {
-        left: 10px;
-    }
-    
-    .slide-nav.next {
-        right: 10px;
-    }
-}
+} /* ===================== Mobile Responsive (end) ===================== */
 
 /* Temporarily hide Portfolio nav link across the site */
 nav a[href$="portfolio.html"],
@@ -854,61 +742,36 @@ nav a[href$="/portfolio"] {
   display: none !important;
 }
 
-
-/* ===== HERO FORM FINAL OVERRIDES (min-width fix) ===== */
-/* Control the width from a single variable */
-:root{ --hero-form-width: 400px; }
-
-/* The wrapper is a flex item; set min-width so it obeys the width we set */
-.hero .hero-form{
-  flex: 0 0 var(--hero-form-width) !important;   /* flex-basis == width */
-  width: var(--hero-form-width) !important;
-  max-width: var(--hero-form-width) !important;
-  min-width: var(--hero-form-width) !important;   /* <-- key to override min-content sizing */
-  margin-left: auto !important;                   /* push to the right */
-  margin-right: 0 !important;
-}
-
-/* The card fills its wrapper */
-.quote-form{
-  width: 100% !important;
-  max-width: 100% !important;
-  padding: 18px !important;
-  transform: none !important;
-  border-radius: 12px !important;
-}
-
-/* ===============================================================
-   HERO CONTACT FORM CONTROLS (2025-09-03)
-   Change these few variables to resize and position the home-page form.
-   -----------------------------------------------------------------
-   --hero-form-width:    form/card width (desktop)
-   --hero-form-padding:  inside padding (controls height)
-   --hero-form-right-gap:space between form and right edge (nudges left)
-   --hero-form-top:      vertical offset (negative moves up)
-   --hero-form-note-size:font size of "We'll call you back within 1 day."
-   =============================================================== */
+/* ===== HERO CONTACT FORM CONTROLS (desktop + mobile) ===== */
 :root{
-  --hero-form-width: 100px;
-  --hero-form-padding: 10px;
-  --hero-form-right-gap: 0rem;
-  --hero-form-top: -80px;
-  --hero-form-note-size: 1.0rem;
+  --hero-form-width: 500px;      /* desktop width */
+  --hero-form-padding: 18px;     /* vertical padding -> height */
+  --hero-form-right-gap: 24px;   /* distance from right edge (bigger = more left) */
+  --hero-form-top-abs: 50px;    /* distance from top (bigger = lower) */
+  --hero-form-note-size: 1.0rem; /* "We'll call you back..." size */
 }
 
-/* Wrapper: lock width so flex doesn't shrink it and allow easy positioning */
+.hero{ position: relative; }  /* anchor for absolute positioning */
+
 .hero .hero-form{
-  flex: 0 0 var(--hero-form-width) !important;  /* flex-basis == width */
   width: var(--hero-form-width) !important;
   max-width: var(--hero-form-width) !important;
   min-width: var(--hero-form-width) !important;
-
-  margin-left: auto !important;                 /* stick to the right side */
-  margin-right: var(--hero-form-right-gap) !important; /* nudge left by increasing */
-  margin-top: var(--hero-form-top) !important;  /* move up/down */
 }
 
-/* Card: fills wrapper width and uses padding to control height */
+/* Desktop: pin it over the image so it won't drift */
+@media (min-width: 901px){
+  .hero .hero-form{
+    position: absolute !important;
+    top: var(--hero-form-top-abs) !important;
+    right: var(--hero-form-right-gap) !important;
+    margin: 0 !important;
+    z-index: 2 !important;
+    flex: none !important;
+  }
+}
+
+/* Card sizing */
 .quote-form{
   width: 100% !important;
   max-width: 100% !important;
@@ -917,16 +780,108 @@ nav a[href$="/portfolio"] {
   border-radius: 12px !important;
 }
 
-/* Make the note text under the button smaller (match header-ish) */
+/* Note under the button */
 .form-footer{
   font-size: var(--hero-form-note-size) !important;
   line-height: 1.2 !important;
-  text-align: center !important;
   margin: 0 !important;
+  text-align: center !important;
 }
 
-/* Keep mobile full-width behavior */
+/* Mobile: back to normal flow for the form */
 @media (max-width: 900px){
-  .hero .hero-form{ width: 100% !important; max-width: 100% !important; flex: 1 1 auto !important; margin: 0 0 0 0 !important; }
-  .quote-form{ padding: 16px !important; }
+  .hero .hero-form{
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    flex: 1 1 auto !important;
+  }
+}
+/* ================= CONTACT PAGE – Form polish (2025-09-03) ================= */
+
+/* Make the form look like a proper card */
+.contact-form-section form{
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  padding:22px;
+}
+
+/* Heading */
+.contact-form-section h3{
+  font-family:'Montserrat', sans-serif;
+  font-weight:700;
+  color:var(--text-dark);
+  margin: 0 0 14px 0;
+}
+
+/* Grid spacing (override generic .form-grid) */
+.contact-form-section .form-grid{ gap:14px; }
+.contact-form-section .form-grid .span-2{ grid-column:1 / -1; }
+.contact-form-section .form-grid .row-3{
+  display:grid;
+  grid-template-columns:1fr 0.6fr 0.8fr;
+  gap:14px;
+  grid-column:1 / -1;
+}
+
+/* Inputs/textarea – consistent font, size, borders, focus */
+.contact-form-section input,
+.contact-form-section select,
+.contact-form-section textarea{
+  font-family:'Montserrat', sans-serif;
+  font-size:.95rem;
+  color:var(--text-body);
+  width:100%;
+  padding:12px 14px;
+  border:1.5px solid #e6e6e6;
+  border-radius:10px;
+  background:#fff;
+  transition:border-color .2s ease, box-shadow .2s ease;
+  box-sizing:border-box;
+}
+.contact-form-section input::placeholder,
+.contact-form-section textarea::placeholder{ color:#8c8c8c; }
+
+.contact-form-section input:focus,
+.contact-form-section select:focus,
+.contact-form-section textarea:focus{
+  outline:0;
+  border-color:var(--primary-color);
+  box-shadow:0 0 0 3px rgba(255,90,51,.15);
+}
+
+.contact-form-section textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+/* Button – match primary style and spacing */
+.contact-form-section .form-submit-btn{
+  width:100%;
+  padding:14px 18px;
+  font-family:'Montserrat', sans-serif;
+  font-size:1rem;
+  font-weight:700;
+  letter-spacing:.2px;
+  border-radius:10px;
+  background:var(--primary-color);
+  color:#fff;
+  border:0;
+  cursor:pointer;
+  transition:background .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+.contact-form-section .form-submit-btn:hover{
+  background:#e6492b;
+  transform:translateY(-1px);
+  box-shadow:0 8px 18px rgba(255,90,51,.22);
+}
+
+/* Responsive: stack city/state/zip on narrow screens */
+@media (max-width: 700px){
+  .contact-form-section .form-grid .row-3{
+    grid-template-columns:1fr;
+  }
 }
