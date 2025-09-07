@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra Home Repair | Irvine & Orange County Handyman Services</title>
+    <meta name="description" content="Professional handyman services based in Irvine and serving all of Orange County. Fast, reliable repairs for homes, rentals, and real estate listings.">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=1753739600">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+<!-- ===== Hamburger CSS (inline, page-specific) ===== -->
+<style>
+/* Button next to the Call pill */
+.nav-toggle{
+  position: relative; width:40px; height:40px; border-radius:10px;
+  border:1px solid #eceff3; background:#fff; display:inline-flex;
+  align-items:center; justify-content:center; margin-left:8px; cursor:pointer;
+}
+.nav-toggle .bar{position:absolute; display:block; width:18px; height:2px; background:#111;
+  border-radius:2px; transition:transform .25s ease, opacity .2s ease, top .25s ease;}
+.nav-toggle .bar:nth-child(1){top:12px}
+.nav-toggle .bar:nth-child(2){top:19px}
+.nav-toggle .bar:nth-child(3){top:26px}
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1){top:19px; transform:rotate(45deg)}
+.nav-toggle[aria-expanded="true"] .bar:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3){top:19px; transform:rotate(-45deg)}
+
+/* Off-canvas sheet */
+.menu-backdrop{position:fixed; inset:0; background:rgba(0,0,0,.35); backdrop-filter:saturate(150%) blur(2px);
+  opacity:0; pointer-events:none; transition:opacity .25s ease; z-index:120}
+.menu-backdrop.open{opacity:1; pointer-events:auto}
+.mobile-menu{position:fixed; top:0; right:0; height:100dvh; width:min(82vw, 360px); background:#fff;
+  box-shadow:0 8px 24px rgba(0,0,0,.2); transform:translateX(100%); transition:transform .25s ease;
+  z-index:130; padding:16px 14px}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu .menu-title{font-weight:800; color:#1f2640; margin:4px 2px 10px}
+.mobile-menu .links{display:flex; flex-direction:column; gap:8px}
+.mobile-menu .links a{display:block; padding:12px 10px; border:1px solid #eef0f3; border-radius:10px;
+  text-decoration:none; color:#111; font-weight:700}
+
+/* Collapse desktop nav at smaller widths */
+@media (max-width: 900px){
+  .nav-list{display:none}
+  .nav-toggle{display:inline-flex}
+}
+</style>
+
+</head>
+<body>
+           <!-- Header -->
+        <header class="header">
+          <div class="container">
+            <div class="nav-brand">
+              <!-- Note: the class="logo" must be inside the <img> tag -->
+              <a href="index.html" class="nav-brand-link">
+                <img class="logo" src="images/logo.png" alt="Logo - Ultra Home Repair" />
+              </a>
+            </div>
+            <nav class="nav-menu" id="nav-menu">
+              <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="realtors.html" class="nav-link">Realtors</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+              </ul>
+              <a href="tel:949-371-6423" class="nav-call-btn">
+                <i class="fas fa-phone"></i>
+                (949) 371-6423
+              </a>
+          </div>
+        </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive handyman services for your home and property</p>
+        </div>
+    </section>
+
+    <!-- Main Services Grid -->
+    <section class="section section--light">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3>Painting and Drywall</h3>
+                    <ul style="text-align: left;">
+                        <li>Drywall repair</li>
+                        <li>Interior/exterior painting</li>
+                        <li>Shutter painting</li>
+                        <li>Wood trim painting</li>
+                        <li>Caulking</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Plumbing</h3>
+                    <ul style="text-align: left;">
+                        <li>Reverse Osmosis Water Filtration System installation and filtration replacement</li>
+                        <li>Garbage disposal</li>
+                        <li>Leaks, pipes, valve repairs</li>
+                        <li>Repair or replace toilet</li>
+
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical</h3>
+                    <ul style="text-align: left;">
+                        <li>Thermostat</li>
+                        <li>Light switches</li>
+                        <li>Dimmer switches</li>
+                        <li>Electrical outlets</li>
+                        <li>GFCI</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Fixtures Replacement</h3>
+                    <ul style="text-align: left;">
+                        <li>Light fixtures</li>
+                        <li>Ceiling fans</li>
+                        <li>Shower heads</li>
+                        <li>Faucets</li>
+                        <li>Curtain rods or blinds</li>
+                        <li>Smoke & carbon monoxide detectors</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Home Improvement</h3>
+                    <ul style="text-align: left;">
+                        <li>TV mounting</li>
+                        <li>Home theater setup</li>
+                        <li>Shelves</li>
+                        <li>Pictures and artwork</li>
+                        <li>Smart home & security installations</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <h3>Doors</h3>
+                    <ul style="text-align: left;">
+                        <li>Door locks & deadbolts</li>
+                        <li>Door hinge replacement</li>
+                        <li>Cabinet door hinges, drawer knobs, pulls, etc.</li>
+                        <li>Window and door trim</li>
+                        <li>Baseboards</li>
+                        <li>Door adjustment</li>
+                        <li>Door slab or pre-hung installation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--light">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Exterior Services</h3>
+                    <ul style="text-align: left;">
+                        <li>Gutter cleaning</li>
+                        <li>Pressure washing</li>
+                        <li>Junk removal</li>
+                        <li>Wood rot repairs</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Other Services</h3>
+                    <ul style="text-align: left;">
+                        <li>Window screen repair</li>
+                        <li>Screen door repair</li>
+                        <li>Furniture assembly</li>
+                        <li>Landlord and vacation rental services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title" style="color: 232323;">Don't See Your Project Listed?</h2>
+            <p class="section-subtitle" style="color: 333;">We handle a wide variety of home repair and improvement projects. Contact us to discuss your specific needs.</p>
+            <div style="text-align: center;">
+                <a href="contact.html" class="btn btn--primary">Get a Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <p class="section-subtitle">Real reviews from Nextdoor and satisfied customers</p>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Everybody NEEDS to use this handyman. I was just amazed at how professional, efficient, and pleasant Dustin is. And, as an added bonus, his estimates came in significantly lower than those I received from others. I hired him to help me assemble furniture from Wayfair that was way too heavy for me to tackle by myself. I'm SO happy I did!"</p>
+                    <div class="review-author">Verified Customer</div>
+                    <div class="review-source"><a href="https://nextdoor.com/p/xcJpDK-Rrqw4?utm_source=share&extras=MTEzNTE3NjAz&ne_link_preview_links=&utm_campaign=1757209740953&share_action_id=80cf240f-49f4-49aa-a679-fa7f0bd2e057" target="_blank" style="color: #666; text-decoration: none;">Nextdoor Review →</a></div>
+                </div>
+
+                <div class="review-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"I was so fortunate to come across Dustin when I needed some home repair. He replaced all of my smoke alarms for me—and if you've ever had trouble with smoke alarms, it's not something you can ignore. I was especially impressed that Dustin was careful & perfect in everything he did, including cleaning up after he finished. It sure set my mind at ease!"</p>
+                    <div class="review-author">Verified Customer</div>
+                    <div class="review-source"><a href="https://nextdoor.com/p/BXKfG28HgWpP?utm_source=share&extras=MTEzNTE3NjAz&ne_link_preview_links=&utm_campaign=1757209793532&share_action_id=3a7440a4-78de-4e78-bc75-f8d7229d743a" target="_blank" style="color: #666; text-decoration: none;">Nextdoor Review →</a></div>
+                </div>
+
+                <div class="review-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Really nice and reliable handyman, who will work with you and be upfront, fair and honest about costs. Highly competent, highly recommend."</p>
+                    <div class="review-author">Verified Customer</div>
+                    <div class="review-source"><a href="https://nextdoor.com/p/HTN-h6R5zcBT?utm_source=share&extras=MTEzNTE3NjAz&ne_link_preview_links=&utm_campaign=1757209914047&share_action_id=57a325c9-b708-45df-9637-1124bbae04f2" target="_blank" style="color: #666; text-decoration: none;">Nextdoor Review →</a></div>
+                </div>
+
+                <div class="review-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"HANDYMAN RECOMMENDATION: I hired Dustin of Ultra Home Repair to install these pendant lights and ceiling fans. Wanted to give him a shout out and provide his info for people to consider in future. He did great job, was super clean and conscientious about leaving everything clean, etc."</p>
+                    <div class="review-author">Verified Customer</div>
+                    <div class="review-source"><a href="https://nextdoor.com/p/G4TzFNngPT_6?utm_source=share&extras=MTEyMTEyMDY2&ne_link_preview_links=&utm_campaign=1757210117783&share_action_id=4d677acc-194b-4d68-b1ee-31ac65d57ff9" target="_blank" style="color: #666; text-decoration: none;">Nextdoor Review →</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>Professional handyman services in Orange County.</p>
+          <p class="footer-phone"><a href="tel:+19493716423">Phone: (949) 371-6423</a></p>
+         <p class="copyright">© 2025 Ultra Home Repair. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+<!-- ===== Hamburger JS (inline, page-specific) ===== -->
+<script>
+(function(){
+  // Ensure the button has the animated bars even if original had an icon
+  const btn = document.getElementById('nav-toggle') || document.querySelector('.nav-toggle');
+  if (btn && !btn.querySelector('.bar')) {
+    btn.innerHTML = '<span class="bar"></span><span class="bar"></span><span class="bar"></span>';
+    btn.setAttribute('aria-label','Open menu');
+    btn.setAttribute('aria-controls','mobile-menu');
+    btn.setAttribute('aria-expanded','false');
+  }
+  // Create backdrop + panel once per page if missing
+  let backdrop = document.getElementById('menu-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.id = 'menu-backdrop';
+    backdrop.className = 'menu-backdrop';
+    backdrop.hidden = true;
+    document.body.appendChild(backdrop);
+  }
+  let panel = document.getElementById('mobile-menu');
+  if (!panel) {
+    panel = document.createElement('nav');
+    panel.id = 'mobile-menu';
+    panel.className = 'mobile-menu';
+    panel.setAttribute('aria-hidden','true');
+    panel.innerHTML = '<div class="menu-title">Menu</div><div class="links"></div>';
+    document.body.appendChild(panel);
+  }
+  const linksBox = panel.querySelector('.links');
+  const srcList = document.querySelector('.nav-list');
+  if (srcList && linksBox && !linksBox.children.length) {
+    const items = Array.from(srcList.querySelectorAll('a'));
+    linksBox.innerHTML = items.map(a => `<a href="${a.getAttribute('href')}">${a.textContent}</a>`).join('');
+  }
+
+  function openMenu(){
+    if (!btn) return;
+    btn.setAttribute('aria-expanded','true');
+    panel.classList.add('open');
+    panel.setAttribute('aria-hidden','false');
+    backdrop.hidden = false;
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const first = panel.querySelector('a'); first && first.focus();
+  }
+  function closeMenu(){
+    if (!btn) return;
+    btn.setAttribute('aria-expanded','false');
+    panel.classList.remove('open');
+    panel.setAttribute('aria-hidden','true');
+    backdrop.classList.remove('open');
+    setTimeout(()=>{ backdrop.hidden = true; }, 200);
+    document.body.style.overflow = '';
+    btn.focus();
+  }
+
+  btn && btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    expanded ? closeMenu() : openMenu();
+  });
+  backdrop && backdrop.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape' && btn && btn.getAttribute('aria-expanded') === 'true'){ closeMenu(); }
+  });
+  panel && panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+})();
+</script>
+
+</body>
+</html>
