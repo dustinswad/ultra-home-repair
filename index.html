@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ultra Home Repair | Irvine &amp; Orange County Handyman Services</title>
+<meta content="Professional handyman services based in Irvine and serving all of Orange County. Fast, reliable repairs for homes, rentals, and real estate listings." name="description"/>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<link href="style.css?v=abs2" rel="stylesheet"/>
+<link href="images/favicon.png" rel="icon" type="image/png"/>
+<!-- LocalBusiness Schema -->
+<script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ServiceAreaBusiness",
+          "name": "Ultra Home Repair",
+          "image": "https://ultrahomerepair.com/images/logo.png",
+          "url": "https://ultrahomerepair.com",
+          "telephone": "+1-949-371-6423",
+          "email": "dustin@ultrahomerepair.com",
+          "priceRange": "$$",
+          "areaServed": [
+            { "@type": "Place", "name": "Orange County" },
+            { "@type": "Place", "name": "Irvine" },
+            { "@type": "Place", "name": "Lake Forest" },
+            { "@type": "Place", "name": "Newport Beach" },
+            { "@type": "Place", "name": "Tustin" },
+            { "@type": "Place", "name": "Costa Mesa" },
+            { "@type": "Place", "name": "Laguna Woods" },
+            { "@type": "Place", "name": "Laguna Hills" },
+            { "@type": "Place", "name": "Laguna Niguel" },
+            { "@type": "Place", "name": "Laguna Beach" },
+            { "@type": "Place", "name": "Mission Viejo" }
+          ],
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+          }],
+          "serviceArea": {
+            "@type": "GeoShape",
+            "circle": "33.6861 -117.8250 50"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Irvine",
+            "addressRegion": "CA",
+            "postalCode": "92618",
+            "addressCountry": "US"
+          }
+        }
+        </script>
+<link href="/mobile.html" media="only screen and (max-width: 600px)" rel="alternate"/>
+<script>
+  // Redirect phones to mobile.html; use replace() to avoid back-button loop
+  if (window.matchMedia("(max-width: 600px)").matches &&
+      window.location.pathname !== "/mobile.html") {
+    window.location.replace("/mobile.html");
+  }
+</script>
+<!-- ===== Hamburger CSS (inline, page-specific) ===== -->
+<style>
+/* Button next to the Call pill */
+.nav-toggle{
+  position: relative; width:40px; height:40px; border-radius:10px;
+  border:1px solid #eceff3; background:#fff; display:inline-flex;
+  align-items:center; justify-content:center; margin-left:8px; cursor:pointer;
+}
+.nav-toggle .bar{position:absolute; display:block; width:18px; height:2px; background:#111;
+  border-radius:2px; transition:transform .25s ease, opacity .2s ease, top .25s ease;}
+.nav-toggle .bar:nth-child(1){top:12px}
+.nav-toggle .bar:nth-child(2){top:19px}
+.nav-toggle .bar:nth-child(3){top:26px}
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1){top:19px; transform:rotate(45deg)}
+.nav-toggle[aria-expanded="true"] .bar:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3){top:19px; transform:rotate(-45deg)}
+
+/* Off-canvas sheet */
+.menu-backdrop{position:fixed; inset:0; background:rgba(0,0,0,.35); backdrop-filter:saturate(150%) blur(2px);
+  opacity:0; pointer-events:none; transition:opacity .25s ease; z-index:120}
+.menu-backdrop.open{opacity:1; pointer-events:auto}
+.mobile-menu{position:fixed; top:0; right:0; height:100dvh; width:min(82vw, 360px); background:#fff;
+  box-shadow:0 8px 24px rgba(0,0,0,.2); transform:translateX(100%); transition:transform .25s ease;
+  z-index:130; padding:16px 14px}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu .menu-title{font-weight:800; color:#1f2640; margin:4px 2px 10px}
+.mobile-menu .links{display:flex; flex-direction:column; gap:8px}
+.mobile-menu .links a{display:block; padding:12px 10px; border:1px solid #eef0f3; border-radius:10px;
+  text-decoration:none; color:#111; font-weight:700}
+
+/* Collapse desktop nav at smaller widths */
+@media (max-width: 900px){
+  .nav-list{display:none}
+  .nav-toggle{display:inline-flex}
+}
+</style>
+<style>
+</style>
+<style>
+</style>
+<style>
+/* === Form Grid (always-on, phone+email side-by-side) === */
+.form-grid { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+.form-grid .span-2 { grid-column: 1 / -1; }
+.form-grid .row-3 { display:grid; grid-template-columns: 1fr 0.6fr 0.8fr; gap:14px; grid-column:1 / -1; }
+.form-grid input, .form-grid textarea, .form-grid select, .form-grid button { width:100%; box-sizing:border-box; }
+/* Make hero quote card a bit wider */
+.hero .card .note, .hero .card p.note { margin-top: 8px; margin-bottom: 0; }
+/* In very small viewports, prevent overflow */
+@media (max-width: 380px){ }
+</style>
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+<div class="container">
+<div class="nav-brand">
+<!-- Note: the class="logo" must be inside the <img> tag -->
+<a class="nav-brand-link" href="index.html">
+<img alt="Logo - Ultra Home Repair" class="logo" src="images/logo.png"/>
+</a>
+</div>
+<nav class="nav-menu" id="nav-menu">
+<ul class="nav-list">
+<li><a class="nav-link active" href="index.html">Home</a></li>
+<li><a class="nav-link" href="services.html">Services</a></li>
+<li><a class="nav-link" href="realtors.html">Realtors</a></li>
+<li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+<li><a class="nav-link" href="about.html">About</a></li>
+<li><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+<a class="nav-call-btn" href="tel:949-371-6423">
+<i class="fas fa-phone"></i>
+                (949) 371-6423
+              </a>
+</nav></div>
+</header>
+<!-- Hero Section -->
+<section class="hero">
+<div class="hero-container">
+<!-- Right Side - Contact Form -->
+<div class="hero-form">
+<div class="quote-form">
+<h2>REQUEST A QUOTE</h2>
+<form class="form-grid" enctype="multipart/form-data" id="hero-contact-form">
+<div class="span-2"><input id="name" name="name" placeholder="Name" required="" type="text"/></div>
+<div><input name="email" placeholder="Email" required="" type="email"/></div>
+<div><input id="phone" name="phone" placeholder="Phone" required="" type="tel"/></div>
+<div class="span-2"><input id="street" name="street" placeholder="Street Address" required="" type="text"/></div>
+<div class="row-3">
+<input id="city" name="city" placeholder="City" required="" type="text"/>
+<input id="state" maxlength="2" name="state" placeholder="State" required="" type="text"/>
+<input id="zip" name="zip" pattern="\d{5}(-\d{4})?" placeholder="Zip" required="" type="text"/>
+</div>
+<div class="span-2"><textarea name="description" placeholder="Please describe your project." required="" rows="4"></textarea></div>
+<button class="form-submit-btn span-2 span-2" type="submit">REQUEST A QUOTE</button>
+</form>
+<p class="form-footer">We'll call you back within 1 day.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- What We Do Section -->
+<section class="section section--light">
+<div class="container">
+<h2 class="section-title">
+                    Your Trusted Handyman in Orange County, CA
+                </h2>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">
+<i class="fas fa-hammer"></i>
+</div>
+<h3>Professional Handyman</h3>
+<p>
+                            From leaky faucets to home improvements, Ultra Home
+                            Repair is your go-to expert for all home repair and
+                            maintenance needs across Orange
+                            County.
+                        </p>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<i class="fas fa-dollar-sign"></i>
+</div>
+<h3>Flexible Pricing</h3>
+<p>
+                            Whether you need a quick fix or a more extensive
+                            home improvement project, Ultra Home Repair will
+                            work with you to find a pricing solution that fits
+                            your needs.
+                        </p>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<i class="fas fa-clock"></i>
+</div>
+<h3>Flexible Hours</h3>
+<p>
+                            Home repairs don't always happen during regular
+                            business hours. That's why we offer flexible
+                            scheduling to accommodate your busy life.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Since 2013 Section -->
+<section class="section section--dark">
+<div class="container">
+<div class="stats">
+<div class="stat-item">
+<span class="stat-number">Since 2009</span>
+<span class="stat-label">+15 Years of Experience</span>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="section">
+<div class="container">
+<div class="about-content">
+<div class="about-text">
+<h2>About Ultra Home Repair</h2>
+<div class="about-tabs">
+<div class="tab-content active">
+<p>
+                                    Our mission is to provide top-notch handyman
+                                    services that exceed expectations. We strive
+                                    to deliver reliable, efficient, and
+                                    affordable solutions to all your home repair
+                                    and maintenance needs, ensuring your living
+                                    space remains comfortable, functional, and
+                                    safe.
+                                </p>
+</div>
+</div>
+</div>
+<div class="about-image">
+<img alt="Installing ceiling fan - Ultra Home Repair" src="images/Me - fan Large.jpeg" style="max-width: 400px"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Overview -->
+<section class="section section--light">
+<div class="container">
+<h2 class="section-title">Ultra Home Repair Services</h2>
+<p style="text-align: center; margin-bottom: 3rem">
+                    At Ultra Home Repair, we offer a comprehensive range of
+                    services from plumbing and electrical to carpentry,
+                    painting, and outdoor maintenance. Whether you need a quick
+                    fix or a larger home improvement project, our versatile
+                    expertise and commitment to quality ensure that one call to
+                    Ultra Home Repair is all it takes to keep your home in
+                    perfect working order, inside and out.
+                </p>
+<div style="text-align: center">
+<a class="btn btn--primary" href="services.html">View Services</a>
+</div>
+</div>
+</section>
+
+<!-- Customer Reviews Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Real reviews from Nextdoor and satisfied customers</p>
+        
+        <div class="reviews-grid">
+            <div class="review-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"Everybody NEEDS to use this handyman. I was just amazed at how professional, efficient, and pleasant Dustin is. And, as an added bonus, his estimates came in significantly lower than those I received from others. I hired him to help me assemble furniture from Wayfair that was way too heavy for me to tackle by myself. I'm SO happy I did!"</p>
+                <div class="review-author">Verified Customer</div>
+                <div class="review-source"><a href="https://nextdoor.com/p/xcJpDK-Rrqw4?utm_source=share&extras=MTEzNTE3NjAz&ne_link_preview_links=&utm_campaign=1757209740953&share_action_id=80cf240f-49f4-49aa-a679-fa7f0bd2e057" target="_blank" style="color: #666; text-decoration: none;">Nextdoor Review →</a></div>
+            </div>
+
+            <div class="review-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"I was so fortunate to come across Dustin when I needed some home repair. He replaced all of my smoke alarms for me—and if you've ever had trouble with smoke alarms, it's not something you can ignore. I was especially impressed that Dustin was careful & perfect in everything he did, including cleaning up after he finished. It sure set my mind at ease!"</p>
+                <div class="review-author">Verified Customer</div>
+                <div class="review-source"><a href="https://nextdoor.com/p/BXKfG28HgWpP?utm_source=share&extras=MTEzNTE3NjAz&ne_link_preview_links=&utm_campaign=1757209793532&share_action_id=3a7440a4-78de-4e78-bc75-f8d7229d743a" target="_blank" style="color: #666; text-decoration: none;">Nextdoor Review →</a></div>
+            </div>
+
+            <div class="review-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"Really nice and reliable handyman, who will work with you and be upfront, fair and honest about costs. Highly competent, highly recommend."</p>
+                <div class="review-author">Verified Customer</div>
+                <div class="review-source"><a href="https://nextdoor.com/p/HTN-h6R5zcBT?utm_source=share&extras=MTEzNTE3NjAz&ne_link_preview_links=&utm_campaign=1757209914047&share_action_id=57a325c9-b708-45df-9637-1124bbae04f2" target="_blank" style="color: #666; text-decoration: none;">Nextdoor Review →</a></div>
+            </div>
+
+            <div class="review-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"HANDYMAN RECOMMENDATION: I hired Dustin of Ultra Home Repair to install these pendant lights and ceiling fans. Wanted to give him a shout out and provide his info for people to consider in future. He did great job, was super clean and conscientious about leaving everything clean, etc."</p>
+                <div class="review-author">Verified Customer</div>
+                <div class="review-source"><a href="https://nextdoor.com/p/G4TzFNngPT_6?utm_source=share&extras=MTEyMTEyMDY2&ne_link_preview_links=&utm_campaign=1757210117783&share_action_id=4d677acc-194b-4d68-b1ee-31ac65d57ff9" target="_blank" style="color: #666; text-decoration: none;">Nextdoor Review →</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<p>Professional handyman services in Orange County.</p>
+<p class="footer-phone"><a href="tel:+19493716423">Phone: (949) 371-6423</a></p>
+<p class="copyright">© 2025 Ultra Home Repair. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="/form-handler.js"></script>
+</body>
+</html>
