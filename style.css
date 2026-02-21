@@ -442,6 +442,44 @@ body {
     opacity: 0.8;
 }
 
+/* Customer Reviews */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.review-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: relative;
+}
+.review-stars {
+    display: flex;
+    gap: 0.2rem;
+    margin-bottom: 1rem;
+}
+.review-stars i { color: #ffd700; font-size: 1rem; }
+.review-text {
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+.review-author { font-weight: bold; margin-bottom: 0.5rem; }
+.review-source { color: #666; font-size: 0.9rem; }
+.review-source a { color: #666; text-decoration: none; }
+.review-source a:hover { color: var(--primary-color); }
+.quote-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: var(--primary-color);
+    opacity: 0.3;
+}
+
 /* Services Grid */
 .services-grid {
     display: grid;
