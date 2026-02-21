@@ -3,7 +3,6 @@
  * Targets:
  *   - #hero-contact-form (home)
  *   - #contact-form (contact page)
- *   - #mobile-quote-form (mobile)
  *   - any <form data-emailjs="true">
  *
  * Requires /emailjs-config.json in the site root:
@@ -11,7 +10,7 @@
  */
 (function () {
   const FORM_SELECTOR =
-    'form#hero-contact-form, form#contact-form, form#mobile-quote-form, form[data-emailjs="true"]';
+    'form#hero-contact-form, form#contact-form, form[data-emailjs="true"]';
 
   // Single-listener guard
   const processedForms = new WeakSet();
