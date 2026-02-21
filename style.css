@@ -884,12 +884,6 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Hide Portfolio nav link (not yet live) */
-nav a[href$="portfolio.html"],
-nav a[href$="/portfolio.html"],
-nav a[href$="/portfolio"] {
-    display: none !important;
-}
 
 /* Shorter "Since 2009" band */
 .section.section--dark {
