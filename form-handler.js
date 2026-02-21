@@ -46,5 +46,5 @@
     });
   }
 
-  ['hero-contact-form','contact-form','mobile-quote-form'].forEach(attach);
+  ['hero-contact-form','contact-form'].forEach(attach);
 })();
