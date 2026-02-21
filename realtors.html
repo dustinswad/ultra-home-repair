@@ -9,51 +9,12 @@
     <link rel="stylesheet" href="style.css?v=1753739600">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
-
-<!-- ===== Hamburger CSS (inline, page-specific) ===== -->
-<style>
-/* Button next to the Call pill */
-.nav-toggle{
-  position: relative; width:40px; height:40px; border-radius:10px;
-  border:1px solid #eceff3; background:#fff; display:inline-flex;
-  align-items:center; justify-content:center; margin-left:8px; cursor:pointer;
-}
-.nav-toggle .bar{position:absolute; display:block; width:18px; height:2px; background:#111;
-  border-radius:2px; transition:transform .25s ease, opacity .2s ease, top .25s ease;}
-.nav-toggle .bar:nth-child(1){top:12px}
-.nav-toggle .bar:nth-child(2){top:19px}
-.nav-toggle .bar:nth-child(3){top:26px}
-.nav-toggle[aria-expanded="true"] .bar:nth-child(1){top:19px; transform:rotate(45deg)}
-.nav-toggle[aria-expanded="true"] .bar:nth-child(2){opacity:0}
-.nav-toggle[aria-expanded="true"] .bar:nth-child(3){top:19px; transform:rotate(-45deg)}
-
-/* Off-canvas sheet */
-.menu-backdrop{position:fixed; inset:0; background:rgba(0,0,0,.35); backdrop-filter:saturate(150%) blur(2px);
-  opacity:0; pointer-events:none; transition:opacity .25s ease; z-index:120}
-.menu-backdrop.open{opacity:1; pointer-events:auto}
-.mobile-menu{position:fixed; top:0; right:0; height:100dvh; width:min(82vw, 360px); background:#fff;
-  box-shadow:0 8px 24px rgba(0,0,0,.2); transform:translateX(100%); transition:transform .25s ease;
-  z-index:130; padding:16px 14px}
-.mobile-menu.open{transform:translateX(0)}
-.mobile-menu .menu-title{font-weight:800; color:#1f2640; margin:4px 2px 10px}
-.mobile-menu .links{display:flex; flex-direction:column; gap:8px}
-.mobile-menu .links a{display:block; padding:12px 10px; border:1px solid #eef0f3; border-radius:10px;
-  text-decoration:none; color:#111; font-weight:700}
-
-/* Collapse desktop nav at smaller widths */
-@media (max-width: 900px){
-  .nav-list{display:none}
-  .nav-toggle{display:inline-flex}
-}
-</style>
-
 </head>
 <body>
     <!-- Header -->
     <header class="header">
       <div class="container">
         <div class="nav-brand">
-          <!-- Note: the class="logo" must be inside the <img> tag -->
           <a href="index.html" class="nav-brand-link">
             <img class="logo" src="images/logo.png" alt="Ultra Home Repair logo" />
           </a>
@@ -77,10 +38,8 @@
       </div>
     </header>
 
-
-
     <!-- Intro Section -->
-    <section class="section section--light" style="margin-top: 110px;">
+    <section class="section section--light" style="margin-top: var(--header-height, 110px);">
         <div class="container">
             <h2 class="section-title">Empowering Real Estate Professionals</h2>
             <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
@@ -174,34 +133,34 @@
         <div class="container">
             <h2 class="section-title" style="color: white;">Why Realtors Choose Ultra Home Repair</h2>
             <div class="services-grid">
-                <div class="service-card" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
+                <div class="service-card service-card--dark">
                     <div class="service-icon">
                         <i class="fas fa-clock" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 style="color: white;">Quick Response Times</h3>
-                    <p style="color: #ccc;">
+                    <h3>Quick Response Times</h3>
+                    <p>
                         We understand real estate timelines. Fast quotes, rapid scheduling, 
                         and efficient completion to keep your deals moving forward.
                     </p>
                 </div>
 
-                <div class="service-card" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
+                <div class="service-card service-card--dark">
                     <div class="service-icon">
                         <i class="fas fa-dollar-sign" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 style="color: white;">Competitive Pricing</h3>
-                    <p style="color: #ccc;">
+                    <h3>Competitive Pricing</h3>
+                    <p>
                         Transparent, fair pricing that works within your clients' budgets. 
                         No surprises, just honest estimates and quality work.
                     </p>
                 </div>
 
-                <div class="service-card" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
+                <div class="service-card service-card--dark">
                     <div class="service-icon">
                         <i class="fas fa-handshake" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 style="color: white;">Professional Communication</h3>
-                    <p style="color: #ccc;">
+                    <h3>Professional Communication</h3>
+                    <p>
                         Clear updates, professional interactions with your clients, 
                         and seamless coordination throughout the entire process.
                     </p>
@@ -229,15 +188,13 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
-                    <div style="flex: 1;">
-                        <p style="margin-bottom: 2rem;">Professional handyman services in Orange County.</p>
-                        <p style="font-size: 0.9em; color: #888; text-align: left; margin-top: 0.5rem;">
-                            &copy; 2025 Ultra Home Repair. All rights reserved.
-                        </p>
+                <div class="footer-inner">
+                    <div class="footer-left">
+                        <p>Professional handyman services in Orange County.</p>
+                        <p style="font-size: 0.9em; color: #888;">&copy; 2025 Ultra Home Repair. All rights reserved.</p>
                     </div>
-                    <div style="flex: 0 0 auto; margin-left: auto;">
-                        <p style="white-space: nowrap; margin: 0;">Phone: (949) 371-6423</p>
+                    <div class="footer-right">
+                        <p>Phone: (949) 371-6423</p>
                     </div>
                 </div>
             </div>
@@ -245,75 +202,5 @@
     </footer>
 
     <script src="script.js"></script>
-
-<!-- ===== Hamburger JS (inline, page-specific) ===== -->
-<script>
-(function(){
-  // Ensure the button has the animated bars even if original had an icon
-  const btn = document.getElementById('nav-toggle') || document.querySelector('.nav-toggle');
-  if (btn && !btn.querySelector('.bar')) {
-    btn.innerHTML = '<span class="bar"></span><span class="bar"></span><span class="bar"></span>';
-    btn.setAttribute('aria-label','Open menu');
-    btn.setAttribute('aria-controls','mobile-menu');
-    btn.setAttribute('aria-expanded','false');
-  }
-  // Create backdrop + panel once per page if missing
-  let backdrop = document.getElementById('menu-backdrop');
-  if (!backdrop) {
-    backdrop = document.createElement('div');
-    backdrop.id = 'menu-backdrop';
-    backdrop.className = 'menu-backdrop';
-    backdrop.hidden = true;
-    document.body.appendChild(backdrop);
-  }
-  let panel = document.getElementById('mobile-menu');
-  if (!panel) {
-    panel = document.createElement('nav');
-    panel.id = 'mobile-menu';
-    panel.className = 'mobile-menu';
-    panel.setAttribute('aria-hidden','true');
-    panel.innerHTML = '<div class="menu-title">Menu</div><div class="links"></div>';
-    document.body.appendChild(panel);
-  }
-  const linksBox = panel.querySelector('.links');
-  const srcList = document.querySelector('.nav-list');
-  if (srcList && linksBox && !linksBox.children.length) {
-    const items = Array.from(srcList.querySelectorAll('a'));
-    linksBox.innerHTML = items.map(a => `<a href="${a.getAttribute('href')}">${a.textContent}</a>`).join('');
-  }
-
-  function openMenu(){
-    if (!btn) return;
-    btn.setAttribute('aria-expanded','true');
-    panel.classList.add('open');
-    panel.setAttribute('aria-hidden','false');
-    backdrop.hidden = false;
-    backdrop.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    const first = panel.querySelector('a'); first && first.focus();
-  }
-  function closeMenu(){
-    if (!btn) return;
-    btn.setAttribute('aria-expanded','false');
-    panel.classList.remove('open');
-    panel.setAttribute('aria-hidden','true');
-    backdrop.classList.remove('open');
-    setTimeout(()=>{ backdrop.hidden = true; }, 200);
-    document.body.style.overflow = '';
-    btn.focus();
-  }
-
-  btn && btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    expanded ? closeMenu() : openMenu();
-  });
-  backdrop && backdrop.addEventListener('click', closeMenu);
-  document.addEventListener('keydown', (e)=>{
-    if(e.key === 'Escape' && btn && btn.getAttribute('aria-expanded') === 'true'){ closeMenu(); }
-  });
-  panel && panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-})();
-</script>
-
 </body>
 </html>
