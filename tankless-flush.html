@@ -9,46 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=1753739600">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    
-    
-<!-- ===== Hamburger CSS (inline, page-specific) ===== -->
+
 <style>
-.nav-toggle{
-  position: relative; width:40px; height:40px; border-radius:10px;
-  border:1px solid #eceff3; background:#fff; display:inline-flex;
-  align-items:center; justify-content:center; margin-left:8px; cursor:pointer;
-}
-.nav-toggle .bar{position:absolute; display:block; width:18px; height:2px; background:#111;
-  border-radius:2px; transition:transform .25s ease, opacity .2s ease, top .25s ease;}
-.nav-toggle .bar:nth-child(1){top:12px}
-.nav-toggle .bar:nth-child(2){top:19px}
-.nav-toggle .bar:nth-child(3){top:26px}
-.nav-toggle[aria-expanded="true"] .bar:nth-child(1){top:19px; transform:rotate(45deg)}
-.nav-toggle[aria-expanded="true"] .bar:nth-child(2){opacity:0}
-.nav-toggle[aria-expanded="true"] .bar:nth-child(3){top:19px; transform:rotate(-45deg)}
-
-.menu-backdrop{position:fixed; inset:0; background:rgba(0,0,0,.35); backdrop-filter:saturate(150%) blur(2px);
-  opacity:0; pointer-events:none; transition:opacity .25s ease; z-index:120}
-.menu-backdrop.open{opacity:1; pointer-events:auto}
-.mobile-menu{position:fixed; top:0; right:0; height:100dvh; width:min(82vw, 360px); background:#fff;
-  box-shadow:0 8px 24px rgba(0,0,0,.2); transform:translateX(100%); transition:transform .25s ease;
-  z-index:130; padding:16px 14px}
-.mobile-menu.open{transform:translateX(0)}
-.mobile-menu .menu-title{font-weight:800; color:#1f2640; margin:4px 2px 10px}
-.mobile-menu .links{display:flex; flex-direction:column; gap:8px}
-.mobile-menu .links a{display:block; padding:12px 10px; border:1px solid #eef0f3; border-radius:10px;
-  text-decoration:none; color:#111; font-weight:700}
-
-@media (max-width: 900px){
-  .nav-list{display:none}
-  .nav-toggle{display:inline-flex}
-}
-
 /* Tankless-specific styles */
 .tankless-hero {
   background: linear-gradient(135deg, #1a3a52 0%, #264466 100%);
   color: white;
   padding: 80px 20px;
+  padding-top: calc(var(--header-height, 110px) + 60px);
   text-align: center;
 }
 
@@ -93,7 +61,6 @@
   background: #e8744f;
   color: white;
 }
-
 .tankless-btn-primary:hover {
   background: #d65a38;
   transform: translateY(-2px);
@@ -104,37 +71,58 @@
   color: white;
   border: 2px solid #e8744f;
 }
-
 .tankless-btn-secondary:hover {
   background: #e8744f;
 }
 
+/* Problem / Solution grid */
+.tankless-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+.tankless-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.tankless-card--solution {
+  border-left: 5px solid #e8744f;
+}
+.tankless-card h3 { font-size: 24px; margin-bottom: 15px; }
+.tankless-card h3.text-problem { color: #d65a38; }
+.tankless-card h3.text-solution { color: #1a3a52; }
+.tankless-card p { margin-bottom: 15px; font-size: 15px; }
+.tankless-card ul { margin-left: 20px; font-size: 14px; line-height: 1.8; }
+.tankless-card .check-list { list-style: none; margin-left: 0; }
+.tankless-card .check-list li { margin-bottom: 10px; }
+.tankless-card .check-list li::before { content: "✓ "; color: #27ae60; font-weight: 700; margin-right: 8px; }
+
+/* Gallery */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   margin: 40px 0;
 }
-
 .gallery-item {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .gallery-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
-
 .gallery-item img {
   width: 100%;
   height: 300px;
   object-fit: cover;
   display: block;
 }
-
 .gallery-caption {
   padding: 12px;
   background: #f5f7fa;
@@ -144,13 +132,13 @@
   font-size: 13px;
 }
 
+/* Benefits */
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
   margin: 40px 0;
 }
-
 .benefit-card {
   background: white;
   padding: 32px 24px;
@@ -168,7 +156,6 @@
   transform: translateY(-8px);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
 }
-
 .benefit-number {
   font-size: 48px;
   font-weight: 700;
@@ -176,7 +163,6 @@
   margin-bottom: 12px;
   line-height: 1;
 }
-
 .benefit-title {
   font-size: 18px;
   font-weight: 600;
@@ -184,7 +170,6 @@
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 10px;
 }
-
 .benefit-description {
   font-size: 15px;
   color: #555;
@@ -192,69 +177,36 @@
   line-height: 1.6;
   font-family: 'Montserrat', sans-serif;
 }
+.benefit-description a { color: #e8744f; text-decoration: none; font-weight: 600; }
 
+/* Process */
 .process-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin: 40px 0;
 }
-
-.process-step {
-  text-align: center;
-}
-
+.process-step { text-align: center; }
 .step-number {
-  width: 50px;
-  height: 50px;
-  background: #e8744f;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  font-weight: 700;
-  color: white;
+  width: 50px; height: 50px;
+  background: #e8744f; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; font-weight: 700; color: white;
   margin: 0 auto 15px;
 }
+.step-title { font-size: 16px; font-weight: 600; color: #1a3a52; margin-bottom: 10px; }
+.step-description { font-size: 15px; color: #555; text-align: center; line-height: 1.6; }
 
-.step-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #1a3a52;
-  margin-bottom: 10px;
-}
-
-.step-description {
-  font-size: 15px;
-  color: #555;
-  text-align: center;
-  line-height: 1.6;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.about-content {
+/* About section */
+.tankless-about {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
   margin: 40px 0;
 }
-
-.about-text h3 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #1a3a52;
-  margin-bottom: 16px;
-}
-
-.about-text p {
-  margin-bottom: 16px;
-  line-height: 1.8;
-  font-size: 15px;
-  color: #333;
-}
-
+.tankless-about h3 { font-size: 28px; font-weight: 700; color: #1a3a52; margin-bottom: 16px; }
+.tankless-about p { margin-bottom: 16px; line-height: 1.8; font-size: 15px; color: #333; }
 .certification-badge {
   display: inline-block;
   background: white;
@@ -266,7 +218,6 @@
   color: #1a3a52;
   font-size: 14px;
 }
-
 .about-photo img {
   width: 100%;
   height: auto;
@@ -274,67 +225,63 @@
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
+/* Testimonials */
 .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   margin: 40px 0;
 }
-
 .testimonial-card {
   background: #f5f7fa;
   padding: 24px;
   border-radius: 12px;
   border-top: 4px solid #e8744f;
 }
+.stars { color: #ffc107; font-size: 16px; margin-bottom: 10px; letter-spacing: 2px; }
+.testimonial-quote { font-size: 14px; line-height: 1.7; font-style: italic; color: #333; margin-bottom: 12px; }
+.testimonial-name { font-weight: 600; color: #1a3a52; font-size: 13px; }
+.testimonial-source { font-size: 12px; color: #999; }
 
-.stars {
-  color: #ffc107;
-  font-size: 16px;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
+/* Named testimonial cards (Google reviews) */
+.named-review-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  border-top: 4px solid #e8744f;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  text-align: left;
+}
+.named-review-card .stars { font-size: 14px; margin-bottom: 15px; }
+.named-review-card .review-body { font-size: 14px; line-height: 1.6; color: #333; margin-bottom: 12px; }
+.named-review-card .review-name { font-size: 13px; font-weight: 600; color: #1a3a52; }
+
+/* CTA section */
+.tankless-cta-section { background: #1a3a52; color: white; text-align: center; }
+.tankless-cta-section h2 { color: white; }
+.tankless-cta-section p { color: rgba(255,255,255,0.9); margin-bottom: 30px; }
+.tankless-cta-note { margin-top: 20px; font-size: 13px; opacity: 0.8; }
+
+/* Centered subtitles */
+.tankless-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.testimonial-quote {
-  font-size: 14px;
-  line-height: 1.7;
-  font-style: italic;
-  color: #333;
-  margin-bottom: 12px;
-}
-
-.testimonial-name {
-  font-weight: 600;
-  color: #1a3a52;
-  font-size: 13px;
-}
-
-.testimonial-source {
-  font-size: 12px;
-  color: #999;
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-  .tankless-hero h1 {
-    font-size: 32px;
-  }
-  
-  .tankless-hero p {
-    font-size: 16px;
-  }
-  
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  
-  .tankless-cta-buttons {
-    flex-direction: column;
-  }
-  
-  .tankless-btn {
-    width: 100%;
-  }
+  .tankless-hero h1 { font-size: 32px; }
+  .tankless-hero p { font-size: 16px; }
+  .tankless-hero { padding-top: calc(var(--header-height, 80px) + 40px); padding-bottom: 60px; }
+  .tankless-columns { grid-template-columns: 1fr; gap: 24px; }
+  .tankless-about { grid-template-columns: 1fr; gap: 24px; }
+  .process-grid { grid-template-columns: 1fr; }
+  .tankless-cta-buttons { flex-direction: column; }
+  .tankless-btn { width: 100%; text-align: center; }
 }
 </style>
 
@@ -352,7 +299,6 @@
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="tankless-flush.html" class="nav-link active">Tankless Flushing</a></li>
                     <li><a href="realtors.html" class="nav-link">Realtors</a></li>
                     <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
@@ -362,32 +308,12 @@
                     <i class="fas fa-phone"></i>
                     (949) 371-6423
                 </a>
+                <button class="nav-toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
-            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
         </div>
     </header>
-
-    <!-- Mobile Menu -->
-    <div class="menu-backdrop" id="menu-backdrop"></div>
-    <div class="mobile-menu" id="mobile-menu">
-        <div class="menu-title">Menu</div>
-        <div class="links">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="tankless-flush.html">Tankless Flushing</a>
-            <a href="realtors.html">Realtors</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="tel:949-371-6423" style="background:#e8744f; color:white; text-align:center; margin-top:10px;">
-                <i class="fas fa-phone"></i> Call Now
-            </a>
-        </div>
-    </div>
 
     <!-- Hero Section -->
     <section class="tankless-hero">
@@ -407,30 +333,30 @@
     <section class="section section--light">
         <div class="container">
             <h2>Why Your Tankless Water Heater Needs Flushing</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Orange County's hard water is one of the toughest in the nation. Here's what's happening inside your system right now.</p>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <h3 style="color: #d65a38; font-size: 24px; margin-bottom: 15px;">The Problem</h3>
-                    <p style="margin-bottom: 15px; font-size: 15px;">Orange County's hard water contains high levels of minerals and sediment. Over time, these minerals accumulate inside your tankless water heater's heat exchanger, creating a thick mineral buildup (called scaling).</p>
-                    <p style="font-weight: 600; margin: 15px 0 10px;">This causes:</p>
-                    <ul style="text-align: left; margin-left: 20px; font-size: 14px; line-height: 1.8;">
-                        <li>Reduced hot water flow & pressure</li>
+            <p class="tankless-subtitle">Orange County's hard water is one of the toughest in the nation. Here's what's happening inside your system right now.</p>
+
+            <div class="tankless-columns">
+                <div class="tankless-card">
+                    <h3 class="text-problem">The Problem</h3>
+                    <p>Orange County's hard water contains high levels of minerals and sediment. Over time, these minerals accumulate inside your tankless water heater's heat exchanger, creating a thick mineral buildup (called scaling).</p>
+                    <p><strong>This causes:</strong></p>
+                    <ul>
+                        <li>Reduced hot water flow &amp; pressure</li>
                         <li>Lower heating efficiency (higher bills)</li>
                         <li>Strange noises from your heater</li>
                         <li>Eventually: complete system failure</li>
                     </ul>
                 </div>
 
-                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 5px solid #e8744f;">
-                    <h3 style="color: #1a3a52; font-size: 24px; margin-bottom: 15px;">The Solution</h3>
-                    <p style="margin-bottom: 15px; font-size: 15px;">Annual tankless water heater flushing removes mineral buildup and descales your system, restoring efficiency and preventing costly repairs.</p>
-                    <ul style="text-align: left; margin-left: 20px; font-size: 14px; line-height: 1.8; list-style: none;">
-                        <li style="margin-bottom: 10px;"><span style="color: #27ae60; font-weight: 700; margin-right: 8px;">✓</span>Restores hot water flow & pressure</li>
-                        <li style="margin-bottom: 10px;"><span style="color: #27ae60; font-weight: 700; margin-right: 8px;">✓</span>Improves energy efficiency (lower bills)</li>
-                        <li style="margin-bottom: 10px;"><span style="color: #27ae60; font-weight: 700; margin-right: 8px;">✓</span>Eliminates strange noises</li>
-                        <li style="margin-bottom: 10px;"><span style="color: #27ae60; font-weight: 700; margin-right: 8px;">✓</span>Extends system lifespan by years</li>
-                        <li><span style="color: #27ae60; font-weight: 700; margin-right: 8px;">✓</span>Prevents emergency breakdowns</li>
+                <div class="tankless-card tankless-card--solution">
+                    <h3 class="text-solution">The Solution</h3>
+                    <p>Annual tankless water heater flushing removes mineral buildup and descales your system, restoring efficiency and preventing costly repairs.</p>
+                    <ul class="check-list">
+                        <li>Restores hot water flow &amp; pressure</li>
+                        <li>Improves energy efficiency (lower bills)</li>
+                        <li>Eliminates strange noises</li>
+                        <li>Extends system lifespan by years</li>
+                        <li>Prevents emergency breakdowns</li>
                     </ul>
                 </div>
             </div>
@@ -441,8 +367,8 @@
     <section class="section">
         <div class="container">
             <h2>Real Results from Orange County Homes</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">See the mineral buildup we remove from tankless systems every year.</p>
-            
+            <p class="tankless-subtitle">See the mineral buildup we remove from tankless systems every year.</p>
+
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="images/Flush_-_Bucket_Sediment.JPG" alt="Mineral sediment collected during flushing">
@@ -458,7 +384,7 @@
                 </div>
                 <div class="gallery-item">
                     <img src="images/Tankless_flush_-_before_-_after.png" alt="Before and after flushing comparison">
-                    <div class="gallery-caption">System Cleaned & Restored</div>
+                    <div class="gallery-caption">System Cleaned &amp; Restored</div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/Flush_-_2_units.JPG" alt="Dual tankless water heater installation">
@@ -466,35 +392,33 @@
                 </div>
                 <div class="gallery-item">
                     <img src="images/Tankless_Flush.JPG" alt="Tankless water heater during service">
-                    <div class="gallery-caption">Expert Maintenance & Care</div>
+                    <div class="gallery-caption">Expert Maintenance &amp; Care</div>
                 </div>
             </div>
         </div>
     </section>
 
-
-
     <!-- Benefits Section -->
     <section class="section section--light">
         <div class="container">
             <h2>The Benefits of Regular Flushing</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Industry data shows what regular flushing maintenance does for your tankless system.</p>
-            
+            <p class="tankless-subtitle">Industry data shows what regular flushing maintenance does for your tankless system.</p>
+
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-number">✓</div>
                     <div class="benefit-title">Protects Your Warranty</div>
-                    <div class="benefit-description">Annual flushing is <a href="https://www.navieninc.com/blog/notice/tankless-water-heater-maintenance" target="_blank" style="color: #e8744f; text-decoration: none; font-weight: 600;">required by manufacturers</a> (Navien, Rinnai, etc.) to keep warranty valid. Without proof of maintenance, scale-related claims are denied.</div>
+                    <div class="benefit-description">Annual flushing is <a href="https://www.navieninc.com/blog/notice/tankless-water-heater-maintenance" target="_blank">required by manufacturers</a> (Navien, Rinnai, etc.) to keep warranty valid. Without proof of maintenance, scale-related claims are denied.</div>
                 </div>
                 <div class="benefit-card">
-                    <div style="font-size: 48px; font-weight: 700; color: #e8744f; margin-bottom: 12px; line-height: 1;"><i>Warmish</i> to Hot</div>
+                    <div class="benefit-number"><i>Warmish</i> to Hot</div>
                     <div class="benefit-title">Restores Peak Performance</div>
                     <div class="benefit-description">If your water isn't as hot as it used to be, scale buildup is likely the culprit. A flush can restore your temperature to day-one levels without the cost of a new unit.</div>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-number">20 yrs</div>
                     <div class="benefit-title">Extends Lifespan</div>
-                    <div class="benefit-description">Regular flushing can extend the lifespan of a tankless water heater as much as <a href="https://www.hotwater.com/info-center/how-long-do-water-heaters-last.html" target="_blank" style="color: #e8744f; text-decoration: none; font-weight: 600;">20 years</a>.</div>
+                    <div class="benefit-description">Regular flushing can extend the lifespan of a tankless water heater as much as <a href="https://www.hotwater.com/info-center/how-long-do-water-heaters-last.html" target="_blank">20 years</a>.</div>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-number">$1,500</div>
@@ -509,9 +433,9 @@
     <section class="section">
         <div class="container">
             <h2>15+ Years of Hands-On Experience</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Dustin is Orange County's trusted tankless water heater expert.</p>
-            
-            <div class="about-content">
+            <p class="tankless-subtitle">Dustin is Orange County's trusted tankless water heater expert.</p>
+
+            <div class="tankless-about">
                 <div>
                     <h3>Why Dustin?</h3>
                     <p>With 15+ years in construction and home renovation, I understand how homes work and what matters to homeowners. My expertise in tankless water heater maintenance and flushing isn't just a sideline—it's a core specialty I'm passionate about.</p>
@@ -522,6 +446,7 @@
                         ✓ 15+ Years Hands-On Experience<br>
                         ✓ Trusted by Orange County Neighbors
                     </div>
+                    <br>
                     <img src="images/nextdoor-fave-2025-website-banner.png" alt="Neighborhood Fave 2025 Winner Nextdoor" style="max-width: 280px; margin-top: 24px;">
                 </div>
                 <div class="about-photo" style="text-align: center;">
@@ -535,8 +460,8 @@
     <section class="section section--light">
         <div class="container">
             <h2>The Flushing Process</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Here's what happens when I flush your tankless water heater.</p>
-            
+            <p class="tankless-subtitle">Here's what happens when I flush your tankless water heater.</p>
+
             <div class="process-grid">
                 <div class="process-step">
                     <div class="step-number">1</div>
@@ -562,12 +487,12 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Testimonials (Nextdoor) -->
     <section class="section">
         <div class="container">
             <h2>What Orange County Homeowners Say</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Real reviews from customers who trusted Ultra Home Repair.</p>
-            
+            <p class="tankless-subtitle">Real reviews from customers who trusted Ultra Home Repair.</p>
+
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
@@ -575,14 +500,12 @@
                     <div class="testimonial-name">Verified Customer</div>
                     <div class="testimonial-source">Nextdoor Review</div>
                 </div>
-
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
                     <div class="testimonial-quote">"Really nice and reliable handyman, who will work with you and be upfront, fair and honest about costs. Highly competent, highly recommend."</div>
                     <div class="testimonial-name">Verified Customer</div>
                     <div class="testimonial-source">Nextdoor Review</div>
                 </div>
-
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
                     <div class="testimonial-quote">"Super clean and conscientious about leaving everything clean. He did a great job, was very professional, and we'd definitely use him again."</div>
@@ -593,81 +516,63 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials (Google / Named) -->
     <section class="section section--light">
         <div class="container">
-            <h2>What Orange County Homeowners Say</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Real reviews from customers who trusted Ultra Home Repair.</p>
-            
-            <div class="benefits-grid" style="gap: 24px;">
-                <div class="benefit-card" style="text-align: left; min-height: auto;">
-                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div style="color: #ffc107; font-size: 14px;">★★★★★</div>
-                    </div>
-                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #333;">"Dustin was prompt, friendly, helpful, answered all my questions and even researched stuff for me. He serviced the tankless water heater and was great!"</p>
-                    <p style="margin: 12px 0 0 0; font-size: 13px; font-weight: 600; color: #1a3a52;">Christine Vega</p>
+            <h2>Tankless Flushing Reviews</h2>
+            <p class="tankless-subtitle">Homeowners who had their tankless systems flushed by Dustin.</p>
+
+            <div class="benefits-grid">
+                <div class="named-review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-body">"Dustin was prompt, friendly, helpful, answered all my questions and even researched stuff for me. He serviced the tankless water heater and was great!"</p>
+                    <p class="review-name">Christine Vega</p>
                 </div>
-                
-                <div class="benefit-card" style="text-align: left; min-height: auto;">
-                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div style="color: #ffc107; font-size: 14px;">★★★★★</div>
-                    </div>
-                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #333;">"We had Dustin come to our house & gave our tankless water heater a check up & flushed the system. We kept his information to have him come back when it's needed again. Very reasonably priced too!"</p>
-                    <p style="margin: 12px 0 0 0; font-size: 13px; font-weight: 600; color: #1a3a52;">J J • Local Guide</p>
+                <div class="named-review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-body">"We had Dustin come to our house &amp; gave our tankless water heater a check up &amp; flushed the system. We kept his information to have him come back when it's needed again. Very reasonably priced too!"</p>
+                    <p class="review-name">J J &bull; Local Guide</p>
                 </div>
-                
-                <div class="benefit-card" style="text-align: left; min-height: auto;">
-                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div style="color: #ffc107; font-size: 14px;">★★★★★</div>
-                    </div>
-                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #333;">"Dustin did a great job with our Tankless hot water flush out. I watched him do the procedure and he totally knew exactly what he was doing. It went without a problem and his rate for the job was very good."</p>
-                    <p style="margin: 12px 0 0 0; font-size: 13px; font-weight: 600; color: #1a3a52;">Jeff Arnold</p>
+                <div class="named-review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-body">"Dustin did a great job with our Tankless hot water flush out. I watched him do the procedure and he totally knew exactly what he was doing. It went without a problem and his rate for the job was very good."</p>
+                    <p class="review-name">Jeff Arnold</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section section--accent" style="background: #1a3a52; color: white; text-align: center;">
+    <section class="section tankless-cta-section">
         <div class="container">
-            <h2 style="color: white;">Ready to Keep Your Tankless System Running Perfect?</h2>
-            <p style="color: rgba(255,255,255,0.9); margin-bottom: 30px;">Text or call for your free estimate. Fast response. Fair pricing. Expert service you can trust.</p>
+            <h2>Ready to Keep Your Tankless System Running Perfect?</h2>
+            <p>Text or call for your free estimate. Fast response. Fair pricing. Expert service you can trust.</p>
             <div class="tankless-cta-buttons">
                 <a href="tel:9493716423" class="tankless-btn tankless-btn-primary">TEXT TO SCHEDULE</a>
                 <a href="tel:9493716423" class="tankless-btn tankless-btn-secondary">CALL (949) 371-6423</a>
             </div>
-            <p style="margin-top: 20px; font-size: 13px; opacity: 0.8;">Free virtual estimates available.</p>
+            <p class="tankless-cta-note">Free virtual estimates available.</p>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Ultra Home Repair</h4>
-                    <p>Tankless Flushing Specialist</p>
-                    <p><a href="tel:9493716423">(949) 371-6423</a></p>
-                </div>
-                    <p>Irvine, Newport Beach, Corona del Mar, Newport Coast & South Orange County</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <p>
-                        <a href="index.html">Home</a> • 
-                        <a href="services.html">Services</a> • 
-                        <a href="portfolio.html">Portfolio</a> • 
-                        <a href="about.html">About</a>
-                    </p>
+                <div class="footer-inner">
+                    <div class="footer-left">
+                        <p>Professional handyman services in Orange County.</p>
+                        <p>Serving Irvine, Newport Beach, Corona del Mar, Newport Coast &amp; South Orange County</p>
+                        <p style="font-size: 0.9em; color: #888;">&copy; 2025 Ultra Home Repair. All rights reserved.</p>
+                    </div>
+                    <div class="footer-right">
+                        <p><a href="tel:+19493716423">Phone: (949) 371-6423</a></p>
+                    </div>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 30px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 20px; font-size: 12px;">© 2025 Ultra Home Repair. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-
-
 </body>
 </html>
