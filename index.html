@@ -135,37 +135,61 @@
 
 
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-container">
-                <!-- Left Side - Text Content -->
-                <div class="hero-text-overlay">
-                    <h1>Irvine's Trusted Neighborhood Handyman</h1>
-                    <p>Serving Woodbury, Orchard Hills, Great Park, Northwood, Newport Beach &amp; all of Orange County. Book your project today and relax &mdash; we'll handle the rest.</p>
-                    <div class="hero-features">
-                        <div class="feature-item"><i class="fas fa-check"></i> Skill &amp; Experience &mdash; 15+ years in home services</div>
-                        <div class="feature-item"><i class="fas fa-check"></i> Fast Scheduling &mdash; Jobs booked within 24 hrs</div>
-                        <div class="feature-item"><i class="fas fa-check"></i> Upfront, Fair Pricing &mdash; No contractor markup</div>
-                    </div>
+        <section class="hero" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding: 80px 20px; text-align: center; min-height: 600px; display: flex; align-items: center; justify-content: center;">
+            <div class="hero-container" style="max-width: 800px; margin: 0 auto;">
+                <!-- Main Headline -->
+                <h1 style="font-size: 48px; font-weight: 700; color: white; margin: 0 0 20px 0; line-height: 1.2; font-family: 'Montserrat', sans-serif;">
+                    Irvine's Trusted Handyman
+                </h1>
+                
+                <!-- Subheading with Services -->
+                <p style="font-size: 20px; color: rgba(255,255,255,0.9); margin: 0 0 30px 0; font-family: 'Montserrat', sans-serif;">
+                    Plumbing • Electrical • Painting • Carpentry • <strong>Tankless Water Heater Experts</strong>
+                </p>
+                
+                <!-- Geographic Focus -->
+                <p style="font-size: 16px; color: rgba(255,255,255,0.8); margin: 0 0 40px 0; font-family: 'Montserrat', sans-serif;">
+                    Serving Woodbury, Orchard Hills, Great Park, Newport Beach & all of Orange County
+                </p>
+                
+                <!-- CTA Button Stack -->
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 40px;">
+                    <!-- Primary: Text Button -->
+                    <a href="sms:+19493716423?body=Hi%20Dustin%2C%20I%20need%20help%20with..." style="display: block; background: #ff5a33; color: white; padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; text-align: center; text-decoration: none; transition: all 0.3s ease; border: 2px solid #ff5a33; cursor: pointer; font-family: 'Montserrat', sans-serif;" onmouseover="this.style.background='#e64622'; this.style.transform='scale(1.02)'" onmouseout="this.style.background='#ff5a33'; this.style.transform='scale(1)'">
+                        📱 TEXT TO SCHEDULE
+                    </a>
+                    
+                    <!-- Secondary: Call Button -->
+                    <a href="tel:+19493716423" style="display: block; background: transparent; color: #ff5a33; padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; text-align: center; text-decoration: none; border: 2px solid #ff5a33; transition: all 0.3s ease; cursor: pointer; font-family: 'Montserrat', sans-serif;" onmouseover="this.style.background='rgba(255,90,51,0.1)'" onmouseout="this.style.background='transparent'">
+                        📞 CALL (949) 371-6423
+                    </a>
+                    
+                    <!-- Tankless Services Link -->
+                    <a href="tankless-flush.html" style="display: block; background: transparent; color: white; padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; text-align: center; text-decoration: none; border: 2px solid white; transition: all 0.3s ease; cursor: pointer; font-family: 'Montserrat', sans-serif;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">
+                        ✓ TANKLESS FLUSH SERVICES
+                    </a>
                 </div>
-                <!-- Right Side - Contact Form -->
-                <div class="hero-form">
-                    <div class="quote-form">
-                        <h2>REQUEST A QUOTE</h2>
-                        <form id="hero-contact-form" class="form-grid" enctype="multipart/form-data">
-                            <div class="span-2"><input type="text" name="name" placeholder="Name" required></div>
-                            <div><input type="email" name="email" placeholder="Email" required></div>
-                            <div><input type="tel" name="phone" placeholder="Phone" required></div>
-                            <div class="span-2"><input type="text" name="street" placeholder="Street Address" required></div>
-                            <div class="row-3">
-                                <input type="text" name="city" placeholder="City" required>
-                                <input type="text" name="state" placeholder="State" maxlength="2" required>
-                                <input type="text" name="zip" placeholder="Zip" pattern="\d{5}(-\d{4})?" required>
-                            </div>
-                            <div class="span-2"><textarea name="description" placeholder="Please describe your project." rows="4" required></textarea></div>
-                            <button type="submit" class="form-submit-btn span-2">REQUEST A QUOTE</button>
-                        </form>
-                        <p class="form-footer">We'll call you back within 1 day.</p>
+                
+                <!-- Trust Badges -->
+                <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px;">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px;">
+                        <!-- Google Reviews -->
+                        <div style="text-align: center;">
+                            <div style="color: #ffc107; font-size: 20px; margin-bottom: 5px;">★★★★★</div>
+                            <p style="color: rgba(255,255,255,0.9); font-size: 13px; margin: 0; font-family: 'Montserrat', sans-serif;">
+                                5 Stars on Google
+                            </p>
+                        </div>
+                        
+                        <!-- Nextdoor Badge -->
+                        <div style="text-align: center;">
+                            <img src="images/nextdoor-fave-2025.png" alt="Nextdoor Neighborhood Fave 2025" style="height: 80px; width: auto;">
+                        </div>
                     </div>
+                    
+                    <p style="color: rgba(255,255,255,0.7); font-size: 13px; margin: 20px 0 0 0; font-family: 'Montserrat', sans-serif;">
+                        ✓ 15+ Years Experience | ✓ Jobs Booked Within 24 Hours | ✓ Fair Pricing
+                    </p>
                 </div>
             </div>
         </section>
