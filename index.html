@@ -1,364 +1,1518 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1THN08DG5P"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultra Home Repair | Irvine & Orange County Handyman Services</title>
+  <meta name="description" content="Irvine & Orange County's trusted handyman since 2009. Plumbing, electrical, home repairs, Realtor services, and tankless water heater experts. Based in Woodbury, serving Orchard Hills to Great Park." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --orange: #E05A2B;
+      --orange-dark: #c44d22;
+      --orange-light: #f97340;
+      --navy: #1E2D5F;
+      --navy-dark: #141f42;
+      --navy-light: #2a3e7a;
+      --white: #ffffff;
+      --off-white: #F9F8F6;
+      --gray-100: #F3F2F0;
+      --gray-200: #E8E6E2;
+      --gray-400: #9B9690;
+      --gray-600: #6B6560;
+      --gray-800: #2E2B28;
+      --text: #1A1916;
+      --radius: 10px;
+      --radius-lg: 18px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 6px 24px rgba(0,0,0,0.12);
+      --shadow-lg: 0 16px 48px rgba(0,0,0,0.15);
+      --transition: 0.25s ease;
+    }
 
-            gtag('config', 'G-1THN08DG5P');
-        </script>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ultra Home Repair | Irvine & Orange County Handyman Services</title>
-        <meta
-            name="description"
-            content="Irvine's trusted neighborhood handyman since 2009. Serving Woodbury, Orchard Hills, Great Park, Northwood, Newport Beach & all of Orange County. Plumbing, electrical, painting, tankless water heater flush & more. Call (949) 371-6423."
-        />
-        <link
-            href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        />
-        <link rel="stylesheet" href="style.css?v=1753739600" />
-        <link rel="icon" type="image/png" href="images/favicon.png" />
-        <link rel="canonical" href="https://ultrahomerepair.com/">
-        <meta property="og:title" content="Ultra Home Repair | Irvine & Orange County Handyman Services">
-        <meta property="og:description" content="Irvine's trusted neighborhood handyman. Serving Woodbury, Orchard Hills, Great Park, Newport Beach & all of Orange County. 15+ years experience. Call (949) 371-6423.">
-        <meta property="og:url" content="https://ultrahomerepair.com/">
-        <meta property="og:type" content="website">
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
 
-          <!-- LocalBusiness Schema -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "ServiceAreaBusiness",
-          "name": "Ultra Home Repair",
-          "image": "https://ultrahomerepair.com/images/logo.png",
-          "url": "https://ultrahomerepair.com",
-          "telephone": "+1-949-371-6423",
-          "email": "dustin@ultrahomerepair.com",
-          "priceRange": "$$",
-          "description": "Professional handyman services in Irvine and Orange County. Specializing in plumbing, electrical, painting, carpentry, and tankless water heater maintenance. Serving Woodbury, Orchard Hills, Great Park, Northwood, Newport Beach, and surrounding communities since 2009.",
-          "founder": {
-            "@type": "Person",
-            "name": "Dustin"
-          },
-          "foundingDate": "2009",
-          "areaServed": [
-            { "@type": "Place", "name": "Irvine, CA" },
-            { "@type": "Place", "name": "Newport Beach, CA" },
-            { "@type": "Place", "name": "Newport Coast, CA" },
-            { "@type": "Place", "name": "Corona del Mar, CA" },
-            { "@type": "Place", "name": "Tustin, CA" },
-            { "@type": "Place", "name": "Lake Forest, CA" },
-            { "@type": "Place", "name": "Orange County, CA" }
-          ],
-          "openingHoursSpecification": [{
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday",
-              "Sunday"
-            ],
-            "opens": "08:00",
-            "closes": "18:00"
-          }],
-          "serviceArea": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": 33.7175,
-              "longitude": -117.7560
-            },
-            "geoRadius": "8047"
-          },
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Irvine",
-            "addressRegion": "CA",
-            "postalCode": "92620",
-            "addressCountry": "US"
-          },
-          "knowsAbout": [
-            "Plumbing Repair",
-            "Electrical Repair",
-            "Interior Painting",
-            "Drywall Repair",
-            "Tankless Water Heater Flush",
-            "Ceiling Fan Installation",
-            "TV Mounting",
-            "Door Repair",
-            "Fixture Replacement"
-          ]
-        }
-        </script>
-    </head>
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: 0 1px 12px rgba(0,0,0,0.07);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo img {
+      height: 54px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray-800);
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--orange);
+      background: rgba(224,90,43,0.06);
+    }
+    .nav-links a.active {
+      border-bottom: 2px solid var(--orange);
+      border-radius: 0;
+      background: none;
+    }
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--orange);
+      color: white !important;
+      padding: 10px 20px !important;
+      border-radius: 8px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.04em;
+      transition: background var(--transition), transform var(--transition) !important;
+    }
+    .nav-cta:hover {
+      background: var(--orange-dark) !important;
+      transform: translateY(-1px);
+      color: white !important;
+    }
+    .nav-cta svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      padding-top: 72px; /* nav height */
+      min-height: 0;
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      background:
+        linear-gradient(to bottom right, rgba(20,30,62,0.88), rgba(20,30,62,0.72)),
+        url('images/hero-bg.jpg') center center / cover no-repeat;
+      /* Fallback gradient if no image */
+      background-color: var(--navy);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(224,90,43,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    /* Decorative diagonal accent */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: var(--white);
+      clip-path: polygon(0 60%, 100% 0%, 100% 100%, 0 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 40px 0 120px;
+      animation: heroFadeUp 0.8s ease both;
+    }
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.9);
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow span { color: var(--orange-light); }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(38px, 5.5vw, 62px);
+      font-weight: 800;
+      line-height: 1.1;
+      color: white;
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--orange-light);
+    }
+    .hero-services {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--orange-light);
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .hero-services { white-space: normal; font-size: 13px; }
+    }
+    .hero-services span { color: rgba(255,255,255,0.45); margin: 0 6px; }
+    .hero-location {
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 40px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 15px 30px;
+      border-radius: 10px;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+    }
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      box-shadow: 0 4px 20px rgba(224,90,43,0.40);
+    }
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(224,90,43,0.50);
+    }
+    .btn-outline {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 2px solid rgba(255,255,255,0.5);
+      backdrop-filter: blur(6px);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.2);
+      border-color: white;
+      transform: translateY(-2px);
+    }
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    /* ============================================================
+       TRUST BAR
+    ============================================================ */
+    .trust-bar {
+      background: var(--navy);
+      padding: 18px 0;
+      overflow: hidden;
+    }
+    .trust-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: nowrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      flex: 1;
+      justify-content: center;
+    }
+    .trust-item:not(:last-child) {
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    .trust-item-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .trust-item-icon svg { width: 18px; height: 18px; }
+    .trust-stars { color: #FFB800; font-size: 16px; letter-spacing: 2px; }
+    .trust-label { color: rgba(255,255,255,0.65); font-weight: 600; font-size: 12px; margin-top: 1px; }
+    .trust-value { font-size: 15px; font-weight: 800; }
+
+    /* ============================================================
+       SECTION STYLES
+    ============================================================ */
+    .section { padding: 90px 0; }
+    .section-alt { background: var(--off-white); }
+    .section-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
+    .section-subtitle {
+      font-size: 16.5px;
+      color: var(--gray-600);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+    .section-header { margin-bottom: 56px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-subtitle { margin: 0 auto; }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .service-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      padding: 36px 28px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--orange);
+    }
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(224,90,43,0.12), rgba(224,90,43,0.06));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      flex-shrink: 0;
+    }
+    .service-icon svg { width: 26px; height: 26px; color: var(--orange); }
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+    .service-card p {
+      font-size: 14.5px;
+      color: var(--gray-600);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 22px;
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--orange);
+      letter-spacing: 0.04em;
+      transition: gap var(--transition);
+    }
+    .service-link:hover { gap: 8px; }
+    .service-link svg { width: 14px; height: 14px; }
+
+    /* ============================================================
+       HOW IT WORKS
+    ============================================================ */
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .how-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: calc(12.5% + 36px);
+      right: calc(12.5% + 36px);
+      height: 2px;
+      background: linear-gradient(to right, var(--orange), rgba(224,90,43,0.2));
+    }
+    .how-step {
+      padding: 0 20px;
+      text-align: center;
+      position: relative;
+      animation: fadeUp 0.6s ease both;
+    }
+    .how-step:nth-child(2) { animation-delay: 0.1s; }
+    .how-step:nth-child(3) { animation-delay: 0.2s; }
+    .how-step:nth-child(4) { animation-delay: 0.3s; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .step-number {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: white;
+      font-size: 26px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 6px 20px rgba(224,90,43,0.35);
+    }
+    .how-step h3 {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .how-step p {
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.65;
+    }
+
+    /* ============================================================
+       REVIEWS
+    ============================================================ */
+    .reviews-section { background: var(--navy); padding: 90px 0; }
+    .reviews-section .section-label { color: var(--orange-light); }
+    .reviews-section .section-title { color: white; }
+    .reviews-section .section-subtitle { color: rgba(255,255,255,0.65); }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      margin-top: 16px;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .review-card {
+      min-width: 100%;
+      padding: 0 80px;
+    }
+    .review-inner {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      padding: 48px 52px;
+      position: relative;
+    }
+    .review-inner::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 44px;
+      font-size: 120px;
+      line-height: 1;
+      font-family: 'Playfair Display', serif;
+      color: rgba(224,90,43,0.3);
+      pointer-events: none;
+    }
+    .review-stars { color: #FFB800; font-size: 20px; letter-spacing: 3px; margin-bottom: 18px; }
+    .review-text {
+      font-size: 17px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .review-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), var(--orange-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 900;
+      color: white;
+      flex-shrink: 0;
+    }
+    .review-author-info strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 800;
+      color: white;
+    }
+    .review-author-info span {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+    }
+    .review-source {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition);
+    }
+    .carousel-btn:hover { background: var(--orange); border-color: var(--orange); }
+    .carousel-btn svg { width: 18px; height: 18px; }
+    .carousel-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .dot.active {
+      background: var(--orange);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-content .section-subtitle {
+      max-width: 100%;
+      font-size: 16.5px;
+      margin-bottom: 28px;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .about-stat {
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+    }
+    .about-stat-value {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--orange);
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .about-stat-badge {
+      background: transparent;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .about-image-wrap {
+      position: relative;
+      isolation: isolate;
+    }
+    .about-image-frame {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      min-height: 400px;
+      background: var(--gray-200);
+    }
+    .about-image-frame img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: var(--orange);
+      color: white;
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      box-shadow: var(--shadow-md);
+      z-index: 2;
+    }
+    .about-badge-name {
+      font-size: 18px;
+      font-weight: 900;
+      display: block;
+    }
+    .about-badge-title {
+      font-size: 13px;
+      font-weight: 600;
+      opacity: 0.85;
+    }
+    /* Orange accent square behind image */
+    .about-image-wrap::before {
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      width: 60%;
+      height: 60%;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(224,90,43,0.15), rgba(30,45,95,0.1));
+      z-index: -1;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: var(--navy-dark);
+      padding: 60px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-logo {
+      margin-bottom: 18px;
+    }
+    .footer-logo img {
+      height: 50px;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
+    .footer-about {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition);
+    }
+    .social-link:hover { background: var(--orange); }
+    .social-link svg { width: 16px; height: 16px; color: white; }
+
+    .footer-heading {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 18px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--orange-light); }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+    }
+    .footer-contact-item svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      color: var(--orange-light);
+      margin-top: 2px;
+    }
+    .footer-contact-item a:hover { color: white; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 28px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+    .footer-ratings {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .rating-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.55);
+    }
+    .rating-badge-stars { color: #FFB800; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .how-steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .how-steps::before { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { min-height: 100svh; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-image-wrap { order: -1; }
+      .about-image-frame img { height: 340px; }
+      .about-stats { grid-template-columns: repeat(3, 1fr); }
+      .review-card { padding: 0 16px; }
+      .review-inner { padding: 32px 28px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .trust-bar-inner { flex-direction: column; gap: 8px; }
+      .trust-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; justify-content: center; padding: 10px 20px; }
+      .trust-item:last-child { border-bottom: none; }
+    }
+    @media (max-width: 560px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .how-steps { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Ultra Home Repair",
+    "image": "https://ultrahomerepair.com/images/logo.png",
+    "url": "https://ultrahomerepair.com",
+    "telephone": "+19493716423",
+    "priceRange": "$$",
+    "description": "Professional handyman services in Irvine and Orange County. Plumbing, electrical, painting, carpentry, and tankless water heater flush. Trusted by Realtors throughout OC.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Woodbury",
+      "addressLocality": "Irvine",
+      "addressRegion": "CA",
+      "postalCode": "92620",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.6846,
+      "longitude": -117.7658
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
+    "areaServed": [
+      "Irvine","Newport Beach","Corona Del Mar","Laguna Beach","Lake Forest","Orange County"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "13"
+    }
+  }
+  </script>
+</head>
 <body>
-        <!-- Header -->
-        <header class="header">
-          <div class="container">
-            <div class="nav-brand">
-              <!-- Note: the class="logo" must be inside the <img> tag -->
-              <a href="index.html" class="nav-brand-link">
-                <img class="logo" src="images/logo.png" alt="Logo - Ultra Home Repair" />
-              </a>
-            </div>
-            <nav class="nav-menu" id="nav-menu">
-              <ul class="nav-list">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="realtors.html" class="nav-link">Realtors</a></li>
-                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-              </ul>
-              <a href="tel:949-371-6423" class="nav-call-btn">
-                <i class="fas fa-phone"></i>
-                (949) 371-6423
-              </a>
-              <button class="nav-toggle" id="nav-toggle">
-                <i class="fas fa-bars"></i>
-              </button>
-            </nav>
-          </div>
-        </header>
 
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Ultra Home Repair Home">
+      <img src="images/logo.png" alt="Ultra Home Repair" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="realtors.html">Realtors</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <a href="tel:9493716423" class="nav-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.63 4.4 2 2 0 0 1 3.6 2.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (949) 371-6423
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-        <!-- Hero Section -->
-        <section style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.45) 100%), url('images/Hero background Large.jpeg') center/cover; background-attachment: fixed; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; position: relative; overflow: hidden;">
-            <div style="max-width: 800px; width: 100%; margin: 0 auto; z-index: 2;">
-                <!-- Main Headline -->
-                <h1 style="font-size: 56px; font-weight: 700; color: white; margin: 0 0 30px 0; line-height: 1.2; letter-spacing: -0.5px; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); font-family: 'Montserrat', sans-serif;">
-                    Irvine & Orange County's Trusted Handyman
-                </h1>
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        📍 Based in Woodbury, Irvine &nbsp;·&nbsp; <span>15+ Years Experience</span>
+      </div>
+      <h1>Irvine &amp; Orange County's<br><em>Trusted Handyman</em></h1>
+      <p class="hero-services">
+        Plumbing <span>•</span> Electrical <span>•</span> Home Repairs <span>•</span> Realtor Services <span>•</span> Tankless Water Heater Experts
+      </p>
+      <p class="hero-location">Based in Woodbury, Irvine. Trusted from Orchard Hills to Great Park. Serving Coastal and South Orange County.</p>
+      <div class="hero-actions">
+        <a href="sms:+19493716423?body=Hi%20Dustin%2C%20I%20need%20help%20with..." class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Text for Fast Response
+        </a>
+        <a href="contact.html" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          Request a Quote
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <!-- Service Specialties -->
-                <p style="font-size: 18px; color: white; margin: 0 0 20px 0; font-weight: 500; letter-spacing: 0.3px; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); font-family: 'Montserrat', sans-serif;">
-                    <span style="color: #FFB84D; font-weight: 600;">Plumbing</span> • <span style="color: #FFB84D; font-weight: 600;">Electrical</span> • <span style="color: #FFB84D; font-weight: 600;">Painting</span> • <span style="color: #FFB84D; font-weight: 600;">Carpentry</span> • <span style="color: #FFB84D; font-weight: 600;">Tankless Water Heater Experts</span>
-                </p>
-
-                <!-- Geographic Service Area -->
-                <p style="font-size: 15px; color: rgba(255,255,255,0.85); margin: 0 0 40px 0; font-weight: 400; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); font-family: 'Montserrat', sans-serif;">
-                    Serving Woodbury, Orchard Hills, Great Park, Newport Beach & all of Orange County
-                </p>
-
-                <!-- CTA Buttons -->
-                <div style="display: flex; gap: 15px; align-items: center; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;">
-                    <!-- Primary: Text Button -->
-                    <a href="sms:+19493716423?body=Hi%20Dustin%2C%20I%20need%20help%20with..." style="background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%); color: white; padding: 18px 45px; border-radius: 6px; font-weight: 700; font-size: 16px; text-align: center; text-decoration: none; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(255, 152, 0, 0.3); text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 30px rgba(255, 152, 0, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 152, 0, 0.3)'">
-                        TEXT TO SCHEDULE
-                    </a>
-                </div>
-
-                <!-- Trust Badges Section -->
-                <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; font-size: 14px;">
-                    <!-- Google Stars -->
-                    <div style="background: rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 6px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                        <div style="color: #FFB84D; font-size: 16px; margin-bottom: 3px;">★★★★★</div>
-                        <p style="color: rgba(255,255,255,0.9); font-size: 13px; margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 500;">
-                            5.0 on Google
-                        </p>
-                    </div>
-
-                    <!-- Nextdoor Badge -->
-                    <div style="background: rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 6px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); font-weight: 500;">
-                        ✓ Nextdoor Favorite
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- What We Do Section -->
-        <section class="section section--light">
-            <div class="container">
-                <h2 class="section-title">
-                    Your Trusted Handyman in Irvine &amp; Orange County
-                </h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-hammer"></i>
-                        </div>
-                        <h3>Professional HandyMan</h3>
-                        <p>
-                            From leaky faucets to home improvements, Ultra Home
-                            Repair is your go-to expert for all home repair and
-                            maintenance needs across Orange
-                            County.
-                        </p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-dollar-sign"></i>
-                        </div>
-                        <h3>Flexible Pricing</h3>
-                        <p>
-                            Whether you need a quick fix or a more extensive
-                            home improvement project, Ultra Home Repair will
-                            work with you to find a pricing solution that fits
-                            your needs.
-                        </p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3>Flexible Hours</h3>
-                        <p>
-                            Home repairs don't always happen during regular
-                            business hours. That's why we offer flexible
-                            scheduling to accommodate your busy life.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Since 2013 Section -->
-        <section class="section section--dark">
-            <div class="container">
-                <div class="stats">
-                    <div class="stat-item">
-                        <span class="stat-number">Since 2009</span>
-                        <span class="stat-label">+15 Years of Experience</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="section">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h2>About Ultra Home Repair</h2>
-                        <div class="about-tabs">
-                            <div class="tab-content active">
-                                <p>
-                                    Our mission is to provide top-notch handyman
-                                    services that exceed expectations. We strive
-                                    to deliver reliable, efficient, and
-                                    affordable solutions to all your home repair
-                                    and maintenance needs, ensuring your living
-                                    space remains comfortable, functional, and
-                                    safe.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-image">
-                        <img
-                            src="images/Me - fan Large.jpeg"
-                            alt="Installing ceiling fan - Ultra Home Repair"
-                        />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Overview -->
-        <section class="section section--light">
-            <div class="container">
-                <h2 class="section-title">Ultra Home Repair Services</h2>
-               
-                <p style="text-align: center; margin-bottom: 3rem">
-                    From Woodbury and Orchard Hills to Newport Beach and
-                    beyond, Ultra Home Repair offers a comprehensive range of
-                    services including plumbing, electrical, carpentry,
-                    painting, tankless water heater maintenance, and more. Whether you need a quick
-                    fix or a larger home improvement project, our 15+ years of
-                    expertise and commitment to quality ensure that one call
-                    is all it takes to keep your home in
-                    perfect working order.
-                </p>
-                <div style="text-align: center">
-                    <a href="services.html" class="btn btn--primary"
-                        >View All Services</a
-                    >
-                    <a href="tankless-flush.html" class="btn" style="margin-left: 12px; background: transparent; border: 2px solid var(--primary-color); color: var(--primary-color);"
-                        >Tankless Water Heater Flush</a
-                    >
-                </div>
-            </div>
-        </section>
-
-        <!-- Customer Reviews -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">What Our Customers Say</h2>
-                <p class="section-subtitle">Real reviews from Nextdoor and satisfied customers</p>
-                <div class="reviews-grid">
-                    <div class="review-card">
-                        <i class="fas fa-quote-right quote-icon"></i>
-                        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="review-text">"Everybody NEEDS to use this handyman. I was just amazed at how professional, efficient, and pleasant Dustin is. And, as an added bonus, his estimates came in significantly lower than those I received from others. I hired him to help me assemble furniture from Wayfair that was way too heavy for me to tackle by myself. I'm SO happy I did!"</p>
-                        <div class="review-author">Verified Customer</div>
-                        <div class="review-source"><a href="https://nextdoor.com/p/xcJpDK-Rrqw4?utm_source=share&extras=MTEzNTE3NjAz" target="_blank">Nextdoor Review</a></div>
-                    </div>
-                    <div class="review-card">
-                        <i class="fas fa-quote-right quote-icon"></i>
-                        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="review-text">"I was so fortunate to come across Dustin when I needed some home repair. He replaced all of my smoke alarms for me — and if you've ever had trouble with smoke alarms, it's not something you can ignore. I was especially impressed that Dustin was careful &amp; perfect in everything he did, including cleaning up after he finished. It sure set my mind at ease!"</p>
-                        <div class="review-author">Verified Customer</div>
-                        <div class="review-source"><a href="https://nextdoor.com/p/BXKfG28HgWpP?utm_source=share&extras=MTEzNTE3NjAz" target="_blank">Nextdoor Review</a></div>
-                    </div>
-                    <div class="review-card">
-                        <i class="fas fa-quote-right quote-icon"></i>
-                        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="review-text">"Really nice and reliable handyman, who will work with you and be upfront, fair and honest about costs. Highly competent, highly recommend."</p>
-                        <div class="review-author">Verified Customer</div>
-                        <div class="review-source"><a href="https://nextdoor.com/p/HTN-h6R5zcBT?utm_source=share&extras=MTEzNTE3NjAz" target="_blank">Nextdoor Review</a></div>
-                    </div>
-                    <div class="review-card">
-                        <i class="fas fa-quote-right quote-icon"></i>
-                        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="review-text">"HANDYMAN RECOMMENDATION: I hired Dustin of Ultra Home Repair to install these pendant lights and ceiling fans. Wanted to give him a shout out and provide his info for people to consider in future. He did great job, was super clean and conscientious about leaving everything clean, etc."</p>
-                        <div class="review-author">Verified Customer</div>
-                        <div class="review-source"><a href="https://nextdoor.com/p/G4TzFNngPT_6?utm_source=share&extras=MTEyMTEyMDY2" target="_blank">Nextdoor Review</a></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-inner">
-                    <div class="footer-left">
-                        <p><strong>Ultra Home Repair</strong> &mdash; Professional handyman services in Orange County since 2009.</p>
-                        <p style="font-size: 0.9em; color: #aaa;">Serving Irvine neighborhoods including Woodbury, Orchard Hills, Great Park, Northwood, Portola Springs, Stonegate, Cypress Village &amp; Pavilion Park. Also serving Newport Beach, Newport Coast, Corona del Mar, Tustin, Lake Forest &amp; all of Orange County.</p>
-                        <p style="font-size: 0.85em; margin-top: 10px;">
-                            <a href="index.html" style="color:#ccc; text-decoration:none;">Home</a> &nbsp;|&nbsp;
-                            <a href="services.html" style="color:#ccc; text-decoration:none;">Services</a> &nbsp;|&nbsp;
-                            <a href="tankless-flush.html" style="color:#ccc; text-decoration:none;">Tankless Flush</a> &nbsp;|&nbsp;
-                            <a href="realtors.html" style="color:#ccc; text-decoration:none;">Realtors</a> &nbsp;|&nbsp;
-                            <a href="portfolio.html" style="color:#ccc; text-decoration:none;">Portfolio</a> &nbsp;|&nbsp;
-                            <a href="about.html" style="color:#ccc; text-decoration:none;">About</a> &nbsp;|&nbsp;
-                            <a href="contact.html" style="color:#ccc; text-decoration:none;">Contact</a>
-                        </p>
-                        <p style="font-size: 0.9em; color: #888;">&copy; 2025 Ultra Home Repair. All rights reserved.</p>
-                    </div>
-                    <div class="footer-right">
-                        <p><a href="tel:+19493716423">(949) 371-6423</a></p>
-                    </div>
-                </div>
-            </div>
+<!-- ============================================================
+     TRUST BAR
+============================================================ -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <div class="trust-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-    </footer>
+        <div>
+          <div class="trust-stars">★★★★★</div>
+          <div class="trust-value">5.0 Google Rating</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="trust-value">Winner 2025 Nextdoor<br>Neighborhood Fave</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="trust-value">15+ Years Experience</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="trust-value">Workmanship Warranty</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <script src="script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script src="/form-handler.js"></script>
-    </body>
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section class="section section-alt" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Home Repair Services</h2>
+      <p class="section-subtitle">From quick fixes to larger home improvement projects — one call handles it all.</p>
+    </div>
+    <div class="services-grid">
+
+      <!-- Home Repair Services -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Home Repair Services</h3>
+        <p>Complete handyman services including plumbing, electrical, painting and drywall, doors and hardware, fixtures and lighting, home improvements, exterior services, and general repairs.</p>
+        <a href="services.html" class="service-link">
+          View all services
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- For Realtors -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3>For Realtors</h3>
+        <p>Listing preparation, post-inspection repairs, tenant turnover and maintenance, and handyman services for buyers after escrow closes.</p>
+        <a href="realtors.html" class="service-link">
+          Realtor services
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Tankless Water Heater -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10c0-4.42-2.87-8.17-7-9.58"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Tankless Water Heater Flush</h3>
+        <p>Annual professional descaling maintains peak performance, extends system lifespan, and protects your warranty. Learn why this service prevents costly repairs.</p>
+        <a href="tankless-flush.html" class="service-link">
+          Learn more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOW IT WORKS
+============================================================ -->
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Simple Process</div>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">Getting your quote is simple. Here's what to expect from first contact to completed job.</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-number">1</div>
+        <h3>Contact Us</h3>
+        <p>Text, call, or request a quote online. Responses are fast — usually same day.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-number">2</div>
+        <h3>Describe Your Project</h3>
+        <p>Tell us what you need fixed or improved. Photos help but aren't required.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-number">3</div>
+        <h3>Receive Your Quote</h3>
+        <p>A written estimate is emailed to you describing the work and the flat-rate price.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-number">4</div>
+        <h3>Accept &amp; Schedule</h3>
+        <p>Approve your quote and pick your service date. We show up on time, every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     REVIEWS
+============================================================ -->
+<section class="reviews-section" id="reviews">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">What Clients Say</div>
+      <h2 class="section-title" style="color:white;">Our Reviews</h2>
+      <p class="section-subtitle">Real reviews from verified Nextdoor neighbors and satisfied clients.</p>
+    </div>
+
+    <div class="carousel">
+      <div class="carousel-track" id="carouselTrack">
+
+        <!-- Review 1 - Google -->
+        <div class="review-card">
+          <div class="review-inner">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Dustin was extremely responsive to my messages and questions. He was able to finish installing a faucet, complete my painting, replace the bathroom fans and also swap out door knobs in good time. I appreciated his before/after pictures and his prompt responses to my questions. I would highly recommend him!</p>
+            <div class="review-author">
+              <div class="review-avatar">K</div>
+              <div class="review-author-info">
+                <strong>Kavi Anand</strong>
+                <span>Google Review</span>
+              </div>
+              <div class="review-source">
+                <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Google
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 - Google -->
+        <div class="review-card">
+          <div class="review-inner">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">As a Realtor I know how important (and how difficult) it is to find an outstanding handyman, and Dustin is among the best I've worked with. He's great at what he does: knowledgeable, proactive, punctual, trustworthy… His workmanship, work ethic, and professionalism are excellent. A good handyman is hard to find so you'll be thrilled to know Dustin.</p>
+            <div class="review-author">
+              <div class="review-avatar">A</div>
+              <div class="review-author-info">
+                <strong>Anne Suri</strong>
+                <span>Google Review</span>
+              </div>
+              <div class="review-source">
+                <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Google
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 - Google -->
+        <div class="review-card">
+          <div class="review-inner">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Dustin was knowledgeable, professional and friendly. He worked with my schedule and kept me informed via texts of when he would arrive and his progress on the work being done. Reasonable rates and great work!</p>
+            <div class="review-author">
+              <div class="review-avatar">S</div>
+              <div class="review-author-info">
+                <strong>Susie Motooka</strong>
+                <span>Google Review</span>
+              </div>
+              <div class="review-source">
+                <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Google
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4 - Google -->
+        <div class="review-card">
+          <div class="review-inner">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Dustin was prompt, friendly, helpful, answered all my questions and even researched stuff for me. He serviced the tankless water heater and was great!</p>
+            <div class="review-author">
+              <div class="review-avatar">C</div>
+              <div class="review-author-info">
+                <strong>Christine Vega</strong>
+                <span>Google Review</span>
+              </div>
+              <div class="review-source">
+                <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Google
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 5 - Google -->
+        <div class="review-card">
+          <div class="review-inner">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">We had Dustin come to our house &amp; gave our tankless water heater a check up &amp; flushed the system. We kept his information to have him come back when it's needed again. Very reasonably priced too!</p>
+            <div class="review-author">
+              <div class="review-avatar">J</div>
+              <div class="review-author-info">
+                <strong>J J</strong>
+                <span>Google Review</span>
+              </div>
+              <div class="review-source">
+                <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Google
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 6 - Google -->
+        <div class="review-card">
+          <div class="review-inner">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">GREAT JOB! He was fast, professional, polite and friendly.</p>
+            <div class="review-author">
+              <div class="review-avatar">R</div>
+              <div class="review-author-info">
+                <strong>Ryan Forse</strong>
+                <span>Google Review</span>
+              </div>
+              <div class="review-source">
+                <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Google
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 7 - Google -->
+        <div class="review-card">
+          <div class="review-inner">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Dustin Swad of Ultra Home Repair replaced 5 faucets for me, changed out a thermostat, and flushed our tankless water heater. He did a great job, was professional, gave me a great price, and I will definitely hire him again in the future!</p>
+            <div class="review-author">
+              <div class="review-avatar">L</div>
+              <div class="review-author-info">
+                <strong>Laura Warren</strong>
+                <span>Google Review</span>
+              </div>
+              <div class="review-source">
+                <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Google
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 8 - Google -->
+        <div class="review-card">
+          <div class="review-inner">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Dustin recently descaled my tankless water heater. He does a very clean and thorough job. I can highly recommend him.</p>
+            <div class="review-author">
+              <div class="review-avatar">H</div>
+              <div class="review-author-info">
+                <strong>Hans Schmutz</strong>
+                <span>Google Review · Irvine</span>
+              </div>
+              <div class="review-source">
+                <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Google
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 9 - Google -->
+        <div class="review-card">
+          <div class="review-inner">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Dustin did a great job with our tankless hot water flush out. I watched him do the procedure and he totally knew exactly what he was doing. It went without a problem and his rate for the job was a very good one. I would recommend him for his construction services.</p>
+            <div class="review-author">
+              <div class="review-avatar">J</div>
+              <div class="review-author-info">
+                <strong>Jeff Arnold</strong>
+                <span>Google Review</span>
+              </div>
+              <div class="review-source">
+                <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Google
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 10 - Nextdoor -->
+        <div class="review-card">
+          <div class="review-inner">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Everybody NEEDS to use this handyman. I was just amazed at how professional, efficient, and pleasant Dustin is. And, as an added bonus, his estimates came in significantly lower than those I received from others. I hired him to help me assemble furniture from Wayfair that was way too heavy for me to tackle by myself. I'm SO happy I did — I'm sure it's a lot more stable and attractive than what I could put together myself. His webpage shows that he is multi-talented and I've already asked him for quotes on other projects. I look forward to working with him again!</p>
+            <div class="review-author">
+              <div class="review-avatar">S</div>
+              <div class="review-author-info">
+                <strong>Susan Emery</strong>
+                <span>Nextdoor · Laguna Woods Village East</span>
+              </div>
+              <div class="review-source">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                Nextdoor
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 11 - Nextdoor -->
+        <div class="review-card">
+          <div class="review-inner">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Really nice and reliable handyman, who will work with you and be upfront, fair and honest about costs. Highly competent, highly recommend.</p>
+            <div class="review-author">
+              <div class="review-avatar">A</div>
+              <div class="review-author-info">
+                <strong>Anh Lilly</strong>
+                <span>Nextdoor · Northwood Pointe</span>
+              </div>
+              <div class="review-source">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                Nextdoor
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 12 - Nextdoor -->
+        <div class="review-card">
+          <div class="review-inner">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Dustin was able to help me with a few things around the house. He was on time and very accommodating and flexible. Highly recommended!</p>
+            <div class="review-author">
+              <div class="review-avatar">M</div>
+              <div class="review-author-info">
+                <strong>Michael C.</strong>
+                <span>Nextdoor · Cypress Village</span>
+              </div>
+              <div class="review-source">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                Nextdoor
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 13 - Nextdoor -->
+        <div class="review-card">
+          <div class="review-inner">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">I want to give a shout out to Dustin at Ultra Home Repair. He came over after giving me an estimate ahead of time of the work I needed done. He replaced outdoor lighting and hung 2 wall iron decor into stucco off my patio. If you need work done I highly recommend Ultra Home Repair.</p>
+            <div class="review-author">
+              <div class="review-avatar">L</div>
+              <div class="review-author-info">
+                <strong>Linda P.</strong>
+                <span>Nextdoor · Anaheim</span>
+              </div>
+              <div class="review-source">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                Nextdoor
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /carousel-track -->
+    </div>
+
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="prevBtn" aria-label="Previous review">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="carousel-dots" id="carouselDots">
+        <div class="dot active" data-index="0"></div>
+        <div class="dot" data-index="1"></div>
+        <div class="dot" data-index="2"></div>
+        <div class="dot" data-index="3"></div>
+        <div class="dot" data-index="4"></div>
+        <div class="dot" data-index="5"></div>
+        <div class="dot" data-index="6"></div>
+        <div class="dot" data-index="7"></div>
+        <div class="dot" data-index="8"></div>
+        <div class="dot" data-index="9"></div>
+        <div class="dot" data-index="10"></div>
+        <div class="dot" data-index="11"></div>
+        <div class="dot" data-index="12"></div>
+      </div>
+      <button class="carousel-btn" id="nextBtn" aria-label="Next review">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section class="section section-alt" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content">
+        <div class="section-label">About Ultra Home Repair</div>
+        <h2 class="section-title">Your Neighbor. Your Handyman.</h2>
+        <p class="section-subtitle">Since 2009, I've been fixing, renovating, and improving homes — from quick touch-ups to major renovations. I've flipped houses, managed dozens of renovations, and worked for a large home renovation firm.</p>
+        <p class="section-subtitle">I started Ultra Home Repair after seeing how often homeowners needed one trusted source who could handle a wide range of repairs without the high general contractor pricing. By doing the work myself, I eliminate contractor markups, delivering transparent pricing, dependable scheduling, and quality repairs.</p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="about-stat-value">15+</span>
+            <span class="about-stat-label">Years Experience</span>
+          </div>
+          <div class="about-stat about-stat-badge">
+            <img src="Nextdoor_Neighborhood_Fave.jpeg" alt="2025 Nextdoor Neighborhood Fave" style="width:100%;height:auto;object-fit:contain;" />
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-value">5.0</span>
+            <span class="about-stat-label">Google Rating</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-image-wrap">
+        <div class="about-image-frame">
+          <img src="Dustin_Irvine_Kitchen.jpeg" alt="Dustin Swad — Owner, Ultra Home Repair" />
+          <div class="about-badge">
+            <span class="about-badge-name">Dustin Swad</span>
+            <span class="about-badge-title">Owner — Ultra Home Repair</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div>
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="Ultra Home Repair" />
+        </div>
+        <p class="footer-about">Professional handyman services in Irvine and Orange County. Trusted by homeowners and Realtors throughout Irvine, Newport Beach, Corona Del Mar, Laguna Beach, Lake Forest, and all of Orange County.</p>
+        <div class="footer-social">
+          <a href="https://share.google/qhuI73fJBqeY8x6Mu" target="_blank" rel="noopener" class="social-link" aria-label="Google">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </a>
+          <a href="https://nextdoor.com/page/dustin-swad-irvine-ca/" target="_blank" rel="noopener" class="social-link" aria-label="Nextdoor">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/ultra_home_repair/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Menu -->
+      <div>
+        <div class="footer-heading">Menu</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="tankless-flush.html">Tankless Flush</a></li>
+          <li><a href="realtors.html">Realtors</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <div class="footer-heading">Services</div>
+        <ul class="footer-links">
+          <li><a href="services.html">Plumbing</a></li>
+          <li><a href="services.html">Electrical</a></li>
+          <li><a href="services.html">Painting &amp; Drywall</a></li>
+          <li><a href="services.html">Doors &amp; Hardware</a></li>
+          <li><a href="services.html">Fixtures &amp; Lighting</a></li>
+          <li><a href="realtors.html">Listing Prep</a></li>
+          <li><a href="tankless-flush.html">Tankless Flush</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div class="footer-heading">Contact Us</div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.63 4.4 2 2 0 0 1 3.6 2.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:9493716423" style="color:inherit;">(949) 371-6423</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <a href="sms:+19493716423" style="color:inherit;">Text for fast response</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/></svg>
+          <span>Woodbury, Irvine, CA<br/>Serving all of Orange County</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Mon–Sat: 8:00 AM – 6:00 PM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Ultra Home Repair. All rights reserved.</span>
+      <div class="footer-ratings">
+        <div class="rating-badge">
+          <span class="rating-badge-stars">★★★★★</span>
+          <span>5.0 Google</span>
+        </div>
+        <div class="rating-badge">
+          <svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.55)" width="14" height="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>15+ Yrs Experience</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     CAROUSEL JS
+============================================================ -->
+<script>
+  (function() {
+    const track = document.getElementById('carouselTrack');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = 13;
+    let current = 0;
+    let autoTimer;
+
+    function goTo(index) {
+      current = (index + totalSlides) % totalSlides;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    function startAuto() {
+      autoTimer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      startAuto();
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+    document.getElementById('prevBtn').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+    dots.forEach(d => {
+      d.addEventListener('click', () => { goTo(parseInt(d.dataset.index)); resetAuto(); });
+    });
+
+    startAuto();
+  })();
+</script>
+
+</body>
 </html>
