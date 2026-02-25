@@ -649,6 +649,7 @@
     .about-image-wrap {
       position: relative;
       isolation: isolate;
+      overflow: visible;
     }
     .about-image-frame {
       border-radius: var(--radius-lg);
@@ -666,14 +667,14 @@
     }
     .about-badge {
       position: absolute;
-      bottom: 20px;
-      left: 20px;
+      bottom: -20px;
+      left: -20px;
       background: var(--orange);
       color: white;
       border-radius: var(--radius);
       padding: 18px 24px;
       box-shadow: var(--shadow-md);
-      z-index: 2;
+      z-index: 10;
     }
     .about-badge-name {
       font-size: 18px;
@@ -1366,7 +1367,7 @@
             <span class="about-stat-label">Years Experience</span>
           </div>
           <div class="about-stat about-stat-badge">
-            <img src="images/Nextdoor_Neighborhood_Fave.jpeg" alt="2025 Nextdoor Neighborhood Fave" style="width:100%;height:auto;object-fit:contain;" />
+            <img src="images/nextdoor-fave-2025-transparent.png" alt="2025 Nextdoor Neighborhood Fave" style="width:100%;height:auto;object-fit:contain;" />
           </div>
           <div class="about-stat">
             <span class="about-stat-value">5.0</span>
@@ -1377,10 +1378,10 @@
       <div class="about-image-wrap">
         <div class="about-image-frame">
           <img src="images/Dustin_Irvine_Kitchen.jpeg" alt="Dustin Swad — Owner, Ultra Home Repair" />
-          <div class="about-badge">
-            <span class="about-badge-name">Dustin Swad</span>
-            <span class="about-badge-title">Owner — Ultra Home Repair</span>
-          </div>
+        </div>
+        <div class="about-badge">
+          <span class="about-badge-name">Dustin Swad</span>
+          <span class="about-badge-title">Owner — Ultra Home Repair</span>
         </div>
       </div>
     </div>
