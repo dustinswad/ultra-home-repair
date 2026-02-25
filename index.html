@@ -665,17 +665,19 @@
       height: 520px;
       object-fit: cover;
       object-position: center top;
+      position: relative;
+      z-index: 1;
     }
     .about-badge {
       position: absolute;
-      bottom: -20px;
-      left: -20px;
+      bottom: 20px;
+      left: 20px;
       background: var(--orange);
       color: white;
       border-radius: var(--radius);
       padding: 18px 24px;
       box-shadow: var(--shadow-md);
-      z-index: 10;
+      z-index: 2;
     }
     .about-badge-name {
       font-size: 18px;
@@ -1380,10 +1382,10 @@
       <div class="about-image-wrap">
         <div class="about-image-frame">
           <img src="images/Dustin_Irvine_Kitchen.jpeg" alt="Dustin Swad — Owner, Ultra Home Repair" />
-        </div>
-        <div class="about-badge">
-          <span class="about-badge-name">Dustin Swad</span>
-          <span class="about-badge-title">Owner — Ultra Home Repair</span>
+          <div class="about-badge">
+            <span class="about-badge-name">Dustin Swad</span>
+            <span class="about-badge-title">Owner — Ultra Home Repair</span>
+          </div>
         </div>
       </div>
     </div>
