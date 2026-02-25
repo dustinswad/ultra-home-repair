@@ -283,9 +283,7 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 90px;
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 0 24px;
+  width: 100%;
 }
 .nav-logo img {
   height: 100px;
