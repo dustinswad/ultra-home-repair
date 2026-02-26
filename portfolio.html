@@ -1,412 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1THN08DG5P"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Handyman Project Photos | Irvine & Orange County | Ultra Home Repair</title>
+  <meta name="description" content="See Dustin's work — before & after photos, recent project gallery, and real results from handyman jobs across Irvine and Orange County. Plumbing, electrical, drywall, painting, and more." />
+  <link rel="canonical" href="https://ultrahomerepair.com/portfolio.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-        gtag('config', 'G-1THN08DG5P');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Work - Ultra Home Repair | Orange County Portfolio</title>
-    <meta name="description" content="See Ultra Home Repair's quality work across Orange County. Before/after photos, customer reviews, and professional handyman services showcase.">
-    <link rel="canonical" href="https://ultrahomerepair.com/portfolio.html">
-    <meta property="og:title" content="Our Work - Ultra Home Repair | Orange County Portfolio">
-    <meta property="og:description" content="See Ultra Home Repair's quality work across Orange County. Before/after photos, customer reviews, and professional handyman services showcase.">
-    <meta property="og:url" content="https://ultrahomerepair.com/portfolio.html">
-    <meta property="og:type" content="website">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=1753739600">
-    <link rel="icon" type="image/png" href="images/favicon.png">
+  <style>
+    :root {
+      --orange: #E05A2B;
+      --orange-dark: #c44d22;
+      --orange-light: #f97340;
+      --navy: #1E2D5F;
+      --navy-dark: #141f42;
+      --white: #ffffff;
+      --off-white: #F9F8F6;
+      --gray-100: #F3F2F0;
+      --gray-200: #E8E6E2;
+      --gray-400: #9B9690;
+      --gray-600: #6B6560;
+      --gray-800: #2E2B28;
+      --text: #1A1916;
+      --radius: 10px;
+      --radius-lg: 18px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 6px 24px rgba(0,0,0,0.12);
+      --shadow-lg: 0 16px 48px rgba(0,0,0,0.18);
+      --transition: 0.25s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 1.65; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 
-    <style>
-        /* Portfolio-specific styles */
-        .portfolio-section {
-            padding: 60px 0;
-        }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+    /* ── NAV ── */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid var(--gray-200); box-shadow: 0 1px 12px rgba(0,0,0,0.07); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 90px; }
+    .nav-logo img { height: 100px; width: auto; }
+    .nav-hamburger { display: none; }
+    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+    .nav-links a { font-size: 13.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-800); padding: 6px 12px; border-radius: 6px; transition: color var(--transition), background var(--transition); }
+    .nav-links a:hover { color: var(--orange); background: rgba(224,90,43,0.06); }
+    .nav-links a.active { color: var(--orange); border-bottom: 2px solid var(--orange); border-radius: 0; }
+    .nav-cta { display: flex; align-items: center; gap: 10px; background: var(--orange); color: white !important; padding: 10px 20px !important; border-radius: 8px !important; font-weight: 800 !important; transition: background var(--transition); white-space: nowrap; }
+    .nav-cta:hover { background: var(--orange-dark) !important; }
+    .nav-cta svg { width: 16px; height: 16px; flex-shrink: 0; }
 
-        .project-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    /* ── BUTTONS ── */
+    .btn { display: inline-flex; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.03em; padding: 16px 32px; border-radius: var(--radius); border: none; cursor: pointer; transition: all var(--transition); white-space: nowrap; }
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .btn-primary { background: var(--orange); color: white; }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
+    .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+    .btn-white { background: white; color: var(--orange); }
+    .btn-white:hover { background: var(--off-white); transform: translateY(-1px); }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-        }
+    /* ── SECTIONS ── */
+    .section { padding: 88px 0; }
+    .section-alt { background: var(--off-white); }
+    .section-navy { background: var(--navy); color: white; }
+    .section-center { text-align: center; }
+    .section-label { font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
+    .section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 900; line-height: 1.15; color: var(--navy); margin-bottom: 16px; }
+    .section-title.white { color: white; }
+    .section-subtitle { font-size: 17px; color: var(--gray-600); max-width: 620px; line-height: 1.7; }
+    .section-center .section-subtitle { margin: 0 auto; }
 
-        .project-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
+    /* ── HERO ── */
+    .hero { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, #2d3f78 100%); padding: 140px 0 100px; position: relative; overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(224,90,43,0.15) 0%, transparent 65%); }
+    .hero-content { position: relative; max-width: 720px; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 8px 18px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: white; margin-bottom: 28px; }
+    .hero-eyebrow span { color: var(--orange-light); }
+    .hero h1 { font-size: clamp(36px, 5.5vw, 62px); font-weight: 900; line-height: 1.1; color: white; margin-bottom: 20px; }
+    .hero h1 em { font-style: normal; color: var(--orange-light); display: block; }
+    .hero-desc { font-size: 17px; color: rgba(255,255,255,0.75); max-width: 560px; margin-bottom: 36px; line-height: 1.7; }
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
 
-        .project-info {
-            padding: 1.5rem;
-        }
+    /* ── TRUST BAR ── */
+    .trust-bar { background: var(--navy-dark); padding: 24px 0; }
+    .trust-bar-inner { display: flex; align-items: center; justify-content: space-between; }
+    .trust-item { display: flex; align-items: center; gap: 12px; color: white; flex: 1; justify-content: center; padding: 8px 16px; border-right: 1px solid rgba(255,255,255,0.12); }
+    .trust-item:last-child { border-right: none; }
+    .trust-item-icon { width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .trust-item-icon svg { width: 18px; height: 18px; color: rgba(255,255,255,0.7); }
+    .trust-item-text { font-size: 14px; font-weight: 700; line-height: 1.3; }
+    .trust-item-stars { color: #F5A623; font-size: 14px; letter-spacing: 1px; display: block; }
 
-        .project-info h3 {
-            color: var(--text-dark);
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
+    /* ── FILTER TABS ── */
+    .filter-bar { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 48px; }
+    .filter-btn { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; padding: 9px 20px; border-radius: 50px; border: 1.5px solid var(--gray-200); background: white; color: var(--gray-600); cursor: pointer; transition: all var(--transition); }
+    .filter-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .filter-btn.active { background: var(--orange); border-color: var(--orange); color: white; }
 
-        .project-info p {
-            color: var(--text-body);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
+    /* ── PROJECT GRID ── */
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .project-card { border-radius: var(--radius-lg); overflow: hidden; background: white; border: 1.5px solid var(--gray-200); transition: all var(--transition); cursor: pointer; }
+    .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
+    .project-card.hidden { display: none; }
+    .project-img { aspect-ratio: 4/3; overflow: hidden; background: var(--gray-100); }
+    .project-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease; }
+    .project-card:hover .project-img img { transform: scale(1.05); }
+    .project-body { padding: 20px 22px; }
+    .project-category { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+    .project-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
+    .project-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
 
-        .project-category {
-            background: var(--primary-color);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+    /* ── BEFORE/AFTER SLIDERS ── */
+    .ba-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 56px; }
+    .ba-card { border-radius: var(--radius-lg); overflow: hidden; background: white; border: 1.5px solid var(--gray-200); box-shadow: var(--shadow-sm); }
+    .ba-slider { position: relative; aspect-ratio: 4/3; overflow: hidden; cursor: col-resize; user-select: none; -webkit-user-select: none; background: var(--gray-100); }
+    .ba-after { position: absolute; inset: 0; }
+    .ba-after img { width: 100%; height: 100%; object-fit: cover; }
+    .ba-before { position: absolute; inset: 0; clip-path: inset(0 50% 0 0); transition: none; }
+    .ba-before img { width: 100%; height: 100%; object-fit: cover; }
+    .ba-divider { position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: white; box-shadow: 0 0 12px rgba(0,0,0,0.4); transform: translateX(-50%); pointer-events: none; z-index: 3; }
+    .ba-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; background: white; border-radius: 50%; box-shadow: 0 2px 16px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 4; }
+    .ba-handle svg { width: 20px; height: 20px; color: var(--navy); }
+    .ba-label-before, .ba-label-after { position: absolute; top: 14px; padding: 5px 12px; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 50px; z-index: 5; pointer-events: none; }
+    .ba-label-before { left: 14px; background: rgba(0,0,0,0.6); color: white; }
+    .ba-label-after { right: 14px; background: var(--orange); color: white; }
+    .ba-body { padding: 20px 22px; }
+    .ba-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .ba-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
 
-        /* Before/After Gallery */
-        .before-after-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+    /* ── CTA BAND ── */
+    .cta-band { background: var(--orange); padding: 64px 0; }
+    .cta-band-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .cta-band h2 { font-size: clamp(24px, 3.5vw, 36px); font-weight: 900; color: white; line-height: 1.2; }
+    .cta-band p { color: rgba(255,255,255,0.85); font-size: 16px; margin-top: 8px; max-width: 500px; }
+    .cta-band-btns { display: flex; gap: 16px; flex-wrap: wrap; flex-shrink: 0; }
 
-        .before-after-item {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
+    /* ── CAROUSEL ── */
+    .carousel { position: relative; overflow: hidden; margin-top: 16px; }
+    .carousel-track { display: flex; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .review-card { min-width: 100%; padding: 0 80px; }
+    .review-inner { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-lg); padding: 48px 52px; position: relative; }
+    .review-inner::before { content: '"'; position: absolute; top: 20px; left: 44px; font-size: 120px; line-height: 1; color: rgba(224,90,43,0.3); pointer-events: none; }
+    .review-stars { color: #FFB800; font-size: 20px; letter-spacing: 3px; margin-bottom: 18px; }
+    .review-text { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.9); margin-bottom: 28px; position: relative; z-index: 1; }
+    .review-author { display: flex; align-items: center; gap: 14px; }
+    .review-avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--orange-light)); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: white; flex-shrink: 0; }
+    .review-author-info strong { display: block; font-size: 15px; font-weight: 800; color: white; }
+    .review-author-info span { font-size: 13px; color: rgba(255,255,255,0.55); }
+    .review-source { margin-left: auto; display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.55); letter-spacing: 0.06em; text-transform: uppercase; }
+    .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; }
+    .carousel-btn { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background var(--transition); }
+    .carousel-btn:hover { background: var(--orange); border-color: var(--orange); }
+    .carousel-btn svg { width: 18px; height: 18px; }
+    .carousel-dots { display: flex; gap: 8px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: all var(--transition); }
+    .dot.active { background: var(--orange); width: 24px; border-radius: 4px; }
 
-        .ba-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            height: 300px;
-        }
+    /* ── LIGHTBOX ── */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; }
+    .lightbox.open { display: flex; }
+    .lightbox-inner { position: relative; max-width: 90vw; max-height: 90vh; }
+    .lightbox-img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: var(--radius); }
+    .lightbox-close { position: absolute; top: -48px; right: 0; background: none; border: none; color: white; cursor: pointer; font-size: 32px; line-height: 1; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+    .lightbox-caption { color: rgba(255,255,255,0.7); font-size: 13px; text-align: center; margin-top: 12px; font-weight: 600; }
+    .lightbox-prev, .lightbox-next { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; cursor: pointer; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background var(--transition); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+    .lightbox-prev:hover, .lightbox-next:hover { background: var(--orange); border-color: var(--orange); }
+    .lightbox-prev svg, .lightbox-next svg { width: 20px; height: 20px; }
 
-        .ba-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    /* ── FOOTER ── */
+    .footer { background: var(--navy-dark); color: rgba(255,255,255,0.75); padding: 72px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-logo { margin-bottom: 20px; }
+    .footer-logo img { height: 64px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
+    .footer-about { font-size: 13.5px; line-height: 1.7; margin-bottom: 24px; }
+    .footer-social { display: flex; gap: 10px; }
+    .social-link { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7); transition: all var(--transition); }
+    .social-link svg { width: 16px; height: 16px; }
+    .social-link:hover { background: var(--orange); color: white; }
+    .footer-heading { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 14px; color: rgba(255,255,255,0.65); transition: color var(--transition); }
+    .footer-links a:hover { color: white; }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; margin-bottom: 14px; }
+    .footer-contact-item svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px; color: var(--orange); }
+    .footer-contact-item a:hover { color: white; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; font-size: 13px; color: rgba(255,255,255,0.35); }
+    .footer-ratings { display: flex; align-items: center; gap: 20px; }
+    .rating-badge { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,0.5); }
+    .rating-badge-stars { color: #F5A623; font-size: 13px; }
 
-        .ba-labels {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background: #f8f9fa;
-        }
+    /* ── MOBILE NAV ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; border-top: 1px solid var(--gray-200); box-shadow: 0 8px 24px rgba(0,0,0,0.1); padding: 16px 0; gap: 0; z-index: 99; }
+      .nav-links.open li { width: 100%; }
+      .nav-links.open a { display: block; padding: 14px 24px; font-size: 16px; color: var(--navy); border-bottom: 1px solid var(--gray-100); }
+      .nav-links.open .nav-cta { margin: 12px 24px 4px; border-radius: var(--radius); text-align: center; justify-content: center; }
+      .nav-hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; background: none; border: none; cursor: pointer; padding: 4px; }
+      .nav-hamburger span { display: block; height: 2.5px; background: var(--navy); border-radius: 2px; transition: all 0.25s ease; transform-origin: center; }
+      .nav-hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+      .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+      .nav-hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+    }
 
-        .ba-label {
-            padding: 0.8rem;
-            text-align: center;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .ba-label.before {
-            background: #ffebee;
-            color: #c62828;
-        }
-
-        .ba-label.after {
-            background: #e8f5e8;
-            color: #2e7d32;
-        }
-
-        .ba-description {
-            padding: 1.5rem;
-            background: white !important;
-            background-color: #ffffff !important;
-        }
-
-        /* Reviews Section */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .review-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            position: relative;
-        }
-
-        .review-stars {
-            color: #ffd700;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .review-text {
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            color: var(--text-body);
-        }
-
-        .review-author {
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .review-source {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .quote-icon {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            font-size: 2rem;
-            color: var(--primary-color);
-            opacity: 0.3;
-        }
-
-        /* Service Categories */
-        .service-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-category-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service-category-card:hover {
-            transform: translateY(-3px);
-        }
-
-        .category-header {
-            background: var(--primary-color);
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .category-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .category-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            height: 200px;
-        }
-
-        .category-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Lightbox Styles */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            cursor: pointer;
-        }
-
-        .lightbox.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            margin: auto;
-            cursor: default;
-        }
-
-        .lightbox-image {
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 35px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .lightbox-close:hover {
-            color: #ff6b35;
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
-            padding: 16px;
-            user-select: none;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox-nav:hover {
-            background: rgba(255, 107, 53, 0.8);
-        }
-
-        .lightbox-prev {
-            left: -70px;
-        }
-
-        .lightbox-next {
-            right: -70px;
-        }
-
-        .lightbox-counter {
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 16px;
-        }
-
-        /* Make images clickable */
-        .project-image,
-        .ba-image {
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-
-        .project-image:hover,
-        .ba-image:hover {
-            opacity: 0.9;
-        }
-
-        @media (max-width: 768px) {
-            .before-after-container {
-                grid-template-columns: 1fr;
-            }
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            .lightbox-nav {
-                font-size: 20px;
-                width: 40px;
-                height: 40px;
-            }
-            .lightbox-prev {
-                left: 10px;
-            }
-            .lightbox-next {
-                right: 10px;
-            }
-            .lightbox-close {
-                top: 10px;
-                right: 10px;
-                font-size: 30px;
-            }
-        }
-    </style>
-
-    <!-- Hamburger CSS (inline, page-specific) -->
-    <style>
-        /* Button next to the Call pill */
-        .nav-toggle{
-            position: relative; width:40px; height:40px; border-radius:10px;
-            border:1px solid #eceff3; background:#fff; display:inline-flex;
-            align-items:center; justify-content:center; margin-left:8px; cursor:pointer;
-        }
-        .nav-toggle .bar{position:absolute; display:block; width:18px; height:2px; background:#111;
-            border-radius:2px; transition:transform .25s ease, opacity .2s ease, top .25s ease;}
-        .nav-toggle .bar:nth-child(1){top:12px}
-        .nav-toggle .bar:nth-child(2){top:19px}
-        .nav-toggle .bar:nth-child(3){top:26px}
-        .nav-toggle[aria-expanded="true"] .bar:nth-child(1){top:19px; transform:rotate(45deg)}
-        .nav-toggle[aria-expanded="true"] .bar:nth-child(2){opacity:0}
-        .nav-toggle[aria-expanded="true"] .bar:nth-child(3){top:19px; transform:rotate(-45deg)}
-
-        /* Off-canvas sheet */
-        .menu-backdrop{position:fixed; inset:0; background:rgba(0,0,0,.35); backdrop-filter:saturate(150%) blur(2px);
-            opacity:0; pointer-events:none; transition:opacity .25s ease; z-index:120}
-        .menu-backdrop.open{opacity:1; pointer-events:auto}
-        .mobile-menu{position:fixed; top:0; right:0; height:100dvh; width:min(82vw, 360px); background:#fff;
-            box-shadow:0 8px 24px rgba(0,0,0,.2); transform:translateX(100%); transition:transform .25s ease;
-            z-index:130; padding:16px 14px}
-        .mobile-menu.open{transform:translateX(0)}
-        .mobile-menu .menu-title{font-weight:800; color:#1f2640; margin:4px 2px 10px}
-        .mobile-menu .links{display:flex; flex-direction:column; gap:8px}
-        .mobile-menu .links a{display:block; padding:12px 10px; border:1px solid #eef0f3; border-radius:10px;
-            text-decoration:none; color:#111; font-weight:700}
-
-        /* Collapse desktop nav at smaller widths */
-        @media (max-width: 900px){
-            .nav-list{display:none}
-            .nav-toggle{display:inline-flex}
-        }
-    </style>
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .project-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .hero { padding: 120px 0 80px; clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%); }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+      .trust-bar-inner { flex-direction: column; gap: 16px; }
+      .trust-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; padding-bottom: 16px; justify-content: flex-start; }
+      .trust-item:last-child { border-bottom: none; }
+      .project-grid { grid-template-columns: 1fr; }
+      .ba-grid { grid-template-columns: 1fr; }
+      .review-card { padding: 0 16px; }
+      .review-inner { padding: 32px 28px; }
+      .cta-band-inner { flex-direction: column; text-align: center; }
+      .cta-band p { margin: 8px auto; }
+      .cta-band-btns { width: 100%; flex-direction: column; }
+      .cta-band-btns .btn { width: 100%; justify-content: center; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .lightbox-prev { left: 8px; }
+      .lightbox-next { right: 8px; }
+    }
+    @media (max-width: 560px) {
+      .hero h1 { font-size: 32px; }
+      .section-title { font-size: 26px; }
+    }
+  </style>
 </head>
 <body>
-<!-- ============================================================
-     NAVIGATION
-============================================================ -->
+
+<!-- NAV -->
 <nav class="nav">
   <div class="container nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Ultra Home Repair Home">
-      <img src="images/logo.png" alt="Ultra Home Repair" />
-    </a>
-    <ul class="nav-links">
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Ultra Home Repair" /></a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="realtors.html">Realtors</a></li>
@@ -423,586 +266,583 @@
   </div>
 </nav>
 
-    <!-- Page Header -->
-    <section style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.45) 100%), url('images/Hero background Large.jpeg') center/cover; background-attachment: fixed; min-height: 500px; display: flex; align-items: center; justify-content: center; padding: 40px 20px; padding-top: 112px; text-align: center; position: relative; overflow: hidden;">
-        <div class="container" style="z-index: 2; max-width: 800px;">
-            <h1 style="font-size: 56px; font-weight: 700; color: white; margin-bottom: 15px; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);">Our Work Portfolio</h1>
-            <p style="font-size: 18px; color: rgba(255,255,255,0.9); text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">See the quality and craftsmanship that Orange County trusts</p>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">📸 Real Work &nbsp;·&nbsp; <span>Real Results</span></div>
+      <h1>The Work Speaks<br><em>For Itself.</em></h1>
+      <p class="hero-desc">Browse recent projects and before & after transformations from jobs across Irvine and Orange County. Every photo is real — no stock images, no staging.</p>
+      <div class="hero-ctas">
+        <a href="sms:+19493716423" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Text for Fast Response
+        </a>
+        <a href="contact.html" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg>
+          Request a Quote
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Recent Projects Section -->
-    <section class="portfolio-section">
-        <div class="container">
-            <h2 class="section-title">Recent Projects</h2>
-            <p class="section-subtitle">Our latest completed work across Orange County</p>
-            
-            <div class="portfolio-grid">
-                <div class="project-card">
-                    <img src="images/Pendant installation 1 Large_1757210352442.jpeg" alt="Pendant light installation" class="project-image">
-                    <div class="project-info">
-                        <h3>Pendant Light Installation</h3>
-                        <p>Professional pendant light installation with proper electrical connections and mounting. Expert spacing and alignment for perfect kitchen lighting.</p>
-                        <span class="project-category">Electrical</span>
-                    </div>
-                </div>
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <div class="trust-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="trust-item-text"><span class="trust-item-stars">★★★★★</span>5.0 Google Rating</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+        <div class="trust-item-text">Winner 2025 Nextdoor<br>Neighborhood Fave</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="trust-item-text">15+ Years Experience</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="trust-item-text">Workmanship Warranty</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-                <div class="project-card">
-                    <img src="images/Chandelier Installation Large_1757210330481.jpeg" alt="Chandelier installation" class="project-image">
-                    <div class="project-info">
-                        <h3>Chandelier Installation</h3>
-                        <p>Professional chandelier installation with proper electrical connections and mounting. Expert handling of delicate fixtures with attention to detail.</p>
-                        <span class="project-category">Electrical</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/Ceiling fan after Large_1757210330480.jpeg" alt="Ceiling fan completed installation" class="project-image">
-                    <div class="project-info">
-                        <h3>Ceiling Fan Installation</h3>
-                        <p>Complete ceiling fan installation with proper mounting and electrical connections. Clean, professional installation with attention to safety and functionality.</p>
-                        <span class="project-category">Electrical</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/Closet system Large_1757210330481.jpeg" alt="Custom closet organization system" class="project-image">
-                    <div class="project-info">
-                        <h3>Closet Organization System</h3>
-                        <p>Custom closet system installation with adjustable shelving and hanging solutions. Maximizes storage space with professional organization design.</p>
-                        <span class="project-category">Carpentry</span>
-                    </div>
-                </div>
-
-
-                <div class="project-card">
-                    <img src="images/Garbage_disposal_install Large_1757210330483.jpeg" alt="Garbage disposal installation" class="project-image">
-                    <div class="project-info">
-                        <h3>Garbage Disposal Installation</h3>
-                        <p>Professional garbage disposal installation with proper electrical connections and plumbing. Efficient installation with clean-up and testing included.</p>
-                        <span class="project-category">Plumbing</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/furniture-assembly Large_1757210330483.jpeg" alt="Furniture assembly service" class="project-image">
-                    <div class="project-info">
-                        <h3>Furniture Assembly</h3>
-                        <p>Expert furniture assembly for heavy and complex pieces. Professional assembly ensures stability and proper construction for long-lasting use.</p>
-                        <span class="project-category">Assembly</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/TV_Mount Large_1757210352446.jpeg" alt="TV wall mount installation" class="project-image">
-                    <div class="project-info">
-                        <h3>TV Wall Mount Installation</h3>
-                        <p>Secure TV wall mounting with cable management for clean, professional appearance. Includes stud finding and proper bracket installation for safety.</p>
-                        <span class="project-category">Installation</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/light-switch Large_1757210352440.jpeg" alt="Light switch replacement" class="project-image">
-                    <div class="project-info">
-                        <h3>Light Switch Replacement</h3>
-                        <p>Modern light switch replacement with proper wiring and safety compliance. Clean installation with attention to detail and code requirements.</p>
-                        <span class="project-category">Electrical</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/post-inspection-repairs Large_1757210352444.jpeg" alt="Post-inspection repair work" class="project-image">
-                    <div class="project-info">
-                        <h3>Post-Inspection Repairs</h3>
-                        <p>Comprehensive post-inspection repair services for real estate transactions. Quick turnaround to help close deals on time with quality workmanship.</p>
-                        <span class="project-category">Repairs</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/Baseboard installation Large_1757211330891.jpeg" alt="Professional baseboard installation" class="project-image">
-                    <div class="project-info">
-                        <h3>Baseboard Installation</h3>
-                        <p>Professional baseboard installation with precision corner cuts and seamless joints. Clean finish work that enhances the room's overall appearance.</p>
-                        <span class="project-category">Carpentry</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/Baseboard corner before after Large_1757211463078.jpeg" alt="Baseboard corner repair work" class="project-image">
-                    <div class="project-info">
-                        <h3>Baseboard Repair</h3>
-                        <p>Expert baseboard corner repair with precision cuts and seamless matching. Professional repair work that restores the original appearance and functionality.</p>
-                        <span class="project-category">Repairs</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/Drywall Patch-texture and paint process Large_1757214762977.jpeg" alt="Drywall patch, texture, and paint project" class="project-image">
-                    <div class="project-info">
-                        <h3>Drywall Patch & Paint</h3>
-                        <p>Complete drywall repair with patch installation, texture matching, and professional paint finish. Seamless repair that blends perfectly with existing walls.</p>
-                        <span class="project-category">Repairs</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/leaky shower cartridge replacement Large_1757215085094.jpeg" alt="Shower cartridge replacement for leaky faucet" class="project-image">
-                    <div class="project-info">
-                        <h3>Shower Cartridge Replacement</h3>
-                        <p>Professional shower cartridge replacement to fix leaky faucet. Expert plumbing repair with proper sealing and testing for reliable water flow control.</p>
-                        <span class="project-category">Plumbing</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Before/After Section -->
-    <section class="portfolio-section section--light">
-        <div class="container">
-            <h2 class="section-title">Before & After Transformations</h2>
-            <p class="section-subtitle">See the dramatic improvements we deliver</p>
-            
-            <div class="before-after-container">
-                <div class="before-after-item">
-                    <div class="ba-images">
-                        <img src="images/compactor installation before Large_1757210330482.jpeg" alt="Before: Kitchen without compactor" class="ba-image">
-                        <img src="images/compactor installation after Large_1757210330481.jpeg" alt="After: Custom compactor installation" class="ba-image">
-                    </div>
-                    <div class="ba-labels">
-                        <div class="ba-label before">BEFORE</div>
-                        <div class="ba-label after">AFTER</div>
-                    </div>
-                    <div class="ba-description">
-                        <h3>Trash Compactor Installation</h3>
-                        <p>Professional installation of built-in trash compactor with custom cabinet modification. Seamless integration maintaining kitchen aesthetic with proper electrical connections.</p>
-                    </div>
-                </div>
-
-                <div class="before-after-item">
-                    <div class="ba-images">
-                        <img src="images/Fireplace before Large_1757210330483.jpeg" alt="Fireplace before renovation" class="ba-image">
-                        <img src="images/Fireplace After Large_1757210330482.jpeg" alt="Fireplace after renovation" class="ba-image">
-                    </div>
-                    <div class="ba-labels">
-                        <div class="ba-label before">BEFORE</div>
-                        <div class="ba-label after">AFTER</div>
-                    </div>
-                    <div class="ba-description">
-                        <h3>Fireplace Renovation</h3>
-                        <p>Complete fireplace transformation with modern updates and professional finishing. Dramatic improvement in both appearance and functionality.</p>
-                    </div>
-                </div>
-
-                <div class="before-after-item">
-                    <div class="ba-images">
-                        <img src="images/Grenada Kitchen Before Large_1757210330483.jpeg" alt="Kitchen before renovation" class="ba-image">
-                        <img src="images/Grenada Kitchen after Large_1757210330483.jpeg" alt="Kitchen after renovation" class="ba-image">
-                    </div>
-                    <div class="ba-labels">
-                        <div class="ba-label before">BEFORE</div>
-                        <div class="ba-label after">AFTER</div>
-                    </div>
-                    <div class="ba-description">
-                        <h3>Grenada Kitchen Remodel</h3>
-                        <p>Complete kitchen transformation with updated cabinets, countertops, and fixtures. Professional renovation delivered on time and within budget.</p>
-                    </div>
-                </div>
-
-                <div class="before-after-item">
-                    <div class="ba-images">
-                        <img src="images/Danubo Kitchen before Large_1757211001566.jpeg" alt="Danubo kitchen before renovation" class="ba-image">
-                        <img src="images/Danubo Kitchen After Large_1757210330482.jpeg" alt="Danubo kitchen after renovation" class="ba-image">
-                    </div>
-                    <div class="ba-labels">
-                        <div class="ba-label before">BEFORE</div>
-                        <div class="ba-label after">AFTER</div>
-                    </div>
-                    <div class="ba-description">
-                        <h3>Danubo Kitchen Transformation</h3>
-                        <p>Complete kitchen renovation with updated cabinets, countertops, and modern fixtures. Professional transformation that dramatically improved functionality and appeal.</p>
-                    </div>
-                </div>
-
-                <div class="before-after-item">
-                    <div class="ba-images">
-                        <img src="images/Rose Kitchen Before Large_1757210352445.jpeg" alt="Rose kitchen before renovation" class="ba-image">
-                        <img src="images/Rose Kitchen After Large_1757210352445.jpeg" alt="Rose kitchen after renovation" class="ba-image">
-                    </div>
-                    <div class="ba-labels">
-                        <div class="ba-label before">BEFORE</div>
-                        <div class="ba-label after">AFTER</div>
-                    </div>
-                    <div class="ba-description">
-                        <h3>Rose Kitchen Transformation</h3>
-                        <p>Complete kitchen renovation with modern updates, improved layout, and quality finishes. Total transformation for enhanced functionality and appeal.</p>
-                    </div>
-                </div>
-
-                <div class="before-after-item">
-                    <div class="ba-images">
-                        <img src="images/Rose bathroom before Large_1757210352444.jpeg" alt="Rose bathroom before renovation" class="ba-image">
-                        <img src="images/Rose Bathroom after Large_1757210352444.jpeg" alt="Rose bathroom after renovation" class="ba-image">
-                    </div>
-                    <div class="ba-labels">
-                        <div class="ba-label before">BEFORE</div>
-                        <div class="ba-label after">AFTER</div>
-                    </div>
-                    <div class="ba-description">
-                        <h3>Rose Bathroom Remodel</h3>
-                        <p>Full bathroom renovation with modern fixtures, updated finishes, and improved functionality. Professional quality installation and finishing work.</p>
-                    </div>
-                </div>
-
-                <div class="before-after-item">
-                    <div class="ba-images">
-                        <img src="images/LVP plank repair before Large_1757210352441.jpeg" alt="LVP flooring before repair" class="ba-image">
-                        <img src="images/LVP plank repair after Large_1757210352441.jpeg" alt="LVP flooring after repair" class="ba-image">
-                    </div>
-                    <div class="ba-labels">
-                        <div class="ba-label before">BEFORE</div>
-                        <div class="ba-label after">AFTER</div>
-                    </div>
-                    <div class="ba-description">
-                        <h3>LVP Plank Repair</h3>
-                        <p>Expert luxury vinyl plank repair with seamless color and pattern matching. Professional repair that makes damage completely invisible.</p>
-                    </div>
-                </div>
-
-                <div class="before-after-item">
-                    <div class="ba-images">
-                        <img src="images/Moldy caulk repair before Large_1757210352442.jpeg" alt="Moldy caulk before repair" class="ba-image">
-                        <img src="images/Moldy Caulk repair after Large_1757210352441.jpeg" alt="Clean caulk after repair" class="ba-image">
-                    </div>
-                    <div class="ba-labels">
-                        <div class="ba-label before">BEFORE</div>
-                        <div class="ba-label after">AFTER</div>
-                    </div>
-                    <div class="ba-description">
-                        <h3>Caulk Repair & Replacement</h3>
-                        <p>Complete caulk removal and replacement with mold-resistant materials. Clean, professional finishing for improved hygiene and appearance.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Customer Reviews Section -->
-    <section class="portfolio-section">
-        <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
-            <p class="section-subtitle">Real reviews from Nextdoor and satisfied customers</p>
-            
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"Everybody NEEDS to use this handyman. I was just amazed at how professional, efficient, and pleasant Dustin is. And, as an added bonus, his estimates came in significantly lower than those I received from others. I hired him to help me assemble furniture from Wayfair that was way too heavy for me to tackle by myself. I'm SO happy I did!"</p>
-                    <div class="review-author">Verified Customer</div>
-                    <div class="review-source"><a href="https://nextdoor.com/p/xcJpDK-Rrqw4?utm_source=share&extras=MTEzNTE3NjAz&ne_link_preview_links=&utm_campaign=1757209740953&share_action_id=80cf240f-49f4-49aa-a679-fa7f0bd2e057" target="_blank" style="color: #666; text-decoration: none;">Nextdoor Review →</a></div>
-                </div>
-
-                <div class="review-card">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"I was so fortunate to come across Dustin when I needed some home repair. He replaced all of my smoke alarms for me—and if you've ever had trouble with smoke alarms, it's not something you can ignore. I was especially impressed that Dustin was careful & perfect in everything he did, including cleaning up after he finished. It sure set my mind at ease!"</p>
-                    <div class="review-author">Verified Customer</div>
-                    <div class="review-source"><a href="https://nextdoor.com/p/BXKfG28HgWpP?utm_source=share&extras=MTEzNTE3NjAz&ne_link_preview_links=&utm_campaign=1757209793532&share_action_id=3a7440a4-78de-4e78-bc75-f8d7229d743a" target="_blank" style="color: #666; text-decoration: none;">Nextdoor Review →</a></div>
-                </div>
-
-                <div class="review-card">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"Really nice and reliable handyman, who will work with you and be upfront, fair and honest about costs. Highly competent, highly recommend."</p>
-                    <div class="review-author">Verified Customer</div>
-                    <div class="review-source"><a href="https://nextdoor.com/p/HTN-h6R5zcBT?utm_source=share&extras=MTEzNTE3NjAz&ne_link_preview_links=&utm_campaign=1757209914047&share_action_id=57a325c9-b708-45df-9637-1124bbae04f2" target="_blank" style="color: #666; text-decoration: none;">Nextdoor Review →</a></div>
-                </div>
-
-                <div class="review-card">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"HANDYMAN RECOMMENDATION: I hired Dustin of Ultra Home Repair to install these pendant lights and ceiling fans. Wanted to give him a shout out and provide his info for people to consider in future. He did great job, was super clean and conscientious about leaving everything clean, etc."</p>
-                    <div class="review-author">Verified Customer</div>
-                    <div class="review-source"><a href="https://nextdoor.com/p/G4TzFNngPT_6?utm_source=share&extras=MTEyMTEyMDY2&ne_link_preview_links=&utm_campaign=1757210117783&share_action_id=4d677acc-194b-4d68-b1ee-31ac65d57ff9" target="_blank" style="color: #666; text-decoration: none;">Nextdoor Review →</a></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Call to Action -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Ready to Start Your Project?</h2>
-            <p class="section-subtitle">Join our satisfied customers and experience the Ultra Home Repair difference</p>
-            <div style="text-align: center;">
-                <a href="contact.html" class="btn btn--primary" style="margin-right: 1rem;">Get Your Free Quote</a>
-                <a href="tel:9493716423" class="btn" style="background: transparent; border: 2px solid var(--primary-color); color: var(--primary-color);">Call (949) 371-6423</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-inner">
-                    <div class="footer-left">
-                        <p><strong>Ultra Home Repair</strong> &mdash; Professional handyman services in Orange County since 2009.</p>
-                        <p style="font-size: 0.9em; color: #aaa;">Serving Irvine neighborhoods including Woodbury, Orchard Hills, Great Park, Northwood, Portola Springs, Stonegate, Cypress Village &amp; Pavilion Park. Also serving Newport Beach, Newport Coast, Corona del Mar, Tustin, Lake Forest &amp; all of Orange County.</p>
-                        <p style="font-size: 0.85em; margin-top: 10px;">
-                            <a href="index.html" style="color:#ccc; text-decoration:none;">Home</a> &nbsp;|&nbsp;
-                            <a href="services.html" style="color:#ccc; text-decoration:none;">Services</a> &nbsp;|&nbsp;
-                            <a href="tankless-flush.html" style="color:#ccc; text-decoration:none;">Tankless Flush</a> &nbsp;|&nbsp;
-                            <a href="realtors.html" style="color:#ccc; text-decoration:none;">Realtors</a> &nbsp;|&nbsp;
-                            <a href="portfolio.html" style="color:#ccc; text-decoration:none;">Portfolio</a> &nbsp;|&nbsp;
-                            <a href="about.html" style="color:#ccc; text-decoration:none;">About</a> &nbsp;|&nbsp;
-                            <a href="contact.html" style="color:#ccc; text-decoration:none;">Contact</a>
-                        </p>
-                        <p style="font-size: 0.9em; color: #888;">&copy; 2025 Ultra Home Repair. All rights reserved.</p>
-                    </div>
-                    <div class="footer-right">
-                        <p><a href="tel:+19493716423">(949) 371-6423</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-        <div class="lightbox-content">
-            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-img" class="lightbox-image" alt="Full size image">
-            <div class="lightbox-nav lightbox-prev" onclick="changeImage(-1); event.stopPropagation();" style="display: none;">&#10094;</div>
-            <div class="lightbox-nav lightbox-next" onclick="changeImage(1); event.stopPropagation();" style="display: none;">&#10095;</div>
-            <div class="lightbox-counter" id="lightbox-counter" style="display: none;"></div>
-        </div>
+<!-- PROJECT GALLERY -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-center">
+      <div class="section-label">Recent Work</div>
+      <h2 class="section-title">Project Gallery</h2>
+      <p class="section-subtitle" style="margin:0 auto 40px;">Click any photo to view full size. Filter by service type below.</p>
     </div>
 
-    <script>
-        let currentGallery = [];
-        let currentIndex = 0;
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="electrical">Electrical</button>
+      <button class="filter-btn" data-filter="plumbing">Plumbing</button>
+      <button class="filter-btn" data-filter="carpentry">Carpentry</button>
+      <button class="filter-btn" data-filter="repairs">Repairs</button>
+      <button class="filter-btn" data-filter="installation">Installation</button>
+      <button class="filter-btn" data-filter="assembly">Assembly</button>
+    </div>
 
-        function openLightbox(imageSrc, gallery = null, index = 0) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const prevBtn = document.querySelector('.lightbox-prev');
-            const nextBtn = document.querySelector('.lightbox-next');
-            const counter = document.getElementById('lightbox-counter');
+    <div class="project-grid" id="projectGrid">
 
-            if (gallery) {
-                currentGallery = gallery;
-                currentIndex = index;
-                lightboxImg.src = currentGallery[currentIndex];
-                
-                // Show navigation and counter for galleries
-                if (currentGallery.length > 1) {
-                    prevBtn.style.display = 'flex';
-                    nextBtn.style.display = 'flex';
-                    counter.style.display = 'block';
-                    counter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
-                } else {
-                    prevBtn.style.display = 'none';
-                    nextBtn.style.display = 'none';
-                    counter.style.display = 'none';
-                }
-            } else {
-                // Single image
-                currentGallery = [];
-                lightboxImg.src = imageSrc;
-                prevBtn.style.display = 'none';
-                nextBtn.style.display = 'none';
-                counter.style.display = 'none';
-            }
+      <div class="project-card" data-category="electrical" data-img="images/Pendant installation 1 Large_1757210352442.jpeg" data-title="Pendant Light Installation">
+        <div class="project-img"><img src="images/Pendant installation 1 Large_1757210352442.jpeg" alt="Pendant light installation" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Electrical</div>
+          <div class="project-title">Pendant Light Installation</div>
+          <div class="project-desc">Expert spacing, alignment, and wiring for perfect kitchen pendant lighting.</div>
+        </div>
+      </div>
 
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+      <div class="project-card" data-category="electrical" data-img="images/Chandelier Installation Large_1757210330481.jpeg" data-title="Chandelier Installation">
+        <div class="project-img"><img src="images/Chandelier Installation Large_1757210330481.jpeg" alt="Chandelier installation" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Electrical</div>
+          <div class="project-title">Chandelier Installation</div>
+          <div class="project-desc">Careful handling of delicate fixtures with proper electrical connections and mounting.</div>
+        </div>
+      </div>
 
-        function closeLightbox(event = null) {
-            if (event && event.target.classList.contains('lightbox-content')) {
-                return; // Don't close if clicking on the image content
-            }
-            
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
-            currentGallery = [];
-            currentIndex = 0;
-        }
+      <div class="project-card" data-category="electrical" data-img="images/Ceiling fan after Large_1757210330480.jpeg" data-title="Ceiling Fan Installation">
+        <div class="project-img"><img src="images/Ceiling fan after Large_1757210330480.jpeg" alt="Ceiling fan installation" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Electrical</div>
+          <div class="project-title">Ceiling Fan Installation</div>
+          <div class="project-desc">Complete installation with proper mounting, wiring, and safety compliance.</div>
+        </div>
+      </div>
 
-        function changeImage(direction) {
-            if (currentGallery.length === 0) return;
+      <div class="project-card" data-category="electrical" data-img="images/light-switch Large_1757210352440.jpeg" data-title="Light Switch Replacement">
+        <div class="project-img"><img src="images/light-switch Large_1757210352440.jpeg" alt="Light switch replacement" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Electrical</div>
+          <div class="project-title">Light Switch Replacement</div>
+          <div class="project-desc">Modern switch replacement with clean installation and code compliance.</div>
+        </div>
+      </div>
 
-            currentIndex += direction;
+      <div class="project-card" data-category="carpentry" data-img="images/Closet system Large_1757210330481.jpeg" data-title="Closet Organization System">
+        <div class="project-img"><img src="images/Closet system Large_1757210330481.jpeg" alt="Custom closet organization system" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Carpentry</div>
+          <div class="project-title">Closet Organization System</div>
+          <div class="project-desc">Custom system with adjustable shelving and hanging solutions to maximize storage.</div>
+        </div>
+      </div>
 
-            if (currentIndex >= currentGallery.length) {
-                currentIndex = 0;
-            } else if (currentIndex < 0) {
-                currentIndex = currentGallery.length - 1;
-            }
+      <div class="project-card" data-category="carpentry" data-img="images/Baseboard installation Large_1757211330891.jpeg" data-title="Baseboard Installation">
+        <div class="project-img"><img src="images/Baseboard installation Large_1757211330891.jpeg" alt="Baseboard installation" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Carpentry</div>
+          <div class="project-title">Baseboard Installation</div>
+          <div class="project-desc">Precision corner cuts and seamless joints for a clean professional finish.</div>
+        </div>
+      </div>
 
-            const lightboxImg = document.getElementById('lightbox-img');
-            const counter = document.getElementById('lightbox-counter');
-            
-            lightboxImg.src = currentGallery[currentIndex];
-            counter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
-        }
+      <div class="project-card" data-category="plumbing" data-img="images/Garbage_disposal_install Large_1757210330483.jpeg" data-title="Garbage Disposal Installation">
+        <div class="project-img"><img src="images/Garbage_disposal_install Large_1757210330483.jpeg" alt="Garbage disposal installation" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Plumbing</div>
+          <div class="project-title">Garbage Disposal Installation</div>
+          <div class="project-desc">Full installation with proper electrical connections, plumbing, and testing.</div>
+        </div>
+      </div>
 
-        // Prevent lightbox content clicks from closing lightbox
-        document.addEventListener('DOMContentLoaded', function() {
-            const lightboxContent = document.querySelector('.lightbox-content');
-            if (lightboxContent) {
-                lightboxContent.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-            }
-        });
+      <div class="project-card" data-category="plumbing" data-img="images/leaky shower cartridge replacement Large_1757215085094.jpeg" data-title="Shower Cartridge Replacement">
+        <div class="project-img"><img src="images/leaky shower cartridge replacement Large_1757215085094.jpeg" alt="Shower cartridge replacement" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Plumbing</div>
+          <div class="project-title">Shower Cartridge Replacement</div>
+          <div class="project-desc">Fixed leaky faucet with cartridge replacement, proper sealing, and flow testing.</div>
+        </div>
+      </div>
 
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            const lightbox = document.getElementById('lightbox');
-            if (lightbox.classList.contains('active')) {
-                if (e.key === 'Escape') {
-                    closeLightbox();
-                } else if (e.key === 'ArrowLeft') {
-                    changeImage(-1);
-                } else if (e.key === 'ArrowRight') {
-                    changeImage(1);
-                }
-            }
-        });
+      <div class="project-card" data-category="repairs" data-img="images/post-inspection-repairs Large_1757210352444.jpeg" data-title="Post-Inspection Repairs">
+        <div class="project-img"><img src="images/post-inspection-repairs Large_1757210352444.jpeg" alt="Post-inspection repairs" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Repairs</div>
+          <div class="project-title">Post-Inspection Repairs</div>
+          <div class="project-desc">Quick turnaround on inspection repair lists to help real estate closings stay on schedule.</div>
+        </div>
+      </div>
 
-        // Add click handlers when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Handle project card images (single images)
-            const projectImages = document.querySelectorAll('.project-image');
-            projectImages.forEach(img => {
-                img.addEventListener('click', function() {
-                    openLightbox(this.src);
-                });
-            });
+      <div class="project-card" data-category="repairs" data-img="images/Baseboard corner before after Large_1757211463078.jpeg" data-title="Baseboard Corner Repair">
+        <div class="project-img"><img src="images/Baseboard corner before after Large_1757211463078.jpeg" alt="Baseboard corner repair" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Repairs</div>
+          <div class="project-title">Baseboard Corner Repair</div>
+          <div class="project-desc">Precision repair with seamless matching to restore the original appearance.</div>
+        </div>
+      </div>
 
-            // Handle before/after images (galleries)
-            const beforeAfterItems = document.querySelectorAll('.before-after-item');
-            beforeAfterItems.forEach(item => {
-                const images = item.querySelectorAll('.ba-image');
-                if (images.length > 0) {
-                    const gallery = Array.from(images).map(img => img.src);
-                    
-                    images.forEach((img, index) => {
-                        img.addEventListener('click', function() {
-                            openLightbox(null, gallery, index);
-                        });
-                    });
-                }
-            });
-        });
-    </script>
+      <div class="project-card" data-category="repairs" data-img="images/Drywall Patch-texture and paint process Large_1757214762977.jpeg" data-title="Drywall Patch & Paint">
+        <div class="project-img"><img src="images/Drywall Patch-texture and paint process Large_1757214762977.jpeg" alt="Drywall patch and paint" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Repairs</div>
+          <div class="project-title">Drywall Patch &amp; Paint</div>
+          <div class="project-desc">Full repair with texture matching and paint finish that blends seamlessly with existing walls.</div>
+        </div>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="project-card" data-category="installation" data-img="images/TV_Mount Large_1757210352446.jpeg" data-title="TV Wall Mount Installation">
+        <div class="project-img"><img src="images/TV_Mount Large_1757210352446.jpeg" alt="TV wall mount installation" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Installation</div>
+          <div class="project-title">TV Wall Mount Installation</div>
+          <div class="project-desc">Secure mounting with cable management for a clean, professional look.</div>
+        </div>
+      </div>
 
-    <!-- Hamburger JS (inline, page-specific) -->
-    <script>
-        (function(){
-            const btn = document.getElementById('nav-toggle') || document.querySelector('.nav-toggle');
-            if (btn && !btn.querySelector('.bar')) {
-                btn.innerHTML = '<span class="bar"></span><span class="bar"></span><span class="bar"></span>';
-                btn.setAttribute('aria-label','Open menu');
-                btn.setAttribute('aria-controls','mobile-menu');
-                btn.setAttribute('aria-expanded','false');
-            }
-            
-            let backdrop = document.getElementById('menu-backdrop');
-            if (!backdrop) {
-                backdrop = document.createElement('div');
-                backdrop.id = 'menu-backdrop';
-                backdrop.className = 'menu-backdrop';
-                backdrop.hidden = true;
-                document.body.appendChild(backdrop);
-            }
-            
-            let panel = document.getElementById('mobile-menu');
-            if (!panel) {
-                panel = document.createElement('nav');
-                panel.id = 'mobile-menu';
-                panel.className = 'mobile-menu';
-                panel.setAttribute('aria-hidden','true');
-                panel.innerHTML = '<div class="menu-title">Menu</div><div class="links"></div>';
-                document.body.appendChild(panel);
-            }
-            
-            const linksBox = panel.querySelector('.links');
-            const srcList = document.querySelector('.nav-list');
-            if (srcList && linksBox && !linksBox.children.length) {
-                const items = Array.from(srcList.querySelectorAll('a'));
-                linksBox.innerHTML = items.map(a => `<a href="${a.getAttribute('href')}">${a.textContent}</a>`).join('');
-            }
+      <div class="project-card" data-category="assembly" data-img="images/furniture-assembly Large_1757210330483.jpeg" data-title="Furniture Assembly">
+        <div class="project-img"><img src="images/furniture-assembly Large_1757210330483.jpeg" alt="Furniture assembly" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Assembly</div>
+          <div class="project-title">Furniture Assembly</div>
+          <div class="project-desc">Professional assembly of heavy and complex pieces for stability and longevity.</div>
+        </div>
+      </div>
 
-            function openMenu(){
-                if (!btn) return;
-                btn.setAttribute('aria-expanded','true');
-                panel.classList.add('open');
-                panel.setAttribute('aria-hidden','false');
-                backdrop.hidden = false;
-                backdrop.classList.add('open');
-                document.body.style.overflow = 'hidden';
-                const first = panel.querySelector('a'); 
-                first && first.focus();
-            }
-            
-            function closeMenu(){
-                if (!btn) return;
-                btn.setAttribute('aria-expanded','false');
-                panel.classList.remove('open');
-                panel.setAttribute('aria-hidden','true');
-                backdrop.classList.remove('open');
-                setTimeout(()=>{ backdrop.hidden = true; }, 200);
-                document.body.style.overflow = '';
-                btn.focus();
-            }
+    </div>
+  </div>
+</section>
 
-            btn && btn.addEventListener('click', () => {
-                const expanded = btn.getAttribute('aria-expanded') === 'true';
-                expanded ? closeMenu() : openMenu();
-            });
-            
-            backdrop && backdrop.addEventListener('click', closeMenu);
-            
-            document.addEventListener('keydown', (e)=>{
-                if(e.key === 'Escape' && btn && btn.getAttribute('aria-expanded') === 'true'){ 
-                    closeMenu(); 
-                }
-            });
-        })();
-    </script>
+<!-- BEFORE & AFTER -->
+<section class="section section-alt" id="before-after">
+  <div class="container">
+    <div class="section-center">
+      <div class="section-label">Before &amp; After</div>
+      <h2 class="section-title">Drag to Compare</h2>
+      <p class="section-subtitle" style="margin:0 auto 8px;">Slide the divider left or right on any photo to see the transformation.</p>
+    </div>
+
+    <div class="ba-grid">
+
+      <div class="ba-card">
+        <div class="ba-slider" data-ba>
+          <div class="ba-after"><img src="images/compactor installation after Large_1757210330481.jpeg" alt="After: Trash compactor installation" loading="lazy" /></div>
+          <div class="ba-before"><img src="images/compactor installation before Large_1757210330482.jpeg" alt="Before: Kitchen without compactor" loading="lazy" /></div>
+          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+          <span class="ba-label-before">Before</span>
+          <span class="ba-label-after">After</span>
+        </div>
+        <div class="ba-body">
+          <div class="ba-title">Trash Compactor Installation</div>
+          <div class="ba-desc">Custom cabinet modification for seamless built-in integration with proper electrical connections.</div>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-slider" data-ba>
+          <div class="ba-after"><img src="images/Fireplace After Large_1757210330482.jpeg" alt="After: Fireplace renovation" loading="lazy" /></div>
+          <div class="ba-before"><img src="images/Fireplace before Large_1757210330483.jpeg" alt="Before: Fireplace renovation" loading="lazy" /></div>
+          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+          <span class="ba-label-before">Before</span>
+          <span class="ba-label-after">After</span>
+        </div>
+        <div class="ba-body">
+          <div class="ba-title">Fireplace Renovation</div>
+          <div class="ba-desc">Complete transformation with modern updates and professional finishing work.</div>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-slider" data-ba>
+          <div class="ba-after"><img src="images/Grenada Kitchen after Large_1757210330483.jpeg" alt="After: Grenada kitchen remodel" loading="lazy" /></div>
+          <div class="ba-before"><img src="images/Grenada Kitchen Before Large_1757210330483.jpeg" alt="Before: Grenada kitchen" loading="lazy" /></div>
+          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+          <span class="ba-label-before">Before</span>
+          <span class="ba-label-after">After</span>
+        </div>
+        <div class="ba-body">
+          <div class="ba-title">Grenada Kitchen Remodel</div>
+          <div class="ba-desc">Full kitchen transformation — updated cabinets, countertops, and fixtures, on time and on budget.</div>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-slider" data-ba>
+          <div class="ba-after"><img src="images/Danubo Kitchen After Large_1757210330482.jpeg" alt="After: Danubo kitchen" loading="lazy" /></div>
+          <div class="ba-before"><img src="images/Danubo Kitchen before Large_1757211001566.jpeg" alt="Before: Danubo kitchen" loading="lazy" /></div>
+          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+          <span class="ba-label-before">Before</span>
+          <span class="ba-label-after">After</span>
+        </div>
+        <div class="ba-body">
+          <div class="ba-title">Danubo Kitchen Transformation</div>
+          <div class="ba-desc">Complete renovation with updated cabinets, countertops, and modern fixtures.</div>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-slider" data-ba>
+          <div class="ba-after"><img src="images/Rose Kitchen After Large_1757210352445.jpeg" alt="After: Rose kitchen" loading="lazy" /></div>
+          <div class="ba-before"><img src="images/Rose Kitchen Before Large_1757210352445.jpeg" alt="Before: Rose kitchen" loading="lazy" /></div>
+          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+          <span class="ba-label-before">Before</span>
+          <span class="ba-label-after">After</span>
+        </div>
+        <div class="ba-body">
+          <div class="ba-title">Rose Kitchen Transformation</div>
+          <div class="ba-desc">Modern updates and improved layout for enhanced functionality and curb appeal.</div>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-slider" data-ba>
+          <div class="ba-after"><img src="images/Rose Bathroom after Large_1757210352444.jpeg" alt="After: Rose bathroom" loading="lazy" /></div>
+          <div class="ba-before"><img src="images/Rose bathroom before Large_1757210352444.jpeg" alt="Before: Rose bathroom" loading="lazy" /></div>
+          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+          <span class="ba-label-before">Before</span>
+          <span class="ba-label-after">After</span>
+        </div>
+        <div class="ba-body">
+          <div class="ba-title">Rose Bathroom Remodel</div>
+          <div class="ba-desc">Full bathroom renovation with modern fixtures, updated finishes, and improved functionality.</div>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-slider" data-ba>
+          <div class="ba-after"><img src="images/LVP plank repair after Large_1757210352441.jpeg" alt="After: LVP repair" loading="lazy" /></div>
+          <div class="ba-before"><img src="images/LVP plank repair before Large_1757210352441.jpeg" alt="Before: LVP repair" loading="lazy" /></div>
+          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+          <span class="ba-label-before">Before</span>
+          <span class="ba-label-after">After</span>
+        </div>
+        <div class="ba-body">
+          <div class="ba-title">LVP Plank Repair</div>
+          <div class="ba-desc">Seamless luxury vinyl plank repair with invisible color and pattern matching.</div>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-slider" data-ba>
+          <div class="ba-after"><img src="images/Moldy Caulk repair after Large_1757210352441.jpeg" alt="After: Caulk repair" loading="lazy" /></div>
+          <div class="ba-before"><img src="images/Moldy caulk repair before Large_1757210352442.jpeg" alt="Before: Moldy caulk" loading="lazy" /></div>
+          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+          <span class="ba-label-before">Before</span>
+          <span class="ba-label-after">After</span>
+        </div>
+        <div class="ba-body">
+          <div class="ba-title">Caulk Repair &amp; Replacement</div>
+          <div class="ba-desc">Full caulk removal and mold-resistant replacement for improved hygiene and appearance.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner">
+      <div>
+        <h2>Ready to Start Your Project?</h2>
+        <p>Text or call for a free estimate. I'll respond same day — usually within a few hours.</p>
+      </div>
+      <div class="cta-band-btns">
+        <a href="sms:+19493716423" class="btn btn-white">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Text Dustin
+        </a>
+        <a href="contact.html" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg>
+          Get a Free Quote
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section class="section section-navy" id="reviews">
+  <div class="container">
+    <div class="section-center">
+      <div class="section-label">What Clients Say</div>
+      <h2 class="section-title white">Real Reviews from Real Clients</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.65);margin:0 auto 48px;">Verified Google and Nextdoor reviews from Orange County homeowners and Realtors.</p>
+    </div>
+    <div class="carousel">
+      <div class="carousel-track" id="carouselTrack">
+
+        <div class="review-card"><div class="review-inner">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">As a Realtor I know how important (and how difficult) it is to find an outstanding handyman, and Dustin is among the best I've worked with. Knowledgeable, proactive, punctual, trustworthy… His workmanship, work ethic, and professionalism are excellent. A good handyman is hard to find so you'll be thrilled to know Dustin.</p>
+          <div class="review-author">
+            <div class="review-avatar">A</div>
+            <div class="review-author-info"><strong>Anne Suri</strong><span>Realtor · Google Review</span></div>
+            <div class="review-source"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Google</div>
+          </div>
+        </div></div>
+
+        <div class="review-card"><div class="review-inner">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Dustin was extremely responsive to my messages and questions. He was able to finish installing a faucet, complete my painting, replace the bathroom fans and also swap out door knobs in good time. I appreciated his before/after pictures and his prompt responses. I would highly recommend him!</p>
+          <div class="review-author">
+            <div class="review-avatar">K</div>
+            <div class="review-author-info"><strong>Kavi Anand</strong><span>Google Review</span></div>
+            <div class="review-source"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Google</div>
+          </div>
+        </div></div>
+
+        <div class="review-card"><div class="review-inner">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Everybody NEEDS to use this handyman. I was just amazed at how professional, efficient, and pleasant Dustin is. His estimates came in significantly lower than those I received from others. His webpage shows that he is multi-talented and I've already asked him for quotes on other projects.</p>
+          <div class="review-author">
+            <div class="review-avatar">S</div>
+            <div class="review-author-info"><strong>Susan Emery</strong><span>Nextdoor · Laguna Woods Village East</span></div>
+            <div class="review-source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Nextdoor</div>
+          </div>
+        </div></div>
+
+        <div class="review-card"><div class="review-inner">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">I hired Dustin of Ultra Home Repair to install pendant lights and ceiling fans. Wanted to give him a shout out — he did a great job, was super clean and conscientious about leaving everything clean. Highly recommend!</p>
+          <div class="review-author">
+            <div class="review-avatar">A</div>
+            <div class="review-author-info"><strong>Anh Lilly</strong><span>Nextdoor · Northwood Pointe</span></div>
+            <div class="review-source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Nextdoor</div>
+          </div>
+        </div></div>
+
+        <div class="review-card"><div class="review-inner">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Dustin replaced 5 faucets for me, changed out a thermostat, and flushed our tankless water heater. He did a great job, was professional, gave me a great price, and I will definitely hire him again in the future!</p>
+          <div class="review-author">
+            <div class="review-avatar">L</div>
+            <div class="review-author-info"><strong>Laura Warren</strong><span>Google Review</span></div>
+            <div class="review-source"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Google</div>
+          </div>
+        </div></div>
+
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="prevBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="carousel-dots">
+        <div class="dot active" data-index="0"></div>
+        <div class="dot" data-index="1"></div>
+        <div class="dot" data-index="2"></div>
+        <div class="dot" data-index="3"></div>
+        <div class="dot" data-index="4"></div>
+      </div>
+      <button class="carousel-btn" id="nextBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="images/logo.png" alt="Ultra Home Repair" /></div>
+        <p class="footer-about">Professional handyman services in Irvine and Orange County. Trusted by homeowners and Realtors throughout Irvine, Newport Beach, Corona Del Mar, Laguna Beach, Lake Forest, and all of Orange County.</p>
+        <div class="footer-social">
+          <a href="https://share.google/qhuI73fJBqeY8x6Mu" target="_blank" rel="noopener" class="social-link" aria-label="Google"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></a>
+          <a href="https://nextdoor.com/page/dustin-swad-irvine-ca/" target="_blank" rel="noopener" class="social-link" aria-label="Nextdoor"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></a>
+          <a href="https://www.instagram.com/ultra_home_repair/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Menu</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="tankless-flush.html">Tankless Flush</a></li>
+          <li><a href="realtors.html">Realtors</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Services</div>
+        <ul class="footer-links">
+          <li><a href="services.html">Plumbing</a></li>
+          <li><a href="services.html">Electrical</a></li>
+          <li><a href="services.html">Painting &amp; Drywall</a></li>
+          <li><a href="services.html">Doors &amp; Hardware</a></li>
+          <li><a href="services.html">Fixtures &amp; Lighting</a></li>
+          <li><a href="realtors.html">Listing Prep</a></li>
+          <li><a href="tankless-flush.html">Tankless Flush</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Contact Us</div>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.63 4.4 2 2 0 0 1 3.6 2.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:9493716423" style="color:inherit;">(949) 371-6423</a></div>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><a href="sms:+19493716423" style="color:inherit;">Text for fast response</a></div>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/></svg><span>Woodbury, Irvine, CA<br>Serving all of Orange County</span></div>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon–Sat: 8:00 AM – 6:00 PM</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ultra Home Repair. All rights reserved.</span>
+      <div class="footer-ratings">
+        <div class="rating-badge"><span class="rating-badge-stars">★★★★★</span><span>5.0 Google</span></div>
+        <div class="rating-badge"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.55)" width="14" height="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>15+ Yrs Experience</span></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-prev" id="lbPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lbClose" aria-label="Close">✕</button>
+    <img class="lightbox-img" id="lbImg" src="" alt="" />
+    <div class="lightbox-caption" id="lbCaption"></div>
+  </div>
+  <button class="lightbox-next" id="lbNext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+</div>
+
+<script>
+  // ── NAV ──
+  const hamburger = document.getElementById('navHamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+    navLinks.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', false);
+  }));
+
+  // ── FILTER ──
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      cards.forEach(c => {
+        c.classList.toggle('hidden', f !== 'all' && c.dataset.category !== f);
+      });
+    });
+  });
+
+  // ── LIGHTBOX ──
+  const visibleCards = () => [...cards].filter(c => !c.classList.contains('hidden'));
+  let lbIndex = 0;
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCaption');
+  function openLb(card) {
+    const visible = visibleCards();
+    lbIndex = visible.indexOf(card);
+    lbImg.src = card.dataset.img;
+    lbImg.alt = card.dataset.title;
+    lbCap.textContent = card.dataset.title;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function lbGo(dir) {
+    const visible = visibleCards();
+    lbIndex = (lbIndex + dir + visible.length) % visible.length;
+    const c = visible[lbIndex];
+    lbImg.src = c.dataset.img; lbImg.alt = c.dataset.title; lbCap.textContent = c.dataset.title;
+  }
+  cards.forEach(c => c.addEventListener('click', () => openLb(c)));
+  document.getElementById('lbClose').addEventListener('click', () => { lb.classList.remove('open'); document.body.style.overflow = ''; });
+  document.getElementById('lbPrev').addEventListener('click', () => lbGo(-1));
+  document.getElementById('lbNext').addEventListener('click', () => lbGo(1));
+  lb.addEventListener('click', e => { if (e.target === lb) { lb.classList.remove('open'); document.body.style.overflow = ''; } });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') { lb.classList.remove('open'); document.body.style.overflow = ''; }
+    if (e.key === 'ArrowLeft') lbGo(-1);
+    if (e.key === 'ArrowRight') lbGo(1);
+  });
+
+  // ── BEFORE/AFTER SLIDERS ──
+  document.querySelectorAll('[data-ba]').forEach(slider => {
+    const before = slider.querySelector('.ba-before');
+    const divider = slider.querySelector('.ba-divider');
+    let dragging = false;
+    function setPos(x) {
+      const rect = slider.getBoundingClientRect();
+      let pct = Math.min(Math.max((x - rect.left) / rect.width * 100, 0), 100);
+      before.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      divider.style.left = pct + '%';
+    }
+    slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); });
+    window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+    window.addEventListener('mouseup', () => { dragging = false; });
+    slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend', () => { dragging = false; });
+  });
+
+  // ── CAROUSEL ──
+  (function() {
+    const track = document.getElementById('carouselTrack');
+    const dots = document.querySelectorAll('.dot');
+    const total = 5;
+    let cur = 0, timer;
+    function goTo(i) {
+      cur = (i + total) % total;
+      track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+      dots.forEach((d, j) => d.classList.toggle('active', j === cur));
+    }
+    function start() { timer = setInterval(() => goTo(cur + 1), 5000); }
+    function reset() { clearInterval(timer); start(); }
+    document.getElementById('nextBtn').addEventListener('click', () => { goTo(cur + 1); reset(); });
+    document.getElementById('prevBtn').addEventListener('click', () => { goTo(cur - 1); reset(); });
+    dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); reset(); }));
+    start();
+  })();
+</script>
+
 </body>
 </html>
