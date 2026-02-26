@@ -116,17 +116,22 @@
     /* ── BEFORE/AFTER SLIDERS ── */
     .ba-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 56px; }
     .ba-card { border-radius: var(--radius-lg); overflow: hidden; background: white; border: 1.5px solid var(--gray-200); box-shadow: var(--shadow-sm); }
-    .ba-slider { position: relative; aspect-ratio: 4/3; overflow: hidden; cursor: col-resize; user-select: none; -webkit-user-select: none; background: var(--gray-100); }
+    .ba-slider { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--gray-100); }
     .ba-after { position: absolute; inset: 0; }
-    .ba-after img { width: 100%; height: 100%; object-fit: cover; }
-    .ba-before { position: absolute; inset: 0; clip-path: inset(0 50% 0 0); transition: none; }
-    .ba-before img { width: 100%; height: 100%; object-fit: cover; }
-    .ba-divider { position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: white; box-shadow: 0 0 12px rgba(0,0,0,0.4); transform: translateX(-50%); pointer-events: none; z-index: 3; }
-    .ba-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; background: white; border-radius: 50%; box-shadow: 0 2px 16px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 4; }
+    .ba-after img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; user-select: none; -webkit-user-drag: none; }
+    .ba-before { position: absolute; inset: 0 auto 0 0; width: 50%; overflow: hidden; }
+    .ba-before img { width: 100%; height: 100%; object-fit: cover; min-width: 200%; max-width: none; pointer-events: none; user-select: none; -webkit-user-drag: none; }
+    .ba-divider-line { position: absolute; top: 0; bottom: 0; width: 3px; background: white; box-shadow: 0 0 12px rgba(0,0,0,0.4); transform: translateX(-50%); pointer-events: none; z-index: 3; left: 50%; }
+    .ba-handle { position: absolute; top: 50%; width: 44px; height: 44px; background: white; border-radius: 50%; box-shadow: 0 2px 16px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 4; transform: translate(-50%, -50%); left: 50%; }
     .ba-handle svg { width: 20px; height: 20px; color: var(--navy); }
     .ba-label-before, .ba-label-after { position: absolute; top: 14px; padding: 5px 12px; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 50px; z-index: 5; pointer-events: none; }
     .ba-label-before { left: 14px; background: rgba(0,0,0,0.6); color: white; }
     .ba-label-after { right: 14px; background: var(--orange); color: white; }
+    .ba-range {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      opacity: 0; cursor: col-resize; z-index: 10;
+      -webkit-appearance: none; appearance: none; margin: 0;
+    }
     .ba-body { padding: 20px 22px; }
     .ba-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
     .ba-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
@@ -465,12 +470,13 @@
     <div class="ba-grid">
 
       <div class="ba-card">
-        <div class="ba-slider" data-ba>
-          <div class="ba-after"><img src="images/compactor installation after Large_1757210330481.jpeg" alt="After: Trash compactor installation" loading="lazy" /></div>
-          <div class="ba-before"><img src="images/compactor installation before Large_1757210330482.jpeg" alt="Before: Kitchen without compactor" loading="lazy" /></div>
-          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+        <div class="ba-slider">
+          <div class="ba-after"><img draggable="false" src="images/compactor installation after Large_1757210330481.jpeg" alt="After: Trash compactor installation" loading="lazy" /></div>
+          <div class="ba-before"><img draggable="false" src="images/compactor installation before Large_1757210330482.jpeg" alt="Before: Kitchen without compactor" loading="lazy" /></div>
+          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
           <span class="ba-label-before">Before</span>
           <span class="ba-label-after">After</span>
+          <input type="range" class="ba-range" min="0" max="100" value="50" />
         </div>
         <div class="ba-body">
           <div class="ba-title">Trash Compactor Installation</div>
@@ -479,12 +485,13 @@
       </div>
 
       <div class="ba-card">
-        <div class="ba-slider" data-ba>
-          <div class="ba-after"><img src="images/Fireplace After Large_1757210330482.jpeg" alt="After: Fireplace renovation" loading="lazy" /></div>
-          <div class="ba-before"><img src="images/Fireplace before Large_1757210330483.jpeg" alt="Before: Fireplace renovation" loading="lazy" /></div>
-          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+        <div class="ba-slider">
+          <div class="ba-after"><img draggable="false" src="images/Fireplace After Large_1757210330482.jpeg" alt="After: Fireplace renovation" loading="lazy" /></div>
+          <div class="ba-before"><img draggable="false" src="images/Fireplace before Large_1757210330483.jpeg" alt="Before: Fireplace renovation" loading="lazy" /></div>
+          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
           <span class="ba-label-before">Before</span>
           <span class="ba-label-after">After</span>
+          <input type="range" class="ba-range" min="0" max="100" value="50" />
         </div>
         <div class="ba-body">
           <div class="ba-title">Fireplace Renovation</div>
@@ -493,12 +500,13 @@
       </div>
 
       <div class="ba-card">
-        <div class="ba-slider" data-ba>
-          <div class="ba-after"><img src="images/Grenada Kitchen after Large_1757210330483.jpeg" alt="After: Grenada kitchen remodel" loading="lazy" /></div>
-          <div class="ba-before"><img src="images/Grenada Kitchen Before Large_1757210330483.jpeg" alt="Before: Grenada kitchen" loading="lazy" /></div>
-          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+        <div class="ba-slider">
+          <div class="ba-after"><img draggable="false" src="images/Grenada Kitchen after Large_1757210330483.jpeg" alt="After: Grenada kitchen remodel" loading="lazy" /></div>
+          <div class="ba-before"><img draggable="false" src="images/Grenada Kitchen Before Large_1757210330483.jpeg" alt="Before: Grenada kitchen" loading="lazy" /></div>
+          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
           <span class="ba-label-before">Before</span>
           <span class="ba-label-after">After</span>
+          <input type="range" class="ba-range" min="0" max="100" value="50" />
         </div>
         <div class="ba-body">
           <div class="ba-title">Grenada Kitchen Remodel</div>
@@ -507,12 +515,13 @@
       </div>
 
       <div class="ba-card">
-        <div class="ba-slider" data-ba>
-          <div class="ba-after"><img src="images/Danubo Kitchen After Large_1757210330482.jpeg" alt="After: Danubo kitchen" loading="lazy" /></div>
-          <div class="ba-before"><img src="images/Danubo Kitchen before Large_1757211001566.jpeg" alt="Before: Danubo kitchen" loading="lazy" /></div>
-          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+        <div class="ba-slider">
+          <div class="ba-after"><img draggable="false" src="images/Danubo Kitchen After Large_1757210330482.jpeg" alt="After: Danubo kitchen" loading="lazy" /></div>
+          <div class="ba-before"><img draggable="false" src="images/Danubo Kitchen before Large_1757211001566.jpeg" alt="Before: Danubo kitchen" loading="lazy" /></div>
+          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
           <span class="ba-label-before">Before</span>
           <span class="ba-label-after">After</span>
+          <input type="range" class="ba-range" min="0" max="100" value="50" />
         </div>
         <div class="ba-body">
           <div class="ba-title">Danubo Kitchen Transformation</div>
@@ -521,12 +530,13 @@
       </div>
 
       <div class="ba-card">
-        <div class="ba-slider" data-ba>
-          <div class="ba-after"><img src="images/Rose Kitchen After Large_1757210352445.jpeg" alt="After: Rose kitchen" loading="lazy" /></div>
-          <div class="ba-before"><img src="images/Rose Kitchen Before Large_1757210352445.jpeg" alt="Before: Rose kitchen" loading="lazy" /></div>
-          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+        <div class="ba-slider">
+          <div class="ba-after"><img draggable="false" src="images/Rose Kitchen After Large_1757210352445.jpeg" alt="After: Rose kitchen" loading="lazy" /></div>
+          <div class="ba-before"><img draggable="false" src="images/Rose Kitchen Before Large_1757210352445.jpeg" alt="Before: Rose kitchen" loading="lazy" /></div>
+          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
           <span class="ba-label-before">Before</span>
           <span class="ba-label-after">After</span>
+          <input type="range" class="ba-range" min="0" max="100" value="50" />
         </div>
         <div class="ba-body">
           <div class="ba-title">Rose Kitchen Transformation</div>
@@ -535,12 +545,13 @@
       </div>
 
       <div class="ba-card">
-        <div class="ba-slider" data-ba>
-          <div class="ba-after"><img src="images/Rose Bathroom after Large_1757210352444.jpeg" alt="After: Rose bathroom" loading="lazy" /></div>
-          <div class="ba-before"><img src="images/Rose bathroom before Large_1757210352444.jpeg" alt="Before: Rose bathroom" loading="lazy" /></div>
-          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+        <div class="ba-slider">
+          <div class="ba-after"><img draggable="false" src="images/Rose Bathroom after Large_1757210352444.jpeg" alt="After: Rose bathroom" loading="lazy" /></div>
+          <div class="ba-before"><img draggable="false" src="images/Rose bathroom before Large_1757210352444.jpeg" alt="Before: Rose bathroom" loading="lazy" /></div>
+          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
           <span class="ba-label-before">Before</span>
           <span class="ba-label-after">After</span>
+          <input type="range" class="ba-range" min="0" max="100" value="50" />
         </div>
         <div class="ba-body">
           <div class="ba-title">Rose Bathroom Remodel</div>
@@ -549,12 +560,13 @@
       </div>
 
       <div class="ba-card">
-        <div class="ba-slider" data-ba>
-          <div class="ba-after"><img src="images/LVP plank repair after Large_1757210352441.jpeg" alt="After: LVP repair" loading="lazy" /></div>
-          <div class="ba-before"><img src="images/LVP plank repair before Large_1757210352441.jpeg" alt="Before: LVP repair" loading="lazy" /></div>
-          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+        <div class="ba-slider">
+          <div class="ba-after"><img draggable="false" src="images/LVP plank repair after Large_1757210352441.jpeg" alt="After: LVP repair" loading="lazy" /></div>
+          <div class="ba-before"><img draggable="false" src="images/LVP plank repair before Large_1757210352441.jpeg" alt="Before: LVP repair" loading="lazy" /></div>
+          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
           <span class="ba-label-before">Before</span>
           <span class="ba-label-after">After</span>
+          <input type="range" class="ba-range" min="0" max="100" value="50" />
         </div>
         <div class="ba-body">
           <div class="ba-title">LVP Plank Repair</div>
@@ -563,12 +575,13 @@
       </div>
 
       <div class="ba-card">
-        <div class="ba-slider" data-ba>
-          <div class="ba-after"><img src="images/Moldy Caulk repair after Large_1757210352441.jpeg" alt="After: Caulk repair" loading="lazy" /></div>
-          <div class="ba-before"><img src="images/Moldy caulk repair before Large_1757210352442.jpeg" alt="Before: Moldy caulk" loading="lazy" /></div>
-          <div class="ba-divider"><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div></div>
+        <div class="ba-slider">
+          <div class="ba-after"><img draggable="false" src="images/Moldy Caulk repair after Large_1757210352441.jpeg" alt="After: Caulk repair" loading="lazy" /></div>
+          <div class="ba-before"><img draggable="false" src="images/Moldy caulk repair before Large_1757210352442.jpeg" alt="Before: Moldy caulk" loading="lazy" /></div>
+          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
           <span class="ba-label-before">Before</span>
           <span class="ba-label-after">After</span>
+          <input type="range" class="ba-range" min="0" max="100" value="50" />
         </div>
         <div class="ba-body">
           <div class="ba-title">Caulk Repair &amp; Replacement</div>
@@ -806,22 +819,18 @@
   });
 
   // ── BEFORE/AFTER SLIDERS ──
-  document.querySelectorAll('[data-ba]').forEach(slider => {
+  document.querySelectorAll('.ba-slider').forEach(slider => {
     const before = slider.querySelector('.ba-before');
-    const divider = slider.querySelector('.ba-divider');
-    let dragging = false;
-    function setPos(x) {
-      const rect = slider.getBoundingClientRect();
-      let pct = Math.min(Math.max((x - rect.left) / rect.width * 100, 0), 100);
-      before.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
-      divider.style.left = pct + '%';
+    const dividerLine = slider.querySelector('.ba-divider-line');
+    const handle = slider.querySelector('.ba-handle');
+    const range = slider.querySelector('.ba-range');
+    function setPos(val) {
+      before.style.width = val + '%';
+      dividerLine.style.left = val + '%';
+      handle.style.left = val + '%';
     }
-    slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); });
-    window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
-    window.addEventListener('mouseup', () => { dragging = false; });
-    slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('touchend', () => { dragging = false; });
+    range.addEventListener('input', () => setPos(range.value));
+    setPos(50);
   });
 
   // ── CAROUSEL ──
