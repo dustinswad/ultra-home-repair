@@ -3,12 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Handyman Project Photos | Irvine & Orange County | Ultra Home Repair</title>
-  <meta name="description" content="See Dustin's work — before & after photos, recent project gallery, and real results from handyman jobs across Irvine and Orange County. Plumbing, electrical, drywall, painting, and more." />
-  <link rel="canonical" href="https://ultrahomerepair.com/portfolio.html" />
+  <title>Tankless Water Heater Flush & Descaling | Irvine & Orange County | Ultra Home Repair</title>
+  <meta name="description" content="Professional tankless water heater flushing in Irvine and Orange County. Remove mineral buildup, restore efficiency, protect your warranty. Rinnai, Navien, Noritz, A.O. Smith. Text for fast scheduling." />
+  <link rel="canonical" href="https://ultrahomerepair.com/tankless-flush.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Tankless Water Heater Flush & Descaling",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Ultra Home Repair",
+      "telephone": "+19493716423",
+      "address": { "@type": "PostalAddress", "addressLocality": "Irvine", "addressRegion": "CA", "postalCode": "92620" }
+    },
+    "areaServed": ["Irvine", "Newport Beach", "Corona Del Mar", "Laguna Beach", "Lake Forest", "Orange County"],
+    "description": "Annual tankless water heater descaling and flushing service. Removes mineral buildup, restores efficiency, protects warranty. All major brands serviced.",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "13" }
+  }
+  </script>
 
   <style>
     :root {
@@ -17,6 +34,7 @@
       --orange-light: #f97340;
       --navy: #1E2D5F;
       --navy-dark: #141f42;
+      --navy-light: #2a3e7a;
       --white: #ffffff;
       --off-white: #F9F8F6;
       --gray-100: #F3F2F0;
@@ -29,7 +47,7 @@
       --radius-lg: 18px;
       --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
       --shadow-md: 0 6px 24px rgba(0,0,0,0.12);
-      --shadow-lg: 0 16px 48px rgba(0,0,0,0.18);
+      --shadow-lg: 0 16px 48px rgba(0,0,0,0.15);
       --transition: 0.25s ease;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -61,6 +79,8 @@
     .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
     .btn-white { background: white; color: var(--orange); }
     .btn-white:hover { background: var(--off-white); transform: translateY(-1px); }
+    .btn-navy { background: var(--navy); color: white; }
+    .btn-navy:hover { background: var(--navy-light); transform: translateY(-1px); box-shadow: var(--shadow-md); }
 
     /* ── SECTIONS ── */
     .section { padding: 88px 0; }
@@ -76,13 +96,16 @@
     /* ── HERO ── */
     .hero { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, #2d3f78 100%); padding: 140px 0 100px; position: relative; overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
     .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(224,90,43,0.15) 0%, transparent 65%); }
-    .hero-content { position: relative; max-width: 720px; }
+    .hero-content { position: relative; max-width: 760px; }
     .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 8px 18px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: white; margin-bottom: 28px; }
     .hero-eyebrow span { color: var(--orange-light); }
-    .hero h1 { font-size: clamp(36px, 5.5vw, 62px); font-weight: 900; line-height: 1.1; color: white; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(36px, 5.5vw, 60px); font-weight: 900; line-height: 1.1; color: white; margin-bottom: 20px; }
     .hero h1 em { font-style: normal; color: var(--orange-light); display: block; }
-    .hero-desc { font-size: 17px; color: rgba(255,255,255,0.75); max-width: 560px; margin-bottom: 36px; line-height: 1.7; }
-    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-desc { font-size: 17px; color: rgba(255,255,255,0.75); max-width: 580px; margin-bottom: 36px; line-height: 1.7; }
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+    .hero-brands { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .hero-brands-label { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .brand-pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 50px; padding: 5px 14px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.7); }
 
     /* ── TRUST BAR ── */
     .trust-bar { background: var(--navy-dark); padding: 24px 0; }
@@ -94,47 +117,85 @@
     .trust-item-text { font-size: 14px; font-weight: 700; line-height: 1.3; }
     .trust-item-stars { color: #F5A623; font-size: 14px; letter-spacing: 1px; display: block; }
 
-    /* ── FILTER TABS ── */
-    .filter-bar { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 48px; }
-    .filter-btn { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; padding: 9px 20px; border-radius: 50px; border: 1.5px solid var(--gray-200); background: white; color: var(--gray-600); cursor: pointer; transition: all var(--transition); }
-    .filter-btn:hover { border-color: var(--orange); color: var(--orange); }
-    .filter-btn.active { background: var(--orange); border-color: var(--orange); color: white; }
+    /* ── PROBLEM / SOLUTION ── */
+    .ps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 56px; }
+    .ps-card { border-radius: var(--radius-lg); padding: 40px 36px; }
+    .ps-card.problem { background: #FEF2F0; border: 1.5px solid rgba(224,90,43,0.2); }
+    .ps-card.solution { background: var(--navy); color: white; }
+    .ps-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    .ps-icon { width: 48px; height: 48px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ps-card.problem .ps-icon { background: rgba(224,90,43,0.12); }
+    .ps-card.problem .ps-icon svg { color: var(--orange); }
+    .ps-card.solution .ps-icon { background: rgba(255,255,255,0.1); }
+    .ps-card.solution .ps-icon svg { color: white; }
+    .ps-icon svg { width: 24px; height: 24px; }
+    .ps-card h3 { font-size: 20px; font-weight: 900; }
+    .ps-card.problem h3 { color: var(--navy); }
+    .ps-card.solution h3 { color: white; }
+    .ps-card p { font-size: 15px; line-height: 1.75; margin-bottom: 20px; }
+    .ps-card.problem p { color: var(--gray-600); }
+    .ps-card.solution p { color: rgba(255,255,255,0.75); }
+    .ps-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .ps-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; font-weight: 600; line-height: 1.4; }
+    .ps-card.problem .ps-list li { color: var(--gray-800); }
+    .ps-card.solution .ps-list li { color: rgba(255,255,255,0.9); }
+    .ps-list li::before { content: ''; width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; margin-top: 1px; }
+    .ps-card.problem .ps-list li::before { background: rgba(224,90,43,0.15); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E05A2B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E"); background-size: 12px; background-repeat: no-repeat; background-position: center; }
+    .ps-card.solution .ps-list li::before { background: rgba(255,255,255,0.15); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); background-size: 12px; background-repeat: no-repeat; background-position: center; }
 
-    /* ── PROJECT GRID ── */
-    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .project-card { border-radius: var(--radius-lg); overflow: hidden; background: white; border: 1.5px solid var(--gray-200); transition: all var(--transition); cursor: pointer; }
-    .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
-    .project-card.hidden { display: none; }
-    .project-img { aspect-ratio: 4/3; overflow: hidden; background: var(--gray-100); }
-    .project-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease; }
-    .project-card:hover .project-img img { transform: scale(1.05); }
-    .project-body { padding: 20px 22px; }
-    .project-category { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
-    .project-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
-    .project-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+    /* ── PHOTO GRID ── */
+    .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
+    .photo-item { border-radius: var(--radius-lg); overflow: hidden; position: relative; aspect-ratio: 4/3; background: var(--gray-100); }
+    .photo-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .photo-item:hover img { transform: scale(1.04); }
+    .photo-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 16px; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%); color: white; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; }
 
-    /* ── BEFORE/AFTER SLIDERS ── */
-    .ba-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 56px; }
-    .ba-card { border-radius: var(--radius-lg); overflow: hidden; background: white; border: 1.5px solid var(--gray-200); box-shadow: var(--shadow-sm); }
-    .ba-slider { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--gray-100); }
-    .ba-after { position: absolute; inset: 0; }
-    .ba-after img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; user-select: none; -webkit-user-drag: none; }
-    .ba-before { position: absolute; inset: 0 auto 0 0; width: 50%; overflow: hidden; }
-    .ba-before img { width: 100%; height: 100%; object-fit: cover; min-width: 200%; max-width: none; pointer-events: none; user-select: none; -webkit-user-drag: none; }
-    .ba-divider-line { position: absolute; top: 0; bottom: 0; width: 3px; background: white; box-shadow: 0 0 12px rgba(0,0,0,0.4); transform: translateX(-50%); pointer-events: none; z-index: 3; left: 50%; }
-    .ba-handle { position: absolute; top: 50%; width: 44px; height: 44px; background: white; border-radius: 50%; box-shadow: 0 2px 16px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 4; transform: translate(-50%, -50%); left: 50%; }
-    .ba-handle svg { width: 20px; height: 20px; color: var(--navy); }
-    .ba-label-before, .ba-label-after { position: absolute; top: 14px; padding: 5px 12px; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 50px; z-index: 5; pointer-events: none; }
-    .ba-label-before { left: 14px; background: rgba(0,0,0,0.6); color: white; }
-    .ba-label-after { right: 14px; background: var(--orange); color: white; }
-    .ba-range {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      opacity: 0; cursor: col-resize; z-index: 10;
-      -webkit-appearance: none; appearance: none; margin: 0;
-    }
-    .ba-body { padding: 20px 22px; }
-    .ba-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
-    .ba-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+    /* ── STATS / BENEFITS ── */
+    .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; }
+    .benefit-card { background: white; border-radius: var(--radius-lg); padding: 32px 24px; border: 1.5px solid var(--gray-200); text-align: center; transition: all var(--transition); }
+    .benefit-card:hover { border-color: var(--orange); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .benefit-stat { font-size: 40px; font-weight: 900; color: var(--orange); line-height: 1; display: block; margin-bottom: 4px; }
+    .benefit-label { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 10px; display: block; }
+    .benefit-desc { font-size: 13px; color: var(--gray-600); line-height: 1.65; }
+    .benefit-icon { width: 52px; height: 52px; border-radius: var(--radius); background: rgba(224,90,43,0.08); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+    .benefit-icon svg { width: 26px; height: 26px; color: var(--orange); }
+
+    /* ── ABOUT DUSTIN ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .about-image-wrap { position: relative; }
+    .about-image-frame { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 3/4; background: var(--gray-200); min-height: 480px; position: relative; }
+    .about-image-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; position: relative; z-index: 1; }
+    .about-badge { position: absolute; bottom: 24px; left: 24px; background: var(--orange); color: white; border-radius: var(--radius); padding: 14px 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 10; backdrop-filter: blur(4px); }
+    .about-badge-name { font-size: 17px; font-weight: 900; display: block; }
+    .about-badge-title { font-size: 13px; font-weight: 600; opacity: 0.85; }
+    .about-accent { position: absolute; top: -16px; right: -16px; width: 120px; height: 120px; border-radius: var(--radius-lg); background: var(--orange); opacity: 0.12; z-index: -1; }
+    .about-content p { font-size: 16px; color: var(--gray-600); line-height: 1.8; margin-bottom: 20px; }
+    .about-content p strong { color: var(--navy); }
+    .about-checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 28px 0 32px; }
+    .about-checklist li { display: flex; align-items: center; gap: 12px; font-size: 14.5px; font-weight: 700; color: var(--navy); }
+    .about-checklist li::before { content: ''; width: 22px; height: 22px; border-radius: 50%; background: rgba(224,90,43,0.1); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E05A2B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); background-size: 12px; background-repeat: no-repeat; background-position: center; flex-shrink: 0; }
+    .nextdoor-banner { margin-top: 8px; border-radius: var(--radius); overflow: hidden; max-width: 320px; }
+    .nextdoor-banner img { width: 100%; height: auto; }
+
+    /* ── PROCESS STEPS ── */
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 56px; position: relative; }
+    .process-steps::before { content: ''; position: absolute; top: 32px; left: calc(12.5% + 16px); right: calc(12.5% + 16px); height: 2px; background: var(--gray-200); z-index: 0; }
+    .step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+    .step-number { width: 64px; height: 64px; border-radius: 50%; background: var(--orange); color: white; font-size: 22px; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; box-shadow: 0 4px 16px rgba(224,90,43,0.3); }
+    .step h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .step p { font-size: 14px; color: var(--gray-600); line-height: 1.65; }
+
+    /* ── TANKLESS REVIEWS (named) ── */
+    .tankless-reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .tankless-review-card { background: white; border-radius: var(--radius-lg); padding: 32px 28px; border: 1.5px solid var(--gray-200); transition: all var(--transition); }
+    .tankless-review-card:hover { border-color: var(--orange); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .tr-stars { color: #FFB800; font-size: 18px; letter-spacing: 2px; margin-bottom: 16px; }
+    .tr-text { font-size: 15px; line-height: 1.75; color: var(--gray-600); margin-bottom: 24px; font-style: italic; position: relative; }
+    .tr-text::before { content: '"'; font-size: 64px; color: rgba(224,90,43,0.12); font-style: normal; line-height: 1; position: absolute; top: -8px; left: -8px; }
+    .tr-author { display: flex; align-items: center; gap: 12px; }
+    .tr-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--orange-light)); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; color: white; flex-shrink: 0; }
+    .tr-author-name { font-size: 14px; font-weight: 800; color: var(--navy); display: block; }
+    .tr-author-meta { font-size: 12px; color: var(--gray-400); }
 
     /* ── CTA BAND ── */
     .cta-band { background: var(--orange); padding: 64px 0; }
@@ -163,19 +224,6 @@
     .carousel-dots { display: flex; gap: 8px; }
     .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: all var(--transition); }
     .dot.active { background: var(--orange); width: 24px; border-radius: 4px; }
-
-    /* ── LIGHTBOX ── */
-    .lightbox { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; }
-    .lightbox.open { display: flex; }
-    .lightbox-inner { position: relative; max-width: 90vw; max-height: 90vh; }
-    .lightbox-img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: var(--radius); }
-    .lightbox-close { position: absolute; top: -48px; right: 0; background: none; border: none; color: white; cursor: pointer; font-size: 32px; line-height: 1; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
-    .lightbox-caption { color: rgba(255,255,255,0.7); font-size: 13px; text-align: center; margin-top: 12px; font-weight: 600; }
-    .lightbox-prev, .lightbox-next { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; cursor: pointer; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background var(--transition); }
-    .lightbox-prev { left: 16px; }
-    .lightbox-next { right: 16px; }
-    .lightbox-prev:hover, .lightbox-next:hover { background: var(--orange); border-color: var(--orange); }
-    .lightbox-prev svg, .lightbox-next svg { width: 20px; height: 20px; }
 
     /* ── FOOTER ── */
     .footer { background: var(--navy-dark); color: rgba(255,255,255,0.75); padding: 72px 0 0; }
@@ -215,7 +263,8 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
-      .project-grid { grid-template-columns: repeat(2, 1fr); }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { gap: 40px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
@@ -226,8 +275,13 @@
       .trust-bar-inner { flex-direction: column; gap: 16px; }
       .trust-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; padding-bottom: 16px; justify-content: flex-start; }
       .trust-item:last-child { border-bottom: none; }
-      .project-grid { grid-template-columns: 1fr; }
-      .ba-grid { grid-template-columns: 1fr; }
+      .ps-grid { grid-template-columns: 1fr; }
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .process-steps::before { display: none; }
+      .tankless-reviews-grid { grid-template-columns: 1fr; }
       .review-card { padding: 0 16px; }
       .review-inner { padding: 32px 28px; }
       .cta-band-inner { flex-direction: column; text-align: center; }
@@ -236,12 +290,13 @@
       .cta-band-btns .btn { width: 100%; justify-content: center; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-      .lightbox-prev { left: 8px; }
-      .lightbox-next { right: 8px; }
     }
     @media (max-width: 560px) {
       .hero h1 { font-size: 32px; }
       .section-title { font-size: 26px; }
+      .photo-grid { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -258,7 +313,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="realtors.html">Realtors</a></li>
-      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li>
@@ -275,18 +330,28 @@
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-eyebrow">📸 Real Work &nbsp;·&nbsp; <span>Real Results</span></div>
-      <h1>The Work Speaks<br><em>For Itself.</em></h1>
-      <p class="hero-desc">Browse recent projects and before & after transformations from jobs across Irvine and Orange County. Every photo is real — no stock images, no staging.</p>
+      <div class="hero-eyebrow">
+        💧 Tankless Specialist &nbsp;·&nbsp; <span>Orange County Hard Water Expert</span>
+      </div>
+      <h1>Keep Your Tankless<br><em>Running Like New.</em></h1>
+      <p class="hero-desc">Orange County's hard water quietly destroys tankless water heaters from the inside. Annual flushing removes mineral buildup, restores efficiency, and keeps your warranty intact.</p>
       <div class="hero-ctas">
         <a href="sms:+19493716423" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Text for Fast Response
+          Text to Schedule
         </a>
-        <a href="contact.html" class="btn btn-outline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg>
-          Request a Quote
+        <a href="tel:9493716423" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.63 4.4 2 2 0 0 1 3.6 2.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (949) 371-6423
         </a>
+      </div>
+      <div class="hero-brands">
+        <span class="hero-brands-label">All major brands</span>
+        <span class="brand-pill">Rinnai</span>
+        <span class="brand-pill">Navien</span>
+        <span class="brand-pill">Noritz</span>
+        <span class="brand-pill">A.O. Smith</span>
+        <span class="brand-pill">Rheem</span>
       </div>
     </div>
   </div>
@@ -316,276 +381,246 @@
   </div>
 </div>
 
-<!-- PROJECT GALLERY -->
-<section class="section" id="projects">
+<!-- PROBLEM / SOLUTION -->
+<section class="section" id="why-flush">
   <div class="container">
     <div class="section-center">
-      <div class="section-label">Recent Work</div>
-      <h2 class="section-title">Project Gallery</h2>
-      <p class="section-subtitle" style="margin:0 auto 40px;">Click any photo to view full size. Filter by service type below.</p>
+      <div class="section-label">The Problem & The Fix</div>
+      <h2 class="section-title">Why Your Tankless Needs Annual Flushing</h2>
+      <p class="section-subtitle">Orange County's hard water is among the toughest in the nation. Here's what's happening inside your system right now — and what a flush does about it.</p>
     </div>
-
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="electrical">Electrical</button>
-      <button class="filter-btn" data-filter="plumbing">Plumbing</button>
-      <button class="filter-btn" data-filter="carpentry">Carpentry</button>
-      <button class="filter-btn" data-filter="repairs">Repairs</button>
-      <button class="filter-btn" data-filter="installation">Installation</button>
-      <button class="filter-btn" data-filter="assembly">Assembly</button>
-    </div>
-
-    <div class="project-grid" id="projectGrid">
-
-      <div class="project-card" data-category="electrical" data-img="images/Pendant installation 1 Large_1757210352442.jpeg" data-title="Pendant Light Installation">
-        <div class="project-img"><img src="images/Pendant installation 1 Large_1757210352442.jpeg" alt="Pendant light installation" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Electrical</div>
-          <div class="project-title">Pendant Light Installation</div>
-          <div class="project-desc">Expert spacing, alignment, and wiring for perfect kitchen pendant lighting.</div>
+    <div class="ps-grid">
+      <div class="ps-card problem">
+        <div class="ps-header">
+          <div class="ps-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3>Without Annual Flushing</h3>
         </div>
+        <p>Hard water minerals (calcium, magnesium) accumulate inside the heat exchanger, creating a thick layer of scale that gets worse every year.</p>
+        <ul class="ps-list">
+          <li>Reduced hot water flow &amp; pressure</li>
+          <li>Higher energy bills from lost efficiency</li>
+          <li>Strange popping or rumbling noises</li>
+          <li>Manufacturer warranty voided</li>
+          <li>Heat exchanger failure — up to $1,500 repair</li>
+          <li>Premature system replacement</li>
+        </ul>
       </div>
-
-      <div class="project-card" data-category="electrical" data-img="images/Chandelier Installation Large_1757210330481.jpeg" data-title="Chandelier Installation">
-        <div class="project-img"><img src="images/Chandelier Installation Large_1757210330481.jpeg" alt="Chandelier installation" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Electrical</div>
-          <div class="project-title">Chandelier Installation</div>
-          <div class="project-desc">Careful handling of delicate fixtures with proper electrical connections and mounting.</div>
+      <div class="ps-card solution">
+        <div class="ps-header">
+          <div class="ps-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>With Annual Flushing</h3>
         </div>
+        <p>A professional descaling flush clears the buildup before it causes damage — restoring performance and protecting your investment year after year.</p>
+        <ul class="ps-list">
+          <li>Hot water flow &amp; pressure fully restored</li>
+          <li>Energy efficiency back to factory levels</li>
+          <li>Quiet, reliable operation</li>
+          <li>Warranty requirements met &amp; documented</li>
+          <li>Heat exchanger protected from failure</li>
+          <li>System lifespan extended up to 20 years</li>
+        </ul>
       </div>
-
-      <div class="project-card" data-category="electrical" data-img="images/Ceiling fan after Large_1757210330480.jpeg" data-title="Ceiling Fan Installation">
-        <div class="project-img"><img src="images/Ceiling fan after Large_1757210330480.jpeg" alt="Ceiling fan installation" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Electrical</div>
-          <div class="project-title">Ceiling Fan Installation</div>
-          <div class="project-desc">Complete installation with proper mounting, wiring, and safety compliance.</div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="electrical" data-img="images/light-switch Large_1757210352440.jpeg" data-title="Light Switch Replacement">
-        <div class="project-img"><img src="images/light-switch Large_1757210352440.jpeg" alt="Light switch replacement" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Electrical</div>
-          <div class="project-title">Light Switch Replacement</div>
-          <div class="project-desc">Modern switch replacement with clean installation and code compliance.</div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="carpentry" data-img="images/Closet system Large_1757210330481.jpeg" data-title="Closet Organization System">
-        <div class="project-img"><img src="images/Closet system Large_1757210330481.jpeg" alt="Custom closet organization system" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Carpentry</div>
-          <div class="project-title">Closet Organization System</div>
-          <div class="project-desc">Custom system with adjustable shelving and hanging solutions to maximize storage.</div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="carpentry" data-img="images/Baseboard installation Large_1757211330891.jpeg" data-title="Baseboard Installation">
-        <div class="project-img"><img src="images/Baseboard installation Large_1757211330891.jpeg" alt="Baseboard installation" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Carpentry</div>
-          <div class="project-title">Baseboard Installation</div>
-          <div class="project-desc">Precision corner cuts and seamless joints for a clean professional finish.</div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="plumbing" data-img="images/Garbage_disposal_install Large_1757210330483.jpeg" data-title="Garbage Disposal Installation">
-        <div class="project-img"><img src="images/Garbage_disposal_install Large_1757210330483.jpeg" alt="Garbage disposal installation" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Plumbing</div>
-          <div class="project-title">Garbage Disposal Installation</div>
-          <div class="project-desc">Full installation with proper electrical connections, plumbing, and testing.</div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="plumbing" data-img="images/leaky shower cartridge replacement Large_1757215085094.jpeg" data-title="Shower Cartridge Replacement">
-        <div class="project-img"><img src="images/leaky shower cartridge replacement Large_1757215085094.jpeg" alt="Shower cartridge replacement" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Plumbing</div>
-          <div class="project-title">Shower Cartridge Replacement</div>
-          <div class="project-desc">Fixed leaky faucet with cartridge replacement, proper sealing, and flow testing.</div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="repairs" data-img="images/post-inspection-repairs Large_1757210352444.jpeg" data-title="Post-Inspection Repairs">
-        <div class="project-img"><img src="images/post-inspection-repairs Large_1757210352444.jpeg" alt="Post-inspection repairs" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Repairs</div>
-          <div class="project-title">Post-Inspection Repairs</div>
-          <div class="project-desc">Quick turnaround on inspection repair lists to help real estate closings stay on schedule.</div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="repairs" data-img="images/Baseboard corner before after Large_1757211463078.jpeg" data-title="Baseboard Corner Repair">
-        <div class="project-img"><img src="images/Baseboard corner before after Large_1757211463078.jpeg" alt="Baseboard corner repair" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Repairs</div>
-          <div class="project-title">Baseboard Corner Repair</div>
-          <div class="project-desc">Precision repair with seamless matching to restore the original appearance.</div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="repairs" data-img="images/Drywall Patch-texture and paint process Large_1757214762977.jpeg" data-title="Drywall Patch & Paint">
-        <div class="project-img"><img src="images/Drywall Patch-texture and paint process Large_1757214762977.jpeg" alt="Drywall patch and paint" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Repairs</div>
-          <div class="project-title">Drywall Patch &amp; Paint</div>
-          <div class="project-desc">Full repair with texture matching and paint finish that blends seamlessly with existing walls.</div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="installation" data-img="images/TV_Mount Large_1757210352446.jpeg" data-title="TV Wall Mount Installation">
-        <div class="project-img"><img src="images/TV_Mount Large_1757210352446.jpeg" alt="TV wall mount installation" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Installation</div>
-          <div class="project-title">TV Wall Mount Installation</div>
-          <div class="project-desc">Secure mounting with cable management for a clean, professional look.</div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="assembly" data-img="images/furniture-assembly Large_1757210330483.jpeg" data-title="Furniture Assembly">
-        <div class="project-img"><img src="images/furniture-assembly Large_1757210330483.jpeg" alt="Furniture assembly" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Assembly</div>
-          <div class="project-title">Furniture Assembly</div>
-          <div class="project-desc">Professional assembly of heavy and complex pieces for stability and longevity.</div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- BEFORE & AFTER -->
-<section class="section section-alt" id="before-after">
+<!-- REAL RESULTS PHOTOS -->
+<section class="section section-alt" id="results">
   <div class="container">
     <div class="section-center">
-      <div class="section-label">Before &amp; After</div>
-      <h2 class="section-title">Drag to Compare</h2>
-      <p class="section-subtitle" style="margin:0 auto 8px;">Slide the divider left or right on any photo to see the transformation.</p>
+      <div class="section-label">Real Results</div>
+      <h2 class="section-title">What We Pull Out of Orange County Homes</h2>
+      <p class="section-subtitle">Every photo is from an actual service call. This is what hard water does to an unflushed tankless system.</p>
     </div>
+    <div class="photo-grid">
+      <div class="photo-item">
+        <img src="images/flush-bucket-sediment.jpeg" alt="Heavy mineral sediment collected during tankless water heater flushing in Irvine" loading="lazy" />
+        <div class="photo-caption">Heavy Mineral Buildup — Before Flushing</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/inlet-filter-mineral-buildup.jpeg" alt="Inlet filter clogged with mineral buildup from Orange County hard water" loading="lazy" />
+        <div class="photo-caption">Clogged Inlet Filter</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/flush-bucket-after.jpeg" alt="Clean water after professional tankless water heater flushing" loading="lazy" />
+        <div class="photo-caption">Clean System — After Flushing</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/tankless-flush-before-after.jpeg" alt="Before and after tankless water heater flushing comparison" loading="lazy" />
+        <div class="photo-caption">System Cleaned &amp; Restored</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/flush-2-units.jpeg" alt="Dual tankless water heater flushing setup" loading="lazy" />
+        <div class="photo-caption">Professional Flushing Setup</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/tankless-flush-unit.jpeg" alt="Tankless water heater during professional service in Irvine" loading="lazy" />
+        <div class="photo-caption">Expert Maintenance &amp; Care</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="ba-grid">
-
-      <div class="ba-card">
-        <div class="ba-slider">
-          <div class="ba-after"><img draggable="false" src="images/compactor installation after Large_1757210330481.jpeg" alt="After: Trash compactor installation" loading="lazy" /></div>
-          <div class="ba-before"><img draggable="false" src="images/compactor installation before Large_1757210330482.jpeg" alt="Before: Kitchen without compactor" loading="lazy" /></div>
-          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
-          <span class="ba-label-before">Before</span>
-          <span class="ba-label-after">After</span>
-          <input type="range" class="ba-range" min="0" max="100" value="50" />
+<!-- BENEFITS / STATS -->
+<section class="section" id="benefits">
+  <div class="container">
+    <div class="section-center">
+      <div class="section-label">Why It Matters</div>
+      <h2 class="section-title">The Numbers Behind Annual Flushing</h2>
+      <p class="section-subtitle">Industry data on what regular maintenance does for your system.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <div class="ba-body">
-          <div class="ba-title">Trash Compactor Installation</div>
-          <div class="ba-desc">Custom cabinet modification for seamless built-in integration with proper electrical connections.</div>
+        <span class="benefit-stat">✓</span>
+        <span class="benefit-label">Warranty Protected</span>
+        <p class="benefit-desc">Navien, Rinnai, and other manufacturers require annual flushing to keep your warranty valid. Scale-related claims are denied without proof of maintenance.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <span class="benefit-stat">100%</span>
+        <span class="benefit-label">Peak Performance Restored</span>
+        <p class="benefit-desc">If your water isn't as hot as it used to be, scale is likely the cause. A flush can restore your temperature to day-one levels without replacing the unit.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <span class="benefit-stat">20 yrs</span>
+        <span class="benefit-label">Extended Lifespan</span>
+        <p class="benefit-desc">Regular flushing can extend the lifespan of your tankless water heater by up to 20 years — compared to 8–12 years without maintenance.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <span class="benefit-stat">$1,500</span>
+        <span class="benefit-label">Repairs Prevented</span>
+        <p class="benefit-desc">Scale buildup is the leading cause of heat exchanger failure — a $1,500+ repair. A $200 annual flush is one of the best investments in your home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT DUSTIN -->
+<section class="section section-alt" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap">
+        <div class="about-image-frame">
+          <img src="images/flush-dustin.jpeg" alt="Dustin performing tankless water heater flushing in Irvine, Orange County" />
+          <div class="about-badge">
+            <span class="about-badge-name">Dustin Swad</span>
+            <span class="about-badge-title">Tankless Flushing Specialist</span>
+          </div>
+        </div>
+        <div class="about-accent"></div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">Why Dustin</div>
+        <h2 class="section-title">15+ Years of Hands-On Experience</h2>
+        <p>With 15+ years in construction and home renovation, I understand how homes work and what matters to homeowners. Tankless water heater maintenance isn't a sideline — it's a core specialty I've invested in deeply.</p>
+        <p>I specialize in diagnosing and maintaining tankless systems across Irvine's neighborhoods — including Woodbury, Orchard Hills, Great Park, and Northwood — as well as Newport Beach, Newport Coast, Corona del Mar, and surrounding areas.</p>
+        <p>When I show up, you get <strong>me</strong> — not a dispatcher or crew. I do the work personally, explain what I'm finding, and answer all your questions.</p>
+        <ul class="about-checklist">
+          <li>Tankless Flushing Specialist</li>
+          <li>15+ Years Hands-On Experience</li>
+          <li>All Major Brands Serviced</li>
+          <li>Trusted by Orange County Neighbors</li>
+          <li>Before &amp; After Documentation Provided</li>
+        </ul>
+        <div class="nextdoor-banner">
+          <img src="images/nextdoor-fave-2025-website-banner.png" alt="2025 Nextdoor Neighborhood Fave — Ultra Home Repair, Irvine" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS STEPS -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-center">
+      <div class="section-label">The Service</div>
+      <h2 class="section-title">What Happens During a Flush</h2>
+      <p class="section-subtitle">A complete service visit takes about 1–1.5 hours. Here's what you can expect.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Inspection</h3>
+        <p>I assess your system, check the inlet filter, and identify the degree of mineral buildup before starting.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Descaling</h3>
+        <p>Using professional equipment and descaling solution, I flush the heat exchanger to dissolve and remove mineral deposits.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Cleaning</h3>
+        <p>I clean the inlet filter, flush supply lines, and ensure water flows freely through every part of your system.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Testing</h3>
+        <p>I confirm proper operation, water pressure, and heating function — then show you before and after photos of the flush.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TANKLESS-SPECIFIC REVIEWS -->
+<section class="section section-alt" id="reviews-tankless">
+  <div class="container">
+    <div class="section-center">
+      <div class="section-label">Tankless Flush Reviews</div>
+      <h2 class="section-title">Homeowners Who've Had It Done</h2>
+      <p class="section-subtitle">Real reviews from Orange County homeowners who had their tankless systems flushed by Dustin.</p>
+    </div>
+    <div class="tankless-reviews-grid">
+
+      <div class="tankless-review-card">
+        <div class="tr-stars">★★★★★</div>
+        <p class="tr-text">Dustin was prompt, friendly, helpful, answered all my questions and even researched stuff for me. He serviced the tankless water heater and was great!</p>
+        <div class="tr-author">
+          <div class="tr-avatar">C</div>
+          <div>
+            <span class="tr-author-name">Christine Vega</span>
+            <span class="tr-author-meta">Google Review</span>
+          </div>
         </div>
       </div>
 
-      <div class="ba-card">
-        <div class="ba-slider">
-          <div class="ba-after"><img draggable="false" src="images/Fireplace After Large_1757210330482.jpeg" alt="After: Fireplace renovation" loading="lazy" /></div>
-          <div class="ba-before"><img draggable="false" src="images/Fireplace before Large_1757210330483.jpeg" alt="Before: Fireplace renovation" loading="lazy" /></div>
-          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
-          <span class="ba-label-before">Before</span>
-          <span class="ba-label-after">After</span>
-          <input type="range" class="ba-range" min="0" max="100" value="50" />
-        </div>
-        <div class="ba-body">
-          <div class="ba-title">Fireplace Renovation</div>
-          <div class="ba-desc">Complete transformation with modern updates and professional finishing work.</div>
+      <div class="tankless-review-card">
+        <div class="tr-stars">★★★★★</div>
+        <p class="tr-text">We had Dustin come to our house &amp; gave our tankless water heater a check up &amp; flushed the system. We kept his information to have him come back when it's needed again. Very reasonably priced too!</p>
+        <div class="tr-author">
+          <div class="tr-avatar">J</div>
+          <div>
+            <span class="tr-author-name">J J</span>
+            <span class="tr-author-meta">Google Review · Local Guide</span>
+          </div>
         </div>
       </div>
 
-      <div class="ba-card">
-        <div class="ba-slider">
-          <div class="ba-after"><img draggable="false" src="images/Grenada Kitchen after Large_1757210330483.jpeg" alt="After: Grenada kitchen remodel" loading="lazy" /></div>
-          <div class="ba-before"><img draggable="false" src="images/Grenada Kitchen Before Large_1757210330483.jpeg" alt="Before: Grenada kitchen" loading="lazy" /></div>
-          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
-          <span class="ba-label-before">Before</span>
-          <span class="ba-label-after">After</span>
-          <input type="range" class="ba-range" min="0" max="100" value="50" />
-        </div>
-        <div class="ba-body">
-          <div class="ba-title">Grenada Kitchen Remodel</div>
-          <div class="ba-desc">Full kitchen transformation — updated cabinets, countertops, and fixtures, on time and on budget.</div>
-        </div>
-      </div>
-
-      <div class="ba-card">
-        <div class="ba-slider">
-          <div class="ba-after"><img draggable="false" src="images/Danubo Kitchen After Large_1757210330482.jpeg" alt="After: Danubo kitchen" loading="lazy" /></div>
-          <div class="ba-before"><img draggable="false" src="images/Danubo Kitchen before Large_1757211001566.jpeg" alt="Before: Danubo kitchen" loading="lazy" /></div>
-          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
-          <span class="ba-label-before">Before</span>
-          <span class="ba-label-after">After</span>
-          <input type="range" class="ba-range" min="0" max="100" value="50" />
-        </div>
-        <div class="ba-body">
-          <div class="ba-title">Danubo Kitchen Transformation</div>
-          <div class="ba-desc">Complete renovation with updated cabinets, countertops, and modern fixtures.</div>
-        </div>
-      </div>
-
-      <div class="ba-card">
-        <div class="ba-slider">
-          <div class="ba-after"><img draggable="false" src="images/Rose Kitchen After Large_1757210352445.jpeg" alt="After: Rose kitchen" loading="lazy" /></div>
-          <div class="ba-before"><img draggable="false" src="images/Rose Kitchen Before Large_1757210352445.jpeg" alt="Before: Rose kitchen" loading="lazy" /></div>
-          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
-          <span class="ba-label-before">Before</span>
-          <span class="ba-label-after">After</span>
-          <input type="range" class="ba-range" min="0" max="100" value="50" />
-        </div>
-        <div class="ba-body">
-          <div class="ba-title">Rose Kitchen Transformation</div>
-          <div class="ba-desc">Modern updates and improved layout for enhanced functionality and curb appeal.</div>
-        </div>
-      </div>
-
-      <div class="ba-card">
-        <div class="ba-slider">
-          <div class="ba-after"><img draggable="false" src="images/Rose Bathroom after Large_1757210352444.jpeg" alt="After: Rose bathroom" loading="lazy" /></div>
-          <div class="ba-before"><img draggable="false" src="images/Rose bathroom before Large_1757210352444.jpeg" alt="Before: Rose bathroom" loading="lazy" /></div>
-          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
-          <span class="ba-label-before">Before</span>
-          <span class="ba-label-after">After</span>
-          <input type="range" class="ba-range" min="0" max="100" value="50" />
-        </div>
-        <div class="ba-body">
-          <div class="ba-title">Rose Bathroom Remodel</div>
-          <div class="ba-desc">Full bathroom renovation with modern fixtures, updated finishes, and improved functionality.</div>
-        </div>
-      </div>
-
-      <div class="ba-card">
-        <div class="ba-slider">
-          <div class="ba-after"><img draggable="false" src="images/LVP plank repair after Large_1757210352441.jpeg" alt="After: LVP repair" loading="lazy" /></div>
-          <div class="ba-before"><img draggable="false" src="images/LVP plank repair before Large_1757210352441.jpeg" alt="Before: LVP repair" loading="lazy" /></div>
-          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
-          <span class="ba-label-before">Before</span>
-          <span class="ba-label-after">After</span>
-          <input type="range" class="ba-range" min="0" max="100" value="50" />
-        </div>
-        <div class="ba-body">
-          <div class="ba-title">LVP Plank Repair</div>
-          <div class="ba-desc">Seamless luxury vinyl plank repair with invisible color and pattern matching.</div>
-        </div>
-      </div>
-
-      <div class="ba-card">
-        <div class="ba-slider">
-          <div class="ba-after"><img draggable="false" src="images/Moldy Caulk repair after Large_1757210352441.jpeg" alt="After: Caulk repair" loading="lazy" /></div>
-          <div class="ba-before"><img draggable="false" src="images/Moldy caulk repair before Large_1757210352442.jpeg" alt="Before: Moldy caulk" loading="lazy" /></div>
-          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
-          <span class="ba-label-before">Before</span>
-          <span class="ba-label-after">After</span>
-          <input type="range" class="ba-range" min="0" max="100" value="50" />
-        </div>
-        <div class="ba-body">
-          <div class="ba-title">Caulk Repair &amp; Replacement</div>
-          <div class="ba-desc">Full caulk removal and mold-resistant replacement for improved hygiene and appearance.</div>
+      <div class="tankless-review-card">
+        <div class="tr-stars">★★★★★</div>
+        <p class="tr-text">Dustin did a great job with our tankless hot water flush out. I watched him do the procedure and he totally knew exactly what he was doing. It went without a problem and his rate for the job was very good.</p>
+        <div class="tr-author">
+          <div class="tr-avatar">J</div>
+          <div>
+            <span class="tr-author-name">Jeff Arnold</span>
+            <span class="tr-author-meta">Google Review</span>
+          </div>
         </div>
       </div>
 
@@ -598,37 +633,47 @@
   <div class="container">
     <div class="cta-band-inner">
       <div>
-        <h2>Ready to Start Your Project?</h2>
-        <p>Text or call for a free estimate. I'll respond same day — usually within a few hours.</p>
+        <h2>Ready to Flush Your Tankless System?</h2>
+        <p>Text or call for a free estimate. Fast response. Fair pricing. Expert service from someone who knows your system.</p>
       </div>
       <div class="cta-band-btns">
         <a href="sms:+19493716423" class="btn btn-white">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Text Dustin
+          Text to Schedule
         </a>
-        <a href="contact.html" class="btn btn-outline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg>
-          Get a Free Quote
+        <a href="tel:9493716423" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.63 4.4 2 2 0 0 1 3.6 2.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (949) 371-6423
         </a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- REVIEWS -->
+<!-- GENERAL REVIEWS CAROUSEL -->
 <section class="section section-navy" id="reviews">
   <div class="container">
     <div class="section-center">
       <div class="section-label">What Clients Say</div>
-      <h2 class="section-title white">Real Reviews from Real Clients</h2>
-      <p class="section-subtitle" style="color:rgba(255,255,255,0.65);margin:0 auto 48px;">Verified Google and Nextdoor reviews from Orange County homeowners and Realtors.</p>
+      <h2 class="section-title white">More Reviews from Orange County</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.65);margin:0 auto 48px;">Verified Google and Nextdoor reviews from homeowners across Orange County.</p>
     </div>
     <div class="carousel">
       <div class="carousel-track" id="carouselTrack">
 
         <div class="review-card"><div class="review-inner">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text">As a Realtor I know how important (and how difficult) it is to find an outstanding handyman, and Dustin is among the best I've worked with. Knowledgeable, proactive, punctual, trustworthy… His workmanship, work ethic, and professionalism are excellent. A good handyman is hard to find so you'll be thrilled to know Dustin.</p>
+          <p class="review-text">Dustin replaced 5 faucets for me, changed out a thermostat, and flushed our tankless water heater. He did a great job, was professional, gave me a great price, and I will definitely hire him again in the future!</p>
+          <div class="review-author">
+            <div class="review-avatar">L</div>
+            <div class="review-author-info"><strong>Laura Warren</strong><span>Google Review</span></div>
+            <div class="review-source"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Google</div>
+          </div>
+        </div></div>
+
+        <div class="review-card"><div class="review-inner">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">As a Realtor I know how important (and how difficult) it is to find an outstanding handyman, and Dustin is among the best I've worked with. Knowledgeable, proactive, punctual, trustworthy… His workmanship, work ethic, and professionalism are excellent.</p>
           <div class="review-author">
             <div class="review-avatar">A</div>
             <div class="review-author-info"><strong>Anne Suri</strong><span>Realtor · Google Review</span></div>
@@ -638,17 +683,7 @@
 
         <div class="review-card"><div class="review-inner">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text">Dustin was extremely responsive to my messages and questions. He was able to finish installing a faucet, complete my painting, replace the bathroom fans and also swap out door knobs in good time. I appreciated his before/after pictures and his prompt responses. I would highly recommend him!</p>
-          <div class="review-author">
-            <div class="review-avatar">K</div>
-            <div class="review-author-info"><strong>Kavi Anand</strong><span>Google Review</span></div>
-            <div class="review-source"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Google</div>
-          </div>
-        </div></div>
-
-        <div class="review-card"><div class="review-inner">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">Everybody NEEDS to use this handyman. I was just amazed at how professional, efficient, and pleasant Dustin is. His estimates came in significantly lower than those I received from others. His webpage shows that he is multi-talented and I've already asked him for quotes on other projects.</p>
+          <p class="review-text">Everybody NEEDS to use this handyman. I was just amazed at how professional, efficient, and pleasant Dustin is. His estimates came in significantly lower than those I received from others. Multi-talented and I've already asked him for quotes on other projects.</p>
           <div class="review-author">
             <div class="review-avatar">S</div>
             <div class="review-author-info"><strong>Susan Emery</strong><span>Nextdoor · Laguna Woods Village East</span></div>
@@ -658,20 +693,20 @@
 
         <div class="review-card"><div class="review-inner">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text">I hired Dustin of Ultra Home Repair to install pendant lights and ceiling fans. Wanted to give him a shout out — he did a great job, was super clean and conscientious about leaving everything clean. Highly recommend!</p>
+          <p class="review-text">Dustin was extremely responsive to my messages and questions. He was able to finish installing a faucet, complete my painting, replace the bathroom fans and also swap out door knobs in good time. I appreciated his before/after pictures. I would highly recommend him!</p>
           <div class="review-author">
-            <div class="review-avatar">A</div>
-            <div class="review-author-info"><strong>Anh Lilly</strong><span>Nextdoor · Northwood Pointe</span></div>
-            <div class="review-source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Nextdoor</div>
+            <div class="review-avatar">K</div>
+            <div class="review-author-info"><strong>Kavi Anand</strong><span>Google Review</span></div>
+            <div class="review-source"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Google</div>
           </div>
         </div></div>
 
         <div class="review-card"><div class="review-inner">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text">Dustin replaced 5 faucets for me, changed out a thermostat, and flushed our tankless water heater. He did a great job, was professional, gave me a great price, and I will definitely hire him again in the future!</p>
+          <p class="review-text">Dustin was knowledgeable, professional and friendly. He worked with my schedule and kept me informed via texts of when he would arrive and his progress on the work being done. Reasonable rates and great work!</p>
           <div class="review-author">
-            <div class="review-avatar">L</div>
-            <div class="review-author-info"><strong>Laura Warren</strong><span>Google Review</span></div>
+            <div class="review-avatar">S</div>
+            <div class="review-author-info"><strong>Susie Motooka</strong><span>Google Review</span></div>
             <div class="review-source"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Google</div>
           </div>
         </div></div>
@@ -747,19 +782,8 @@
   </div>
 </footer>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
-  <button class="lightbox-prev" id="lbPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
-  <div class="lightbox-inner">
-    <button class="lightbox-close" id="lbClose" aria-label="Close">✕</button>
-    <img class="lightbox-img" id="lbImg" src="" alt="" />
-    <div class="lightbox-caption" id="lbCaption"></div>
-  </div>
-  <button class="lightbox-next" id="lbNext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
-</div>
-
 <script>
-  // ── NAV ──
+  // NAV
   const hamburger = document.getElementById('navHamburger');
   const navLinks = document.getElementById('navLinks');
   hamburger.addEventListener('click', () => {
@@ -771,69 +795,7 @@
     navLinks.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', false);
   }));
 
-  // ── FILTER ──
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.project-card');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const f = btn.dataset.filter;
-      cards.forEach(c => {
-        c.classList.toggle('hidden', f !== 'all' && c.dataset.category !== f);
-      });
-    });
-  });
-
-  // ── LIGHTBOX ──
-  const visibleCards = () => [...cards].filter(c => !c.classList.contains('hidden'));
-  let lbIndex = 0;
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lbImg');
-  const lbCap = document.getElementById('lbCaption');
-  function openLb(card) {
-    const visible = visibleCards();
-    lbIndex = visible.indexOf(card);
-    lbImg.src = card.dataset.img;
-    lbImg.alt = card.dataset.title;
-    lbCap.textContent = card.dataset.title;
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function lbGo(dir) {
-    const visible = visibleCards();
-    lbIndex = (lbIndex + dir + visible.length) % visible.length;
-    const c = visible[lbIndex];
-    lbImg.src = c.dataset.img; lbImg.alt = c.dataset.title; lbCap.textContent = c.dataset.title;
-  }
-  cards.forEach(c => c.addEventListener('click', () => openLb(c)));
-  document.getElementById('lbClose').addEventListener('click', () => { lb.classList.remove('open'); document.body.style.overflow = ''; });
-  document.getElementById('lbPrev').addEventListener('click', () => lbGo(-1));
-  document.getElementById('lbNext').addEventListener('click', () => lbGo(1));
-  lb.addEventListener('click', e => { if (e.target === lb) { lb.classList.remove('open'); document.body.style.overflow = ''; } });
-  document.addEventListener('keydown', e => {
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') { lb.classList.remove('open'); document.body.style.overflow = ''; }
-    if (e.key === 'ArrowLeft') lbGo(-1);
-    if (e.key === 'ArrowRight') lbGo(1);
-  });
-
-  // ── BEFORE/AFTER SLIDERS ──
-  document.querySelectorAll('.ba-slider').forEach(slider => {
-    const before = slider.querySelector('.ba-before');
-    const dividerLine = slider.querySelector('.ba-divider-line');
-    const handle = slider.querySelector('.ba-handle');
-    const range = slider.querySelector('.ba-range');
-    function setPos(val) {
-      before.style.width = val + '%';
-      dividerLine.style.left = val + '%';
-      handle.style.left = val + '%';
-    }
-    range.addEventListener('input', () => setPos(range.value));
-    setPos(50);
-  });
-
-  // ── CAROUSEL ──
+  // CAROUSEL
   (function() {
     const track = document.getElementById('carouselTrack');
     const dots = document.querySelectorAll('.dot');
