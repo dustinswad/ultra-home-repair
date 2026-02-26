@@ -760,95 +760,133 @@
 
 <script>
   // ── NAV ──
-  const hamburger = document.getElementById('navHamburger');
-  const navLinks = document.getElementById('navLinks');
-  hamburger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
+  var hamburger = document.getElementById('navHamburger');
+  var navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', function() {
+    var isOpen = navLinks.classList.toggle('open');
     hamburger.classList.toggle('open', isOpen);
     hamburger.setAttribute('aria-expanded', isOpen);
   });
-  navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
-    navLinks.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', false);
-  }));
+  navLinks.querySelectorAll('a').forEach(function(l) {
+    l.addEventListener('click', function() {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
 
   // ── FILTER ──
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.project-card');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var projectCards = document.querySelectorAll('.project-card');
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
-      const f = btn.dataset.filter;
-      cards.forEach(c => {
+      var f = btn.dataset.filter;
+      projectCards.forEach(function(c) {
         c.classList.toggle('hidden', f !== 'all' && c.dataset.category !== f);
       });
     });
   });
 
   // ── LIGHTBOX ──
-  const visibleCards = () => [...cards].filter(c => !c.classList.contains('hidden'));
-  let lbIndex = 0;
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lbImg');
-  const lbCap = document.getElementById('lbCaption');
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCap = document.getElementById('lbCaption');
+  var lbIndex = 0;
+
+  function getVisible() {
+    return Array.prototype.slice.call(projectCards).filter(function(c) {
+      return !c.classList.contains('hidden');
+    });
+  }
+
+  function closeLb() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   function openLb(card) {
-    const visible = visibleCards();
-    lbIndex = visible.indexOf(card);
+    var visible = getVisible();
+    var idx = visible.indexOf(card);
+    if (idx === -1 || !card.dataset.img) return;
+    lbIndex = idx;
     lbImg.src = card.dataset.img;
-    lbImg.alt = card.dataset.title;
-    lbCap.textContent = card.dataset.title;
+    lbImg.alt = card.dataset.title || '';
+    lbCap.textContent = card.dataset.title || '';
     lb.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
+
   function lbGo(dir) {
-    const visible = visibleCards();
+    var visible = getVisible();
+    if (visible.length === 0) return;
     lbIndex = (lbIndex + dir + visible.length) % visible.length;
-    const c = visible[lbIndex];
-    lbImg.src = c.dataset.img; lbImg.alt = c.dataset.title; lbCap.textContent = c.dataset.title;
+    var c = visible[lbIndex];
+    if (!c || !c.dataset.img) return;
+    lbImg.src = c.dataset.img;
+    lbImg.alt = c.dataset.title || '';
+    lbCap.textContent = c.dataset.title || '';
   }
-  cards.forEach(c => c.addEventListener('click', () => openLb(c)));
-  document.getElementById('lbClose').addEventListener('click', () => { lb.classList.remove('open'); document.body.style.overflow = ''; });
-  document.getElementById('lbPrev').addEventListener('click', () => lbGo(-1));
-  document.getElementById('lbNext').addEventListener('click', () => lbGo(1));
-  lb.addEventListener('click', e => { if (e.target === lb) { lb.classList.remove('open'); document.body.style.overflow = ''; } });
-  document.addEventListener('keydown', e => {
+
+  projectCards.forEach(function(c) {
+    c.addEventListener('click', function() { openLb(c); });
+  });
+
+  document.getElementById('lbClose').addEventListener('click', closeLb);
+  document.getElementById('lbPrev').addEventListener('click', function() { lbGo(-1); });
+  document.getElementById('lbNext').addEventListener('click', function() { lbGo(1); });
+
+  lb.addEventListener('click', function(e) {
+    if (e.target === lb) closeLb();
+  });
+
+  // Single keydown handler — no stacking
+  document.addEventListener('keydown', function(e) {
     if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') { lb.classList.remove('open'); document.body.style.overflow = ''; }
-    if (e.key === 'ArrowLeft') lbGo(-1);
-    if (e.key === 'ArrowRight') lbGo(1);
+    if (e.key === 'Escape') closeLb();
+    else if (e.key === 'ArrowLeft') lbGo(-1);
+    else if (e.key === 'ArrowRight') lbGo(1);
   });
 
   // ── BEFORE/AFTER SLIDERS ──
-  document.querySelectorAll('.ba-slider').forEach(slider => {
-    const before = slider.querySelector('.ba-before');
-    const dividerLine = slider.querySelector('.ba-divider-line');
-    const handle = slider.querySelector('.ba-handle');
-    const range = slider.querySelector('.ba-range');
+  document.querySelectorAll('.ba-slider').forEach(function(slider) {
+    var before = slider.querySelector('.ba-before');
+    var dividerLine = slider.querySelector('.ba-divider-line');
+    var handle = slider.querySelector('.ba-handle');
+    var range = slider.querySelector('.ba-range');
+    if (!before || !dividerLine || !handle || !range) return;
     function setPos(val) {
       before.style.width = val + '%';
       dividerLine.style.left = val + '%';
       handle.style.left = val + '%';
     }
-    range.addEventListener('input', () => setPos(range.value));
+    range.addEventListener('input', function() { setPos(range.value); });
     setPos(50);
   });
 
   // ── CAROUSEL ──
   (function() {
-    const track = document.getElementById('carouselTrack');
-    const dots = document.querySelectorAll('.dot');
-    const total = 5;
-    let cur = 0, timer;
+    var track = document.getElementById('carouselTrack');
+    var dots = document.querySelectorAll('.dot');
+    if (!track) return;
+    var total = 5;
+    var cur = 0;
+    var timer = null;
     function goTo(i) {
-      cur = (i + total) % total;
+      cur = ((i % total) + total) % total;
       track.style.transform = 'translateX(-' + (cur * 100) + '%)';
-      dots.forEach((d, j) => d.classList.toggle('active', j === cur));
+      dots.forEach(function(d, j) { d.classList.toggle('active', j === cur); });
     }
-    function start() { timer = setInterval(() => goTo(cur + 1), 5000); }
+    function start() { timer = setInterval(function() { goTo(cur + 1); }, 5000); }
     function reset() { clearInterval(timer); start(); }
-    document.getElementById('nextBtn').addEventListener('click', () => { goTo(cur + 1); reset(); });
-    document.getElementById('prevBtn').addEventListener('click', () => { goTo(cur - 1); reset(); });
-    dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); reset(); }));
+    var nextBtn = document.getElementById('nextBtn');
+    var prevBtn = document.getElementById('prevBtn');
+    if (nextBtn) nextBtn.addEventListener('click', function() { goTo(cur + 1); reset(); });
+    if (prevBtn) prevBtn.addEventListener('click', function() { goTo(cur - 1); reset(); });
+    dots.forEach(function(d) {
+      d.addEventListener('click', function() { goTo(parseInt(d.dataset.index, 10)); reset(); });
+    });
     start();
   })();
 </script>
