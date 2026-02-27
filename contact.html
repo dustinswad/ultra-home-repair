@@ -511,22 +511,22 @@
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First Name <span>*</span></label>
-              <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Jane" required />
+              <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Jane" autocomplete="given-name" required />
             </div>
             <div class="form-group">
               <label for="lastName">Last Name <span>*</span></label>
-              <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Smith" required />
+              <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Smith" autocomplete="family-name" required />
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="phone">Phone <span>*</span></label>
-              <input type="tel" id="phone" name="phone" class="form-control" placeholder="(949) 555-0100" required />
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="(949) 555-0100" autocomplete="tel" required />
             </div>
             <div class="form-group">
               <label for="email">Email <span>*</span></label>
-              <input type="email" id="email" name="email" class="form-control" placeholder="jane@example.com" required />
+              <input type="email" id="email" name="email" class="form-control" placeholder="jane@example.com" autocomplete="email" required />
             </div>
           </div>
 
@@ -748,49 +748,34 @@
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  // Load EmailJS config and initialize
-  fetch('emailjs-config.json')
-    .then(r => r.json())
-    .then(config => {
-      emailjs.init(config.publicKey || config.user_id || config.userId);
+  emailjs.init('Cqfit21vgxcz9D-Zt');
 
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const btn = document.getElementById('submitBtn');
-        const errorEl = document.getElementById('formError');
-        errorEl.style.display = 'none';
-        btn.disabled = true;
-        btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;animation:spin 1s linear infinite"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg> Sending...';
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const errorEl = document.getElementById('formError');
+    errorEl.style.display = 'none';
+    btn.disabled = true;
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;animation:spin 1s linear infinite"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg> Sending...';
 
-        const templateParams = {
-          name: document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value,
-          phone: document.getElementById('phone').value,
-          email: document.getElementById('email').value,
-          address: document.getElementById('address').value,
-          message: document.getElementById('message').value,
-        };
+    const templateParams = {
+      name: document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value,
+      phone: document.getElementById('phone').value,
+      email: document.getElementById('email').value,
+      address: document.getElementById('address').value,
+      message: document.getElementById('message').value,
+    };
 
-        emailjs.send(
-          config.serviceId || config.service_id,
-          config.templateId || config.template_id,
-          templateParams
-        ).then(() => {
-          document.getElementById('contactForm').style.display = 'none';
-          document.getElementById('formSuccess').style.display = 'block';
-        }).catch(() => {
-          errorEl.style.display = 'block';
-          btn.disabled = false;
-          btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send My Request';
-        });
-      });
-    })
-    .catch(() => {
-      // If config can't load, form falls back gracefully — show error on submit
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        document.getElementById('formError').style.display = 'block';
-      });
+    emailjs.send('service_sbirwu1', 'template_6myr1z8', templateParams)
+    .then(() => {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }).catch(() => {
+      errorEl.style.display = 'block';
+      btn.disabled = false;
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send My Request';
     });
+  });
 </script>
 
 <style>
