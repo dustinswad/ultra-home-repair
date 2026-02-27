@@ -377,6 +377,28 @@
       .section-title { font-size: 26px; }
     }
   </style>
+  <style>
+    /* Google Places autocomplete dropdown styling */
+    .pac-container {
+      font-family: 'Montserrat', sans-serif;
+      border: 1.5px solid var(--gray-200);
+      border-top: none;
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: var(--shadow-md);
+      margin-top: -2px;
+    }
+    .pac-item {
+      padding: 10px 14px;
+      font-size: 13.5px;
+      color: var(--gray-800);
+      cursor: pointer;
+      border-top: 1px solid var(--gray-100);
+    }
+    .pac-item:hover, .pac-item-selected { background: var(--off-white); }
+    .pac-item-query { font-weight: 700; color: var(--navy); }
+    .pac-icon { display: none; }
+    .pac-logo::after { display: none; }
+  </style>
 </head>
 <body>
 
@@ -510,7 +532,7 @@
 
           <div class="form-group">
             <label for="address">Property Address <span>*</span></label>
-            <input type="text" id="address" name="address" class="form-control" placeholder="123 Main St, Irvine, CA 92620" required />
+            <input type="text" id="address" name="address" class="form-control" placeholder="123 Main St, Irvine, CA 92620" autocomplete="off" required />
           </div>
 
           <div class="form-group">
@@ -810,6 +832,28 @@
     dots.forEach(d => d.addEventListener('click', () => { goTo(parseInt(d.dataset.index)); resetAuto(); }));
     startAuto();
   })();
+</script>
+
+<!-- Google Places Autocomplete -->
+<!-- REPLACE YOUR_API_KEY_HERE with your actual Google API key -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHtvVdBE_9sQB1URqVG6i7KeCXizc1jhU&libraries=places&callback=initAutocomplete" async defer></script>
+<script>
+  function initAutocomplete() {
+    var input = document.getElementById('address');
+    if (!input) return;
+    var autocomplete = new google.maps.places.Autocomplete(input, {
+      componentRestrictions: { country: 'us' },
+      fields: ['formatted_address'],
+      types: ['address']
+    });
+    // When user picks a suggestion, put the full address in the field
+    autocomplete.addListener('place_changed', function() {
+      var place = autocomplete.getPlace();
+      if (place.formatted_address) {
+        input.value = place.formatted_address;
+      }
+    });
+  }
 </script>
 
 </body>
