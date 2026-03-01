@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra Home Repair | Irvine & Orange County Handyman Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.45) 100%),
+                        url('images/Hero background Large.jpeg') center/cover;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(255, 152, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            color: white;
+            z-index: 2;
+            padding: 40px 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero .services {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            animation: slideInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero .service-item {
+            display: inline;
+            margin: 0 8px;
+            color: #FFB84D;
+            font-weight: 600;
+        }
+
+        .hero .service-item:not(:last-child)::after {
+            content: ' •';
+            margin-left: 16px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .hero .location {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+            font-weight: 400;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            animation: slideInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 0.8s ease-out 0.6s backwards;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 152, 0, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 152, 0, 0.5);
+            background: linear-gradient(135deg, #FFA500 0%, #FF9800 100%);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .social-proof {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            font-size: 14px;
+        }
+
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 6px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stars {
+            color: #FFB84D;
+            font-size: 16px;
+        }
+
+        .proof-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            .hero .services {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+
+            .hero .location {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+
+            .btn-primary {
+                padding: 15px 35px;
+                font-size: 14px;
+            }
+
+            .social-proof {
+                gap: 15px;
+                margin-top: 40px;
+            }
+
+            .proof-item {
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: auto;
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .hero .services {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+
+            .hero .location {
+                font-size: 13px;
+                margin-bottom: 25px;
+            }
+
+            .btn-primary {
+                padding: 12px 30px;
+                font-size: 13px;
+            }
+
+            .service-item {
+                margin: 0 4px;
+            }
+
+            .service-item:not(:last-child)::after {
+                margin-left: 8px;
+            }
+
+            .social-proof {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .proof-item {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Irvine & Orange County's Trusted Handyman</h1>
+
+            <div class="services">
+                <span class="service-item">Plumbing</span>
+                <span class="service-item">Electrical</span>
+                <span class="service-item">Painting</span>
+                <span class="service-item">Carpentry</span>
+                <span class="service-item">Tankless Water Heater Experts</span>
+            </div>
+
+            <p class="location">Serving Woodbury, Orchard Hills, Great Park, Newport Beach & all of Orange County</p>
+
+            <div class="hero-cta">
+                <button class="btn-primary">Text to Schedule</button>
+            </div>
+
+            <div class="social-proof">
+                <div class="proof-item">
+                    <span class="stars">★★★★★</span>
+                    <span class="proof-text">5.0 on Google</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-text">✓ Nextdoor Favorite</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
