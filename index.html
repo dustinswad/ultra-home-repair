@@ -78,10 +78,9 @@
       height: 90px;
     }
     .nav-logo img {
-      height: 52px;
+      height: 100px;
       width: auto;
     }
-    .nav-hamburger { display: none; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -723,6 +722,7 @@
     }
     .footer-logo img {
       height: 50px;
+      filter: brightness(0) invert(1);
       opacity: 0.9;
     }
     .footer-about {
@@ -819,57 +819,6 @@
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        border-top: 1px solid var(--gray-200);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-        padding: 16px 0;
-        gap: 0;
-        z-index: 99;
-      }
-      .nav-links.open li { width: 100%; }
-      .nav-links.open a {
-        display: block;
-        padding: 14px 24px;
-        font-size: 16px;
-        color: var(--navy);
-        border-bottom: 1px solid var(--gray-100);
-      }
-      .nav-links.open .nav-cta {
-        margin: 12px 24px 4px;
-        border-radius: var(--radius);
-        text-align: center;
-        justify-content: center;
-      }
-      .nav-hamburger {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        width: 40px;
-        height: 40px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 4px;
-      }
-      .nav-hamburger span {
-        display: block;
-        height: 2.5px;
-        background: var(--navy);
-        border-radius: 2px;
-        transition: all 0.25s ease;
-        transform-origin: center;
-      }
-      .nav-hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-      .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-      .nav-hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
       .hero { min-height: 100svh; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-image-wrap { order: -1; }
@@ -940,12 +889,9 @@
 <nav class="nav">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo" aria-label="Ultra Home Repair Home">
-      <img src="images/Ultra_Home_Repair_Logo_web.png" alt="Ultra Home Repair" />
+      <img src="images/logo.png" alt="Ultra Home Repair" />
     </a>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
+    <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="realtors.html">Realtors</a></li>
@@ -1456,7 +1402,7 @@
       <!-- Brand -->
       <div>
         <div class="footer-logo">
-          <img src="images/Ultra_Home_Repair_Logo_web.png" alt="Ultra Home Repair" />
+          <img src="images/logo-white-background_1757198034325.png" alt="Ultra Home Repair" />
         </div>
         <p class="footer-about">Professional handyman services in Irvine and Orange County. Trusted by homeowners and Realtors throughout Irvine, Newport Beach, Corona Del Mar, Laguna Beach, Lake Forest, and all of Orange County.</p>
         <div class="footer-social">
@@ -1574,22 +1520,5 @@
   })();
 </script>
 
-  <script>
-    const hamburger = document.getElementById('navHamburger');
-    const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      hamburger.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', isOpen);
-    });
-    // Close menu when a link is clicked
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', false);
-      });
-    });
-  </script>
 </body>
 </html>
