@@ -1,12 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Handyman Project Photos | Irvine & Orange County | Ultra Home Repair</title>
+  <title>Gallery | Handyman Project Photos | Irvine & Orange County | Ultra Home Repair</title>
   <meta name="description" content="See Dustin's work — before & after photos, recent project gallery, and real results from handyman jobs across Irvine and Orange County. Plumbing, electrical, drywall, painting, and more." />
   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-  <link rel="canonical" href="https://ultrahomerepair.com/portfolio.html" />
+  <link rel="canonical" href="https://ultrahomerepair.com/gallery.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -41,7 +42,7 @@
     .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 
     /* ── NAV ── */
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid var(--gray-200); box-shadow: 0 1px 12px rgba(0,0,0,0.07); }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.98); border-bottom: 1px solid var(--gray-200); box-shadow: 0 1px 12px rgba(0,0,0,0.07); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 90px; }
     .nav-logo img { height: 52px; width: auto; }
     .nav-hamburger { display: none; }
@@ -57,11 +58,11 @@
     .btn { display: inline-flex; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.03em; padding: 16px 32px; border-radius: var(--radius); border: none; cursor: pointer; transition: all var(--transition); white-space: nowrap; }
     .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
     .btn-primary { background: var(--orange); color: white; }
-    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .btn-primary:hover { background: var(--orange-dark); box-shadow: var(--shadow-md); }
     .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
     .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
     .btn-white { background: white; color: var(--orange); }
-    .btn-white:hover { background: var(--off-white); transform: translateY(-1px); }
+    .btn-white:hover { background: var(--off-white); }
 
     /* ── SECTIONS ── */
     .section { padding: 88px 0; }
@@ -75,7 +76,8 @@
     .section-center .section-subtitle { margin: 0 auto; }
 
     /* ── HERO ── */
-    .hero { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, #2d3f78 100%); padding: 140px 0 100px; position: relative; overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+    .hero { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, #2d3f78 100%); padding: 140px 0 100px; position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 12%; background: var(--white); clip-path: polygon(0 100%, 100% 0, 100% 100%); }
     .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(224,90,43,0.15) 0%, transparent 65%); }
     .hero-content { position: relative; max-width: 720px; }
     .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 8px 18px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: white; margin-bottom: 28px; }
@@ -103,12 +105,11 @@
 
     /* ── PROJECT GRID ── */
     .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .project-card { border-radius: var(--radius-lg); overflow: hidden; background: white; border: 1.5px solid var(--gray-200); transition: all var(--transition); cursor: pointer; }
-    .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
+    .project-card { border-radius: var(--radius-lg); overflow: hidden; background: white; border: 1.5px solid var(--gray-200); transition: box-shadow var(--transition), border-color var(--transition); cursor: pointer; }
+    .project-card:hover { box-shadow: var(--shadow-lg); border-color: transparent; }
     .project-card.hidden { display: none; }
     .project-img { aspect-ratio: 4/3; overflow: hidden; background: var(--gray-100); }
-    .project-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease; }
-    .project-card:hover .project-img img { transform: scale(1.05); }
+    .project-img img { width: 100%; height: 100%; object-fit: cover; }
     .project-body { padding: 20px 22px; }
     .project-category { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
     .project-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
@@ -117,13 +118,13 @@
     /* ── BEFORE/AFTER SLIDERS ── */
     .ba-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 56px; }
     .ba-card { border-radius: var(--radius-lg); overflow: hidden; background: white; border: 1.5px solid var(--gray-200); box-shadow: var(--shadow-sm); }
-    .ba-slider { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--gray-100); cursor: col-resize; touch-action: none; user-select: none; -webkit-user-select: none; }
+    .ba-slider { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--gray-100); cursor: col-resize; touch-action: none; user-select: none; -webkit-user-select: none; contain: layout style paint; }
     .ba-after { position: absolute; inset: 0; }
     .ba-after img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; user-select: none; -webkit-user-drag: none; }
-    .ba-before { position: absolute; top: 0; left: 0; bottom: 0; width: 50%; overflow: hidden; }
-    .ba-before img { position: absolute; top: 0; left: 0; height: 100%; object-fit: cover; pointer-events: none; user-select: none; -webkit-user-drag: none; }
-    .ba-divider-line { position: absolute; top: 0; bottom: 0; width: 3px; background: white; box-shadow: 0 0 12px rgba(0,0,0,0.4); transform: translateX(-50%); pointer-events: none; z-index: 3; left: 50%; }
-    .ba-handle { position: absolute; top: 50%; width: 44px; height: 44px; background: white; border-radius: 50%; box-shadow: 0 2px 16px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 4; transform: translate(-50%, -50%); left: 50%; }
+    .ba-before { position: absolute; inset: 0; clip-path: inset(0 50% 0 0); z-index: 1; }
+    .ba-before img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; user-select: none; -webkit-user-drag: none; }
+    .ba-divider-line { position: absolute; top: 0; bottom: 0; width: 3px; background: white; box-shadow: 0 0 12px rgba(0,0,0,0.4); transform: translateX(-50%); pointer-events: none; z-index: 3; left: 50%; will-change: left; }
+    .ba-handle { position: absolute; top: 50%; width: 44px; height: 44px; background: white; border-radius: 50%; box-shadow: 0 2px 16px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 4; transform: translate(-50%, -50%); left: 50%; will-change: left; }
     .ba-handle svg { width: 20px; height: 20px; color: var(--navy); }
     .ba-label-before, .ba-label-after { position: absolute; top: 14px; padding: 5px 12px; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 50px; z-index: 5; pointer-events: none; }
     .ba-label-before { left: 14px; background: rgba(0,0,0,0.6); color: white; }
@@ -216,7 +217,8 @@
     }
     @media (max-width: 768px) {
       .section { padding: 64px 0; }
-      .hero { padding: 120px 0 80px; clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%); }
+      .hero { padding: 120px 0 80px; }
+      .hero::after { height: 6%; }
       .hero-ctas { flex-direction: column; }
       .hero-ctas .btn { width: 100%; justify-content: center; }
       .trust-bar-inner { flex-direction: column; gap: 16px; }
@@ -254,7 +256,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="realtors.html">Realtors</a></li>
-      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li>
@@ -328,125 +330,228 @@
       <button class="filter-btn" data-filter="carpentry">Carpentry</button>
       <button class="filter-btn" data-filter="repairs">Repairs</button>
       <button class="filter-btn" data-filter="installation">Installation</button>
-      <button class="filter-btn" data-filter="assembly">Assembly</button>
     </div>
 
     <div class="project-grid" id="projectGrid">
 
-      <div class="project-card" data-category="electrical" data-img="images/Pendant installation 1 Large_1757210352442.jpeg" data-title="Pendant Light Installation">
-        <div class="project-img"><img src="images/Pendant installation 1 Large_1757210352442.jpeg" alt="Pendant light installation" loading="lazy" /></div>
+      <!-- ELECTRICAL -->
+      <div class="project-card" data-category="electrical" data-img="images/after-recessed-lights.jpg" data-title="Recessed Lighting Installation">
+        <div class="project-img"><img src="images/after-recessed-lights.jpg" alt="Recessed lighting installation" loading="lazy" /></div>
         <div class="project-body">
           <div class="project-category">Electrical</div>
-          <div class="project-title">Pendant Light Installation</div>
-          <div class="project-desc">Expert spacing, alignment, and wiring for perfect kitchen pendant lighting.</div>
+          <div class="project-title">Recessed Lighting Installation</div>
+          <div class="project-desc">Clean can light install with proper wiring, spacing, and drywall patching.</div>
         </div>
       </div>
 
-      <div class="project-card" data-category="electrical" data-img="images/Chandelier Installation Large_1757210330481.jpeg" data-title="Chandelier Installation">
-        <div class="project-img"><img src="images/Chandelier Installation Large_1757210330481.jpeg" alt="Chandelier installation" loading="lazy" /></div>
+      <div class="project-card" data-category="electrical" data-img="images/after-chandelier-conversion.jpg" data-title="Chandelier Conversion">
+        <div class="project-img"><img src="images/after-chandelier-conversion.jpg" alt="Chandelier conversion" loading="lazy" /></div>
         <div class="project-body">
           <div class="project-category">Electrical</div>
-          <div class="project-title">Chandelier Installation</div>
-          <div class="project-desc">Careful handling of delicate fixtures with proper electrical connections and mounting.</div>
+          <div class="project-title">Chandelier Conversion</div>
+          <div class="project-desc">Old fixture removed and replaced with a modern chandelier — wiring, mounting, and trim.</div>
         </div>
       </div>
 
-      <div class="project-card" data-category="electrical" data-img="images/Ceiling fan after Large_1757210330480.jpeg" data-title="Ceiling Fan Installation">
-        <div class="project-img"><img src="images/Ceiling fan after Large_1757210330480.jpeg" alt="Ceiling fan installation" loading="lazy" /></div>
+      <div class="project-card" data-category="electrical" data-img="images/ceiling-fan-install-irvine.jpg" data-title="Ceiling Fan Installation">
+        <div class="project-img"><img src="images/ceiling-fan-install-irvine.jpg" alt="Ceiling fan installation Irvine" loading="lazy" /></div>
         <div class="project-body">
           <div class="project-category">Electrical</div>
           <div class="project-title">Ceiling Fan Installation</div>
-          <div class="project-desc">Complete installation with proper mounting, wiring, and safety compliance.</div>
+          <div class="project-desc">Full install with brace box, proper wiring, and balancing for quiet operation.</div>
         </div>
       </div>
 
-      <div class="project-card" data-category="electrical" data-img="images/light-switch Large_1757210352440.jpeg" data-title="Light Switch Replacement">
-        <div class="project-img"><img src="images/light-switch Large_1757210352440.jpeg" alt="Light switch replacement" loading="lazy" /></div>
+      <div class="project-card" data-category="electrical" data-img="images/modern-light-switches-lutron.jpg" data-title="Smart Switch Upgrade">
+        <div class="project-img"><img src="images/modern-light-switches-lutron.jpg" alt="Lutron smart light switches" loading="lazy" /></div>
         <div class="project-body">
           <div class="project-category">Electrical</div>
-          <div class="project-title">Light Switch Replacement</div>
-          <div class="project-desc">Modern switch replacement with clean installation and code compliance.</div>
+          <div class="project-title">Smart Switch Upgrade</div>
+          <div class="project-desc">Lutron smart switches installed throughout — clean wiring and matching wall plates.</div>
         </div>
       </div>
 
-      <div class="project-card" data-category="carpentry" data-img="images/Closet system Large_1757210330481.jpeg" data-title="Closet Organization System">
-        <div class="project-img"><img src="images/Closet system Large_1757210330481.jpeg" alt="Custom closet organization system" loading="lazy" /></div>
+      <div class="project-card" data-category="electrical" data-img="images/chandelier-wagon-wheel.jpg" data-title="Wagon Wheel Chandelier">
+        <div class="project-img"><img src="images/chandelier-wagon-wheel.jpg" alt="Wagon wheel chandelier installation" loading="lazy" /></div>
         <div class="project-body">
-          <div class="project-category">Carpentry</div>
-          <div class="project-title">Closet Organization System</div>
-          <div class="project-desc">Custom system with adjustable shelving and hanging solutions to maximize storage.</div>
+          <div class="project-category">Electrical</div>
+          <div class="project-title">Wagon Wheel Chandelier</div>
+          <div class="project-desc">Heavy fixture mounting with proper junction box support and clean finish.</div>
         </div>
       </div>
 
-      <div class="project-card" data-category="carpentry" data-img="images/Baseboard installation Large_1757211330891.jpeg" data-title="Baseboard Installation">
-        <div class="project-img"><img src="images/Baseboard installation Large_1757211330891.jpeg" alt="Baseboard installation" loading="lazy" /></div>
-        <div class="project-body">
-          <div class="project-category">Carpentry</div>
-          <div class="project-title">Baseboard Installation</div>
-          <div class="project-desc">Precision corner cuts and seamless joints for a clean professional finish.</div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="plumbing" data-img="images/Garbage_disposal_install Large_1757210330483.jpeg" data-title="Garbage Disposal Installation">
-        <div class="project-img"><img src="images/Garbage_disposal_install Large_1757210330483.jpeg" alt="Garbage disposal installation" loading="lazy" /></div>
+      <!-- PLUMBING -->
+      <div class="project-card" data-category="plumbing" data-img="images/shower-head-install.jpg" data-title="Shower Head Installation">
+        <div class="project-img"><img src="images/shower-head-install.jpg" alt="Shower head installation" loading="lazy" /></div>
         <div class="project-body">
           <div class="project-category">Plumbing</div>
-          <div class="project-title">Garbage Disposal Installation</div>
-          <div class="project-desc">Full installation with proper electrical connections, plumbing, and testing.</div>
+          <div class="project-title">Shower Head Installation</div>
+          <div class="project-desc">New shower head and arm installed with leak-free connections and clean finish.</div>
         </div>
       </div>
 
-      <div class="project-card" data-category="plumbing" data-img="images/leaky shower cartridge replacement Large_1757215085094.jpeg" data-title="Shower Cartridge Replacement">
-        <div class="project-img"><img src="images/leaky shower cartridge replacement Large_1757215085094.jpeg" alt="Shower cartridge replacement" loading="lazy" /></div>
+      <div class="project-card" data-category="plumbing" data-img="images/bath-faucet-install.jpg" data-title="Bath Faucet Installation">
+        <div class="project-img"><img src="images/bath-faucet-install.jpg" alt="Bathroom faucet installation" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Plumbing</div>
+          <div class="project-title">Bath Faucet Installation</div>
+          <div class="project-desc">Full faucet swap including supply lines, drain, and caulking for a polished look.</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="plumbing" data-img="images/kitchen-faucet-replacement.jpg" data-title="Kitchen Faucet Replacement">
+        <div class="project-img"><img src="images/kitchen-faucet-replacement.jpg" alt="Kitchen faucet replacement" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Plumbing</div>
+          <div class="project-title">Kitchen Faucet Replacement</div>
+          <div class="project-desc">Old faucet removed, new one installed with updated supply lines and shutoff valves.</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="plumbing" data-img="images/shower-cartridge-replacement.jpg" data-title="Shower Cartridge Replacement">
+        <div class="project-img"><img src="images/shower-cartridge-replacement.jpg" alt="Shower cartridge replacement" loading="lazy" /></div>
         <div class="project-body">
           <div class="project-category">Plumbing</div>
           <div class="project-title">Shower Cartridge Replacement</div>
-          <div class="project-desc">Fixed leaky faucet with cartridge replacement, proper sealing, and flow testing.</div>
+          <div class="project-desc">Fixed dripping shower by replacing worn cartridge — proper seal and flow tested.</div>
         </div>
       </div>
 
-      <div class="project-card" data-category="repairs" data-img="images/post-inspection-repairs Large_1757210352444.jpeg" data-title="Post-Inspection Repairs">
-        <div class="project-img"><img src="images/post-inspection-repairs Large_1757210352444.jpeg" alt="Post-inspection repairs" loading="lazy" /></div>
+      <div class="project-card" data-category="plumbing" data-img="images/tankless-flush-lake-forest.jpg" data-title="Tankless Water Heater Flush">
+        <div class="project-img"><img src="images/tankless-flush-lake-forest.jpg" alt="Tankless water heater flush Lake Forest" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Plumbing</div>
+          <div class="project-title">Tankless Water Heater Flush</div>
+          <div class="project-desc">Annual descaling service to remove mineral buildup and maintain peak efficiency.</div>
+        </div>
+      </div>
+
+      <!-- CARPENTRY -->
+      <div class="project-card" data-category="carpentry" data-img="images/after-stair-repair.jpg" data-title="Stair Repair">
+        <div class="project-img"><img src="images/after-stair-repair.jpg" alt="Stair repair" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Carpentry</div>
+          <div class="project-title">Stair Repair</div>
+          <div class="project-desc">Squeaky, damaged stair treads reinforced and refinished for a solid, quiet result.</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="carpentry" data-img="images/gate-repair.jpg" data-title="Gate Repair">
+        <div class="project-img"><img src="images/gate-repair.jpg" alt="Gate repair" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Carpentry</div>
+          <div class="project-title">Gate Repair</div>
+          <div class="project-desc">Sagging gate re-hung with new hardware — opens and closes smooth every time.</div>
+        </div>
+      </div>
+
+      <!-- REPAIRS -->
+      <div class="project-card" data-category="repairs" data-img="images/after-cabinet-hinge-repair.jpg" data-title="Cabinet Hinge Repair">
+        <div class="project-img"><img src="images/after-cabinet-hinge-repair.jpg" alt="Cabinet hinge repair" loading="lazy" /></div>
         <div class="project-body">
           <div class="project-category">Repairs</div>
-          <div class="project-title">Post-Inspection Repairs</div>
-          <div class="project-desc">Quick turnaround on inspection repair lists to help real estate closings stay on schedule.</div>
+          <div class="project-title">Cabinet Hinge Repair</div>
+          <div class="project-desc">Stripped hinges replaced and cabinet doors realigned for smooth, even operation.</div>
         </div>
       </div>
 
-      <div class="project-card" data-category="repairs" data-img="images/Baseboard corner before after Large_1757211463078.jpeg" data-title="Baseboard Corner Repair">
-        <div class="project-img"><img src="images/Baseboard corner before after Large_1757211463078.jpeg" alt="Baseboard corner repair" loading="lazy" /></div>
+      <div class="project-card" data-category="repairs" data-img="images/after-couch-frame-repair.jpg" data-title="Couch Frame Repair">
+        <div class="project-img"><img src="images/after-couch-frame-repair.jpg" alt="Couch frame repair" loading="lazy" /></div>
         <div class="project-body">
           <div class="project-category">Repairs</div>
-          <div class="project-title">Baseboard Corner Repair</div>
-          <div class="project-desc">Precision repair with seamless matching to restore the original appearance.</div>
+          <div class="project-title">Couch Frame Repair</div>
+          <div class="project-desc">Broken sofa frame reattached and reinforced — sturdy enough to last years more.</div>
         </div>
       </div>
 
-      <div class="project-card" data-category="repairs" data-img="images/Drywall Patch-texture and paint process Large_1757214762977.jpeg" data-title="Drywall Patch & Paint">
-        <div class="project-img"><img src="images/Drywall Patch-texture and paint process Large_1757214762977.jpeg" alt="Drywall patch and paint" loading="lazy" /></div>
+      <div class="project-card" data-category="repairs" data-img="images/after-drywall-repair.jpg" data-title="Drywall Repair">
+        <div class="project-img"><img src="images/after-drywall-repair.jpg" alt="Drywall repair" loading="lazy" /></div>
         <div class="project-body">
           <div class="project-category">Repairs</div>
-          <div class="project-title">Drywall Patch &amp; Paint</div>
-          <div class="project-desc">Full repair with texture matching and paint finish that blends seamlessly with existing walls.</div>
+          <div class="project-title">Drywall Repair</div>
+          <div class="project-desc">Patch, texture match, and paint — you won't know it was ever there.</div>
         </div>
       </div>
 
-      <div class="project-card" data-category="installation" data-img="images/TV_Mount Large_1757210352446.jpeg" data-title="TV Wall Mount Installation">
-        <div class="project-img"><img src="images/TV_Mount Large_1757210352446.jpeg" alt="TV wall mount installation" loading="lazy" /></div>
+      <div class="project-card" data-category="repairs" data-img="images/after-baseboard-mold-remediation.jpg" data-title="Baseboard Mold Remediation">
+        <div class="project-img"><img src="images/after-baseboard-mold-remediation.jpg" alt="Baseboard mold remediation" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Repairs</div>
+          <div class="project-title">Baseboard Mold Remediation</div>
+          <div class="project-desc">Damaged baseboard removed, area treated, and new baseboard installed and painted.</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="repairs" data-img="images/after-fountain-cleaning.jpg" data-title="Fountain Cleaning &amp; Repair">
+        <div class="project-img"><img src="images/after-fountain-cleaning.jpg" alt="Fountain cleaning and repair" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Repairs</div>
+          <div class="project-title">Fountain Cleaning &amp; Repair</div>
+          <div class="project-desc">Deep clean, pump inspection, and sealing to get the fountain running like new.</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="repairs" data-img="images/living-room-fresh-paint.jpg" data-title="Interior Painting">
+        <div class="project-img"><img src="images/living-room-fresh-paint.jpg" alt="Interior painting living room" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Repairs</div>
+          <div class="project-title">Interior Painting</div>
+          <div class="project-desc">Walls prepped, primed, and painted with clean edges and a smooth professional finish.</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="repairs" data-img="images/antique-lamp-repair.jpg" data-title="Antique Lamp Repair">
+        <div class="project-img"><img src="images/antique-lamp-repair.jpg" alt="Antique lamp repair" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Repairs</div>
+          <div class="project-title">Antique Lamp Repair</div>
+          <div class="project-desc">Rewired and restored vintage floor lamp — fully functional and safe to use.</div>
+        </div>
+      </div>
+
+      <!-- INSTALLATION -->
+      <div class="project-card" data-category="installation" data-img="images/clothes-rack.jpg" data-title="Clothes Rack Installation">
+        <div class="project-img"><img src="images/clothes-rack.jpg" alt="Clothes rack installation" loading="lazy" /></div>
         <div class="project-body">
           <div class="project-category">Installation</div>
-          <div class="project-title">TV Wall Mount Installation</div>
-          <div class="project-desc">Secure mounting with cable management for a clean, professional look.</div>
+          <div class="project-title">Clothes Rack Installation</div>
+          <div class="project-desc">Wall-mounted rack secured into studs for a strong, clean, space-saving solution.</div>
         </div>
       </div>
 
-      <div class="project-card" data-category="assembly" data-img="images/furniture-assembly Large_1757210330483.jpeg" data-title="Furniture Assembly">
-        <div class="project-img"><img src="images/furniture-assembly Large_1757210330483.jpeg" alt="Furniture assembly" loading="lazy" /></div>
+      <div class="project-card" data-category="installation" data-img="images/window-blinds-installed.jpg" data-title="Window Blind Installation">
+        <div class="project-img"><img src="images/window-blinds-installed.jpg" alt="Window blind installation" loading="lazy" /></div>
         <div class="project-body">
-          <div class="project-category">Assembly</div>
-          <div class="project-title">Furniture Assembly</div>
-          <div class="project-desc">Professional assembly of heavy and complex pieces for stability and longevity.</div>
+          <div class="project-category">Installation</div>
+          <div class="project-title">Window Blind Installation</div>
+          <div class="project-desc">Custom-fit blinds installed level and plumb with clean brackets and hardware.</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="installation" data-img="images/decorative-mirror-install.jpg" data-title="Decorative Mirror Installation">
+        <div class="project-img"><img src="images/decorative-mirror-install.jpg" alt="Decorative mirror installation" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Installation</div>
+          <div class="project-title">Decorative Mirror Installation</div>
+          <div class="project-desc">Heavy mirror mounted securely into studs — perfectly level and anchored right.</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="installation" data-img="images/stucco-decor-install.jpg" data-title="Stucco Décor Installation">
+        <div class="project-img"><img src="images/stucco-decor-install.jpg" alt="Stucco decorative installation" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Installation</div>
+          <div class="project-title">Stucco Décor Installation</div>
+          <div class="project-desc">Decorative stucco elements mounted and finished for a clean, architectural look.</div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="installation" data-img="images/shower-grab-bars.jpg" data-title="Shower Grab Bar Installation">
+        <div class="project-img"><img src="images/shower-grab-bars.jpg" alt="Shower grab bar installation" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="project-category">Installation</div>
+          <div class="project-title">Shower Grab Bar Installation</div>
+          <div class="project-desc">ADA-compliant grab bars anchored into studs for maximum safety and reliability.</div>
         </div>
       </div>
 
@@ -577,6 +682,20 @@
         </div>
       </div>
 
+      <div class="ba-card">
+        <div class="ba-slider">
+          <div class="ba-after"><img draggable="false" src="images/fireplace-renovation-after.jpg" alt="After: Fireplace renovation" loading="lazy" /></div>
+          <div class="ba-before"><img draggable="false" src="images/fireplace-renovation-before.jpg" alt="Before: Fireplace renovation" loading="lazy" /></div>
+          <div class="ba-divider-line"></div><div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 9 5 9M16 3l5 9-5 9"/></svg></div>
+          <span class="ba-label-before">Before</span>
+          <span class="ba-label-after">After</span>
+        </div>
+        <div class="ba-body">
+          <div class="ba-title">Fireplace Renovation</div>
+          <div class="ba-desc">Shiplap accent wall, mirror installation, firebox cleaning, and heat-resistant paint for a clean modern look.</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -700,7 +819,7 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="tankless-flush.html">Tankless Flush</a></li>
           <li><a href="realtors.html">Realtors</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -840,16 +959,13 @@
   // ── BEFORE/AFTER SLIDERS ──
   document.querySelectorAll('.ba-slider').forEach(function(slider) {
     var before = slider.querySelector('.ba-before');
-    var beforeImg = before ? before.querySelector('img') : null;
     var dividerLine = slider.querySelector('.ba-divider-line');
     var handle = slider.querySelector('.ba-handle');
     if (!before || !dividerLine || !handle) return;
 
     function setPos(pct) {
       pct = Math.min(100, Math.max(0, pct));
-      var sliderW = slider.getBoundingClientRect().width;
-      before.style.width = pct + '%';
-      if (beforeImg && sliderW > 0) beforeImg.style.width = sliderW + 'px';
+      before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
       dividerLine.style.left = pct + '%';
       handle.style.left = pct + '%';
     }
@@ -870,7 +986,6 @@
       setPos(getPct(e.clientX));
     });
 
-    window.addEventListener('load', function() { setPos(50); });
     setPos(50);
   });
 
