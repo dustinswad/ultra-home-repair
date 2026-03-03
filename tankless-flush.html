@@ -833,5 +833,19 @@
   })();
 </script>
 
+  <script>
+    // Phone click conversion tracking
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          gtag('event', 'phone_call', {
+            'event_category': 'conversion',
+            'event_label': 'Phone Click',
+            'value': 1
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
