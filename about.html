@@ -1013,13 +1013,23 @@
 </script>
 
   <script>
-    // Phone click conversion tracking
+    // Phone & SMS click conversion tracking
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
         el.addEventListener('click', function() {
           gtag('event', 'phone_call', {
             'event_category': 'conversion',
             'event_label': 'Phone Click',
+            'value': 1,
+            'transport_type': 'beacon'
+          });
+        });
+      });
+      document.querySelectorAll('a[href^="sms:"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          gtag('event', 'sms_click', {
+            'event_category': 'conversion',
+            'event_label': 'SMS Click',
             'value': 1,
             'transport_type': 'beacon'
           });

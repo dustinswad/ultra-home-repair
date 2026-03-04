@@ -103,6 +103,16 @@
       // Always use sendForm when the form may contain files
       await emailjs.sendForm(cfg.serviceId, cfg.templateId, form);
 
+      // GA4 conversion tracking
+      if (typeof gtag === 'function') {
+        gtag('event', 'contact_form_submit', {
+          'event_category': 'conversion',
+          'event_label': 'Contact Form',
+          'value': 1,
+          'transport_type': 'beacon'
+        });
+      }
+
       alert("Thanks! Your request was sent. We will call you back within 1 business day.");
       form.reset();
     } catch (err) {
