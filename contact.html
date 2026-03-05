@@ -851,6 +851,10 @@
 
     emailjs.send('service_sbirwu1', 'template_6myr1z8', templateParams)
     .then(() => {
+      gtag('event', 'contact_form_submit', {
+        event_category: 'contact',
+        event_label: 'Contact Form'
+      });
       document.getElementById('contactForm').style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
     }).catch(() => {
