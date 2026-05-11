@@ -58,7 +58,7 @@
       "@type": "Offer",
       "price": "125.00",
       "priceCurrency": "USD",
-      "description": "Flat-rate annual tankless water heater flush including inspection, descaling, inlet filter cleaning, supply line flush, performance testing, and detailed service documentation."
+      "description": "Flat-rate annual tankless water heater flush including pre-flush system inspection, 30+ minute professional descaling of the heat exchanger with Qwikdescaler solution, cold water inlet filter cleaning, post-flush rinse and restart verification, and detailed emailed service documentation. 90-day workmanship warranty."
     }
   }
   </script>
@@ -97,7 +97,7 @@
         "name": "What does the $125 flush include?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Full system inspection, professional descaling flush of the heat exchanger, inlet filter cleaning, supply line flush, performance testing, and detailed service documentation. Everything needed to keep your unit running efficiently and your warranty valid. No upsells."
+          "text": "Pre-flush system inspection (including a leak and corrosion check), 30+ minute professional descaling of the heat exchanger with Qwikdescaler solution, cold water inlet filter cleaning, post-flush rinse and restart verification, and a detailed emailed service receipt. 90-day workmanship warranty. Flat price — no upsells, no hourly billing."
         }
       },
       {
@@ -105,7 +105,7 @@
         "name": "How long does a flush take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "About 1 to 1.5 hours, including setup, the 45-minute descaling circulation, and post-flush testing."
+          "text": "About 1 to 1.5 hours, including setup, a minimum 30-minute descaling circulation (longer when scale is heavy), and post-flush rinse and verification."
         }
       },
       {
@@ -319,12 +319,20 @@
     .nextdoor-banner img { width: 100%; height: auto; }
 
     /* ── PROCESS STEPS ── */
-    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 56px; position: relative; }
-    .process-steps::before { content: ''; position: absolute; top: 32px; left: calc(12.5% + 16px); right: calc(12.5% + 16px); height: 2px; background: var(--gray-200); z-index: 0; }
-    .step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+    .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 56px; }
+    .step { text-align: center; padding: 0 8px; }
     .step-number { width: 64px; height: 64px; border-radius: 50%; background: var(--orange); color: white; font-size: 22px; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; box-shadow: 0 4px 16px rgba(224,90,43,0.3); }
     .step h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
     .step p { font-size: 14px; color: var(--gray-600); line-height: 1.65; }
+
+    /* ── EQUIPMENT SECTION ── */
+    .equipment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+    .equipment-item { background: var(--navy); color: white; border-radius: var(--radius-lg); padding: 32px 28px; }
+    .equipment-item h3 { font-size: 16px; font-weight: 800; color: white; margin-bottom: 10px; }
+    .equipment-item p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+    .expertise-note { margin-top: 32px; background: var(--gray-100); border-left: 4px solid var(--orange); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; font-size: 15px; color: var(--gray-600); line-height: 1.75; }
+    .expertise-note strong { color: var(--navy); }
+    @media (max-width: 768px) { .equipment-grid { grid-template-columns: 1fr; } }
 
     /* ── TANKLESS REVIEWS (named) ── */
     .tankless-reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
@@ -420,8 +428,7 @@
       .photo-grid { grid-template-columns: repeat(2, 1fr); }
       .benefits-grid { grid-template-columns: 1fr 1fr; }
       .about-grid { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .process-steps::before { display: none; }
+      .process-steps { grid-template-columns: 1fr; gap: 32px; }
       .tankless-reviews-grid { grid-template-columns: 1fr; }
       .review-card { padding: 0 16px; }
       .review-inner { padding: 32px 28px; }
@@ -437,7 +444,7 @@
       .section-title { font-size: 26px; }
       .photo-grid { grid-template-columns: 1fr; }
       .benefits-grid { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr; }
+      /* process-steps already 1-col at 768px */
     }
 
     /* ── HERO PRICE BADGE ── */
@@ -726,30 +733,68 @@
     <div class="section-center">
       <div class="section-label">The Service</div>
       <h2 class="section-title">What Happens During a Flush</h2>
-      <p class="section-subtitle">A complete service visit takes about 1–1.5 hours. Here's what you can expect.</p>
+      <p class="section-subtitle">A complete service visit takes about 1–1.5 hours. Here's the process I run on every unit.</p>
     </div>
     <div class="process-steps">
       <div class="step">
         <div class="step-number">1</div>
-        <h3>Inspection</h3>
-        <p>I assess your system, check the inlet filter, and identify the degree of mineral buildup before starting.</p>
+        <h3>System Inspection</h3>
+        <p>I check the brand, model, and connections, look for signs of leaks or corrosion that could indicate a slow leak, and assess the degree of mineral buildup before starting.</p>
       </div>
       <div class="step">
         <div class="step-number">2</div>
-        <h3>Descaling</h3>
-        <p>Using professional equipment and descaling solution, I flush the heat exchanger to dissolve and remove mineral deposits.</p>
+        <h3>Setup &amp; Isolation</h3>
+        <p>I shut off the gas and water supply, connect to the unit's isolation valves, and stage the descaling pump, hoses, and reservoir for a clean, contained flush.</p>
       </div>
       <div class="step">
         <div class="step-number">3</div>
-        <h3>Cleaning</h3>
-        <p>I clean the inlet filter, flush supply lines, and ensure water flows freely through every part of your system.</p>
+        <h3>Heat Exchanger Descaling</h3>
+        <p>I circulate professional Qwikdescaler solution through the heat exchanger for a minimum of 30 minutes — longer when scale is heavy — until mineral deposits are fully dissolved.</p>
       </div>
       <div class="step">
         <div class="step-number">4</div>
-        <h3>Testing</h3>
-        <p>I confirm proper operation, water pressure, and heating function — and walk you through what was found and cleared during the service.</p>
+        <h3>Inlet Filter Cleaning</h3>
+        <p>I remove and clean the cold water inlet filter to restore full flow into the unit. If the filter is damaged, replacement is available for an additional charge.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">5</div>
+        <h3>Rinse &amp; Restart</h3>
+        <p>I flush remaining descaling solution from the system, restart the unit, confirm proper ignition, and verify temperature output at the fixture.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">6</div>
+        <h3>Service Documentation</h3>
+        <p>You receive an emailed receipt detailing the work performed — useful for your records, manufacturer warranty claims, and future maintenance scheduling.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- EQUIPMENT & EXPERTISE -->
+<section class="section section-alt" id="equipment">
+  <div class="container">
+    <p class="eyebrow">Professional-Grade Service</p>
+    <h2 class="section-title">What a Proper Flush Requires</h2>
+    <p class="section-intro">A tankless flush isn't a DIY-friendly job. Done wrong, it can damage the heat exchanger, leave residual descaler in your water lines, or trigger lockout codes that require a service call to clear. Here's the equipment and knowledge that goes into every $125 service.</p>
+    <div class="equipment-grid">
+      <div class="equipment-item">
+        <h3>Submersible Descaling Pump</h3>
+        <p>Circulates Qwikdescaler at the correct flow rate through the heat exchanger — a standard sump pump won't do it.</p>
+      </div>
+      <div class="equipment-item">
+        <h3>5/8" Service Hoses</h3>
+        <p>Heat-rated lines with proper fittings to connect securely to your unit's isolation valves without leaks or pressure loss.</p>
+      </div>
+      <div class="equipment-item">
+        <h3>Qwikdescaler Solution</h3>
+        <p>Professional-grade, biodegradable descaling solution engineered specifically for tankless heat exchangers — not vinegar, not a hardware-store substitute.</p>
+      </div>
+      <div class="equipment-item">
+        <h3>Filter Service Tools</h3>
+        <p>Specialized tools for safe inlet filter removal without damaging the manifold or cross-threading the housing on reinstall.</p>
+      </div>
+    </div>
+    <p class="expertise-note"><strong>Beyond equipment:</strong> a proper flush requires knowing how to safely depressurize the system, maintain proper circulation pressure during descaling, fully rinse residual solution from the lines, and restart the unit in the correct sequence to avoid triggering error codes or lockouts. Any of these done wrong can damage the unit or void your manufacturer warranty.</p>
   </div>
 </section>
 
@@ -760,14 +805,14 @@
     <h2 class="section-title">What You Get for $125</h2>
     <p class="section-intro">No upsells, no surprise charges, no "while I'm here" add-ons. One flat price, every time.</p>
     <ul class="includes-list">
-      <li>Full system inspection &amp; mineral buildup assessment</li>
-      <li>Professional descaling flush of the heat exchanger (45-min circulation)</li>
-      <li>Inlet filter cleaning</li>
-      <li>Supply line flush</li>
-      <li>Performance &amp; temperature testing post-flush</li>
-      <li>Detailed service documentation</li>
-      <li>Manufacturer warranty maintenance documented</li>
+      <li>Pre-flush system inspection — including leak and corrosion check</li>
+      <li>30+ minute heat exchanger descaling with professional Qwikdescaler solution</li>
+      <li>Professional-grade equipment: submersible descaling pump, service hoses, calibrated reservoir</li>
+      <li>Cold water inlet filter removal and cleaning</li>
+      <li>Post-flush rinse and system restart verification</li>
+      <li>Detailed emailed service receipt for your records and warranty</li>
       <li>90-day workmanship warranty</li>
+      <li>Flat $125 — no hourly billing, no surprise charges, no upsells</li>
     </ul>
   </div>
 </section>
@@ -794,11 +839,11 @@
       </div>
       <div class="faq-item">
         <h3>What does the $125 flush include?</h3>
-        <p>Full system inspection, professional descaling flush of the heat exchanger, inlet filter cleaning, supply line flush, performance testing, and detailed service documentation. Everything needed to keep your unit running efficiently and your warranty valid. No upsells.</p>
+        <p>Pre-flush system inspection (including a leak and corrosion check), 30+ minute professional descaling of the heat exchanger with Qwikdescaler solution, cold water inlet filter cleaning, post-flush rinse and restart verification, and a detailed emailed service receipt. 90-day workmanship warranty. Flat price — no upsells, no hourly billing.</p>
       </div>
       <div class="faq-item">
         <h3>How long does a flush take?</h3>
-        <p>About 1 to 1.5 hours, including setup, the 45-minute descaling circulation, and post-flush testing.</p>
+        <p>About 1 to 1.5 hours, including setup, a minimum 30-minute descaling circulation (longer when scale is heavy), and post-flush rinse and verification.</p>
       </div>
       <div class="faq-item">
         <h3>Can I flush my tankless myself?</h3>
