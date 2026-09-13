@@ -515,6 +515,9 @@
       display: flex;
       transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
+    @media (prefers-reduced-motion: reduce) {
+      .carousel-track { transition: none; }
+    }
     .review-card {
       min-width: 100%;
       padding: 0 80px;
@@ -2114,9 +2117,12 @@
     const playIcon = document.getElementById('playIcon');
     const reviewsSection = document.getElementById('reviews');
     const totalSlides = 13;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let current = 0;
     let autoTimer;
-    let paused = false;
+    // Respect the OS/browser-level reduced-motion setting: start paused
+    // instead of auto-rotating, same as if the visitor had hit pause.
+    let paused = prefersReducedMotion;
 
     function goTo(index) {
       current = (index + totalSlides) % totalSlides;
@@ -2131,7 +2137,7 @@
     function startAuto() {
       clearInterval(autoTimer);
       if (paused) return;
-      autoTimer = setInterval(() => goTo(current + 1), 5000);
+      autoTimer = setInterval(() => goTo(current + 1), 8000);
     }
 
     function resetAuto() {
@@ -2161,7 +2167,13 @@
     reviewsSection.addEventListener('focusin', () => clearInterval(autoTimer));
     reviewsSection.addEventListener('focusout', () => { if (!paused) startAuto(); });
 
-    startAuto();
+    if (prefersReducedMotion) {
+      // Reflect the paused state in the button UI instead of implying
+      // it's auto-rotating when it isn't.
+      setPaused(true);
+    } else {
+      startAuto();
+    }
   })();
 </script>
 
