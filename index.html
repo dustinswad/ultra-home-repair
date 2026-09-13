@@ -25,14 +25,16 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
   <style>
     /* ============================================================
        DESIGN TOKENS
     ============================================================ */
     :root {
       --orange: #E05A2B;
-      --orange-dark: #c44d22;
+      --orange-dark: #be4c24;
       --orange-light: #f97340;
       --navy: #1E2D5F;
       --navy-dark: #141f42;
@@ -156,7 +158,7 @@
       position: relative;
       background:
         linear-gradient(to bottom right, rgba(20,30,62,0.88), rgba(20,30,62,0.72)),
-        url('images/hero-bg.jpg') center center / cover no-repeat;
+        url('images/Hero background Large.jpeg') center center / cover no-repeat;
       /* Fallback gradient if no image */
       background-color: var(--navy);
       overflow: hidden;
@@ -258,12 +260,12 @@
     .btn-primary {
       background: var(--orange);
       color: white;
-      box-shadow: 0 4px 20px rgba(224,90,43,0.40);
+      box-shadow: 0 2px 8px rgba(224,90,43,0.25);
     }
     .btn-primary:hover {
       background: var(--orange-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(224,90,43,0.50);
+      box-shadow: 0 4px 14px rgba(224,90,43,0.32);
     }
     .btn-outline {
       background: rgba(255,255,255,0.1);
@@ -332,7 +334,7 @@
       font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--orange-dark);
       margin-bottom: 12px;
     }
     .section-title {
@@ -371,6 +373,7 @@
       transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
     .service-card::before {
       content: '';
@@ -424,12 +427,19 @@
       margin-top: 22px;
       font-size: 13.5px;
       font-weight: 800;
-      color: var(--orange);
+      color: var(--orange-dark);
       letter-spacing: 0.04em;
       transition: gap var(--transition);
     }
     .service-link:hover { gap: 8px; }
     .service-link svg { width: 14px; height: 14px; }
+    /* Stretched-link: makes the whole card clickable via this one real link,
+       instead of wrapping the card in <a> (which would nest/duplicate links). */
+    .service-link::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
 
     /* ============================================================
        HOW IT WORKS
@@ -564,7 +574,7 @@
     }
     .review-author-info span {
       font-size: 13px;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.6);
     }
     .review-source {
       margin-left: auto;
@@ -573,7 +583,7 @@
       gap: 6px;
       font-size: 12px;
       font-weight: 700;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.6);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
@@ -771,7 +781,7 @@
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.5);
       margin-bottom: 18px;
     }
     .footer-links {
@@ -1361,7 +1371,7 @@
 <nav class="nav">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo" aria-label="Ultra Home Repair Home">
-      <img src="images/Ultra_Home_Repair_Logo_web.png" alt="Ultra Home Repair" />
+      <img src="images/Ultra_Home_Repair_Logo_web.png" alt="Ultra Home Repair" width="308" height="104" fetchpriority="high" />
     </a>
     <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -1383,6 +1393,8 @@
     </ul>
   </div>
 </nav>
+
+<main>
 
 <!-- ============================================================
      HERO
@@ -1498,7 +1510,7 @@
         </div>
         <h3>Tankless Water Heater Flush</h3>
         <p>Annual professional descaling maintains peak performance, extends system lifespan, and protects your warranty. Learn why this service prevents costly repairs.</p>
-        <a href="tankless-water-heater-flush.html" class="service-link">
+        <a href="tankless-water-heater-flush.html" class="service-link" aria-label="Learn more about tankless water heater flush service">
           Learn more
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -1851,7 +1863,9 @@
             <span class="about-stat-label">Years Experience</span>
           </div>
           <div class="about-stat about-stat-badge">
-            <img src="images/nextdoor-fave-2025-transparent.png" alt="2025 Nextdoor Neighborhood Fave" style="width:100%;height:auto;object-fit:contain;" />
+            <a href="https://nextdoor.com/page/dustin-swad-irvine-ca/" target="_blank" rel="noopener" aria-label="View Ultra Home Repair's 2025 Neighborhood Fave award on Nextdoor">
+              <img src="images/nextdoor-fave-2025-transparent.png" alt="2025 Nextdoor Neighborhood Fave" width="350" height="350" style="width:100%;height:auto;object-fit:contain;" />
+            </a>
           </div>
           <div class="about-stat">
             <span class="about-stat-value">5.0</span>
@@ -1876,13 +1890,15 @@
 <!-- ============================================================
      FOOTER
 ============================================================ -->
+</main>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <!-- Brand -->
       <div>
         <div class="footer-logo">
-          <img src="images/Logo_white.png" alt="Ultra Home Repair" />
+          <img src="images/Logo_white.png" alt="Ultra Home Repair" width="304" height="100" />
         </div>
         <p class="footer-about">Professional handyman services based in Woodbury, Irvine. Serving homeowners and Realtors throughout Orange County — Irvine neighborhoods including Woodbury, Great Park, Orchard Hills, Northwood, Turtle Rock, Quail Hill &amp; Portola Springs, plus Newport Beach, Corona Del Mar, Laguna Beach, Dana Point, Laguna Niguel, Mission Viejo, Aliso Viejo, Lake Forest, Tustin, Costa Mesa, and all of Orange County.</p>
         <div class="footer-social">
