@@ -51,13 +51,16 @@ The company focuses on professional home repair, maintenance, installation, and 
 
 ## Important Pages
 
-* https://ultrahomerepair.com/
-* https://ultrahomerepair.com/tankless-water-heater-flush.html
-* https://ultrahomerepair.com/services.html
-* https://ultrahomerepair.com/contact.html
+* [Home](https://ultrahomerepair.com/): Overview of services, service area, and pricing
+* [Services](https://ultrahomerepair.com/services.html): Full list of handyman and home repair services
+* [Tankless Water Heater Flush](https://ultrahomerepair.com/tankless-water-heater-flush.html): Tankless water heater flushing and maintenance details and pricing
+* [Realtors](https://ultrahomerepair.com/realtors.html): Pre-listing and post-inspection repair services for real estate agents
+* [Gallery](https://ultrahomerepair.com/gallery.html): Photos of completed repair and installation work
+* [About](https://ultrahomerepair.com/about.html): Background on Ultra Home Repair and its service philosophy
+* [Contact](https://ultrahomerepair.com/contact.html): Request an estimate or schedule a repair
 
 ## Contact
 
-Website: https://ultrahomerepair.com/
+Website: [https://ultrahomerepair.com/](https://ultrahomerepair.com/)
 Phone: (949) 371-6423
 Preferred contact method: Call or text photos of the repair for a faster estimate.
