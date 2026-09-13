@@ -23,16 +23,21 @@
   <meta name="description" content="Irvine & Orange County's trusted handyman. Plumbing, electrical, home repairs, Realtor services, and tankless water heater experts. Based in Woodbury, serving Orchard Hills to Great Park." />
   <link rel="canonical" href="https://ultrahomerepair.com/" />
   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preload" href="fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin />
   <style>
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400 900;
+      font-display: swap;
+      src: url('fonts/montserrat-latin.woff2') format('woff2');
+    }
     /* ============================================================
        DESIGN TOKENS
     ============================================================ */
     :root {
-      --orange: #E05A2B;
-      --orange-dark: #c44d22;
+      --orange: #C1471D;
+      --orange-dark: #A93B17;
       --orange-light: #f97340;
       --navy: #1E2D5F;
       --navy-dark: #141f42;
@@ -68,6 +73,8 @@
     }
     img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
+    .skip-link { position: fixed; top: 8px; left: 8px; z-index: 1000; padding: 10px 16px; border-radius: 6px; background: var(--navy); color: white; font-weight: 800; transform: translateY(-160%); transition: transform var(--transition); }
+    .skip-link:focus { transform: translateY(0); }
 
     .container {
       max-width: 1160px;
@@ -99,6 +106,7 @@
       height: 52px;
       width: auto;
     }
+    .nav-logo { flex: 0 0 auto; }
     .nav-hamburger { display: none; }
     .nav-links {
       display: flex;
@@ -154,11 +162,7 @@
       display: flex;
       align-items: flex-start;
       position: relative;
-      background:
-        linear-gradient(to bottom right, rgba(20,30,62,0.88), rgba(20,30,62,0.72)),
-        url('images/hero-bg.jpg') center center / cover no-repeat;
-      /* Fallback gradient if no image */
-      background-color: var(--navy);
+      background: linear-gradient(to bottom right, #141e3e, #273867);
       overflow: hidden;
     }
     .hero::before {
@@ -564,7 +568,7 @@
     }
     .review-author-info span {
       font-size: 13px;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.68);
     }
     .review-source {
       margin-left: auto;
@@ -573,7 +577,7 @@
       gap: 6px;
       font-size: 12px;
       font-weight: 700;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.68);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
@@ -659,6 +663,7 @@
       align-items: center;
       justify-content: center;
     }
+    .about-stat-label {
       font-size: 12.5px;
       font-weight: 700;
       color: var(--gray-600);
@@ -707,7 +712,7 @@
     .about-badge-title {
       font-size: 13px;
       font-weight: 600;
-      opacity: 0.85;
+      color: white;
     }
     /* Orange accent square behind image */
     .about-image-wrap::before {
@@ -771,7 +776,7 @@
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.65);
       margin-bottom: 18px;
     }
     .footer-links {
@@ -810,7 +815,7 @@
       align-items: center;
       padding-top: 28px;
       font-size: 13px;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.65);
     }
     .footer-ratings {
       display: flex;
@@ -835,7 +840,7 @@
       .how-steps::before { display: none; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
       .nav-links { display: none; }
       .nav-links.open {
         display: flex;
@@ -1355,13 +1360,15 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ============================================================
      NAVIGATION
 ============================================================ -->
 <nav class="nav">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo" aria-label="Ultra Home Repair Home">
-      <img src="images/Ultra_Home_Repair_Logo_web.png" alt="Ultra Home Repair" />
+      <img src="images/ultra-home-repair-logo-nav.png" alt="Ultra Home Repair" width="320" height="108" fetchpriority="high" />
     </a>
     <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -1383,6 +1390,8 @@
     </ul>
   </div>
 </nav>
+
+<main id="main-content">
 
 <!-- ============================================================
      HERO
@@ -1499,7 +1508,7 @@
         <h3>Tankless Water Heater Flush</h3>
         <p>Annual professional descaling maintains peak performance, extends system lifespan, and protects your warranty. Learn why this service prevents costly repairs.</p>
         <a href="tankless-water-heater-flush.html" class="service-link">
-          Learn more
+          Learn about the $125 tankless flush
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -1851,7 +1860,7 @@
             <span class="about-stat-label">Years Experience</span>
           </div>
           <div class="about-stat about-stat-badge">
-            <img src="images/nextdoor-fave-2025-transparent.png" alt="2025 Nextdoor Neighborhood Fave" style="width:100%;height:auto;object-fit:contain;" />
+            <img src="images/nextdoor-fave-2025-transparent-400.png" alt="2025 Nextdoor Neighborhood Fave" width="400" height="400" loading="lazy" decoding="async" style="width:100%;height:auto;object-fit:contain;" />
           </div>
           <div class="about-stat">
             <span class="about-stat-value">5.0</span>
@@ -1862,7 +1871,7 @@
       </div>
       <div class="about-image-wrap">
         <div class="about-image-frame">
-          <img src="images/Dustin_Irvine_Kitchen.jpeg" alt="Dustin Swad — Owner, Ultra Home Repair" />
+          <img src="images/dustin-irvine-kitchen-800.jpg" alt="Dustin Swad — Owner, Ultra Home Repair" width="800" height="796" loading="lazy" decoding="async" />
           <div class="about-badge">
             <span class="about-badge-name">Dustin Swad</span>
             <span class="about-badge-title">Owner — Ultra Home Repair</span>
@@ -1873,6 +1882,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- ============================================================
      FOOTER
 ============================================================ -->
@@ -1882,7 +1893,7 @@
       <!-- Brand -->
       <div>
         <div class="footer-logo">
-          <img src="images/Logo_white.png" alt="Ultra Home Repair" />
+          <img src="images/ultra-home-repair-logo-footer.png" alt="Ultra Home Repair" width="390" height="128" loading="lazy" decoding="async" />
         </div>
         <p class="footer-about">Professional handyman services based in Woodbury, Irvine. Serving homeowners and Realtors throughout Orange County — Irvine neighborhoods including Woodbury, Great Park, Orchard Hills, Northwood, Turtle Rock, Quail Hill &amp; Portola Springs, plus Newport Beach, Corona Del Mar, Laguna Beach, Dana Point, Laguna Niguel, Mission Viejo, Aliso Viejo, Lake Forest, Tustin, Costa Mesa, and all of Orange County.</p>
         <div class="footer-social">
