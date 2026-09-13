@@ -25,9 +25,7 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     /* ============================================================
        DESIGN TOKENS
@@ -644,6 +642,15 @@
     }
     .carousel-pause:hover { color: white; }
     .carousel-pause svg { width: 16px; height: 16px; }
+
+    /* ============================================================
+       FAQ
+    ============================================================ */
+    .faq-list { margin-top: 8px; display: flex; flex-direction: column; gap: 0; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .faq-item { border-bottom: 1px solid var(--gray-200); padding: 24px 0; }
+    .faq-item:first-child { border-top: 1px solid var(--gray-200); }
+    .faq-item h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+    .faq-item p { font-size: 15px; color: var(--gray-600); line-height: 1.75; }
 
     /* ============================================================
        ABOUT
@@ -1379,6 +1386,62 @@
     "inLanguage": "en-US"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What areas does Ultra Home Repair serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ultra Home Repair is based in Woodbury, Irvine and primarily serves Irvine neighborhoods including Woodbury, Great Park, Orchard Hills, Northwood, Turtle Rock, Quail Hill, and Portola Springs, plus Newport Beach, Corona del Mar, Laguna Beach, Dana Point, Laguna Niguel, Mission Viejo, Aliso Viejo, Lake Forest, Tustin, Costa Mesa, and the rest of Orange County."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What handyman services do you offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Complete handyman and home repair services including plumbing fixture replacement, electrical fixtures and outlets, drywall patching and paint touch-up, door and hardware repair, ceiling fan and light fixture installation, tankless water heater flushing, and general home maintenance and installation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can I get a quote?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Text or call (949) 371-6423, or submit a request through the contact form, and you'll hear back within 24 hours — usually much sooner. Texting photos of the repair speeds up the estimate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with Realtors, landlords, and property managers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Ultra Home Repair handles Realtor pre-listing repairs, post-inspection punch lists, tenant turnover work, and ongoing maintenance for landlords and property managers throughout Orange County."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does pricing work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You get a written estimate before any work starts, with a flat price and no hourly billing surprises. Because there's no general contractor markup, pricing stays transparent and competitive. Tankless water heater flush service has a standard flat rate of $125."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What payment methods do you accept?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cash, check, credit card, Zelle, and Venmo."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -1903,6 +1966,44 @@
             <span class="about-badge-title">Owner — Ultra Home Repair</span>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What areas does Ultra Home Repair serve?</h3>
+        <p>Ultra Home Repair is based in Woodbury, Irvine and primarily serves Irvine neighborhoods including Woodbury, Great Park, Orchard Hills, Northwood, Turtle Rock, Quail Hill, and Portola Springs, plus Newport Beach, Corona del Mar, Laguna Beach, Dana Point, Laguna Niguel, Mission Viejo, Aliso Viejo, Lake Forest, Tustin, Costa Mesa, and the rest of Orange County.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What handyman services do you offer?</h3>
+        <p>Complete handyman and home repair services including plumbing fixture replacement, electrical fixtures and outlets, drywall patching and paint touch-up, door and hardware repair, ceiling fan and light fixture installation, tankless water heater flushing, and general home maintenance and installation.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How fast can I get a quote?</h3>
+        <p>Text or call (949) 371-6423, or submit a request through the contact form, and you'll hear back within 24 hours — usually much sooner. Texting photos of the repair speeds up the estimate.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you work with Realtors, landlords, and property managers?</h3>
+        <p>Yes. Ultra Home Repair handles Realtor pre-listing repairs, post-inspection punch lists, tenant turnover work, and ongoing maintenance for landlords and property managers throughout Orange County.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does pricing work?</h3>
+        <p>You get a written estimate before any work starts, with a flat price — no hourly billing surprises. Because there's no general contractor markup, pricing stays transparent and competitive. Tankless water heater flush service has a standard flat rate of $125.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What payment methods do you accept?</h3>
+        <p>Cash, check, credit card, Zelle, and Venmo.</p>
       </div>
     </div>
   </div>
