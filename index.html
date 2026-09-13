@@ -154,7 +154,8 @@
       display: flex;
       align-items: flex-start;
       position: relative;
-      background: linear-gradient(to bottom right, #141e3e, #273867);
+      background: linear-gradient(to bottom right, rgba(20,30,62,0.88), rgba(20,30,62,0.72));
+      background-color: var(--navy);
       overflow: hidden;
     }
     .hero::before {
@@ -201,7 +202,8 @@
       border-radius: 100px;
       margin-bottom: 24px;
     }
-    .hero-eyebrow span { color: var(--orange-light); }
+    .hero-eyebrow .hero-experience { color: var(--orange-light); }
+    .hero-eyebrow .hero-base, .hero-experience { white-space: nowrap; }
     .hero h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: clamp(38px, 5.5vw, 62px);
@@ -215,13 +217,18 @@
       color: var(--orange-light);
     }
     .hero-services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      list-style: none;
+      padding: 0;
       font-size: 15px;
       font-weight: 700;
       color: var(--orange-light);
       letter-spacing: 0.04em;
       margin-bottom: 14px;
-      white-space: nowrap;
     }
+    .hero-services li { white-space: nowrap; }
     @media (max-width: 768px) {
       .hero-services { white-space: normal; font-size: 13px; }
     }
@@ -254,12 +261,12 @@
     .btn-primary {
       background: var(--orange);
       color: white;
-      box-shadow: 0 4px 20px rgba(224,90,43,0.40);
+      box-shadow: 0 2px 8px rgba(224,90,43,0.25);
     }
     .btn-primary:hover {
       background: var(--orange-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(224,90,43,0.50);
+      box-shadow: 0 4px 14px rgba(224,90,43,0.32);
     }
     .btn-outline {
       background: rgba(255,255,255,0.1);
@@ -328,7 +335,7 @@
       font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--orange-dark);
       margin-bottom: 12px;
     }
     .section-title {
@@ -367,6 +374,7 @@
       transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
     .service-card::before {
       content: '';
@@ -420,12 +428,19 @@
       margin-top: 22px;
       font-size: 13.5px;
       font-weight: 800;
-      color: var(--orange);
+      color: var(--orange-dark);
       letter-spacing: 0.04em;
       transition: gap var(--transition);
     }
     .service-link:hover { gap: 8px; }
     .service-link svg { width: 14px; height: 14px; }
+    /* Stretched-link: makes the whole card clickable via this one real link,
+       instead of wrapping the card in <a> (which would nest/duplicate links). */
+    .service-link::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
 
     /* ============================================================
        HOW IT WORKS
@@ -501,7 +516,11 @@
     }
     .carousel-track {
       display: flex;
+      align-items: flex-start;
       transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .carousel-track { transition: none; }
     }
     .review-card {
       min-width: 100%;
@@ -576,6 +595,7 @@
 
     .carousel-controls {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       gap: 16px;
@@ -584,6 +604,7 @@
     .carousel-btn {
       width: 44px;
       height: 44px;
+      flex-shrink: 0;
       border-radius: 50%;
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.2);
@@ -598,21 +619,64 @@
     .carousel-btn svg { width: 18px; height: 18px; }
     .carousel-dots {
       display: flex;
-      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
     }
     .dot {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      cursor: pointer;
+    }
+    .dot::before {
+      content: '';
       width: 8px;
       height: 8px;
       border-radius: 50%;
       background: rgba(255,255,255,0.3);
-      cursor: pointer;
-      transition: all var(--transition);
+      transition: width var(--transition), background var(--transition);
     }
-    .dot.active {
+    .dot.active::before {
       background: var(--orange);
       width: 24px;
       border-radius: 4px;
     }
+    .dot:focus-visible {
+      outline: 2px solid white;
+      outline-offset: -2px;
+    }
+    .carousel-pause {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.55);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      margin-left: 4px;
+      transition: color var(--transition);
+    }
+    .carousel-pause:hover { color: white; }
+    .carousel-pause svg { width: 16px; height: 16px; }
+
+    /* ============================================================
+       FAQ
+    ============================================================ */
+    .faq-list { margin-top: 8px; display: flex; flex-direction: column; gap: 0; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .faq-item { border-bottom: 1px solid var(--gray-200); padding: 24px 0; }
+    .faq-item:first-child { border-top: 1px solid var(--gray-200); }
+    .faq-item h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+    .faq-item p { font-size: 15px; color: var(--gray-600); line-height: 1.75; }
 
     /* ============================================================
        ABOUT
@@ -630,38 +694,46 @@
     }
     .about-stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 36px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
     }
     .about-stat {
+      min-width: 0;
       background: var(--gray-100);
       border-radius: var(--radius);
-      padding: 20px 16px;
+      padding: 20px 12px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
     }
     .about-stat-value {
       font-size: 28px;
       font-weight: 900;
       color: var(--orange);
-      display: block;
       line-height: 1;
-      margin-bottom: 4px;
     }
+    .about-stat-label { font-size: 13px; color: var(--gray-600); }
     .about-stat-badge {
-      background: transparent;
-      padding: 0;
+      grid-column: 1 / -1;
+      grid-row: 2;
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 18px;
+      padding: 16px 20px;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      color: var(--navy);
+      text-decoration: none;
     }
-    .about-stat-label {
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--gray-600);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
+    .about-stat-badge img { width: 72px; height: 72px; flex-shrink: 0; }
+    .about-award-copy { display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; }
+    .about-award-copy strong { font-size: 16px; }
+    .about-award-link { color: var(--gray-600); text-decoration: underline; text-underline-offset: 3px; }
+    .about-stat-badge:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
     .about-image-wrap {
       position: relative;
       isolation: isolate;
@@ -678,6 +750,8 @@
       display: block;
     }
     .about-image-frame img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -738,6 +812,7 @@
     }
     .footer-logo img {
       height: 50px;
+      width: auto;
       opacity: 0.9;
     }
     .footer-about {
@@ -833,6 +908,36 @@
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
     @media (max-width: 960px) {
+      .carousel-dots { order: -1; flex-basis: 100%; }
+      .hero { min-height: 0; }
+      .hero-content { padding: 28px 0 88px; }
+      .hero-eyebrow {
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 100%;
+        gap: 4px 14px;
+        padding: 10px 18px;
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        margin-bottom: 20px;
+      }
+      .hero-eyebrow .hero-divider { display: none; }
+      .hero h1 { font-size: clamp(30px, 6vw, 42px); line-height: 1.15; margin-bottom: 20px; }
+      .hero-county { white-space: nowrap; }
+      .hero-services {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        justify-content: start;
+        gap: 8px 24px;
+        color: rgba(255,255,255,0.85);
+        font-size: 13px;
+        letter-spacing: 0;
+        margin-bottom: 18px;
+      }
+      .hero-services li:last-child { grid-column: 1 / -1; }
+      .hero-location { font-size: 14px; line-height: 1.65; margin-bottom: 24px; }
+      .hero-actions { display: grid; grid-template-columns: 1fr; gap: 12px; }
+      .hero-actions .btn { justify-content: center; width: 100%; min-height: 48px; padding: 13px 16px; font-size: 14px; letter-spacing: 0; }
       .nav-links { display: none; }
       .nav-links.open {
         display: flex;
@@ -885,11 +990,10 @@
       .nav-hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
       .nav-hamburger.open span:nth-child(2) { opacity: 0; }
       .nav-hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
-      .hero { min-height: 100svh; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-image-wrap { order: -1; }
-      .about-image-frame img { height: 340px; }
-      .about-stats { grid-template-columns: repeat(3, 1fr); }
+      .about-image-frame { min-height: 0; aspect-ratio: 1 / 1; }
+      .about-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .review-card { padding: 0 16px; }
       .review-inner { padding: 32px 28px; }
       .footer-grid { grid-template-columns: 1fr; }
@@ -1349,6 +1453,62 @@
     "inLanguage": "en-US"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What areas does Ultra Home Repair serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ultra Home Repair is based in Woodbury, Irvine and primarily serves Irvine neighborhoods including Woodbury, Great Park, Orchard Hills, Northwood, Turtle Rock, Quail Hill, and Portola Springs, plus Newport Beach, Corona del Mar, Laguna Beach, Dana Point, Laguna Niguel, Mission Viejo, Aliso Viejo, Lake Forest, Tustin, Costa Mesa, and the rest of Orange County."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What handyman services do you offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Complete handyman and home repair services including plumbing fixture replacement, electrical fixtures and outlets, drywall patching and paint touch-up, door and hardware repair, ceiling fan and light fixture installation, tankless water heater flushing, and general home maintenance and installation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can I get a quote?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Text or call (949) 371-6423, or submit a request through the contact form, and you'll hear back within 24 hours — usually much sooner. Texting photos of the repair speeds up the estimate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with Realtors, landlords, and property managers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Ultra Home Repair handles Realtor pre-listing repairs, post-inspection punch lists, tenant turnover work, and ongoing maintenance for landlords and property managers throughout Orange County."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does pricing work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You get a written estimate before any work starts, with a flat price and no hourly billing surprises. Because there's no general contractor markup, pricing stays transparent and competitive. Tankless water heater flush service has a standard flat rate of $125."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What payment methods do you accept?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cash, check, credit card, Zelle, and Venmo."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -1392,13 +1552,19 @@
   <div class="container">
     <div class="hero-content">
       <div class="hero-eyebrow">
-        📍 Based in Woodbury, Irvine &nbsp;·&nbsp; <span>15+ Years Experience</span>
+        <span class="hero-base">📍 Based in Woodbury, Irvine</span>
+        <span class="hero-divider" aria-hidden="true">·</span>
+        <span class="hero-experience">15+ Years Experience</span>
       </div>
-      <h1>Irvine &amp; Orange County's<br><em>Trusted Handyman</em></h1>
-      <p class="hero-services">
-        Plumbing <span>•</span> Electrical <span>•</span> Home Repairs <span>•</span> Realtor Services <span>•</span> Tankless Water Heater Experts
-      </p>
-      <p class="hero-location">Based in Woodbury, Irvine. Trusted from Orchard Hills to Great Park. Serving Coastal and South Orange County.</p>
+      <h1>Irvine &amp; <span class="hero-county">Orange County's</span><br><em>Trusted Handyman</em></h1>
+      <ul class="hero-services">
+        <li>Plumbing</li>
+        <li>Electrical</li>
+        <li>Home Repairs</li>
+        <li>Realtor Services</li>
+        <li>Tankless Water Heater Experts</li>
+      </ul>
+      <p class="hero-location">Serving Irvine, Coastal and South Orange County.</p>
       <div class="hero-actions">
         <a href="sms:+19493716423" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -1812,23 +1978,27 @@
       <button class="carousel-btn" id="prevBtn" aria-label="Previous review">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
-      <div class="carousel-dots" id="carouselDots">
-        <div class="dot active" data-index="0"></div>
-        <div class="dot" data-index="1"></div>
-        <div class="dot" data-index="2"></div>
-        <div class="dot" data-index="3"></div>
-        <div class="dot" data-index="4"></div>
-        <div class="dot" data-index="5"></div>
-        <div class="dot" data-index="6"></div>
-        <div class="dot" data-index="7"></div>
-        <div class="dot" data-index="8"></div>
-        <div class="dot" data-index="9"></div>
-        <div class="dot" data-index="10"></div>
-        <div class="dot" data-index="11"></div>
-        <div class="dot" data-index="12"></div>
+      <div class="carousel-dots" id="carouselDots" aria-label="Select review">
+        <button type="button" class="dot active" data-index="0" aria-label="Show review 1 of 13" aria-current="true"></button>
+        <button type="button" class="dot" data-index="1" aria-label="Show review 2 of 13"></button>
+        <button type="button" class="dot" data-index="2" aria-label="Show review 3 of 13"></button>
+        <button type="button" class="dot" data-index="3" aria-label="Show review 4 of 13"></button>
+        <button type="button" class="dot" data-index="4" aria-label="Show review 5 of 13"></button>
+        <button type="button" class="dot" data-index="5" aria-label="Show review 6 of 13"></button>
+        <button type="button" class="dot" data-index="6" aria-label="Show review 7 of 13"></button>
+        <button type="button" class="dot" data-index="7" aria-label="Show review 8 of 13"></button>
+        <button type="button" class="dot" data-index="8" aria-label="Show review 9 of 13"></button>
+        <button type="button" class="dot" data-index="9" aria-label="Show review 10 of 13"></button>
+        <button type="button" class="dot" data-index="10" aria-label="Show review 11 of 13"></button>
+        <button type="button" class="dot" data-index="11" aria-label="Show review 12 of 13"></button>
+        <button type="button" class="dot" data-index="12" aria-label="Show review 13 of 13"></button>
       </div>
       <button class="carousel-btn" id="nextBtn" aria-label="Next review">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <button class="carousel-pause" id="pauseBtn" aria-label="Pause automatic rotation" aria-pressed="false">
+        <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><polygon points="7 4 20 12 7 20"/></svg>
       </button>
     </div>
 
@@ -1851,9 +2021,14 @@
             <span class="about-stat-value">15+</span>
             <span class="about-stat-label">Years Experience</span>
           </div>
-          <div class="about-stat about-stat-badge">
-            <img src="images/nextdoor-fave-2025-transparent-400.png" alt="2025 Nextdoor Neighborhood Fave" width="400" height="400" loading="lazy" decoding="async" style="width:100%;height:auto;object-fit:contain;" />
-          </div>
+          <a class="about-stat-badge" href="https://nextdoor.com/page/dustin-swad-irvine-ca/" target="_blank" rel="noopener" aria-label="View Ultra Home Repair's 2025 Neighborhood Fave award on Nextdoor">
+            <img src="images/nextdoor-fave-2025-transparent.png" alt="" width="72" height="72" />
+            <span class="about-award-copy">
+              <strong>2025 Neighborhood Fave</strong>
+              <span>Recognized by neighbors on Nextdoor</span>
+              <span class="about-award-link">View on Nextdoor</span>
+            </span>
+          </a>
           <div class="about-stat">
             <span class="about-stat-value">5.0</span>
             <span style="color:#F5A623;font-size:1rem;letter-spacing:1px;display:block;margin-bottom:4px;">★★★★★</span>
@@ -1874,11 +2049,49 @@
   </div>
 </section>
 
-</main>
+<!-- ============================================================
+     FAQ
+============================================================ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What areas does Ultra Home Repair serve?</h3>
+        <p>Ultra Home Repair is based in Woodbury, Irvine and primarily serves Irvine neighborhoods including Woodbury, Great Park, Orchard Hills, Northwood, Turtle Rock, Quail Hill, and Portola Springs, plus Newport Beach, Corona del Mar, Laguna Beach, Dana Point, Laguna Niguel, Mission Viejo, Aliso Viejo, Lake Forest, Tustin, Costa Mesa, and the rest of Orange County.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What handyman services do you offer?</h3>
+        <p>Complete handyman and home repair services including plumbing fixture replacement, electrical fixtures and outlets, drywall patching and paint touch-up, door and hardware repair, ceiling fan and light fixture installation, tankless water heater flushing, and general home maintenance and installation.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How fast can I get a quote?</h3>
+        <p>Text or call (949) 371-6423, or submit a request through the contact form, and you'll hear back within 24 hours — usually much sooner. Texting photos of the repair speeds up the estimate.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you work with Realtors, landlords, and property managers?</h3>
+        <p>Yes. Ultra Home Repair handles Realtor pre-listing repairs, post-inspection punch lists, tenant turnover work, and ongoing maintenance for landlords and property managers throughout Orange County.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does pricing work?</h3>
+        <p>You get a written estimate before any work starts, with a flat price — no hourly billing surprises. Because there's no general contractor markup, pricing stays transparent and competitive. Tankless water heater flush service has a standard flat rate of $125.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What payment methods do you accept?</h3>
+        <p>Cash, check, credit card, Zelle, and Venmo.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============================================================
      FOOTER
 ============================================================ -->
+</main>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -1893,7 +2106,7 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
           </a>
           <a href="https://nextdoor.com/page/dustin-swad-irvine-ca/" target="_blank" rel="noopener" class="social-link" aria-label="Nextdoor">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <svg viewBox="0 0 68 55" fill="currentColor" aria-hidden="true"><path d="M22.1789 8.27054V0.791992H12.2953V14.4821L0.696289 21.7701L5.95482 30.14L12.2953 26.154V53.8538H55.8828V26.154L62.2233 30.14L67.4819 21.7701L34.0863 0.791992L22.1789 8.27054Z"/></svg>
           </a>
           <a href="https://www.instagram.com/ultra_home_repair/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -1973,33 +2186,84 @@
 <script>
   (function() {
     const track = document.getElementById('carouselTrack');
+    const carousel = track.parentElement;
+    const cards = Array.from(track.children);
     const dots = document.querySelectorAll('.dot');
-    const totalSlides = 13;
+    const pauseBtn = document.getElementById('pauseBtn');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const playIcon = document.getElementById('playIcon');
+    const reviewsSection = document.getElementById('reviews');
+    const totalSlides = cards.length;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let current = 0;
     let autoTimer;
+    // Respect the OS/browser-level reduced-motion setting: start paused
+    // instead of auto-rotating, same as if the visitor had hit pause.
+    let paused = prefersReducedMotion;
+
+    function updateHeight() {
+      carousel.style.height = Math.ceil(cards[current].getBoundingClientRect().height) + 'px';
+    }
 
     function goTo(index) {
       current = (index + totalSlides) % totalSlides;
       track.style.transform = 'translateX(-' + (current * 100) + '%)';
-      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+        if (i === current) { d.setAttribute('aria-current', 'true'); }
+        else { d.removeAttribute('aria-current'); }
+      });
+      updateHeight();
     }
 
+    // Keep the viewport fitted to the active review as wrapping or fonts change.
+    const reviewResizeObserver = new ResizeObserver(updateHeight);
+    cards.forEach(card => reviewResizeObserver.observe(card));
+    updateHeight();
+
     function startAuto() {
-      autoTimer = setInterval(() => goTo(current + 1), 5000);
+      clearInterval(autoTimer);
+      if (paused || reviewsSection.matches(':hover') || reviewsSection.contains(document.activeElement)) return;
+      autoTimer = setInterval(() => goTo(current + 1), 8000);
     }
 
     function resetAuto() {
-      clearInterval(autoTimer);
+      startAuto();
+    }
+
+    function setPaused(next) {
+      paused = next;
+      pauseBtn.setAttribute('aria-pressed', String(paused));
+      pauseBtn.setAttribute('aria-label', paused ? 'Resume automatic rotation' : 'Pause automatic rotation');
+      pauseIcon.style.display = paused ? 'none' : '';
+      playIcon.style.display = paused ? '' : 'none';
       startAuto();
     }
 
     document.getElementById('nextBtn').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
     document.getElementById('prevBtn').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+    pauseBtn.addEventListener('click', () => setPaused(!paused));
     dots.forEach(d => {
       d.addEventListener('click', () => { goTo(parseInt(d.dataset.index)); resetAuto(); });
     });
 
-    startAuto();
+    // Pause on hover/focus so the auto-rotation doesn't fight a reading user,
+    // in addition to the explicit pause button above.
+    reviewsSection.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    reviewsSection.addEventListener('mouseleave', () => { if (!paused) startAuto(); });
+    reviewsSection.addEventListener('focusin', () => clearInterval(autoTimer));
+    reviewsSection.addEventListener('focusout', () => {
+      // Wait until focus reaches its destination before deciding to resume.
+      queueMicrotask(startAuto);
+    });
+
+    if (prefersReducedMotion) {
+      // Reflect the paused state in the button UI instead of implying
+      // it's auto-rotating when it isn't.
+      setPaused(true);
+    } else {
+      startAuto();
+    }
   })();
 </script>
 
