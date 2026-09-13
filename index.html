@@ -617,6 +617,8 @@
     .dot {
       width: 8px;
       height: 8px;
+      padding: 0;
+      border: none;
       border-radius: 50%;
       background: rgba(255,255,255,0.3);
       cursor: pointer;
@@ -627,6 +629,21 @@
       width: 24px;
       border-radius: 4px;
     }
+    .carousel-pause {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.55);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      margin-left: 4px;
+      transition: color var(--transition);
+    }
+    .carousel-pause:hover { color: white; }
+    .carousel-pause svg { width: 16px; height: 16px; }
 
     /* ============================================================
        ABOUT
@@ -1823,23 +1840,27 @@
       <button class="carousel-btn" id="prevBtn" aria-label="Previous review">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
-      <div class="carousel-dots" id="carouselDots">
-        <div class="dot active" data-index="0"></div>
-        <div class="dot" data-index="1"></div>
-        <div class="dot" data-index="2"></div>
-        <div class="dot" data-index="3"></div>
-        <div class="dot" data-index="4"></div>
-        <div class="dot" data-index="5"></div>
-        <div class="dot" data-index="6"></div>
-        <div class="dot" data-index="7"></div>
-        <div class="dot" data-index="8"></div>
-        <div class="dot" data-index="9"></div>
-        <div class="dot" data-index="10"></div>
-        <div class="dot" data-index="11"></div>
-        <div class="dot" data-index="12"></div>
+      <div class="carousel-dots" id="carouselDots" aria-label="Select review">
+        <button type="button" class="dot active" data-index="0" aria-label="Show review 1 of 13" aria-current="true"></button>
+        <button type="button" class="dot" data-index="1" aria-label="Show review 2 of 13"></button>
+        <button type="button" class="dot" data-index="2" aria-label="Show review 3 of 13"></button>
+        <button type="button" class="dot" data-index="3" aria-label="Show review 4 of 13"></button>
+        <button type="button" class="dot" data-index="4" aria-label="Show review 5 of 13"></button>
+        <button type="button" class="dot" data-index="5" aria-label="Show review 6 of 13"></button>
+        <button type="button" class="dot" data-index="6" aria-label="Show review 7 of 13"></button>
+        <button type="button" class="dot" data-index="7" aria-label="Show review 8 of 13"></button>
+        <button type="button" class="dot" data-index="8" aria-label="Show review 9 of 13"></button>
+        <button type="button" class="dot" data-index="9" aria-label="Show review 10 of 13"></button>
+        <button type="button" class="dot" data-index="10" aria-label="Show review 11 of 13"></button>
+        <button type="button" class="dot" data-index="11" aria-label="Show review 12 of 13"></button>
+        <button type="button" class="dot" data-index="12" aria-label="Show review 13 of 13"></button>
       </div>
       <button class="carousel-btn" id="nextBtn" aria-label="Next review">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <button class="carousel-pause" id="pauseBtn" aria-label="Pause automatic rotation" aria-pressed="false">
+        <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><polygon points="7 4 20 12 7 20"/></svg>
       </button>
     </div>
 
@@ -1987,30 +2008,57 @@
   (function() {
     const track = document.getElementById('carouselTrack');
     const dots = document.querySelectorAll('.dot');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const playIcon = document.getElementById('playIcon');
+    const reviewsSection = document.getElementById('reviews');
     const totalSlides = 13;
     let current = 0;
     let autoTimer;
+    let paused = false;
 
     function goTo(index) {
       current = (index + totalSlides) % totalSlides;
       track.style.transform = 'translateX(-' + (current * 100) + '%)';
-      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+        if (i === current) { d.setAttribute('aria-current', 'true'); }
+        else { d.removeAttribute('aria-current'); }
+      });
     }
 
     function startAuto() {
+      clearInterval(autoTimer);
+      if (paused) return;
       autoTimer = setInterval(() => goTo(current + 1), 5000);
     }
 
     function resetAuto() {
-      clearInterval(autoTimer);
+      startAuto();
+    }
+
+    function setPaused(next) {
+      paused = next;
+      pauseBtn.setAttribute('aria-pressed', String(paused));
+      pauseBtn.setAttribute('aria-label', paused ? 'Resume automatic rotation' : 'Pause automatic rotation');
+      pauseIcon.style.display = paused ? 'none' : '';
+      playIcon.style.display = paused ? '' : 'none';
       startAuto();
     }
 
     document.getElementById('nextBtn').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
     document.getElementById('prevBtn').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+    pauseBtn.addEventListener('click', () => setPaused(!paused));
     dots.forEach(d => {
       d.addEventListener('click', () => { goTo(parseInt(d.dataset.index)); resetAuto(); });
     });
+
+    // Pause on hover/focus so the auto-rotation doesn't fight a reading user,
+    // in addition to the explicit pause button above.
+    reviewsSection.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    reviewsSection.addEventListener('mouseleave', () => { if (!paused) startAuto(); });
+    reviewsSection.addEventListener('focusin', () => clearInterval(autoTimer));
+    reviewsSection.addEventListener('focusout', () => { if (!paused) startAuto(); });
 
     startAuto();
   })();
