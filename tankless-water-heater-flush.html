@@ -204,13 +204,13 @@
     .tr-author { display: flex; align-items: center; gap: 12px; }
     .tr-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--orange-light)); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; color: white; flex-shrink: 0; }
     .tr-author-name { font-size: 14px; font-weight: 800; color: var(--navy); display: block; }
-    .tr-author-meta { font-size: 12px; color: var(--gray-400); }
+    .tr-author-meta { font-size: 12px; color: var(--gray-600); }
 
     /* ── CTA BAND ── */
     .cta-band { background: var(--orange); padding: 64px 0; }
     .cta-band-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
     .cta-band h2 { font-size: clamp(24px, 3.5vw, 36px); font-weight: 900; color: white; line-height: 1.2; }
-    .cta-band p { color: rgba(255,255,255,0.85); font-size: 16px; margin-top: 8px; max-width: 500px; }
+    .cta-band p { color: white; font-size: 16px; margin-top: 8px; max-width: 500px; }
     .cta-band-btns { display: flex; gap: 16px; flex-wrap: wrap; flex-shrink: 0; }
 
     /* ── CAROUSEL ── */
@@ -224,15 +224,17 @@
     .review-author { display: flex; align-items: center; gap: 14px; }
     .review-avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--orange-light)); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: white; flex-shrink: 0; }
     .review-author-info strong { display: block; font-size: 15px; font-weight: 800; color: white; }
-    .review-author-info span { font-size: 13px; color: rgba(255,255,255,0.55); }
+    .review-author-info span { font-size: 13px; color: rgba(255,255,255,0.78); }
     .review-source { margin-left: auto; display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.68); letter-spacing: 0.06em; text-transform: uppercase; }
     .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; }
     .carousel-btn { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background var(--transition); }
     .carousel-btn:hover { background: var(--orange); border-color: var(--orange); }
     .carousel-btn svg { width: 18px; height: 18px; }
-    .carousel-dots { display: flex; gap: 8px; }
-    .dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,0.45); cursor: pointer; transition: all var(--transition); }
-    .dot.active { background: var(--orange); width: 24px; border-radius: 4px; }
+    .carousel-dots { display: flex; gap: 0; }
+    .dot { position: relative; width: 24px; height: 24px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+    .dot::before { content: ''; position: absolute; top: 50%; left: 50%; width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.55); transform: translate(-50%, -50%); transition: all var(--transition); }
+    .dot.active::before { width: 16px; background: var(--orange); border-radius: 4px; }
+    .section-navy .section-label { color: var(--orange-light); }
 
     /* ── FOOTER ── */
     .footer { background: var(--navy-dark); color: rgba(255,255,255,0.75); padding: 72px 0 0; }
@@ -746,15 +748,15 @@
     </div>
     <div class="photo-grid">
       <div class="photo-item">
-        <img src="images/flush-bucket-sediment.jpeg" alt="Sediment collected from a heavily scaled tankless water heater during a flush — Irvine CA" width="960" height="1280" loading="lazy" decoding="async" />
+        <img src="images/flush-bucket-sediment-720w.jpeg" srcset="images/flush-bucket-sediment-480w.jpeg 480w, images/flush-bucket-sediment-720w.jpeg 720w, images/flush-bucket-sediment.jpeg 960w" sizes="(max-width: 768px) calc(100vw - 48px), 360px" alt="Sediment collected from a heavily scaled tankless water heater during a flush — Irvine CA" width="960" height="1280" loading="lazy" decoding="async" />
         <div class="photo-caption">What comes out of a heavily scaled tankless.</div>
       </div>
       <div class="photo-item">
-        <img src="images/inlet-filter-mineral-buildup.jpeg" alt="Mineral buildup around tankless water heater inlet filter — sign of overdue flush — Irvine and Lake Forest hard water" width="960" height="1280" loading="lazy" decoding="async" />
+        <img src="images/inlet-filter-mineral-buildup-720w.jpeg" srcset="images/inlet-filter-mineral-buildup-480w.jpeg 480w, images/inlet-filter-mineral-buildup-720w.jpeg 720w, images/inlet-filter-mineral-buildup.jpeg 960w" sizes="(max-width: 768px) calc(100vw - 48px), 360px" alt="Mineral buildup around tankless water heater inlet filter — sign of overdue flush — Irvine and Lake Forest hard water" width="960" height="1280" loading="lazy" decoding="async" />
         <div class="photo-caption">You're overdue for a flush when there is mineral buildup around the inlet filter.</div>
       </div>
       <div class="photo-item">
-        <img src="images/tankless-flush-before-after.jpeg" alt="Descaling solution collected during a tankless water heater flush — sediment and mineral buildup removed — Irvine CA" width="1280" height="777" loading="lazy" decoding="async" />
+        <img src="images/tankless-flush-before-after-960w.jpeg" srcset="images/tankless-flush-before-after-640w.jpeg 640w, images/tankless-flush-before-after-960w.jpeg 960w, images/tankless-flush-before-after.jpeg 1280w" sizes="(max-width: 768px) calc(100vw - 48px), 445px" alt="Descaling solution collected during a tankless water heater flush — sediment and mineral buildup removed — Irvine CA" width="1280" height="777" loading="lazy" decoding="async" />
         <div class="photo-caption">What a flush pulls out — sediment and mineral buildup</div>
       </div>
     </div>
