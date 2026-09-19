@@ -1,0 +1,72 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**.html"
+      - "sitemap.xml"
+      - "robots.txt"
+      - "images/**"
+      - "02ecf33eeab112b0781c939212c195e9.txt"
+      - ".github/workflows/indexnow.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          INDEXNOW_KEY: 02ecf33eeab112b0781c939212c195e9
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import time
+          import urllib.error
+          import urllib.request
+          import xml.etree.ElementTree as ET
+
+          key = os.environ["INDEXNOW_KEY"]
+          namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          root = ET.parse("sitemap.xml").getroot()
+          urls = [node.text.strip() for node in root.findall("sm:url/sm:loc", namespace)]
+
+          payload = json.dumps({
+              "host": "ultrahomerepair.com",
+              "key": key,
+              "keyLocation": f"https://ultrahomerepair.com/{key}.txt",
+              "urlList": urls,
+          }).encode("utf-8")
+
+          request = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=payload,
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST",
+          )
+
+          for attempt in range(6):
+              try:
+                  with urllib.request.urlopen(request, timeout=30) as response:
+                      print(f"IndexNow accepted {len(urls)} URLs (HTTP {response.status}).")
+                      raise SystemExit(0)
+              except urllib.error.HTTPError as error:
+                  if error.code in (200, 202):
+                      print(f"IndexNow accepted {len(urls)} URLs (HTTP {error.code}).")
+                      raise SystemExit(0)
+                  if attempt == 5:
+                      raise
+                  print(f"IndexNow returned HTTP {error.code}; retrying after deployment.")
+                  time.sleep(30)
+
+          raise SystemExit("IndexNow submission did not complete.")
+          PY
