@@ -386,28 +386,6 @@
       .section-title { font-size: 26px; }
     }
   </style>
-  <style>
-    /* Google Places autocomplete dropdown styling */
-    .pac-container {
-      font-family: 'Montserrat', sans-serif;
-      border: 1.5px solid var(--gray-200);
-      border-top: none;
-      border-radius: 0 0 var(--radius) var(--radius);
-      box-shadow: var(--shadow-md);
-      margin-top: -2px;
-    }
-    .pac-item {
-      padding: 10px 14px;
-      font-size: 13.5px;
-      color: var(--gray-800);
-      cursor: pointer;
-      border-top: 1px solid var(--gray-100);
-    }
-    .pac-item:hover, .pac-item-selected { background: var(--off-white); }
-    .pac-item-query { font-weight: 700; color: var(--navy); }
-    .pac-icon { display: none; }
-    .pac-logo::after { display: none; }
-  </style>
   <!-- Open Graph / Social sharing -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Ultra Home Repair">
@@ -583,14 +561,18 @@
         <div class="form-error-msg" id="formError" role="alert">Something went wrong. Please try texting or calling directly at (949) 371-6423.</div>
 
         <form id="contactForm">
+          <div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;">
+            <label for="website">Leave this field blank</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First Name <span>*</span></label>
               <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Jane" autocomplete="given-name" required />
             </div>
             <div class="form-group">
-              <label for="lastName">Last Name <span>*</span></label>
-              <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Smith" autocomplete="family-name" required />
+              <label for="lastName">Last Name <small>(optional)</small></label>
+              <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Smith" autocomplete="family-name" />
             </div>
           </div>
 
@@ -600,14 +582,14 @@
               <input type="tel" id="phone" name="phone" class="form-control" placeholder="(949) 555-0100" autocomplete="tel" required />
             </div>
             <div class="form-group">
-              <label for="email">Email <span>*</span></label>
-              <input type="email" id="email" name="email" class="form-control" placeholder="jane@example.com" autocomplete="email" required />
+              <label for="email">Email <small>(optional)</small></label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="jane@example.com" autocomplete="email" />
             </div>
           </div>
 
           <div class="form-group">
-            <label for="address">Property Address <span>*</span></label>
-            <input type="text" id="address" name="address" class="form-control" placeholder="123 Main St, Irvine, CA 92620" autocomplete="off" required />
+            <label for="address">City or Neighborhood <small>(optional)</small></label>
+            <input type="text" id="address" name="address" class="form-control" placeholder="Irvine or Woodbury" autocomplete="address-level2" />
           </div>
 
           <div class="form-group">
@@ -619,6 +601,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             Send My Request
           </button>
+          <p class="form-note">By submitting this form, you agree that Ultra Home Repair may use the information provided to respond to your request. Personal information is not sold. See the <a href="privacy.html" style="color:var(--orange);font-weight:700;text-decoration:underline;">Privacy Policy</a>.</p>
           <p class="form-note">📸 Have photos? Text them to (949) 371-6423 for a faster estimate.</p>
         </form>
 
@@ -808,7 +791,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Ultra Home Repair. All rights reserved.</span>
+      <span>© 2026 Ultra Home Repair. All rights reserved. · <a href="privacy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a></span>
       <div class="footer-ratings">
         <div class="rating-badge"><span class="rating-badge-stars">★★★★★</span><span>5.0 Google</span></div>
         <div class="rating-badge">
@@ -823,10 +806,15 @@
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  emailjs.init('Cqfit21vgxcz9D-Zt');
+  emailjs.init({
+    publicKey: 'Cqfit21vgxcz9D-Zt',
+    blockHeadless: true,
+    limitRate: { id: 'contact-form', throttle: 15000 }
+  });
 
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
+    if (document.getElementById('website').value) return;
     const btn = document.getElementById('submitBtn');
     const errorEl = document.getElementById('formError');
     errorEl.style.display = 'none';
@@ -834,7 +822,7 @@
     btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;animation:spin 1s linear infinite"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg> Sending...';
 
     const templateParams = {
-      name: document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value,
+      name: (document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value).trim(),
       phone: document.getElementById('phone').value,
       email: document.getElementById('email').value,
       address: document.getElementById('address').value,
@@ -896,27 +884,6 @@
     dots.forEach(d => d.addEventListener('click', () => { goTo(parseInt(d.dataset.index)); resetAuto(); }));
     startAuto();
   })();
-</script>
-
-<!-- Google Places Autocomplete -->
-<script src="https://maps.googleapis.com/maps/api/js?key=REMOVED_GOOGLE_MAPS_BROWSER_KEY&libraries=places&callback=initAutocomplete" async defer></script>
-<script>
-  function initAutocomplete() {
-    var input = document.getElementById('address');
-    if (!input) return;
-    var autocomplete = new google.maps.places.Autocomplete(input, {
-      componentRestrictions: { country: 'us' },
-      fields: ['formatted_address'],
-      types: ['address']
-    });
-    // When user picks a suggestion, put the full address in the field
-    autocomplete.addListener('place_changed', function() {
-      var place = autocomplete.getPlace();
-      if (place.formatted_address) {
-        input.value = place.formatted_address;
-      }
-    });
-  }
 </script>
 
   <script>
