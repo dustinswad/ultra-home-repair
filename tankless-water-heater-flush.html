@@ -280,6 +280,7 @@
     }
     @media (max-width: 768px) {
       .section { padding: 64px 0; }
+      .btn { max-width: 100%; white-space: normal; text-align: center; justify-content: center; }
       .hero { padding: 120px 0 80px; clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%); }
       .hero-ctas { flex-direction: column; }
       .hero-ctas .btn { width: 100%; justify-content: center; }
@@ -290,6 +291,7 @@
       .photo-grid { grid-template-columns: repeat(2, 1fr); }
       .benefits-grid { grid-template-columns: 1fr 1fr; }
       .about-grid { grid-template-columns: 1fr; }
+      .about-accent { right: 0; }
       .process-steps { grid-template-columns: 1fr; gap: 32px; }
       .tankless-reviews-grid { grid-template-columns: 1fr; }
       .review-card { padding: 0 16px; }
@@ -320,6 +322,9 @@
     .includes-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; font-weight: 600; color: var(--navy); line-height: 1.4; }
     .includes-list li::before { content: ''; width: 22px; height: 22px; border-radius: 50%; background: rgba(224,90,43,0.1); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E05A2B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); background-size: 12px; background-repeat: no-repeat; background-position: center; flex-shrink: 0; margin-top: 1px; }
     .section-intro { font-size: 16px; color: var(--gray-600); max-width: 620px; line-height: 1.7; margin-top: 12px; }
+    .booking-box { max-width: 760px; margin: 32px auto 0; padding: 28px; border-radius: var(--radius-lg); background: var(--navy); color: white; text-align: center; box-shadow: var(--shadow-md); }
+    .booking-box strong { display: block; margin-bottom: 8px; font-size: 20px; }
+    .booking-box p { margin: 0 auto 20px; max-width: 620px; color: rgba(255,255,255,0.78); }
     @media (max-width: 768px) { .includes-list { grid-template-columns: 1fr; } }
 
     /* ── FAQ SECTION ── */
@@ -434,7 +439,6 @@
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
       "url": "https://ultrahomerepair.com/tankless-water-heater-flush.html",
-      "priceValidUntil": "2026-12-31",
       "businessFunction": "https://purl.org/goodrelations/v1#Sell",
       "areaServed": "Irvine and Lake Forest, CA"
     },
@@ -451,7 +455,7 @@
       "opens": "08:00",
       "closes": "18:00"
     },
-    "serviceOutput": "Descaled and tested tankless water heater with documented warranty maintenance.",
+    "serviceOutput": "Descaled and tested tankless water heater with service documentation.",
     "termsOfService": "90-day workmanship warranty"
   }
   </script>
@@ -498,7 +502,7 @@
         "name": "How do I know if my tankless needs flushing?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Common signs include lukewarm water that used to be hot, longer wait times at the tap, popping or rumbling noises from the unit, reduced flow rate, error codes on the display, or visible mineral buildup around the unit's valves. In Irvine and Lake Forest, if it's been more than 12 months since your last flush, you're due regardless of symptoms."
+          "text": "Common signs include lukewarm water that used to be hot, longer wait times at the tap, unusual noises, reduced flow, or visible mineral buildup around the unit's valves. Error codes and complete loss of hot water should be diagnosed because a flush is not the correct repair for every fault."
         }
       },
       {
@@ -506,7 +510,7 @@
         "name": "How often should I flush my tankless water heater?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Annually, at minimum. Irvine and Lake Forest have hard water that can accelerate scale buildup, so some homes — especially newer developments without whole-house filtration — benefit from a flush every 6 to 9 months. Many tankless manufacturers recommend regular flushing or descaling, especially in hard-water areas, and maintenance documentation can help protect warranty coverage."
+          "text": "About once a year is a common starting point, but the correct interval depends on the manufacturer, model, water hardness, water treatment, and household usage. Follow the unit's manual and shorten the interval when its guidance or water conditions call for it."
         }
       },
       {
@@ -514,7 +518,7 @@
         "name": "My unit is only a year or two old — do I really need this?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Many tankless manufacturers recommend annual flushing starting from year one, and maintenance documentation can help protect warranty coverage. Skipping the first flush can also allow scale buildup to compound every year."
+          "text": "Possibly. Maintenance needs begin with the manufacturer's instructions and local water conditions rather than the age of the unit alone. Irvine Ranch Water District says hardness varies by source, location, and season, so review the manual and service history instead of assuming a newer unit needs no maintenance."
         }
       },
       {
@@ -522,7 +526,7 @@
         "name": "What does the $125 flush include?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Full system inspection, professional descaling flush of the heat exchanger, inlet filter cleaning, supply line flush, performance testing, and detailed service documentation. Everything needed to keep your unit running efficiently and your warranty valid. No upsells."
+          "text": "The standard $125 service includes a pre-flush visual check, heat-exchanger descaling using the appropriate medium and procedure for the unit, cold-water inlet-filter cleaning when accessible, a clean-water rinse, restart verification, and an emailed service receipt. Repairs, diagnosis, parts, missing or stuck service valves, and unusual access are separate."
         }
       },
       {
@@ -530,7 +534,7 @@
         "name": "How long does a flush take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "About 1 to 1.5 hours, including setup, the 45-minute descaling circulation, and post-flush testing."
+          "text": "About 1 to 1.5 hours for a standard accessible unit. Circulation and rinse time follow the applicable manufacturer and product instructions."
         }
       },
       {
@@ -539,6 +543,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Ultra Home Repair's $125 professional flush is often more practical than buying equipment for a DIY service. If you choose to do it yourself, follow your manufacturer's instructions carefully to avoid damaging the unit or affecting warranty coverage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I still need to flush my tankless water heater if I have a water softener?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A properly operating water softener can reduce scale, but it does not automatically eliminate the manufacturer's maintenance requirements. The appropriate interval depends on the unit, actual water hardness, household usage, and whether the softener has operated continuously."
         }
       },
       {
@@ -570,7 +582,7 @@
         "name": "Why hire you instead of a plumbing company?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "When you hire me, you get me — not a dispatcher, not a commissioned tech, not an upsell pitch for a new water heater. Flat $125. No sales pressure. No unnecessary replacements. Just honest maintenance with photo documentation."
+          "text": "When you hire me, you get me — not a dispatcher, not a commissioned tech, not an upsell pitch for a new water heater. Flat $125. No sales pressure. No unnecessary replacements. Just honest maintenance with detailed service documentation."
         }
       },
       {
@@ -707,8 +719,8 @@
   <div class="container">
     <div class="section-center">
       <div class="section-label">The Problem & The Fix</div>
-      <h2 class="section-title">Why Your Tankless Needs Annual Flushing</h2>
-      <p class="section-subtitle">Irvine and Lake Forest have hard water that can quietly damage tankless water heaters from the inside. Here's what's happening inside your system right now — and what a flush does about it.</p>
+      <h2 class="section-title">Why Routine Tankless Flushing Matters</h2>
+      <p class="section-subtitle">Minerals in the water can accumulate inside a tankless heat exchanger over time. The rate varies with local water conditions, treatment, usage, and the unit itself. Here's what routine descaling addresses.</p>
     </div>
     <div class="ps-grid">
       <div class="ps-card problem">
@@ -716,9 +728,9 @@
           <div class="ps-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           </div>
-          <h3>Without Annual Flushing</h3>
+          <h3>Without Appropriate Maintenance</h3>
         </div>
-        <p>Hard water minerals (calcium, magnesium) accumulate inside the heat exchanger, creating a thick layer of scale that gets worse every year.</p>
+        <p>Hard-water minerals such as calcium and magnesium can accumulate inside the heat exchanger. Without appropriate maintenance, that scale may become more restrictive over time.</p>
         <ul class="ps-list">
           <li>Reduced hot water flow &amp; pressure</li>
           <li>Higher energy bills from lost efficiency</li>
@@ -733,7 +745,7 @@
           <div class="ps-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
-          <h3>With Annual Flushing</h3>
+          <h3>With Routine Flushing</h3>
         </div>
         <p>A professional descaling flush removes mineral buildup from the water circuit and helps keep routine maintenance current.</p>
         <ul class="ps-list">
@@ -755,7 +767,7 @@
     <div class="section-center">
       <div class="section-label">Real Results</div>
       <h2 class="section-title">What Hard Water Is Doing Inside Your Tankless Water Heater</h2>
-      <p class="section-subtitle">Images from real service calls in Irvine and Lake Forest. If your tankless water heater hasn't been flushed in the last 12 months, mineral scale like this is building up inside it right now.</p>
+      <p class="section-subtitle">Images from real service calls in Irvine and Lake Forest. The amount of scale varies by unit, water conditions, treatment, usage, and maintenance history.</p>
     </div>
     <div class="photo-grid">
       <div class="photo-item">
@@ -877,7 +889,7 @@
       <div class="step">
         <div class="step-number">3</div>
         <h3>Heat Exchanger Descaling</h3>
-        <p>I circulate professional Qwikdescaler solution through the heat exchanger for a minimum of 30 minutes — longer when scale is heavy — until mineral deposits are fully dissolved.</p>
+        <p>I circulate the manufacturer-appropriate descaling medium through the heat exchanger for the time specified by the applicable unit and product instructions. Some manufacturers specify white vinegar; others permit an approved descaler.</p>
       </div>
       <div class="step">
         <div class="step-number">4</div>
@@ -903,26 +915,26 @@
   <div class="container">
     <p class="eyebrow">Professional-Grade Service</p>
     <h2 class="section-title">What a Proper Flush Requires</h2>
-    <p class="section-intro">A tankless flush isn't a DIY-friendly job. Done wrong, it can damage the heat exchanger, leave residual descaler in your water lines, or trigger lockout codes that require a service call to clear. Here's the equipment and knowledge that goes into every $125 service.</p>
+    <p class="section-intro">Some homeowners can perform routine flushing when the unit has service valves and they follow the exact manufacturer instructions. Professional service is useful when access, the model-specific procedure, filter service, or the shutdown and restart sequence is uncertain.</p>
     <div class="equipment-grid">
       <div class="equipment-item">
         <h3>Submersible Descaling Pump</h3>
-        <p>Circulates Qwikdescaler at the correct flow rate through the heat exchanger — a standard sump pump won't do it.</p>
+        <p>A recirculating pump sized for the procedure moves the selected descaling medium through the heat exchanger in a controlled loop.</p>
       </div>
       <div class="equipment-item">
         <h3>5/8" Service Hoses</h3>
         <p>Heat-rated lines with proper fittings to connect securely to your unit's isolation valves without leaks or pressure loss.</p>
       </div>
       <div class="equipment-item">
-        <h3>Qwikdescaler Solution</h3>
-        <p>Professional-grade, biodegradable descaling solution engineered specifically for tankless heat exchangers — not vinegar, not a hardware-store substitute.</p>
+        <h3>Manufacturer-Appropriate Descaling Medium</h3>
+        <p>Rinnai's published procedure specifies undiluted white vinegar, while other manufacturers may permit an approved descaler. The unit's model instructions control the method used.</p>
       </div>
       <div class="equipment-item">
         <h3>Filter Service Tools</h3>
         <p>Specialized tools for safe inlet filter removal without damaging the manifold or cross-threading the housing on reinstall.</p>
       </div>
     </div>
-    <p class="expertise-note"><strong>Beyond equipment:</strong> a proper flush requires knowing how to safely depressurize the system, maintain proper circulation pressure during descaling, fully rinse residual solution from the lines, and restart the unit in the correct sequence to avoid triggering error codes or lockouts. Any of these done wrong can damage the unit or void your manufacturer warranty.</p>
+    <p class="expertise-note"><strong>Beyond equipment:</strong> a proper flush requires knowing how to safely isolate and depressurize the system, circulate and rinse the selected medium, service the inlet filter, and restart the unit in the correct sequence. Manufacturer instructions and warranty terms vary by brand and model.</p>
   </div>
 </section>
 
@@ -934,7 +946,7 @@
     <p class="section-intro">No upsells, no surprise charges, no "while I'm here" add-ons. One flat price, every time.</p>
     <ul class="includes-list">
       <li>Pre-flush system inspection — including leak and corrosion check</li>
-      <li>30+ minute heat exchanger descaling with professional Qwikdescaler solution</li>
+      <li>Heat exchanger descaling with the manufacturer-appropriate medium and procedure</li>
       <li>Professional-grade equipment: submersible descaling pump, service hoses, calibrated reservoir</li>
       <li>Cold water inlet filter removal and cleaning</li>
       <li>Post-flush rinse and system restart verification</li>
@@ -942,6 +954,11 @@
       <li>90-day workmanship warranty</li>
       <li>Flat $125 — no hourly billing, no surprise charges, no upsells</li>
     </ul>
+    <div class="booking-box">
+      <strong>Want to confirm the $125 service applies to your unit?</strong>
+      <p>Text a photo of the heater and your ZIP code. Dustin will confirm the brand, access, and service area before scheduling.</p>
+      <a href="sms:+19493716423" class="btn btn-primary" data-cta-location="scope-confirmation">Text a Photo to Dustin</a>
+    </div>
   </div>
 </section>
 
@@ -951,7 +968,7 @@
     <div class="section-center">
       <div class="section-label">Local Hard Water</div>
       <h2 class="section-title">Tankless Water Heater Maintenance for Irvine Homes</h2>
-      <p class="section-subtitle">Many newer Irvine homes have tankless water heaters, and local hard water can contribute to mineral scale buildup over time. Routine flushing, cleaning, and descaling helps maintain hot water performance, support efficiency, and extend the life of the system.</p>
+      <p class="section-subtitle">Irvine Ranch Water District explains that water hardness varies by source, location, and season. That is why the right maintenance interval should be based on the unit manual, actual water conditions, treatment, and usage—not a one-size-fits-all promise. <a href="https://publications.irwd.com/view/967451735" target="_blank" rel="noopener noreferrer">See IRWD's 2026 Water Quality Report</a>.</p>
     </div>
   </div>
 </section>
@@ -1050,27 +1067,31 @@
       </div>
       <div class="faq-item">
         <h3>How do I know if my tankless needs flushing?</h3>
-        <p>Common signs include lukewarm water that used to be hot, longer wait times at the tap, popping or rumbling noises from the unit, reduced flow rate, error codes on the display, or visible mineral buildup around the unit's valves. In Irvine and Lake Forest, if it's been more than 12 months since your last flush, you're due regardless of symptoms.</p>
+        <p>Common signs include lukewarm water that used to be hot, longer wait times at the tap, unusual noises, reduced flow, or visible mineral buildup around the unit's valves. Error codes and complete loss of hot water should be diagnosed because a flush is not the correct repair for every fault.</p>
       </div>
       <div class="faq-item">
         <h3>How often should I flush my tankless water heater?</h3>
-        <p>Annually, at minimum. Irvine and Lake Forest have hard water that can accelerate scale buildup, so some homes — especially newer developments without whole-house filtration — benefit from a flush every 6–9 months. Many tankless manufacturers recommend regular flushing or descaling, especially in hard-water areas, and maintenance documentation can help protect warranty coverage.</p>
+        <p>About once a year is a common starting point, but the correct interval depends on the manufacturer, model, water hardness, water treatment, and household usage. Follow the unit's manual and shorten the interval when its guidance or water conditions call for it.</p>
       </div>
       <div class="faq-item">
         <h3>My unit is only a year or two old — do I really need this?</h3>
-        <p>Yes. Many tankless manufacturers recommend annual flushing starting from year one, and maintenance documentation can help protect warranty coverage. Skipping the first flush can also allow scale buildup to compound every year.</p>
+        <p>Possibly. Maintenance needs begin with the manufacturer's instructions and local water conditions rather than the age of the unit alone. Irvine Ranch Water District says hardness varies by source, location, and season, so review the manual and service history instead of assuming a newer unit needs no maintenance.</p>
       </div>
       <div class="faq-item">
         <h3>What does the $125 flush include?</h3>
-        <p>Pre-flush system inspection (including a leak and corrosion check), 30+ minute professional descaling of the heat exchanger with Qwikdescaler solution, cold water inlet filter cleaning, post-flush rinse and restart verification, and a detailed emailed service receipt. 90-day workmanship warranty. Flat price — no upsells, no hourly billing.</p>
+        <p>The standard service includes a pre-flush visual check, heat-exchanger descaling using the appropriate medium and procedure for the unit, cold-water inlet-filter cleaning when accessible, a clean-water rinse, restart verification, and an emailed service receipt. Repairs, diagnosis, parts, missing or stuck service valves, and unusual access are separate.</p>
       </div>
       <div class="faq-item">
         <h3>How long does a flush take?</h3>
-        <p>About 1 to 1.5 hours, including setup, a minimum 30-minute descaling circulation (longer when scale is heavy), and post-flush rinse and verification.</p>
+        <p>About 1 to 1.5 hours for a standard accessible unit. Circulation and rinse time follow the applicable manufacturer and product instructions.</p>
       </div>
       <div class="faq-item">
         <h3>Can I flush my tankless myself?</h3>
         <p>Ultra Home Repair's $125 professional flush is often more practical than buying equipment for a DIY service. If you choose to do it yourself, follow your manufacturer's instructions carefully to avoid damaging the unit or affecting warranty coverage.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I still need to flush my tankless water heater if I have a water softener?</h3>
+        <p>A properly operating water softener can reduce scale, but it does not automatically eliminate the manufacturer's maintenance requirements. The appropriate interval depends on the unit, actual water hardness, household usage, and whether the softener has operated continuously.</p>
       </div>
       <div class="faq-item">
         <h3>What brands do you service?</h3>
@@ -1464,24 +1485,25 @@
   <script>
     // Phone & SMS click conversion tracking
     document.addEventListener('DOMContentLoaded', function() {
+      function conversionDetails(el) {
+        var section = el.closest('section');
+        return {
+          'event_category': 'conversion',
+          'event_label': (el.textContent || '').trim(),
+          'cta_location': el.dataset.ctaLocation || (section && section.id) || (el.closest('nav') ? 'navigation' : (el.closest('.sticky-mobile-cta') ? 'sticky_mobile' : 'other')),
+          'page_path': window.location.pathname,
+          'value': 1,
+          'transport_type': 'beacon'
+        };
+      }
       document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
         el.addEventListener('click', function() {
-          gtag('event', 'phone_call', {
-            'event_category': 'conversion',
-            'event_label': 'Phone Click',
-            'value': 1,
-            'transport_type': 'beacon'
-          });
+          gtag('event', 'phone_call', conversionDetails(el));
         });
       });
       document.querySelectorAll('a[href^="sms:"]').forEach(function(el) {
         el.addEventListener('click', function() {
-          gtag('event', 'sms_click', {
-            'event_category': 'conversion',
-            'event_label': 'SMS Click',
-            'value': 1,
-            'transport_type': 'beacon'
-          });
+          gtag('event', 'sms_click', conversionDetails(el));
         });
       });
     });
