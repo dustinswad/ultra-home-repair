@@ -352,6 +352,7 @@
         padding: 16px 0; gap: 0; z-index: 99;
       }
       .nav-links.open li { width: 100%; }
+      .nav-links.open .nav-home { display: block !important; }
       .nav-links.open a { display: block; padding: 14px 24px; font-size: 16px; color: var(--navy); border-bottom: 1px solid var(--gray-100); }
       .nav-links.open .nav-cta { margin: 12px 24px 4px; border-radius: var(--radius); text-align: center; justify-content: center; }
       .nav-hamburger {
@@ -464,7 +465,7 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
+      <li class="nav-home" style="display:none;"><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="realtors.html">Realtors</a></li>
       <li><a href="gallery.html">Gallery</a></li>

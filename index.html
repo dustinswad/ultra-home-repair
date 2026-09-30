@@ -954,6 +954,7 @@
         z-index: 99;
       }
       .nav-links.open li { width: 100%; }
+      .nav-links.open .nav-home { display: block !important; }
       .nav-links.open a {
         display: block;
         padding: 14px 24px;
@@ -1509,7 +1510,7 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" class="active">Home</a></li>
+      <li class="nav-home" style="display:none;"><a href="index.html" class="active">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="realtors.html">Realtors</a></li>
       <li><a href="gallery.html">Gallery</a></li>
