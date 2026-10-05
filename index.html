@@ -680,7 +680,13 @@
     .faq-list { margin-top: 8px; display: flex; flex-direction: column; gap: 0; max-width: 800px; margin-left: auto; margin-right: auto; }
     .faq-item { border-bottom: 1px solid var(--gray-200); padding: 24px 0; }
     .faq-item:first-child { border-top: 1px solid var(--gray-200); }
-    .faq-item h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+    .faq-item summary { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+    .faq-item summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 20px; list-style: none; margin-bottom: 0; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; font-size: 24px; flex-shrink: 0; }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-item summary:focus-visible { outline: 3px solid var(--orange); outline-offset: 5px; }
+    .faq-item[open] p { margin-top: 12px; }
     .faq-item p { font-size: 15px; color: var(--gray-600); line-height: 1.75; }
 
     /* ============================================================
@@ -1748,30 +1754,30 @@
       <h2 class="section-title">Frequently Asked Questions</h2>
     </div>
     <div class="faq-list">
-      <div class="faq-item">
-        <h3>What areas does Ultra Home Repair serve?</h3>
+      <details class="faq-item">
+        <summary>What areas does Ultra Home Repair serve?</summary>
         <p>Ultra Home Repair is based in Woodbury, Irvine and primarily serves Irvine neighborhoods including Woodbury, Great Park, Orchard Hills, Northwood, Turtle Rock, Quail Hill, and Portola Springs, plus Newport Beach, Corona del Mar, Laguna Beach, Dana Point, Laguna Niguel, Mission Viejo, Aliso Viejo, Lake Forest, Tustin, Costa Mesa, and the rest of Orange County.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What handyman services do you offer?</h3>
+      </details>
+      <details class="faq-item">
+        <summary>What handyman services do you offer?</summary>
         <p>Complete handyman and home repair services including plumbing fixture replacement, electrical fixtures and outlets, drywall patching and paint touch-up, door and hardware repair, ceiling fan and light fixture installation, tankless water heater flushing, and general home maintenance and installation.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How fast can I get a quote?</h3>
+      </details>
+      <details class="faq-item">
+        <summary>How fast can I get a quote?</summary>
         <p>Text or call (949) 371-6423, or submit a request through the contact form, and you'll hear back within 24 hours — usually much sooner. Texting photos of the repair speeds up the estimate.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Do you work with Realtors, landlords, and property managers?</h3>
+      </details>
+      <details class="faq-item">
+        <summary>Do you work with Realtors, landlords, and property managers?</summary>
         <p>Yes. Ultra Home Repair handles Realtor pre-listing repairs, post-inspection punch lists, tenant turnover work, and ongoing maintenance for landlords and property managers throughout Orange County.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How does pricing work?</h3>
+      </details>
+      <details class="faq-item">
+        <summary>How does pricing work?</summary>
         <p>You get a written estimate before any work starts, with a flat price — no hourly billing surprises. Because there's no general contractor markup, pricing stays transparent and competitive. Tankless water heater flush service has a standard flat rate of $125.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What payment methods do you accept?</h3>
+      </details>
+      <details class="faq-item">
+        <summary>What payment methods do you accept?</summary>
         <p>Cash, check, credit card, Zelle, and Venmo.</p>
-      </div>
+      </details>
     </div>
   </div>
 </section>
