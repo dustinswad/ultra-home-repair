@@ -179,7 +179,7 @@
     /* SERVICES GRID */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 28px;
       margin-top: 56px;
     }
@@ -189,15 +189,15 @@
       padding: 36px 28px;
       border: 1.5px solid var(--gray-200);
       transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+      grid-column: span 2;
     }
+    .service-card:nth-child(3n + 1):nth-last-child(2) { grid-column: 2 / span 2; }
     .service-card:hover {
       border-color: var(--orange);
       box-shadow: var(--shadow-md);
       transform: translateY(-3px);
-    }
-    .service-card.featured {
-      border-color: var(--orange);
-      background: linear-gradient(135deg, #fff9f7 0%, white 100%);
     }
     .service-icon {
       width: 52px; height: 52px; border-radius: var(--radius);
@@ -220,7 +220,7 @@
     .service-card-link {
       display: inline-flex; align-items: center; gap: 6px;
       font-size: 13px; font-weight: 800; color: var(--orange);
-      margin-top: 20px; letter-spacing: 0.04em;
+      margin-top: auto; padding-top: 20px; letter-spacing: 0.04em;
       transition: gap var(--transition);
     }
     .service-card-link:hover { gap: 10px; }
@@ -355,6 +355,8 @@
     /* RESPONSIVE */
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-card,
+      .service-card:nth-child(3n + 1):nth-last-child(2) { grid-column: auto; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
@@ -1328,19 +1330,42 @@
         </a>
       </div>
 
-      <!-- Painting & Drywall -->
+      <!-- Tankless Water Heaters -->
       <div class="service-card">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13.5V20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6.5"/><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M7 9.5v5"/><path d="M17 9.5v5"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M12 10c-1.5 1.4-2.25 2.6-2.25 3.75a2.25 2.25 0 0 0 4.5 0C14.25 12.6 13.5 11.4 12 10z"/><path d="M9 19h6"/></svg>
         </div>
-        <h3>Painting &amp; Drywall</h3>
+        <h3>Tankless Water Heaters</h3>
         <ul class="service-list">
-          <li>Drywall repair &amp; patching</li>
-          <li>Interior &amp; exterior painting</li>
-          <li>Shutter &amp; wood trim painting</li>
-          <li>Texture matching</li>
-          <li>Caulking &amp; sealants</li>
+          <li>Tankless flushing &amp; descaling</li>
+          <li>Inlet filter cleaning &amp; flow verification</li>
+          <li>Diagnosis &amp; repair</li>
+          <li>Rinnai error code 11 &amp; 17 service</li>
+          <li>Rinnai, Rheem, Navien &amp; Noritz</li>
         </ul>
+        <a href="tankless-water-heater-flush.html" class="service-card-link">
+          Tankless service details
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <!-- Smart Home -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 14.5a4.5 4.5 0 0 1 6 0"/><path d="M10.75 17a2 2 0 0 1 2.5 0"/><circle cx="12" cy="19" r=".5" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h3>Smart Home</h3>
+        <ul class="service-list">
+          <li>Video doorbells &amp; security cameras</li>
+          <li>Smart thermostats &amp; room sensors</li>
+          <li>Smart locks &amp; keypads</li>
+          <li>Smart switches &amp; dimmers</li>
+          <li>Basic Wi-Fi &amp; app setup</li>
+        </ul>
+        <a href="smart-home-installation-irvine.html" class="service-card-link">
+          Smart home installation details
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
 
       <!-- Doors & Hardware -->
@@ -1371,42 +1396,35 @@
           <li>Curtain rods &amp; blinds</li>
           <li>TV mounting &amp; home theater setup</li>
           <li>Shelving &amp; picture hanging</li>
-          <li>Smart home &amp; security installations</li>
         </ul>
-        <a href="smart-home-installation-irvine.html" class="service-card-link">
-          Smart home installation details
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
       </div>
 
-      <!-- Exterior -->
+      <!-- Painting & Drywall -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13.5V20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6.5"/><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M7 9.5v5"/><path d="M17 9.5v5"/></svg>
+        </div>
+        <h3>Painting &amp; Drywall</h3>
+        <ul class="service-list">
+          <li>Drywall repair &amp; patching</li>
+          <li>Interior &amp; exterior painting</li>
+          <li>Shutter &amp; wood trim painting</li>
+          <li>Texture matching</li>
+        </ul>
+      </div>
+
+      <!-- General Home Repairs -->
       <div class="service-card">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
-        <h3>Exterior &amp; General</h3>
+        <h3>General Home Repairs</h3>
         <ul class="service-list">
-          <li>Gutter cleaning</li>
-          <li>Wood rot repairs</li>
-          <li>Window &amp; screen door repair</li>
+          <li>Wood repairs</li>
+          <li>Window &amp; screen repairs</li>
           <li>Furniture assembly</li>
-          <li>Junk removal</li>
+          <li>Caulking &amp; sealants</li>
         </ul>
-      </div>
-
-      <!-- Tankless - featured full width on its own row -->
-      <div class="service-card featured" style="grid-column: 1 / -1; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 32px;">
-        <div class="service-icon" style="margin-bottom:0; width:64px; height:64px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-        </div>
-        <div>
-          <h3 style="margin-bottom:8px;">Tankless Water Heater Flush &amp; Maintenance</h3>
-          <p style="font-size:14.5px;color:var(--gray-600);line-height:1.65;">Annual descaling, inlet filter cleaning, and performance testing keeps your tankless system running efficiently, extends its lifespan, and protects your warranty. All major brands serviced including Rinnai, Navien, and Noritz.</p>
-        </div>
-        <a href="tankless-water-heater-flush.html" class="service-card-link" style="flex-shrink:0;">
-          Learn More
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
       </div>
 
     </div>
