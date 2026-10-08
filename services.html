@@ -226,6 +226,16 @@
     .service-card-link:hover { gap: 10px; }
     .service-card-link svg { width: 14px; height: 14px; }
 
+    .guide-promo {
+      margin-top: 38px; padding: 34px 36px; border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy)); color: white;
+      display: flex; align-items: center; justify-content: space-between; gap: 28px;
+    }
+    .guide-promo h3 { margin-bottom: 7px; color: white; font-size: 24px; }
+    .guide-promo p { max-width: 700px; color: rgba(255,255,255,.76); }
+    .guide-promo a { flex-shrink: 0; color: white; font-weight: 800; }
+    .guide-promo a:hover { color: var(--orange-light); }
+
     /* CTA BAND */
     .cta-band { background: var(--orange); padding: 64px 0; }
     .cta-band-inner {
@@ -374,6 +384,7 @@
       .cta-band p { margin: 8px auto; }
       .cta-band-btns { width: 100%; flex-direction: column; }
       .cta-band-btns .btn { width: 100%; justify-content: center; }
+      .guide-promo { padding: 28px 24px; align-items: flex-start; flex-direction: column; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
@@ -1394,6 +1405,13 @@
       </div>
 
     </div>
+    <aside class="guide-promo" aria-labelledby="guide-promo-title">
+      <div>
+        <h3 id="guide-promo-title">Not sure where to start?</h3>
+        <p>The Ultra Homeowner Guide explains common tankless problems, electrical upgrades, smart-home products, and smoke and carbon monoxide alarms.</p>
+      </div>
+      <a href="homeowner-guide.html">Explore the Homeowner Guide →</a>
+    </aside>
   </div>
 </section>
 
