@@ -15,6 +15,8 @@
 .ultra-hero .btn-secondary,.ultra-hero .btn-outline{background:#ffffff10;border:2px solid #ffffff70;color:#fff}
 .ultra-hero .btn:hover{filter:brightness(1.08)}
 .ultra-hero a:focus-visible{outline:3px solid #ffc864;outline-offset:4px}
+body>.skip-link{position:fixed;top:8px;left:8px;z-index:1000;padding:10px 16px;border-radius:6px;background:#1e2d5f;color:#fff;font-weight:800;text-decoration:none;transform:translateY(-160%);transition:transform .2s ease}
+body>.skip-link:focus{transform:translateY(0)}
 .ultra-owner-photo{margin:0;position:relative;border-radius:20px;overflow:hidden}
 .ultra-owner-photo img{display:block;width:100%;height:auto;max-height:470px;object-fit:cover;object-position:top}
 .ultra-owner-photo figcaption{position:absolute;bottom:0;left:0;right:0;padding:36px 18px 16px;background:linear-gradient(transparent,#101a35eb);color:#fff;font-size:13px}
