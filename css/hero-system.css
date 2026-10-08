@@ -1,17 +1,17 @@
 /* Approved homepage visual language, scoped to interior page heroes. */
-.ultra-hero{background:linear-gradient(110deg,#162345,#29283f);color:#fff;padding:125px 0 0!important;clip-path:none!important;overflow:hidden}
+.ultra-hero{background:linear-gradient(110deg,var(--navy-dark,#141f42),var(--navy,#1e2d5f));color:#fff;padding:125px 0 0!important;clip-path:none!important;overflow:hidden}
 .ultra-hero::before,.ultra-hero::after{display:none!important}
 .ultra-hero>.container{padding-bottom:40px}
 .ultra-hero .hero-content{max-width:none;padding:0;animation:none;opacity:1;transform:none}
 .ultra-hero .ultra-hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:46px;align-items:center}
 .ultra-hero h1{font-size:clamp(34px,4vw,52px);line-height:1.12;letter-spacing:-.025em;margin:22px 0}
-.ultra-hero h1 em,.ultra-hero h1 span{color:#ff773a;font-style:normal}
+.ultra-hero h1 em,.ultra-hero h1 span{color:var(--orange-light,#f97340);font-style:normal}
 .ultra-hero p{font-size:17px;line-height:1.65;color:#e4e7f0;max-width:730px}
 .ultra-hero .hero-eyebrow,.ultra-hero .eyebrow{display:inline-block;max-width:100%;padding:8px 16px;border:1px solid #ffffff40;border-radius:24px;background:#ffffff12;color:#e4e7f0;font-size:12px;line-height:1.6;font-weight:700;letter-spacing:.07em}
-.ultra-hero .hero-eyebrow span{color:#ff9c6e}
+.ultra-hero .hero-eyebrow span{color:var(--orange-light,#f97340)}
 .ultra-hero .hero-ctas,.ultra-hero .hero-actions,.ultra-hero .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
 .ultra-hero .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:16px 24px;border-radius:11px;font-size:16px;font-weight:800;line-height:1.4;text-decoration:none;white-space:normal;text-align:center}
-.ultra-hero .btn-primary{background:#bf471b;color:#fff;border:2px solid #bf471b}
+.ultra-hero .btn-primary{background:var(--orange,#c1471d);color:#fff;border:2px solid var(--orange,#c1471d)}
 .ultra-hero .btn-secondary,.ultra-hero .btn-outline{background:#ffffff10;border:2px solid #ffffff70;color:#fff}
 .ultra-hero .btn:hover{filter:brightness(1.08)}
 .ultra-hero a:focus-visible{outline:3px solid #ffc864;outline-offset:4px}

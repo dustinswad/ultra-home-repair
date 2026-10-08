@@ -22,16 +22,16 @@
   border-radius: 8px; background: rgba(255,255,255,.1);
   color: #fff; font-size: 14px; font-weight: 900;
 }
-.site-footer__social a:hover { background: #E05A2B; }
+.site-footer__social a:hover { background: var(--orange, #c1471d); }
 .site-footer__heading {
   margin: 0 0 18px; color: rgba(255,255,255,.65); font-size: 12px;
   font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
 }
 .site-footer__links { display: flex; margin: 0; padding: 0; flex-direction: column; gap: 10px; list-style: none; }
 .site-footer__links a { color: rgba(255,255,255,.65); font-size: 14px; font-weight: 600; }
-.site-footer__links a:hover { color: #f97340; }
+.site-footer__links a:hover { color: var(--orange-light, #f97340); }
 .site-footer__contact { display: grid; grid-template-columns: 18px 1fr; gap: 10px; margin-bottom: 14px; color: rgba(255,255,255,.65); font-size: 14px; line-height: 1.55; }
-.site-footer__contact-mark { color: #f97340; font-weight: 900; }
+.site-footer__contact-mark { color: var(--orange-light, #f97340); font-weight: 900; }
 .site-footer__contact a:hover { color: #fff; }
 .site-footer__bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 28px; color: rgba(255,255,255,.45); font-size: 12px; }
 .site-footer__bottom a { text-decoration: underline; }

@@ -1,0 +1,39 @@
+/* Ultra Home Repair shared brand foundations. Load after page-specific styles. */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("../fonts/montserrat-latin.woff2") format("woff2");
+}
+
+:root {
+  --orange: #c1471d;
+  --orange-dark: #a93b17;
+  --orange-light: #f97340;
+  --navy: #1e2d5f;
+  --navy-dark: #141f42;
+  --navy-light: #2a3e7a;
+  --white: #ffffff;
+  --off-white: #f9f8f6;
+  --gray-100: #f3f2f0;
+  --gray-200: #e8e6e2;
+  --gray-400: #9b9690;
+  --gray-600: #6b6560;
+  --gray-800: #2e2b28;
+  --text: #1a1916;
+  --brand-font: "Montserrat", Arial, sans-serif;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--brand-font);
+}
+
+.review-inner::before {
+  font-family: var(--brand-font);
+}
