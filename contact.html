@@ -985,10 +985,12 @@
       stateInput.value = state;
       zipInput.value = zip;
 
-      [input, cityInput, stateInput, zipInput].forEach(field => {
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+      [cityInput, stateInput, zipInput].forEach(field => {
         field.dispatchEvent(new Event('input', { bubbles: true }));
         field.dispatchEvent(new Event('change', { bubbles: true }));
       });
+      input.blur();
     });
 
     stateInput.addEventListener('input', function() {
