@@ -37,3 +37,166 @@ textarea {
 .review-inner::before {
   font-family: var(--brand-font);
 }
+
+/* Compact, reusable customer proof for informational and utility pages. */
+.site-review-section {
+  padding: 72px 0;
+  background: var(--off-white);
+}
+
+.site-review-card {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 38px 42px;
+  border-radius: 20px;
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: 0 18px 44px rgba(20, 31, 66, 0.16);
+}
+
+.site-review-card__label {
+  margin: 0 0 10px;
+  color: #ff9b73;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.site-review-card__stars {
+  margin-bottom: 14px;
+  color: #ffbd32;
+  font-size: 21px;
+  letter-spacing: 3px;
+}
+
+.site-review-card blockquote {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(18px, 2.2vw, 23px);
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.site-review-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 22px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.site-review-card__meta a {
+  color: var(--white);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Contextual maintenance path for tankless diagnosis and how-to pages. */
+.tankless-maintenance-reminder {
+  padding: 0 0 72px;
+  background: var(--white);
+}
+
+.tankless-maintenance-reminder__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  padding: 30px 34px;
+  border: 1px solid #efc7b8;
+  border-left: 5px solid var(--orange);
+  border-radius: 16px;
+  background: #fff7f2;
+  box-shadow: 0 14px 34px rgba(46, 43, 40, 0.08);
+}
+
+.tankless-maintenance-reminder__eyebrow {
+  margin: 0 0 7px;
+  color: var(--orange-dark);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tankless-maintenance-reminder h2 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: clamp(23px, 3vw, 31px);
+  line-height: 1.2;
+}
+
+.tankless-maintenance-reminder__copy {
+  max-width: 760px;
+  margin: 0;
+  color: var(--gray-800);
+  line-height: 1.7;
+}
+
+.tankless-maintenance-reminder__link {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 850;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.tankless-maintenance-reminder__link:hover {
+  background: var(--orange-dark);
+  transform: translateY(-1px);
+}
+
+.tankless-maintenance-reminder__link:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .site-review-section {
+    padding: 54px 0;
+  }
+
+  .site-review-card {
+    padding: 29px 24px;
+    border-radius: 16px;
+  }
+
+  .tankless-maintenance-reminder {
+    padding-bottom: 54px;
+  }
+
+  .tankless-maintenance-reminder__inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 26px 23px;
+  }
+
+  .tankless-maintenance-reminder__link {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tankless-maintenance-reminder__link {
+    transition: none;
+  }
+
+  .tankless-maintenance-reminder__link:hover {
+    transform: none;
+  }
+}
