@@ -481,6 +481,7 @@
   </script>
 <link rel="stylesheet" href="css/hero-system.css">
 <link rel="stylesheet" href="css/brand-system.css">
+  <script defer src="js/inquiry-source.js"></script>
 </head>
 <body>
 
@@ -554,7 +555,7 @@
           <div>
             <div class="contact-method-label">Call</div>
             <span class="contact-method-value"><a href="tel:9493716423">(949) 371-6423</a></span>
-            <div class="contact-method-note">Mon–Sat, 8:00 AM – 6:00 PM</div>
+            <div class="contact-method-note">Daily, 8:00 AM – 6:00 PM</div>
           </div>
         </div>
 
@@ -572,16 +573,8 @@
         <div class="contact-hours">
           <h3>Hours</h3>
           <div class="hours-row">
-            <span class="hours-day">Monday – Friday</span>
+            <span class="hours-day">Monday – Sunday</span>
             <span class="hours-time">8:00 AM – 6:00 PM</span>
-          </div>
-          <div class="hours-row">
-            <span class="hours-day">Saturday</span>
-            <span class="hours-time">8:00 AM – 6:00 PM</span>
-          </div>
-          <div class="hours-row">
-            <span class="hours-day">Sunday</span>
-            <span class="hours-closed">Closed</span>
           </div>
         </div>
 
@@ -839,7 +832,7 @@
         </div>
         <div class="footer-contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>Mon–Sat: 8:00 AM – 6:00 PM</span>
+          <span>Daily: 8:00 AM – 6:00 PM</span>
         </div>
       </div>
     </div>
@@ -919,7 +912,8 @@
       city: city,
       state: state,
       zip: zip,
-      message: document.getElementById('message').value,
+      message: document.getElementById('message').value + '\n\nWebsite referral information: ' +
+        (window.UltraInquirySource ? window.UltraInquirySource.summary() : 'Unknown / direct'),
     };
 
     emailjs.send('service_sbirwu1', 'template_6myr1z8', templateParams)
