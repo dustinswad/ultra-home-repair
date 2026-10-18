@@ -70,21 +70,41 @@
 
 .photo-card {
   overflow: hidden;
+  margin: 0;
   border: 1px solid var(--line);
   border-radius: 18px;
   background: #fff;
   box-shadow: 0 10px 34px rgba(20, 31, 66, 0.1);
 }
 
+.position-grid .photo-card,
+.repair-grid .photo-card {
+  margin: 0 !important;
+}
+
 .photo-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: clamp(220px, 23vw, 320px);
+  aspect-ratio: 3 / 2;
   object-fit: cover;
 }
 
 .photo-card.position-card img {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 2;
+  object-position: center 46%;
+}
+
+.photo-card.assembly-removal img {
+  object-position: center 43%;
+}
+
+.photo-card.assembly-opening img {
+  object-position: center 56%;
+}
+
+.photo-card.assembly-mechanism img {
+  object-position: center 58%;
 }
 
 .photo-card-copy {
@@ -101,11 +121,24 @@
 }
 
 .repair-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
+}
+
+.repair-grid .photo-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  align-items: stretch;
+}
+
+.repair-grid .photo-card img {
+  height: 100%;
+  min-height: 270px;
 }
 
 .repair-grid .photo-card-copy {
-  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .code-compare {
@@ -228,9 +261,16 @@
     min-height: auto;
   }
 
-  .photo-card img {
-    max-height: 620px;
+  .repair-grid .photo-card {
+    grid-template-columns: 1fr;
   }
+
+  .photo-card img,
+  .repair-grid .photo-card img {
+    height: clamp(230px, 60vw, 420px);
+    min-height: 0;
+  }
+
 }
 
 @media (max-width: 520px) {
