@@ -178,7 +178,7 @@
 .uhr-site .uhr-hero .case-hero-figure img{object-fit:contain;background:#101a35}
 
 /* Let an enlarged header label wrap without pushing the menu off screen. */
-@media(max-width:640px){.uhr-site .uhr-nav-logo{flex:0 1 148px;min-width:60px}.uhr-site .uhr-nav-logo img{width:100%}.uhr-site .uhr-nav-action{white-space:normal;text-align:center;width:5em;max-width:none;min-width:5em}}
+@media(max-width:640px){.uhr-site .uhr-nav-logo{flex:0 1 148px;min-width:50px}.uhr-site .uhr-nav-logo img{width:100%}.uhr-site .uhr-nav-action{white-space:normal;text-align:center;width:5.75em;max-width:none;min-width:5.75em}}
 @media(max-width:360px){.uhr-site .uhr-nav-logo{flex-basis:122px}}
 
 /* Flexible evidence and contact rows also fit when readers enlarge text. */
