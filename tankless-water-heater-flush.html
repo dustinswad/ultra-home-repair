@@ -640,6 +640,23 @@
   <script defer src="js/inquiry-source.js"></script>
   <link rel="stylesheet" href="css/site-experience.css?v=20261023-1">
   <script defer src="js/site-experience.js?v=20261023-1"></script>
+  <style id="tankless-photo-framing">
+    /* Restore the portrait framing used before the sitewide redesign. */
+    .uhr-page-tankless-water-heater-flush .uhr-hero .hero-dustin img {
+      height:auto!important; max-height:none; aspect-ratio:4/5!important;
+      object-fit:cover; object-position:center 30%;
+    }
+    .uhr-page-tankless-water-heater-flush .offer-box { max-height:calc(100dvh - 48px); overflow-y:auto; }
+    .uhr-page-tankless-water-heater-flush .offer-box h2 { font-size:32px; line-height:1.2; }
+    @media(max-width:700px) {
+      .uhr-page-tankless-water-heater-flush .offer-box { max-height:calc(100dvh - 112px); }
+      .uhr-page-tankless-water-heater-flush .offer-box h2 { font-size:24px; }
+    }
+    @media(max-width:1100px) {
+      .uhr-page-tankless-water-heater-flush .uhr-hero .hero-dustin { display:none; }
+      .uhr-page-tankless-water-heater-flush .uhr-hero-layout { grid-template-columns:minmax(0,1fr)!important; }
+    }
+  </style>
 </head><body class="uhr-site uhr-page-tankless-water-heater-flush">
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -1241,7 +1258,7 @@ close.addEventListener('click',closeOffer);shade.addEventListener('click',e=>{if
 document.addEventListener('keydown',e=>{if(shade.hidden)return;if(e.key==='Escape')closeOffer();if(e.key==='Tab'&&!mobile.matches){const a=[...shade.querySelectorAll('button,a[href]')];if(e.shiftKey&&document.activeElement===a[0]){e.preventDefault();a.at(-1).focus()}else if(!e.shiftKey&&document.activeElement===a.at(-1)){e.preventDefault();a[0].focus()}}});
 links.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();openOffer()}));
 let seen=false;try{seen=sessionStorage.getItem('ultra-october-2026-seen')==='1'}catch{}
-// The October offer opens when the visitor chooses its visible link.
+if(!seen)setTimeout(openOffer,4000);
 })();</script>
 </body>
 </html>
