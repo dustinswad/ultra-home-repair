@@ -1,0 +1,24 @@
+/* A homeowner list, using the shared Ultra service-page system. */
+.uhr-page-punch-list .repair-list{align-self:center;background:#fbf8f0;border:1px solid #e3dac8;border-radius:18px;padding:32px 34px;color:#1e2d5f;box-shadow:0 22px 45px #0002;min-width:0}
+.uhr-page-punch-list .repair-list .list-kicker{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:#985119;margin-bottom:13px}
+.uhr-page-punch-list .repair-list h2{font-size:29px;line-height:1.22;letter-spacing:-.025em;margin:0 0 20px;color:#1e2d5f}
+.uhr-page-punch-list .repair-list ul{list-style:none;padding:0;margin:0}
+.uhr-page-punch-list .repair-list li{display:flex;gap:13px;align-items:center;padding:12px 0;border-bottom:1px solid #e4ddcf;font-size:14px;font-weight:650;line-height:1.6}
+.uhr-page-punch-list .repair-list li>span{flex:0 0 15px;width:15px;height:15px;border:1.5px solid #9e9583;border-radius:3px;background:white}
+.uhr-page-punch-list .uhr-hero .repair-list p{font-size:11px!important;line-height:1.75;color:#62604f;margin:18px 0 0}
+.uhr-page-punch-list .punch-jump{background:#f6f4ee;border-bottom:1px solid #dedfe4}
+.uhr-page-punch-list .punch-jump .container{display:flex;flex-wrap:wrap;gap:8px 24px;padding-block:12px}
+.uhr-page-punch-list .punch-jump a{font-size:12px;min-height:42px;display:inline-flex;align-items:center;font-weight:750;color:#39425b;text-decoration:underline;text-underline-offset:4px}
+.uhr-page-punch-list .repair-categories ul{padding-left:18px;margin:18px 0 0;font-size:14px;line-height:1.7}
+.uhr-page-punch-list .repair-categories li{margin-top:10px}
+.uhr-page-punch-list .repair-categories a{font-weight:650}
+.uhr-page-punch-list .punch-scope{font-size:13px;line-height:1.8;max-width:980px;margin:26px 0 0;color:#555b69}
+.uhr-page-punch-list .punch-projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.uhr-page-punch-list .punch-projects figure{margin:0;border:1px solid #dedfe4;border-radius:14px;overflow:hidden;background:#fff}
+.uhr-page-punch-list .punch-projects img{display:block;width:100%;height:250px;object-fit:cover}
+.uhr-page-punch-list .punch-projects figcaption{padding:20px;display:grid;gap:9px;font-size:14px}
+.uhr-page-punch-list .punch-projects figcaption a{font-size:12px}
+.uhr-page-punch-list .punch-final-actions{display:grid;gap:9px;flex-shrink:0}
+.uhr-page-punch-list .punch-final-actions .text-link{color:white;text-align:center}
+@media(max-width:800px){.uhr-page-punch-list .repair-list{width:100%;max-width:560px}.uhr-page-punch-list .punch-projects{grid-template-columns:minmax(0,1fr)}.uhr-page-punch-list .punch-projects img{height:280px}}
+@media(max-width:640px){.uhr-page-punch-list .repair-list{padding:25px}.uhr-page-punch-list .repair-list h2{font-size:25px}.uhr-page-punch-list .repair-list li{font-size:13px}.uhr-page-punch-list .punch-jump .container{gap:0 20px}.uhr-page-punch-list .punch-final-actions{width:100%}.uhr-page-punch-list .punch-projects img{height:230px}}

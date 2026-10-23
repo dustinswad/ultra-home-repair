@@ -1,0 +1,3 @@
+/* Retain the site's existing contact event names without collecting inquiry data. */
+(function(){'use strict';var year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();
+document.querySelectorAll('a[href^="tel:"],a[href^="sms:"]').forEach(function(link){if(link.classList.contains('uhr-nav-action'))return;link.addEventListener('click',function(){if(typeof window.gtag!=='function')return;window.gtag('event',link.getAttribute('href').startsWith('tel:')?'phone_call':'sms_click',{event_category:'conversion',event_label:'Repair list contact',value:1,transport_type:'beacon'});});});})();
