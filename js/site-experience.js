@@ -32,7 +32,7 @@
   document.addEventListener('click', function (event) {
     if (links.classList.contains('is-open') && !header.contains(event.target)) closeMenu(false);
   });
-  var desktop = window.matchMedia('(min-width:1121px)');
+  var desktop = window.matchMedia('(min-width:1281px)');
   desktop.addEventListener('change', function () { closeMenu(false); });
   // One event for the new header CTA, independent of legacy page listeners.
   var textAction = header.querySelector('.uhr-nav-action');
