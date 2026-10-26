@@ -203,3 +203,5 @@
 .uhr-site{overflow-wrap:anywhere}
 .uhr-site .project-img[role=button]:focus-visible,.uhr-site .ba-slider:focus-visible{outline:3px solid #a93b17;outline-offset:5px}
 .uhr-site .lightbox button:focus-visible{outline-color:#ffc864}
+
+.uhr-site .uhr-hero .hero-eyebrow .hero-divider{display:inline!important;margin:0 .5em}
