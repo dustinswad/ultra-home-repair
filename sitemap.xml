@@ -19,7 +19,7 @@
 </url>
 <url>
   <loc>https://ultrahomerepair.com/homeowner-guide.html</loc>
-  <lastmod>2026-10-23</lastmod>
+  <lastmod>2026-10-26</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.85</priority>
 </url>
@@ -152,4 +152,10 @@
   <priority>0.85</priority>
 </url>
 
+<url>
+  <loc>https://ultrahomerepair.com/should-you-flush-your-own-tankless-water-heater.html</loc>
+  <lastmod>2026-10-26</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
 </urlset>
