@@ -1,0 +1,41 @@
+/* Focused additions for the October 28 plumbing page improvements. */
+.uhr-site .uhr-job-proof{background:#f6f4ee;padding:56px 0}
+.uhr-site .uhr-job-proof__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:44px;align-items:center}
+.uhr-site .uhr-job-proof__case{min-width:0;max-width:560px}
+.uhr-site .uhr-job-proof__eyebrow{margin:0 0 14px;color:#a33b14;font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.uhr-site .uhr-job-proof h2{font-size:clamp(27px,3vw,38px);line-height:1.2;margin:0 0 18px}
+.uhr-site .uhr-job-proof__case>p:not(.uhr-job-proof__eyebrow){color:#535b69;line-height:1.75}
+.uhr-site .uhr-job-proof__review{margin:0;padding:30px 32px;background:#fff;border:1px solid #dedfe4;border-radius:16px;min-width:0}
+.uhr-site .uhr-job-proof__stars{color:#996715;font-size:21px;letter-spacing:2px;margin-bottom:14px}
+.uhr-site .uhr-job-proof blockquote{margin:0 0 22px;font-size:17px;line-height:1.8;color:#26324d;overflow-wrap:anywhere}
+.uhr-site .uhr-job-proof figcaption{display:flex;gap:8px 18px;flex-wrap:wrap;align-items:center;font-size:13px;line-height:1.6;color:#535b69}
+.uhr-site .uhr-job-proof__link,.uhr-site .uhr-job-proof figcaption a{color:#a33b14;font-weight:800;text-underline-offset:4px;overflow-wrap:anywhere}
+.uhr-site .uhr-job-proof__link{display:inline-block;padding:9px 0}
+.uhr-site .uhr-replacement-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:44px;align-items:start}
+.uhr-site .uhr-toilet-replacement{background:#fff}
+.uhr-site .uhr-toilet-replacement .scope-card{background:#f6f4ee}
+.uhr-site .uhr-toilet-replacement .scope-card ul{padding-left:20px}
+.uhr-site .uhr-toilet-replacement .scope-card li{margin:10px 0;color:#535b69}
+.uhr-site .uhr-toilet-replacement .actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:24px}
+.uhr-site .uhr-toilet-replacement .scope-card p{font-size:15px;line-height:1.75;color:#535b69}
+.uhr-site.uhr-page-rinnai-error-code-15-venturi-repair-irvine .uhr-hero h1 em{font-style:normal;color:#ff9b70}
+.uhr-site .uhr-hero .uhr-hero-copy>.uhr-code-alternative{font-size:14px;line-height:1.7;margin:18px 0 0;max-width:560px;color:#e3e6ef}
+.uhr-site .uhr-code-alternative a{display:inline-block;color:#fff;text-decoration:underline;text-underline-offset:4px;font-weight:700}
+.uhr-site.uhr-page-rinnai-error-code-15-venturi-repair-irvine .mobile-bar a:first-child{background:#bf481a}
+.uhr-site.uhr-page-rinnai-error-code-15-venturi-repair-irvine .mobile-bar a:last-child{background:#1c2949}
+.uhr-site .uhr-job-proof :is(a,button):focus-visible,.uhr-site .uhr-toilet-replacement :is(a,button):focus-visible{outline:3px solid #a33b14;outline-offset:4px}
+@media(max-width:760px){
+ .uhr-site.uhr-has-contact-bar{padding-bottom:var(--uhr-contact-bar-height,72px)}
+ .uhr-site .mobile-bar{padding-bottom:env(safe-area-inset-bottom);background:#1c2949}
+}
+@media(max-width:820px){
+ .uhr-site .uhr-job-proof__grid,.uhr-site .uhr-replacement-grid{grid-template-columns:minmax(0,1fr);gap:26px}
+ .uhr-site .uhr-job-proof__case{max-width:none}
+}
+@media(max-width:520px){
+ .uhr-site .uhr-job-proof{padding:42px 0}
+ .uhr-site .uhr-job-proof__review{padding:25px 22px}
+ .uhr-site .uhr-job-proof blockquote{font-size:16px;line-height:1.8}
+ .uhr-site .uhr-toilet-replacement .actions{display:grid}
+ .uhr-site .uhr-toilet-replacement .actions .btn{width:100%}
+}
