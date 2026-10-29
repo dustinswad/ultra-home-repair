@@ -3,9 +3,17 @@ from pathlib import Path
 from html import escape
 import json
 import re
+import xml.etree.ElementTree as ET
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ["index.html", "contact.html", "about.html", "services.html", "realtors.html", "gallery.html", "tankless-water-heater-flush.html"]
+# Every canonical public page participates; redirect aliases are excluded.
+PAGES = []
+for node in ET.parse(ROOT / "sitemap.xml").findall("{http://www.sitemaps.org/schemas/sitemap/0.9}url/{http://www.sitemaps.org/schemas/sitemap/0.9}loc"):
+    path = urlparse(node.text.strip()).path.lstrip("/") or "index.html"
+    assert path.endswith(".html") and ".." not in Path(path).parts, path
+    assert (ROOT / path).is_file(), path
+    PAGES.append(path)
 catalog = json.loads((ROOT / "data/reviews.json").read_text())
 reviews = catalog["reviews"]
 assert len({r["id"] for r in reviews}) == len(reviews)
@@ -36,9 +44,17 @@ for name in PAGES:
     source = path.read_text()
     sections = list(re.finditer(r'<section\b[^>]*>.*?</section>', source, flags=re.S | re.I))
     targets = [s for s in sections if any(marker in s.group() for marker in ('id="carouselTrack"', 'id="hr-track"', 'data-review-carousel'))]
-    assert len(targets) == 1, (name, len(targets))
-    target = targets[0]
-    source = source[:target.start()] + component + source[target.end():]
+    assert len(targets) <= 1, (name, len(targets))
+    if targets:
+        target = targets[0]
+        source = source[:target.start()] + component + source[target.end():]
+    else:
+        # Preserve focused service-specific testimonials as separate proof.
+        if 'id="reviews"' in source:
+            assert 'id="service-reviews"' not in source, name
+            source = source.replace('id="reviews"', 'id="service-reviews"', 1)
+        assert source.count('</main>') == 1, name
+        source = source.replace('</main>', component + '\n</main>', 1)
 
     def remove_legacy_script(match):
         script = match.group()
