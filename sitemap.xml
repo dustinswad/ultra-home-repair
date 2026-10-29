@@ -13,7 +13,7 @@
 </url>
 <url>
   <loc>https://ultrahomerepair.com/services.html</loc>
-  <lastmod>2026-10-25</lastmod>
+  <lastmod>2026-10-29</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
 </url>
@@ -103,7 +103,7 @@
 </url>
 <url>
   <loc>https://ultrahomerepair.com/gallery.html</loc>
-  <lastmod>2026-10-25</lastmod>
+  <lastmod>2026-10-29</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
@@ -157,5 +157,11 @@
   <lastmod>2026-10-26</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://ultrahomerepair.com/door-repair-installation-irvine.html</loc>
+  <lastmod>2026-10-29</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
 </url>
 </urlset>
