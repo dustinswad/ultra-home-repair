@@ -37,6 +37,47 @@
     @media(max-width:900px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:86px;left:0;right:0;padding:14px 20px 22px;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 26px rgba(0,0,0,.09)}.nav-links.open{display:flex}.nav-links .nav-cta{margin-left:0;text-align:center}.hero-grid,.split{grid-template-columns:1fr}.hero-photo{max-width:680px}.model-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}}
     @media(max-width:640px){.container{width:min(100% - 30px,1160px)}.nav-inner{min-height:76px}.nav-logo img{width:166px}.nav-links{top:76px}.hero{padding:56px 0}.hero-grid{gap:34px}.hero-grid>div{padding-top:0}.hero-photo img{height:320px}h1{font-size:42px}.actions{display:grid}.btn{width:100%}.trust-grid{grid-template-columns:1fr}.trust-item+ .trust-item{border-top:1px solid var(--line);border-left:0}section{padding:62px 0}.process-grid{grid-template-columns:1fr}.feature-product img{height:300px}.model-card{padding:12px 24px 24px}.model-image{height:240px}.callout{grid-template-columns:1fr}.cta-inner{display:block}.cta .btn{margin-top:22px}.review{padding:28px 23px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    .fan-project .section-heading {
+      max-width: 760px;
+      margin-inline: auto;
+    }
+    .fan-project-photos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 760px;
+      margin: 28px auto 0;
+    }
+    .fan-project-photos figure {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+    .fan-project-photos img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 6 / 5;
+      object-fit: contain;
+      background: #eeece9;
+    }
+    .fan-project-photos figcaption {
+      padding: 10px 16px;
+      color: var(--navy);
+      font-weight: 750;
+    }
+    .fan-project-next {
+      max-width: 760px;
+      margin: 20px auto 0;
+    }
+    .fan-project-next .actions {
+      margin-top: 16px;
+    }
+    @media (max-width: 520px) {
+      .fan-project-photos { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -67,6 +108,29 @@
   <main id="main">
     <section class="hero uhr-hero"><div class="container hero-grid uhr-hero-layout"><div class="uhr-hero-copy"><div class="eyebrow">Bathroom ventilation in Irvine</div><h1>A quieter bathroom fan—<span>without tearing up the ceiling.</span></h1><p class="hero-copy">Replace an aging exhaust fan with a compatible Panasonic model designed for room-side installation. Choose the airflow and features that fit your bathroom, from simple quiet ventilation to lighting, automatic moisture response, or Bluetooth audio.</p><div class="actions"><a class="btn btn-primary" href="sms:+19493716423">Text Dustin</a><a class="btn btn-secondary" href="contact.html#quote">Request an estimate</a></div></div><figure class="hero-photo uhr-hero-media"><img alt="Panasonic WhisperFit DC bathroom exhaust fan with LED grille and low-profile housing" fetchpriority="high" height="2000" src="images/panasonic-whisperfit-fv-0511vfl1.jpg" width="2000"/><figcaption class="photo-caption">Panasonic WhisperFit DC LED: a low-profile fan, integrated light and room-side installation bracket.</figcaption></figure></div></section>
     <div class="trust-strip"><div class="container trust-grid"><div class="trust-item">Existing-location replacements</div><div class="trust-item">Room-side compatible options</div><div class="trust-item">Quiet Panasonic models</div></div></div>
+    <section class="section-alt fan-project" aria-labelledby="fan-project-title">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">From Ultra’s project gallery</div>
+          <h2 id="fan-project-title">Bathroom fan work in Irvine</h2>
+          <p class="section-intro">See the ceiling fixture before the work and the finished fan with its light on.</p>
+        </div>
+        <div class="fan-project-photos">
+          <figure>
+            <img src="images/before-bathroom-exhaust-fan.webp" alt="Ceiling fixture with a round light before the bathroom fan work" width="902" height="786" loading="lazy" decoding="async">
+            <figcaption>Before</figcaption>
+          </figure>
+          <figure>
+            <img src="images/after-bathroom-exhaust-fan.webp" alt="Installed white bathroom fan cover with a square light" width="1110" height="950" loading="lazy" decoding="async">
+            <figcaption>After</figcaption>
+          </figure>
+        </div>
+        <div class="fan-project-next">
+          <p>Replacing your fan? Text a photo of the existing grille and the model label if it’s visible. Dustin can check what may fit your existing opening, duct and wiring before you buy a fan.</p>
+          <div class="actions"><a class="btn btn-primary" href="sms:+19493716423">Text Dustin your fan photos</a></div>
+        </div>
+      </div>
+    </section>
     <section><div class="container split"><div><div class="section-label">Why room-side installation matters</div><h2>Modernize the fan from inside the bathroom.</h2><p class="section-intro">Panasonic's low-profile WhisperFit DC models use the Flex-Z Fast installation bracket, which is designed to simplify retrofit work from below the ceiling. That can make them a strong choice when replacing an existing bathroom fan without attic access.</p><ul class="check-list"><li>Pick-A-Flow settings let one model support 50, 80, or 110 CFM.</li><li>Low-profile housings are designed for tighter ceiling cavities.</li><li>Several models add useful features without changing the basic clean grille style.</li><li>The existing opening, duct, ceiling depth, and wiring still need to be checked first.</li></ul></div><figure class="feature-product"><img src="images/panasonic-whisperfit-fv-0511vf1.jpg" alt="Panasonic WhisperFit DC fan-only model showing grille, low-profile housing and duct connection" width="2000" height="2000" loading="lazy" /><figcaption><strong>What is above the grille:</strong> the low-profile housing, junction box and duct connection that must fit the existing ceiling location.</figcaption></figure></div></section>
     <section class="section-alt" id="models"><div class="container"><div class="section-heading"><div class="section-label">Room-side Panasonic options</div><h2>Choose the features you will actually use.</h2><p class="section-intro">These are the Panasonic models worth comparing because each uses the Flex-Z Fast bracket or is specifically described by Panasonic for room-side installation. The exact model should be confirmed against the existing fan location before purchase.</p></div><div class="model-grid">
       <article class="model-card"><img class="model-image" src="images/panasonic-whisperfit-fv-0511vf1.jpg" alt="Panasonic FV-0511VF1 WhisperFit DC fan-only bathroom exhaust fan" width="2000" height="2000" loading="lazy" /><div class="model-top"><div><div class="model-number">FV-0511VF1</div><h3>WhisperFit DC</h3></div><span class="tag">Fan only</span></div><p>A straightforward quiet replacement when you do not need a light or automated controls.</p><ul class="feature-list"><li>50, 80, or 110 CFM selection</li><li>Low-profile 5⅝-inch housing</li><li>Flex-Z Fast installation bracket</li><li>ENERGY STAR certified</li></ul><a class="source-link" href="https://iaq.na.panasonic.com/ventilation/fans/whisperfit-dc" target="_blank" rel="noopener">View Panasonic specifications →</a></article>
@@ -76,7 +140,7 @@
     </div><p class="image-credit">Product images courtesy of Panasonic North America.</p><div class="callout"><div class="callout-icon" aria-hidden="true">!</div><div><h3>Lighting and controls need a compatibility check.</h3><p>A fan with an LED, nightlight, sensor, or speaker may need different switching or wiring than the fan being removed. The nightlight on Panasonic's LED models requires separate wiring. Confirm the existing setup before ordering a feature-heavy model.</p></div></div></div></section>
     <section><div class="container"><div class="section-heading"><div class="section-label">How replacement works</div><h2>Match the new fan to what is already there.</h2><p class="section-intro">This service is for compatible fan replacement at an existing bathroom exhaust location using the existing wiring and duct.</p></div><div class="process-grid"><article class="step"><div class="step-number">1</div><h3>Check the existing fan</h3><p>Review the opening, ceiling space, duct connection, wiring, and controls.</p></article><article class="step"><div class="step-number">2</div><h3>Choose the right model</h3><p>Select the airflow and features that work with the bathroom and existing setup.</p></article><article class="step"><div class="step-number">3</div><h3>Replace and test</h3><p>Remove the old unit, install the compatible replacement from the room side, and verify operation.</p></article></div></div></section>
     <section class="related-services related-services--alt" aria-labelledby="fan-related-title"><div class="container"><div class="related-services__heading"><p class="related-services__eyebrow">Related electrical devices</p><h2 id="fan-related-title">Finish the room with compatible controls and devices.</h2></div><div class="related-services__grid"><article><h3>Switches and fan controls</h3><p>Replace compatible switches, timers or controls at an existing device location.</p><a href="light-switch-outlet-replacement-irvine.html">See switch replacement →</a></article><article><h3>Smart-home controls</h3><p>Review compatible smart switches, dimmers and other connected devices.</p><a href="smart-home-installation-irvine.html">See smart-home installation →</a></article><article><h3>Smoke and CO alarms</h3><p>Replace expired or incompatible alarms at existing locations.</p><a href="smoke-carbon-monoxide-alarm-installation-irvine.html">See alarm replacement →</a></article></div></div></section>
-    <section class="section-alt"><div class="container"><div class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Dustin came the same day to replace the bathroom fans. He did a great job, explained what he was doing and shared before/after pictures.”</blockquote><cite>— Kavi Anand, Google review excerpt</cite></div></div></section>
+    <section class="section-alt"><div class="container"><div class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“He was able to finish installing a faucet, complete my painting, replace the bathroom fans and also swap out door knobs in good time.”</blockquote><cite>— Kavi Anand, Google review excerpt</cite></div></div></section>
     <section><div class="container"><div class="section-heading"><div class="section-label">Common questions</div><h2>Bathroom exhaust fan replacement FAQs</h2></div><div class="faq-list"><details><summary>Can a bathroom fan really be replaced from inside the room?</summary><p>Some Panasonic WhisperFit models are designed for room-side installation with the Flex-Z Fast bracket. The existing opening, ceiling space, duct, and wiring still determine whether the installation is a match.</p></details><details><summary>Which model should I choose?</summary><p>Choose the standard WhisperFit DC for simple quiet ventilation, the LED version for integrated lighting, the condensation-sensing model for automatic moisture response, or Whisper Symphony if Bluetooth speakers are useful to you.</p></details><details><summary>How much airflow does my bathroom need?</summary><p>The Panasonic models shown here offer selectable airflow settings, but the right setting depends on the bathroom size and existing duct. That should be checked before final model selection.</p></details><details><summary>Can the new fan use my existing switch?</summary><p>A fan-only model may be simpler to match to existing controls. LED, nightlight, sensing, and audio features can change the wiring or switching requirements, so the current setup needs to be verified first.</p></details><details><summary>Do you install new ducts or wiring?</summary><p>This service focuses on replacing compatible fans at existing locations using the existing wiring and duct.</p></details></div></div></section>
     <section class="cta"><div class="container cta-inner"><div><h2>Ready for a quieter bathroom fan?</h2><p>Tell Dustin what fan you have now and which features matter to you.</p></div><a class="btn" href="contact.html#quote">Request an estimate</a></div></section>
   <section id="reviews" class="uhr-reviews" data-review-carousel aria-labelledby="uhr-review-title" aria-roledescription="carousel">
