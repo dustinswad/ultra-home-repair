@@ -273,9 +273,18 @@
     .form-success h3 { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 8px; }
     .form-success p { font-size: 15px; color: var(--gray-600); }
     .form-error-msg {
-      display: none; background: #fef2f2; border: 1px solid #fca5a5;
+      background: #fef2f2; border: 1px solid #fca5a5;
       border-radius: var(--radius); padding: 12px 16px;
-      font-size: 13.5px; color: #dc2626; margin-bottom: 16px;
+      font-size: 14px; color: #991b1b; margin: 16px 0;
+      scroll-margin-block: 110px 96px;
+    }
+    .form-error-msg a {
+      display: inline-flex; align-items: center; min-height: 44px;
+      color: inherit; font-weight: 700; text-decoration: underline;
+      margin-inline-end: 16px;
+    }
+    .form-error-msg:focus, .form-error-msg a:focus-visible {
+      outline: 2px solid #991b1b; outline-offset: 3px;
     }
 
     /* CAROUSEL */
@@ -563,8 +572,6 @@
         <div class="form-title">Request a Free Estimate</div>
         <div class="form-subtitle">All nine fields are required so Dustin can verify the service location and contact you about the work.</div>
 
-        <div class="form-error-msg" id="formError" role="alert" tabindex="-1">Something went wrong. Please try texting or calling directly at (949) 371-6423.</div>
-
         <form id="contactForm" novalidate>
           <div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;">
             <label for="website">Leave this field blank</label>
@@ -624,6 +631,13 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             Send My Request
           </button>
+          <div class="form-error-msg" id="formError" role="alert" tabindex="-1" hidden>
+            <p id="formErrorText"></p>
+            <div id="formErrorActions" hidden>
+              <a href="sms:+19493716423">Text Dustin</a>
+              <a href="tel:+19493716423">Call (949) 371-6423</a>
+            </div>
+          </div>
           <p class="form-note">By submitting this form, you agree that Ultra Home Repair may use the information provided to respond to your request. Personal information is not sold. See the <a href="privacy.html" style="color:var(--orange);font-weight:700;text-decoration:underline;">Privacy Policy</a>.</p>
           <p class="form-note">📸 Have photos? Text them to (949) 371-6423 for a faster estimate.</p>
         </form>
@@ -854,12 +868,23 @@ Hans in Irvine</blockquote><p class="uhr-review-name">Hans Schmutz</p>
   const contactForm = document.getElementById('contactForm');
   const formLoadedAt = Date.now();
 
-  contactForm.addEventListener('submit', function(e) {
+  const btn = document.getElementById('submitBtn');
+  const submitLabel = btn.innerHTML;
+  const errorEl = document.getElementById('formError');
+  const errorText = document.getElementById('formErrorText');
+  const errorActions = document.getElementById('formErrorActions');
+
+  function showFormError(message, showContactLinks) {
+    errorText.textContent = message;
+    errorActions.hidden = !showContactLinks;
+    errorEl.hidden = false;
+    errorEl.focus();
+  }
+
+  contactForm.addEventListener('submit', async function(e) {
     e.preventDefault();
-    const btn = document.getElementById('submitBtn');
-    const errorEl = document.getElementById('formError');
-    errorEl.textContent = 'Something went wrong. Please try texting or calling directly at (949) 371-6423.';
-    errorEl.style.display = 'none';
+    if (btn.disabled) return;
+    errorEl.hidden = true;
 
     const fields = ['firstName', 'lastName', 'phone', 'email', 'address', 'city', 'state', 'zip', 'message'];
     fields.forEach(id => {
@@ -884,15 +909,12 @@ Hans in Irvine</blockquote><p class="uhr-review-name">Hans Schmutz</p>
     const websiteField = document.getElementById('website');
     if (websiteField.value) return;
     if (Date.now() - formLoadedAt < 2500) {
-      errorEl.textContent = 'Please wait a moment, then try submitting again.';
-      errorEl.style.display = 'block';
+      showFormError('Please wait a moment, then try submitting again.', false);
       return;
     }
 
     if (!window.emailjs || typeof window.emailjs.send !== 'function') {
-      errorEl.textContent = 'The request service could not load. Please text or call (949) 371-6423, or reload this page and try again.';
-      errorEl.style.display = 'block';
-      errorEl.focus();
+      showFormError('The quote form is temporarily unavailable. Your details are still here. You can text or call Dustin for a quote.', true);
       return;
     }
 
@@ -916,19 +938,27 @@ Hans in Irvine</blockquote><p class="uhr-review-name">Hans Schmutz</p>
         (window.UltraInquirySource ? window.UltraInquirySource.summary() : 'Unknown / direct'),
     };
 
-    emailjs.send('service_sbirwu1', 'template_6myr1z8', templateParams)
-    .then(() => {
-      gtag('event', 'contact_form_submit', {
+    try {
+      await emailjs.send('service_sbirwu1', 'template_6myr1z8', templateParams);
+    } catch {
+      btn.disabled = false;
+      btn.innerHTML = submitLabel;
+      showFormError('We couldn’t confirm that your request was sent. Your details are still here. Try again, or text or call Dustin.', true);
+      return;
+    }
+
+    contactForm.style.display = 'none';
+    const successEl = document.getElementById('formSuccess');
+    successEl.style.display = 'block';
+    successEl.focus();
+    try {
+      window.gtag?.('event', 'contact_form_submit', {
         event_category: 'contact',
         event_label: 'Contact Form'
       });
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
-    }).catch(() => {
-      errorEl.style.display = 'block';
-      btn.disabled = false;
-      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send My Request';
-    });
+    } catch {
+      // A tracking failure should never change the result shown to the customer.
+    }
   });
 </script>
 
