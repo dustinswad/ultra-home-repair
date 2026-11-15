@@ -205,3 +205,6 @@
 .uhr-site .lightbox button:focus-visible{outline-color:#ffc864}
 
 .uhr-site .uhr-hero .hero-eyebrow .hero-divider{display:inline!important;margin:0 .5em}
+
+/* Owner-approved clear text-message action; this class is used by the homepage hero. */
+.uhr-site .uhr-hero .uhr-contact-hint{font-size:13px;line-height:1.7;color:#dce4f3;margin:12px 0 0;max-width:560px}
