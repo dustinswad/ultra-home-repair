@@ -7,13 +7,13 @@
 
 <url>
   <loc>https://ultrahomerepair.com/</loc>
-  <lastmod>2026-11-01</lastmod>
+  <lastmod>2026-11-14</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://ultrahomerepair.com/services.html</loc>
-  <lastmod>2026-11-13</lastmod>
+  <lastmod>2026-11-14</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
 </url>
@@ -103,7 +103,7 @@
 </url>
 <url>
   <loc>https://ultrahomerepair.com/gallery.html</loc>
-  <lastmod>2026-11-01</lastmod>
+  <lastmod>2026-11-14</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
@@ -178,5 +178,6 @@
   </url>
   <url>
     <loc>https://ultrahomerepair.com/shower-head-replacement-irvine.html</loc>
+    <lastmod>2026-11-14</lastmod>
   </url>
 </urlset>
