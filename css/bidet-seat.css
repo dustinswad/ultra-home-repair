@@ -1,0 +1,7 @@
+/* Narrow bidet service layout; no changes to shared design. */
+.bidet-page .sh-hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.85fr);align-items:center;gap:64px}
+.bidet-page .sh-price{box-shadow:0 12px 32px #07112633;border-top:5px solid #b94117}
+.bidet-page .sh-price a{color:#a23816!important;font-weight:750;display:inline-flex;min-height:44px;align-items:center}
+.bidet-page .sh-price p{line-height:1.8;font-size:15px}
+.bidet-page .bidet-last-note{margin:20px 0 0}
+@media(max-width:800px){.bidet-page .sh-hero-grid{grid-template-columns:minmax(0,1fr);gap:32px}.bidet-page .sh-price{max-width:560px}}
